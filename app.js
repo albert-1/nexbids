@@ -41,6 +41,8 @@ function navigate(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   // close mobile menu
   document.getElementById('navMenu')?.classList.remove('open');
+  // update active state
+  updateNavActive(page);
 }
 
 function renderPage(page) {
@@ -67,11 +69,13 @@ function renderPage(page) {
     'login-dsp':            () => renderLogin('dsp'),
     'login-ssp':            () => renderLogin('ssp'),
     'login-adx':            () => renderLogin('adx'),
+    '404':                  render404,
   };
   const fn = renderers[page] || renderHome;
   container.innerHTML = `<div class="page-transition">${fn()}</div>`;
   applyLang();
   initScrollSpy();
+  initCounterAnimation();
 }
 
 /* ─────────────────────────────────────────────
@@ -184,19 +188,72 @@ function renderHome() {
   return `
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      ${sectionTag('Global Ad Tech Leader', '全球广告技术领导者')}
-      <h1>${t('Power Your Growth with', '用智能程序化广告')}<br><span class="gradient-text">${t('Intelligent Programmatic', '驱动您的全球增长')}</span></h1>
-      <p>${t('NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.',
-             'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。')}</p>
-      <div class="btn-group">
-        <button class="btn btn-primary" onclick="navigate('contact')">${t('Get Started Free', '免费开始')}</button>
-        <button class="btn btn-secondary" onclick="navigate('products')">${t('Explore Platforms', '探索平台')}</button>
+    <div class="hero-content hero-layout">
+      <div class="hero-text">
+        ${sectionTag('Global Ad Tech Leader', '全球广告技术领导者')}
+        <h1>${t('Power Your Growth with', '用智能程序化广告')}<br><span class="gradient-text">${t('Intelligent Programmatic', '驱动您的全球增长')}</span></h1>
+        <p>${t('NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.',
+               'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。')}</p>
+        <div class="btn-group">
+          <button class="btn btn-primary" onclick="navigate('contact')">${t('Get Started Free', '免费开始')}</button>
+          <button class="btn btn-secondary" onclick="navigate('products')">${t('Explore Platforms', '探索平台')}</button>
+        </div>
+        <div style="margin-top:32px;display:flex;gap:20px;flex-wrap:wrap">
+          <span class="stat-badge">✓ ${t('150+ Countries', '150+国家')}</span>
+          <span class="stat-badge green">✓ ${t('50B+ Daily Auctions', '每日500亿+竞价')}</span>
+          <span class="stat-badge purple">✓ ${t('50K+ Active Advertisers', '50,000+活跃广告主')}</span>
+        </div>
       </div>
-      <div style="margin-top:48px;display:flex;gap:24px;flex-wrap:wrap">
-        <span class="stat-badge">✓ ${t('150+ Countries', '150+国家')}</span>
-        <span class="stat-badge green">✓ ${t('50B+ Daily Auctions', '每日500亿+竞价')}</span>
-        <span class="stat-badge purple">✓ ${t('50K+ Active Advertisers', '50,000+活跃广告主')}</span>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Decorative programmatic ad dashboard illustration -->
+        <div class="hero-viz-card">
+          <div class="hvz-header">
+            <span class="hvz-dot" style="background:#FF5F57"></span>
+            <span class="hvz-dot" style="background:#FEBC2E"></span>
+            <span class="hvz-dot" style="background:#28C840"></span>
+            <span style="color:var(--text-muted);font-size:11px;margin-left:8px">NexBids DSP — Live Dashboard</span>
+          </div>
+          <div class="hvz-body">
+            <div class="hvz-row">
+              <span class="hvz-label">${t('Bid Requests','竞价请求')}</span>
+              <span class="hvz-val gradient-text">50B+<span class="hvz-delta">↑12%</span></span>
+            </div>
+            <div class="hvz-row">
+              <span class="hvz-label">${t('Win Rate','竞价胜率')}</span>
+              <span class="hvz-val" style="color:#34D399">34.7%<span class="hvz-delta">↑2.1%</span></span>
+            </div>
+            <div class="hvz-row">
+              <span class="hvz-label">${t('Avg ROAS','平均ROAS')}</span>
+              <span class="hvz-val" style="color:#C084FC">8.4x<span class="hvz-delta">↑0.6x</span></span>
+            </div>
+            <!-- mini bar chart -->
+            <div class="hvz-chart">
+              ${[40,65,52,80,70,95,88].map((h,i) => `<div class="hvz-bar" style="height:${h}%;animation-delay:${i*0.08}s"></div>`).join('')}
+            </div>
+            <div class="hvz-channels">
+              ${[['Display','#60A5FA',72],['Video','#C084FC',58],['Native','#34D399',45],['CTV','#FCD34D',38]].map(([l,c,v])=>`
+              <div class="hvz-ch-row">
+                <span class="hvz-ch-dot" style="background:${c}"></span>
+                <span class="hvz-ch-label">${l}</span>
+                <div class="hvz-ch-bar-wrap"><div class="hvz-ch-bar" style="width:${v}%;background:${c}22;border-left:3px solid ${c}"></div></div>
+                <span class="hvz-ch-pct" style="color:${c}">${v}%</span>
+              </div>`).join('')}
+            </div>
+          </div>
+        </div>
+        <!-- floating badges -->
+        <div class="hvz-badge" style="top:-18px;right:28px;animation-delay:0.3s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>${t('Brand Safety Verified','品牌安全已验证')}</span>
+        </div>
+        <div class="hvz-badge" style="bottom:28px;left:-14px;animation-delay:0.6s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          <span>${t('&lt;80ms Bid Response','&lt;80ms竞价响应')}</span>
+        </div>
+        <div class="hvz-badge" style="top:48%;right:-24px;animation-delay:0.9s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>${t('Real-time Bidding','实时竞价')}</span>
+        </div>
       </div>
     </div>
   </section>
@@ -222,56 +279,68 @@ function renderHome() {
         <!-- DSP -->
         <div class="platform-card dsp">
           <div class="platform-tag">DSP</div>
-          <h3>${t('NexBids DSP', 'NexBids DSP')}</h3>
-          <p>${t('Demand-Side Platform. AI-powered buying platform with global reach, premium inventory access, and advanced audience targeting across every digital channel.',
-               '需求方平台。AI驱动的购买平台，覆盖全球，可访问优质广告资源，在每个数字渠道提供高级受众定向。')}</p>
-          <div class="platform-stats">
-            <span class="stat-badge">50K+ ${t('Advertisers', '广告主')}</span>
-            <span class="stat-badge">${t('30+ Ad Formats', '30+广告格式')}</span>
+          <div class="platform-body">
+            <h3>${t('NexBids DSP', 'NexBids DSP')}</h3>
+            <p>${t('Demand-Side Platform. AI-powered buying platform with global reach, premium inventory access, and advanced audience targeting across every digital channel.',
+                 '需求方平台。AI驱动的购买平台，覆盖全球，可访问优质广告资源，在每个数字渠道提供高级受众定向。')}</p>
+            <div class="platform-stats">
+              <span class="stat-badge">50K+ ${t('Advertisers', '广告主')}</span>
+              <span class="stat-badge">${t('30+ Ad Formats', '30+广告格式')}</span>
+            </div>
+            <ul class="feature-list">
+              <li>${t('AI Bidding & ROAS Optimizer', 'AI竞价与ROAS优化器')}</li>
+              <li>${t('300+ Audience Segments', '300+受众细分')}</li>
+              <li>${t('Real-Time Analytics Dashboard', '实时分析仪表盘')}</li>
+              <li>${t('Third-Party MMP Integration', '第三方MMP集成')}</li>
+            </ul>
           </div>
-          <ul class="feature-list">
-            <li>${t('AI Bidding & ROAS Optimizer', 'AI竞价与ROAS优化器')}</li>
-            <li>${t('300+ Audience Segments', '300+受众细分')}</li>
-            <li>${t('Real-Time Analytics Dashboard', '实时分析仪表盘')}</li>
-            <li>${t('Third-Party MMP Integration', '第三方MMP集成')}</li>
-          </ul>
-          <button class="btn btn-primary" style="width:100%" onclick="navigate('products-dsp')">${t('Explore DSP →', '探索 DSP →')}</button>
+          <div class="card-actions">
+            <button class="btn btn-primary" style="width:100%" onclick="navigate('products-dsp')">${t('Explore DSP →', '探索 DSP →')}</button>
+          </div>
         </div>
         <!-- ADX -->
         <div class="platform-card adx">
           <div class="platform-tag">ADX</div>
-          <h3>${t('NexBids ADX', 'NexBids ADX')}</h3>
-          <p>${t('Ad Exchange. The neutral, high-performance marketplace connecting premium supply with quality demand — built for speed, scale, and trust.',
-               '广告交易中枢。连接优质供应与高质量需求的中立高性能市场——专为速度、规模和信任而构建。')}</p>
-          <div class="platform-stats">
-            <span class="stat-badge purple">50B+ ${t('Daily Auctions', '日竞价')}</span>
-            <span class="stat-badge purple">&lt;100ms ${t('Bid Response', '竞价响应')}</span>
+          <div class="platform-body">
+            <h3>${t('NexBids ADX', 'NexBids ADX')}</h3>
+            <p>${t('Ad Exchange. The neutral, high-performance marketplace connecting premium supply with quality demand — built for speed, scale, and trust.',
+                 '广告交易中枢。连接优质供应与高质量需求的中立高性能市场——专为速度、规模和信任而构建。')}</p>
+            <div class="platform-stats">
+              <span class="stat-badge purple">50B+ ${t('Daily Auctions', '日竞价')}</span>
+              <span class="stat-badge purple">&lt;100ms ${t('Bid Response', '竞价响应')}</span>
+            </div>
+            <ul class="feature-list">
+              <li>${t('OpenRTB 2.6 Compliant', 'OpenRTB 2.6 合规')}</li>
+              <li>${t('Header Bidding & PMP Support', '头部竞价与PMP支持')}</li>
+              <li>${t('AI-Powered Fraud Detection', 'AI驱动的欺诈检测')}</li>
+              <li>${t('Real-Time Quality Scoring', '实时质量评分')}</li>
+            </ul>
           </div>
-          <ul class="feature-list">
-            <li>${t('OpenRTB 2.6 Compliant', 'OpenRTB 2.6 合规')}</li>
-            <li>${t('Header Bidding & PMP Support', '头部竞价与PMP支持')}</li>
-            <li>${t('AI-Powered Fraud Detection', 'AI驱动的欺诈检测')}</li>
-            <li>${t('Real-Time Quality Scoring', '实时质量评分')}</li>
-          </ul>
-          <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#7C3AED,#8B5CF6)" onclick="navigate('products-adx')">${t('Explore ADX →', '探索 ADX →')}</button>
+          <div class="card-actions">
+            <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#7C3AED,#8B5CF6)" onclick="navigate('products-adx')">${t('Explore ADX →', '探索 ADX →')}</button>
+          </div>
         </div>
         <!-- SSP -->
         <div class="platform-card ssp">
           <div class="platform-tag">SSP</div>
-          <h3>${t('NexBids SSP', 'NexBids SSP')}</h3>
-          <p>${t('Supply-Side Platform. Maximize your ad revenue with intelligent yield optimization, header bidding, and direct access to thousands of premium advertisers worldwide.',
-               '供应方平台。通过智能收益优化、头部竞价以及直接访问全球数千家优质广告主，最大化您的广告收益。')}</p>
-          <div class="platform-stats">
-            <span class="stat-badge green">30K+ ${t('Publishers', '发布商')}</span>
-            <span class="stat-badge green">+52% ${t('Avg eCPM Lift', '平均eCPM提升')}</span>
+          <div class="platform-body">
+            <h3>${t('NexBids SSP', 'NexBids SSP')}</h3>
+            <p>${t('Supply-Side Platform. Maximize your ad revenue with intelligent yield optimization, header bidding, and direct access to thousands of premium advertisers worldwide.',
+                 '供应方平台。通过智能收益优化、头部竞价以及直接访问全球数千家优质广告主，最大化您的广告收益。')}</p>
+            <div class="platform-stats">
+              <span class="stat-badge green">30K+ ${t('Publishers', '发布商')}</span>
+              <span class="stat-badge green">+52% ${t('Avg eCPM Lift', '平均eCPM提升')}</span>
+            </div>
+            <ul class="feature-list">
+              <li>${t('Prebid.js Header Bidding', 'Prebid.js 头部竞价')}</li>
+              <li>${t('iOS & Android SDK', 'iOS 和 Android SDK')}</li>
+              <li>${t('Floor Price AI Optimizer', '底价AI优化器')}</li>
+              <li>${t('PMP & Programmatic Direct', 'PMP与程序化直购')}</li>
+            </ul>
           </div>
-          <ul class="feature-list">
-            <li>${t('Prebid.js Header Bidding', 'Prebid.js 头部竞价')}</li>
-            <li>${t('iOS & Android SDK', 'iOS 和 Android SDK')}</li>
-            <li>${t('Floor Price AI Optimizer', '底价AI优化器')}</li>
-            <li>${t('PMP & Programmatic Direct', 'PMP与程序化直购')}</li>
-          </ul>
-          <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#059669,#10B981)" onclick="navigate('products-ssp')">${t('Explore SSP →', '探索 SSP →')}</button>
+          <div class="card-actions">
+            <button class="btn btn-primary" style="width:100%;background:linear-gradient(135deg,#059669,#10B981)" onclick="navigate('products-ssp')">${t('Explore SSP →', '探索 SSP →')}</button>
+          </div>
         </div>
       </div>
     </div>
@@ -376,6 +445,9 @@ function renderHome() {
     </div>
   </section>
 
+  <!-- PARTNERS -->
+  ${renderPartnersSection()}
+
   <!-- CTA -->
   ${ctaBand(
     'Ready to Transform Your Advertising?', '准备好改变您的广告投放了吗？',
@@ -385,6 +457,129 @@ function renderHome() {
     'Talk to Sales', '联系销售', 'contact'
   )}`;
 }
+
+/* ─────────────────────────────────────────────
+   PARTNERS SECTION (used in home page)
+───────────────────────────────────────────── */
+function renderPartnersSection() {
+  // Category rows: each row is an independent scrollable carousel
+  const partnerRows = [
+    {
+      label: 'Advertisers & Brands',
+      labelZh: '广告主与品牌',
+      partners: [
+        { name: 'Shopify', abbr: 'SHO', color: '#95BF47', bg: 'rgba(149,191,71,0.1)' },
+        { name: 'Samsung Ads', abbr: 'SA', color: '#1428A0', bg: 'rgba(20,40,160,0.13)' },
+        { name: 'Lazada', abbr: 'LZD', color: '#F57732', bg: 'rgba(245,119,50,0.1)' },
+        { name: 'Grab', abbr: 'GRB', color: '#00B14F', bg: 'rgba(0,177,79,0.1)' },
+        { name: 'Booking.com', abbr: 'BKG', color: '#003580', bg: 'rgba(0,53,128,0.13)' },
+        { name: 'Rakuten', abbr: 'RAK', color: '#BF0000', bg: 'rgba(191,0,0,0.1)' },
+        { name: 'Zalora', abbr: 'ZLR', color: '#FF0074', bg: 'rgba(255,0,116,0.1)' },
+        { name: 'Sea Group', abbr: 'SEA', color: '#EE4D2D', bg: 'rgba(238,77,45,0.1)' },
+        { name: 'Tokopedia', abbr: 'TKP', color: '#42B549', bg: 'rgba(66,181,73,0.1)' },
+        { name: 'Traveloka', abbr: 'TVL', color: '#0069B9', bg: 'rgba(0,105,185,0.12)' },
+      ]
+    },
+    {
+      label: 'Media & Publishers',
+      labelZh: '媒体与发布商',
+      partners: [
+        { name: 'Dailymotion', abbr: 'DLM', color: '#9CA3AF', bg: 'rgba(156,163,175,0.1)' },
+        { name: 'Opera', abbr: 'OPR', color: '#FF1B2D', bg: 'rgba(255,27,45,0.1)' },
+        { name: 'InMobi', abbr: 'INM', color: '#F5A623', bg: 'rgba(245,166,35,0.1)' },
+        { name: 'AliExpress', abbr: 'AEX', color: '#FF4747', bg: 'rgba(255,71,71,0.1)' },
+        { name: 'MoPub', abbr: 'MPB', color: '#1DA1F2', bg: 'rgba(29,161,242,0.1)' },
+        { name: 'Digital Turbine', abbr: 'DTB', color: '#00B0FF', bg: 'rgba(0,176,255,0.1)' },
+        { name: 'Verizon Media', abbr: 'VMD', color: '#CD040B', bg: 'rgba(205,4,11,0.1)' },
+        { name: 'Outbrain', abbr: 'OTB', color: '#FF5F0F', bg: 'rgba(255,95,15,0.1)' },
+        { name: 'Taboola', abbr: 'TAB', color: '#4A90E2', bg: 'rgba(74,144,226,0.1)' },
+      ]
+    },
+    {
+      label: 'Measurement & Analytics',
+      labelZh: '监测与数据分析',
+      partners: [
+        { name: 'AppsFlyer', abbr: 'AF', color: '#0073E6', bg: 'rgba(0,115,230,0.1)' },
+        { name: 'Adjust', abbr: 'ADJ', color: '#00C853', bg: 'rgba(0,200,83,0.1)' },
+        { name: 'Branch', abbr: 'BRN', color: '#4C47DB', bg: 'rgba(76,71,219,0.1)' },
+        { name: 'IAS', abbr: 'IAS', color: '#0090D4', bg: 'rgba(0,144,212,0.1)' },
+        { name: 'DoubleVerify', abbr: 'DV', color: '#8B9FD4', bg: 'rgba(139,159,212,0.1)' },
+        { name: 'Kochava', abbr: 'KOC', color: '#5D3FD3', bg: 'rgba(93,63,211,0.1)' },
+        { name: 'MOAT', abbr: 'MOT', color: '#00509E', bg: 'rgba(0,80,158,0.1)' },
+        { name: 'Singular', abbr: 'SGL', color: '#7C3AED', bg: 'rgba(124,58,237,0.1)' },
+      ]
+    },
+  ];
+
+  const makeCard = (p) => `
+    <div class="pcard">
+      <div class="pcard-inner" style="background:${p.bg};border-color:${p.color}30">
+        <div class="pcard-abbr" style="color:${p.color}">${p.abbr}</div>
+        <div class="pcard-name">${p.name}</div>
+      </div>
+    </div>`;
+
+  const makeRow = (row, idx) => `
+    <div class="partner-carousel-row">
+      <div class="partner-carousel-label">
+        <span class="prow-tag">${t(row.label, row.labelZh)}</span>
+      </div>
+      <div class="partner-carousel-wrap">
+        <button class="pcarousel-btn pcarousel-prev" onclick="scrollPartnerRow(${idx}, -1)" aria-label="Scroll left">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="partner-carousel-track" id="ptrack-${idx}">
+          ${row.partners.map(makeCard).join('')}
+        </div>
+        <button class="pcarousel-btn pcarousel-next" onclick="scrollPartnerRow(${idx}, 1)" aria-label="Scroll right">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>`;
+
+  return `
+  <section class="section section-subtle partners-section" id="partners">
+    <div class="container">
+      <div class="text-center mb-12">
+        ${sectionTag('Trusted Ecosystem', '受信赖的生态系统')}
+        <h2 class="section-headline">${t('Our Global Partners', '我们的全球合作伙伴')}</h2>
+        <p class="section-sub center">${t('Powering campaigns and monetization for 80,000+ brands, publishers, and technology partners across 150+ countries.',
+          '为150+个国家的80,000+品牌、发布商和技术合作伙伴提供营销活动和变现服务。')}</p>
+      </div>
+
+      <!-- Partner carousel rows -->
+      <div class="partner-carousels">
+        ${partnerRows.map((row, i) => makeRow(row, i)).join('')}
+      </div>
+
+      <!-- Stats row -->
+      <div class="partner-stats-row">
+        ${[
+          ['80K+', 'Global Partners', '全球合作伙伴'],
+          ['150+', 'Countries', '覆盖国家'],
+          ['Top 20', 'DSPs Connected', '对接头部DSP'],
+          ['Premium', 'Quality Verified', '优质流量认证'],
+        ].map(([num, en, zh]) => `
+        <div class="partner-stat-item">
+          <div class="partner-stat-num">${num}</div>
+          <div class="partner-stat-label">${t(en, zh)}</div>
+        </div>`).join('')}
+      </div>
+
+      <div class="text-center" style="margin-top:36px">
+        <button class="btn btn-secondary" onclick="navigate('contact')">${t('Become a Partner →', '成为合作伙伴 →')}</button>
+      </div>
+    </div>
+  </section>`;
+}
+
+window.scrollPartnerRow = function(idx, dir) {
+  const track = document.getElementById('ptrack-' + idx);
+  if (!track) return;
+  const cardW = track.querySelector('.pcard')?.offsetWidth || 180;
+  const scrollAmt = (cardW + 12) * 3;
+  track.scrollBy({ left: dir * scrollAmt, behavior: 'smooth' });
+};
 
 /* ─────────────────────────────────────────────
    SOLUTIONS — OVERVIEW
@@ -1569,15 +1764,27 @@ function renderContact() {
     <div class="container">
       <div class="card-grid card-grid-3" style="margin-bottom:64px">
         ${[
-          ['📈','I want to advertise with NexBids','我想在NexBids投放广告','Speak with our advertiser sales team about launching campaigns, pricing, or getting a platform demo.','与我们的广告主销售团队交流，了解启动营销活动、定价或获取平台演示。','Contact Advertiser Sales','联系广告主销售','1 business day','1个工作日'],
-          ['💰','I want to monetize my traffic','我想变现我的流量','Connect with our publisher partnerships team to discuss SSP integration and monetization strategy.','联系我们的发布商合作伙伴团队，讨论SSP集成和变现策略。','Contact Publisher Team','联系发布商团队','1 business day','1个工作日'],
-          ['🤝','I\'m an agency looking to partner','我是一家代理商，希望合作','Talk to our agency partnerships team about commercial arrangements and platform access.','与我们的代理商合作伙伴团队交流商业安排和平台访问。','Contact Agency Partnerships','联系代理商合作伙伴','1 business day','1个工作日'],
-          ['🛠️','I need technical support','我需要技术支持','For platform issues, integration questions, or bug reports. Priority support for existing clients.','针对平台问题、集成疑问或缺陷报告。现有客户享受优先支持。','Open Support Ticket','提交支持工单','P1 < 1hr, Std < 4hrs','P1 <1小时，标准 <4小时'],
-          ['📰','Media & Press Inquiries','媒体与新闻咨询','For journalists, analysts, and media professionals seeking comment, data, or speaking opportunities.','面向寻求评论、数据或演讲机会的记者、分析师和媒体专业人士。','Contact Press Team','联系公关团队','24 hours','24小时'],
-          ['✉️','Something else?','其他问题？','For any other questions, partnership ideas, or feedback. We read everything.','任何其他问题、合作想法或反馈。我们会阅读所有内容。','Send a Message','发送消息','2 business days','2个工作日'],
+          [
+            `<span class="gi gi-blue gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>`,
+            'I want to advertise with NexBids','我想在NexBids投放广告','Speak with our advertiser sales team about launching campaigns, pricing, or getting a platform demo.','与我们的广告主销售团队交流，了解启动营销活动、定价或获取平台演示。','Contact Advertiser Sales','联系广告主销售','1 business day','1个工作日'],
+          [
+            `<span class="gi gi-green gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>`,
+            'I want to monetize my traffic','我想变现我的流量','Connect with our publisher partnerships team to discuss SSP integration and monetization strategy.','联系我们的发布商合作伙伴团队，讨论SSP集成和变现策略。','Contact Publisher Team','联系发布商团队','1 business day','1个工作日'],
+          [
+            `<span class="gi gi-purple gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>`,
+            'I\'m an agency looking to partner','我是一家代理商，希望合作','Talk to our agency partnerships team about commercial arrangements and platform access.','与我们的代理商合作伙伴团队交流商业安排和平台访问。','Contact Agency Partnerships','联系代理商合作伙伴','1 business day','1个工作日'],
+          [
+            `<span class="gi gi-amber gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2.5" stroke-linecap="round"/></svg></span>`,
+            'I need technical support','我需要技术支持','For platform issues, integration questions, or bug reports. Priority support for existing clients.','针对平台问题、集成疑问或缺陷报告。现有客户享受优先支持。','Open Support Ticket','提交支持工单','P1 < 1hr, Std < 4hrs','P1 <1小时，标准 <4小时'],
+          [
+            `<span class="gi gi-teal gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg></span>`,
+            'Media & Press Inquiries','媒体与新闻咨询','For journalists, analysts, and media professionals seeking comment, data, or speaking opportunities.','面向寻求评论、数据或演讲机会的记者、分析师和媒体专业人士。','Contact Press Team','联系公关团队','24 hours','24小时'],
+          [
+            `<span class="gi gi-neutral gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9" y2="10" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="10" x2="12" y2="10" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="10" x2="15" y2="10" stroke-width="2.5" stroke-linecap="round"/></svg></span>`,
+            'Something else?','其他问题？','For any other questions, partnership ideas, or feedback. We read everything.','任何其他问题、合作想法或反馈。我们会阅读所有内容。','Send a Message','发送消息','2 business days','2个工作日'],
         ].map(([icon,en,zh,enD,zhD,ctaEn,ctaZh,respEn,respZh])=>`
         <div class="contact-card">
-          <div class="contact-icon">${icon}</div>
+          <div class="contact-icon" style="font-size:inherit;margin-bottom:16px">${icon}</div>
           <h3>${t(en,zh)}</h3>
           <p>${t(enD,zhD)}</p>
           <button class="btn btn-primary" style="width:100%;margin-bottom:10px">${t(ctaEn,ctaZh)}</button>
@@ -1585,94 +1792,220 @@ function renderContact() {
         </div>`).join('')}
       </div>
 
-      <!-- Contact Form -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start" class="home-tech-grid">
-        <div>
-          <h2 class="section-headline" style="margin-bottom:8px">${t('Send Us a Message','发送消息')}</h2>
-          <p style="color:var(--text-secondary);margin-bottom:32px">${t("Fill out the form and we'll get back to you within 1 business day.",'填写表格，我们将在1个工作日内回复您。')}</p>
-          <div class="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label>${t('First Name','名字')} *</label>
-                <input type="text" placeholder="${t('John','张')}">
-              </div>
-              <div class="form-group">
-                <label>${t('Last Name','姓氏')} *</label>
-                <input type="text" placeholder="${t('Smith','伟')}">
-              </div>
-            </div>
-            <div class="form-group">
-              <label>${t('Business Email','工作邮箱')} *</label>
-              <input type="email" placeholder="you@company.com">
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>${t('Company Name','公司名称')} *</label>
-                <input type="text" placeholder="${t('Your Company','您的公司')}">
-              </div>
-              <div class="form-group">
-                <label>${t('Country','国家')} *</label>
-                <select>
-                  <option>${t('Select Country','选择国家')}</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                  <option>China / 中国</option>
-                  <option>Singapore</option>
-                  <option>Japan</option>
-                  <option>Germany</option>
-                  <option>Australia</option>
-                  <option>Other</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>${t('I am a','我是')} *</label>
-              <select>
-                <option>${t('Select...','请选择...')}</option>
-                <option>${t('Advertiser','广告主')}</option>
-                <option>${t('Publisher or Developer','发布商或开发者')}</option>
-                <option>${t('Agency','代理商')}</option>
-                <option>${t('Press / Analyst','媒体/分析师')}</option>
-                <option>${t('Other','其他')}</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>${t('How can we help?','我们能为您做什么？')} *</label>
-              <textarea placeholder="${t('Tell us about your needs...','告诉我们您的需求...')}"></textarea>
-            </div>
-            <div class="form-check" style="margin-bottom:20px">
-              <input type="checkbox" id="privacyCheck">
-              <label for="privacyCheck" style="font-size:13px;color:var(--text-secondary)">${t('I agree to NexBids\' Privacy Policy and consent to being contacted.','我同意NexBids的隐私政策并同意被联系。')}</label>
-            </div>
-            <button class="btn btn-primary" style="width:100%">${t('Send Message','发送消息')}</button>
-          </div>
+      <!-- Contact Form — full width, centered -->
+      <div style="max-width:680px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:36px">
+          <h2 class="section-headline" style="margin-bottom:12px">${t('Send Us a Message','发送消息')}</h2>
+          <p style="color:var(--text-secondary)">${t("Fill out the form and we'll get back to you within 1 business day.",'填写表格，我们将在1个工作日内回复您。')}</p>
         </div>
-
-        <!-- Office Directory -->
-        <div>
-          <h2 class="section-headline" style="margin-bottom:32px">${t('Find Your Nearest Team','找到您最近的团队')}</h2>
-          <div style="display:flex;flex-direction:column;gap:16px">
-            ${[
-              ['🇺🇸','San Francisco — Global HQ','旧金山——全球总部','North America','北美市场','Engineering, Product, Corporate','工程、产品、行政'],
-              ['🇬🇧','London — EMEA HQ','伦敦——欧中东非总部','EMEA','欧中东非市场','EMEA Sales, Partnerships, Marketing','欧中东非销售、合作、营销'],
-              ['🇸🇬','Singapore — APAC HQ','新加坡——亚太总部','APAC','亚太市场','APAC Sales, Partnerships, Engineering','亚太销售、合作、工程'],
-              ['🇨🇳','Beijing — China','北京——中国','China','中国市场','China Sales, Publisher Partnerships','中国销售、发布商合作'],
-            ].map(([flag,en,zh,mktEn,mktZh,teamEn,teamZh])=>`
-            <div class="office-card" style="padding:20px">
-              <div style="display:flex;gap:12px;align-items:flex-start">
-                <div style="font-size:20px">${flag}</div>
-                <div>
-                  <h4 style="font-size:15px;font-weight:700;margin-bottom:2px">${t(en,zh)}</h4>
-                  <div class="office-role" style="margin-bottom:6px">${t(mktEn,mktZh)}</div>
-                  <p style="font-size:12px;margin-bottom:4px">${t(teamEn,teamZh)}</p>
-                </div>
-              </div>
-            </div>`).join('')}
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>${t('First Name','名字')} *</label>
+              <input type="text" placeholder="${currentLang==='zh'?'张':'John'}">
+            </div>
+            <div class="form-group">
+              <label>${t('Last Name','姓氏')} *</label>
+              <input type="text" placeholder="${currentLang==='zh'?'伟':'Smith'}">
+            </div>
           </div>
+          <div class="form-group">
+            <label>${t('Business Email','工作邮箱')} *</label>
+            <input type="email" placeholder="you@company.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>${t('Company Name','公司名称')} *</label>
+              <input type="text" placeholder="${currentLang==='zh'?'您的公司':'Your Company'}">
+            </div>
+            <div class="form-group">
+              <label>${t('Country','国家')} *</label>
+              <div class="country-select-wrap">
+                <input type="text" class="country-search-input country-single" id="countrySearch" placeholder="${currentLang==='zh'?'搜索或选择国家...':'Search or select country...'}" autocomplete="off" oninput="filterCountries(this.value)" onfocus="openCountryDropdown()" onblur="setTimeout(()=>closeCountryDropdown(),200)">
+                <div class="country-dropdown-list" id="countryDropdown"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>${t('I am a','我是')} *</label>
+            <select>
+              <option value="">${currentLang==='zh'?'请选择...':'Select...'}</option>
+              <option value="advertiser">${currentLang==='zh'?'广告主':'Advertiser'}</option>
+              <option value="publisher">${currentLang==='zh'?'发布商或开发者':'Publisher or Developer'}</option>
+              <option value="agency">${currentLang==='zh'?'代理商':'Agency'}</option>
+              <option value="press">${currentLang==='zh'?'媒体/分析师':'Press / Analyst'}</option>
+              <option value="other">${currentLang==='zh'?'其他':'Other'}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>${t('How can we help?','我们能为您做什么？')} *</label>
+            <textarea placeholder="${currentLang==='zh'?'告诉我们您的需求...':'Tell us about your needs...'}"></textarea>
+          </div>
+          <div class="form-check" style="margin-bottom:20px">
+            <input type="checkbox" id="privacyCheck">
+            <label for="privacyCheck" style="font-size:13px;color:var(--text-secondary)">${t('I agree to NexBids\'','我同意NexBids的')} <a href="#" onclick="openPrivacyModal(event)" style="color:var(--primary-light);text-decoration:underline">${t('Privacy Policy','隐私政策')}</a> ${t('and consent to being contacted.','并同意被联系。')}</label>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center">${t('Send Message','发送消息')}</button>
         </div>
       </div>
     </div>
   </section>`;
+}
+
+/* ─────────────────────────────────────────────
+   COUNTRY DATA & DROPDOWN
+───────────────────────────────────────────── */
+const ALL_COUNTRIES = [
+  'Afghanistan','Albania','Algeria','Andorra','Angola','Argentina','Armenia','Australia',
+  'Austria','Azerbaijan','Bahrain','Bangladesh','Belarus','Belgium','Bolivia','Bosnia & Herzegovina',
+  'Brazil','Bulgaria','Cambodia','Canada','Chile','China / 中国','Colombia','Croatia',
+  'Czech Republic','Denmark','Ecuador','Egypt','Estonia','Ethiopia','Finland','France',
+  'Georgia','Germany','Ghana','Greece','Guatemala','Hong Kong (SAR)','Hungary','India',
+  'Indonesia','Iran','Iraq','Ireland','Israel','Italy','Japan','Jordan','Kazakhstan',
+  'Kenya','Kuwait','Latvia','Lebanon','Libya','Lithuania','Luxembourg','Malaysia',
+  'Mexico','Morocco','Myanmar','Nepal','Netherlands','New Zealand','Nigeria','North Korea',
+  'Norway','Oman','Pakistan','Peru','Philippines','Poland','Portugal','Qatar',
+  'Romania','Russia','Saudi Arabia','Senegal','Serbia','Singapore','Slovakia','Slovenia',
+  'South Africa','South Korea','Spain','Sri Lanka','Sweden','Switzerland','Taiwan',
+  'Thailand','Tunisia','Turkey','Ukraine','United Arab Emirates','United Kingdom',
+  'United States','Uzbekistan','Venezuela','Vietnam','Yemen','Zimbabwe','Other',
+];
+
+function filterCountries(q) {
+  const dropdown = document.getElementById('countryDropdown');
+  if (!dropdown) return;
+  const filtered = q ? ALL_COUNTRIES.filter(c => c.toLowerCase().includes(q.toLowerCase())) : ALL_COUNTRIES;
+  dropdown.innerHTML = filtered.map(c =>
+    `<div class="country-option" onmousedown="selectCountry('${c.replace(/'/g,"\\\'")}')">${c}</div>`
+  ).join('');
+  dropdown.classList.add('open');
+}
+
+function openCountryDropdown() {
+  filterCountries(document.getElementById('countrySearch')?.value || '');
+}
+
+function closeCountryDropdown() {
+  document.getElementById('countryDropdown')?.classList.remove('open');
+}
+
+function selectCountry(name) {
+  const search = document.getElementById('countrySearch');
+  const dropdown = document.getElementById('countryDropdown');
+  if (search) { search.value = name; search.setAttribute('data-selected', name); }
+  if (dropdown) dropdown.classList.remove('open');
+}
+
+/* ─────────────────────────────────────────────
+   PRIVACY POLICY MODAL
+───────────────────────────────────────────── */
+function openPrivacyModal(e) {
+  if (e) e.preventDefault();
+  const isZh = currentLang === 'zh';
+  const modal = document.createElement('div');
+  modal.className = 'modal-backdrop';
+  modal.id = 'privacyModal';
+  modal.onclick = (ev) => { if (ev.target === modal) closePrivacyModal(); };
+  modal.innerHTML = `
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="modal-header">
+      <h2 id="privacyTitle">${isZh ? 'NexBids 隐私政策' : 'NexBids Privacy Policy'}</h2>
+      <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      ${isZh ? `
+      <p><strong>最后更新日期：</strong>2026年3月</p>
+      <h3>1. 概述</h3>
+      <p>NexBids Inc.（"NexBids"、"我们"）致力于保护您的个人信息。本隐私政策说明我们在您使用nexbids.com及相关服务时如何收集、使用、披露和保护您的个人数据。</p>
+      <h3>2. 我们收集的信息</h3>
+      <p>我们可能收集以下类别的信息：</p>
+      <ul>
+        <li><strong>身份信息：</strong>姓名、职务、公司名称</li>
+        <li><strong>联系信息：</strong>电子邮件地址、电话号码</li>
+        <li><strong>使用数据：</strong>IP地址、浏览器类型、访问页面、访问时间戳</li>
+        <li><strong>广告数据：</strong>通过我们平台处理的出价请求、展示及点击数据</li>
+        <li><strong>通信记录：</strong>您与我们的往来邮件、支持工单内容</li>
+      </ul>
+      <h3>3. 信息使用方式</h3>
+      <p>我们将您的信息用于以下目的：</p>
+      <ul>
+        <li>提供、运营和改进我们的服务</li>
+        <li>处理商业询盘及合同履行</li>
+        <li>发送服务通知、安全警报及支持消息</li>
+        <li>遵守适用法律法规要求</li>
+        <li>防范欺诈及保障平台安全</li>
+      </ul>
+      <h3>4. 信息共享</h3>
+      <p>我们不会出售您的个人数据。我们仅在以下情况下共享信息：（a）经您明确同意；（b）与协助我们运营服务的受信任服务商共享（受保密协议约束）；（c）法律要求时。</p>
+      <h3>5. 数据跨境传输</h3>
+      <p>作为全球运营公司，您的数据可能被传输至您所在国家/地区以外的服务器。我们依据适用法规（包括GDPR标准合同条款）采取适当保障措施。</p>
+      <h3>6. Cookie与追踪技术</h3>
+      <p>我们的网站使用必要Cookie（用于网站功能）、分析Cookie（用于了解使用情况）及广告Cookie（用于程序化广告服务）。您可通过浏览器设置管理Cookie偏好。</p>
+      <h3>7. 数据保留</h3>
+      <p>我们仅在实现本政策所述目的所必要的时间内保留您的个人数据，或根据法律规定保留更长时间。</p>
+      <h3>8. 您的权利</h3>
+      <p>根据适用法律（包括GDPR、CCPA及中国个人信息保护法），您可能享有以下权利：访问权、更正权、删除权、限制处理权、数据可携权及拒绝权。如需行使上述权利，请通过contact@nexbids.com联系我们。</p>
+      <h3>9. 安全措施</h3>
+      <p>我们采用行业标准的技术和组织安全措施，包括数据加密（传输中和静态）、访问控制、定期安全审计及ISO 27001合规实践。</p>
+      <h3>10. 儿童隐私</h3>
+      <p>我们的服务面向商业用户，不面向16岁以下儿童。我们不会故意收集儿童个人信息。</p>
+      <h3>11. 政策变更</h3>
+      <p>我们可能不时更新本隐私政策。重大变更将通过电子邮件或网站显著位置通知您。继续使用我们的服务即视为接受更新后的政策。</p>
+      <h3>12. 联系我们</h3>
+      <p>如对本隐私政策有任何疑问，请联系：<br>数据保护官，NexBids Inc.<br>contact@nexbids.com</p>
+      ` : `
+      <p><strong>Last Updated:</strong> March 2026</p>
+      <h3>1. Overview</h3>
+      <p>NexBids Inc. ("NexBids," "we," "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you use nexbids.com and related services.</p>
+      <h3>2. Information We Collect</h3>
+      <p>We may collect the following categories of information:</p>
+      <ul>
+        <li><strong>Identity Data:</strong> Name, job title, company name</li>
+        <li><strong>Contact Data:</strong> Email address, phone number</li>
+        <li><strong>Usage Data:</strong> IP address, browser type, pages visited, timestamps</li>
+        <li><strong>Advertising Data:</strong> Bid requests, impressions, and click data processed through our platforms</li>
+        <li><strong>Communications:</strong> Email correspondence and support ticket content</li>
+      </ul>
+      <h3>3. How We Use Your Information</h3>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Provide, operate, and improve our services</li>
+        <li>Process business inquiries and fulfill contracts</li>
+        <li>Send service notifications, security alerts, and support messages</li>
+        <li>Comply with applicable laws and regulations</li>
+        <li>Prevent fraud and maintain platform security</li>
+      </ul>
+      <h3>4. Information Sharing</h3>
+      <p>We do not sell your personal data. We share information only: (a) with your explicit consent; (b) with trusted service providers who assist us in operating our services (subject to confidentiality agreements); or (c) when required by law.</p>
+      <h3>5. International Data Transfers</h3>
+      <p>As a global company, your data may be transferred to servers outside your country. We implement appropriate safeguards under applicable regulations, including GDPR Standard Contractual Clauses.</p>
+      <h3>6. Cookies & Tracking Technologies</h3>
+      <p>Our website uses necessary cookies (for site functionality), analytics cookies (to understand usage), and advertising cookies (for programmatic advertising services). You may manage cookie preferences through your browser settings.</p>
+      <h3>7. Data Retention</h3>
+      <p>We retain your personal data only as long as necessary for the purposes outlined in this policy, or as required by applicable law.</p>
+      <h3>8. Your Rights</h3>
+      <p>Under applicable law (including GDPR, CCPA, and China PIPL), you may have rights to access, correct, delete, restrict processing of, port, and object to processing of your data. To exercise these rights, contact us at contact@nexbids.com.</p>
+      <h3>9. Security</h3>
+      <p>We employ industry-standard technical and organizational security measures including data encryption (in transit and at rest), access controls, regular security audits, and ISO 27001-aligned practices.</p>
+      <h3>10. Children's Privacy</h3>
+      <p>Our services are intended for business users and are not directed at children under 16. We do not knowingly collect personal information from children.</p>
+      <h3>11. Policy Updates</h3>
+      <p>We may update this Privacy Policy from time to time. Material changes will be communicated via email or a prominent notice on our website. Continued use of our services constitutes acceptance of the updated policy.</p>
+      <h3>12. Contact Us</h3>
+      <p>For questions about this Privacy Policy, please contact:<br>Data Protection Officer, NexBids Inc.<br>contact@nexbids.com</p>
+      `}
+    </div>
+    <div class="modal-footer-bar">
+      <button class="btn btn-primary" onclick="closePrivacyModal()" style="padding:10px 28px">${isZh ? '关闭' : 'Close'}</button>
+    </div>
+  </div>`;
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+}
+
+function closePrivacyModal() {
+  const modal = document.getElementById('privacyModal');
+  if (modal) { modal.remove(); document.body.style.overflow = ''; }
 }
 
 /* ─────────────────────────────────────────────
@@ -1740,12 +2073,12 @@ function renderLogin(platform) {
     <div class="login-right">
       <div class="login-form-wrap">
         <div style="margin-bottom:24px">
-          <svg class="nexbids-logo" width="130" height="29" viewBox="0 0 160 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="28" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="900" fill="#0057FF" letter-spacing="-1.5">Nex</text>
-            <text x="62" y="28" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="900" fill="#0057FF" letter-spacing="-1.5">B</text>
-            <polygon points="79,2  73,13  82,8" fill="#9934FF"/>
-            <text x="82" y="28" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="900" fill="#0057FF" letter-spacing="-1.5">ids</text>
-            <rect x="151" y="2" width="8" height="8" rx="1.5" fill="#9934FF"/>
+          <svg class="nexbids-logo" width="138" height="29" viewBox="0 0 164 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">Nex</text>
+            <text x="64" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">B</text>
+            <polygon points="71,4 64,20 76,12" fill="#8B2EFF"/>
+            <text x="84" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">ids</text>
+            <rect x="154" y="1" width="9" height="9" rx="2" fill="#8B2EFF"/>
           </svg>
         </div>
         <h3>${t(c.headingEn,c.headingZh)}</h3>
@@ -1756,20 +2089,22 @@ function renderLogin(platform) {
         </div>
         <div class="form-group">
           <label>${t('Password','密码')}</label>
-          <input type="password" placeholder="••••••••">
+          <div class="pw-wrap">
+            <input type="password" id="pwInput_${platform}" placeholder="••••••••">
+            <button type="button" class="pw-toggle" id="pwToggle_${platform}" onclick="togglePassword('${platform}')" aria-label="Toggle password visibility">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" id="pwIcon_${platform}"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+        <div style="margin-bottom:20px">
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);cursor:pointer">
             <input type="checkbox"> ${t('Remember me','记住我')}
           </label>
-          <a style="font-size:13px;color:var(--primary-light)">${t('Forgot password?','忘记密码？')}</a>
         </div>
         <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px">${t('Sign In','登录')}</button>
-        <div class="login-divider">${t('or','或')}</div>
-        <button class="btn-google"><svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2a10 10 0 0 0-.16-1.76H9v3.33h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92a8.78 8.78 0 0 0 2.68-6.55z"/><path fill="#34A853" d="M9 18a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.44 5.44 0 0 1-8.09-2.85H.98v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.96 10.71a5.4 5.4 0 0 1 0-3.42V4.96H.98a9 9 0 0 0 0 8.08l2.98-2.33z"/><path fill="#EA4335" d="M9 3.58a4.86 4.86 0 0 1 3.44 1.35l2.58-2.58A8.64 8.64 0 0 0 9 0 9 9 0 0 0 .98 4.96l2.98 2.33A5.36 5.36 0 0 1 9 3.58z"/></svg>${t('Sign in with Google','使用Google登录')}</button>
-        <div class="login-links">
+        <div class="login-links" style="margin-top:20px">
           <a onclick="navigate('contact')" style="color:var(--text-muted);font-size:13px">${t(c.newLinkEn,c.newLinkZh)}</a>
-          <a style="color:var(--primary-light)">${t('Help','帮助')}</a>
+          <a onclick="navigate('contact')" style="color:var(--primary-light);font-size:13px;cursor:pointer">${t('Help','帮助')}</a>
         </div>
       </div>
     </div>
@@ -1789,9 +2124,117 @@ function initScrollSpy() {
   window.addEventListener('scroll', onScroll);
 }
 
+/* ─────────────────────────────────────────────
+   COUNTER ANIMATION (Intersection Observer)
+───────────────────────────────────────────── */
+function initCounterAnimation() {
+  const items = document.querySelectorAll('.metric-item');
+  if (!items.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        // number rolling effect
+        const numEl = entry.target.querySelector('.metric-num');
+        if (numEl && !numEl.dataset.animated) {
+          numEl.dataset.animated = '1';
+          animateNumber(numEl);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  items.forEach(el => observer.observe(el));
+}
+
+function animateNumber(el) {
+  const original = el.textContent.trim();
+  // Extract numeric part and suffix/prefix
+  const match = original.match(/^([^0-9]*)([0-9,.]+)([^0-9]*)$/);
+  if (!match) return; // non-numeric (e.g. 99.98%)
+  const prefix = match[1];
+  const numStr = match[2].replace(/,/g, '');
+  const suffix = match[3];
+  const target = parseFloat(numStr);
+  if (isNaN(target)) return;
+  const isDecimal = numStr.includes('.');
+  const decimals = isDecimal ? (numStr.split('.')[1] || '').length : 0;
+  const duration = 1200;
+  const steps = 40;
+  const interval = duration / steps;
+  let step = 0;
+  const timer = setInterval(() => {
+    step++;
+    const progress = step / steps;
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current = target * eased;
+    const formatted = decimals > 0 ? current.toFixed(decimals) : Math.round(current).toLocaleString();
+    el.textContent = prefix + formatted + suffix;
+    if (step >= steps) {
+      clearInterval(timer);
+      el.textContent = original; // restore exact original
+    }
+  }, interval);
+}
+
+/* ─────────────────────────────────────────────
+   NAV ACTIVE STATE
+───────────────────────────────────────────── */
+function updateNavActive(page) {
+  // Map page to top-level nav section
+  const map = {
+    'home': 'home',
+    'solutions': 'solutions', 'solutions-advertiser': 'solutions', 'solutions-publisher': 'solutions', 'solutions-agency': 'solutions',
+    'products': 'products', 'products-dsp': 'products', 'products-adx': 'products', 'products-ssp': 'products',
+    'technology': 'technology',
+    'resources': 'resources',
+    'case-studies': 'case-studies', 'cases-advertiser': 'case-studies', 'cases-publisher': 'case-studies',
+    'company': 'company', 'about': 'company', 'careers': 'company',
+    'contact': 'contact',
+  };
+  const active = map[page] || page;
+  document.querySelectorAll('.nav-link').forEach(btn => {
+    btn.classList.remove('active');
+    const onclick = btn.getAttribute('onclick') || '';
+    // match by onclick target
+    if (onclick.includes(`'${active}'`) || onclick.includes(`"${active}"`)) {
+      btn.classList.add('active');
+    }
+  });
+}
+
+/* ─────────────────────────────────────────────
+   404 PAGE
+───────────────────────────────────────────── */
+function render404() {
+  return `
+  <div class="page-404">
+    <div class="err-code">404</div>
+    <h2>${t('Page Not Found','页面未找到')}</h2>
+    <p>${t('Sorry, the page you are looking for doesn\'t exist or is temporarily unavailable. This may be due to a network issue.',
+         '抱歉，您访问的页面不存在或暂时无法访问，这可能是由于网络问题导致的。')}</p>
+    <div class="btn-group" style="justify-content:center">
+      <button class="btn btn-primary" onclick="navigate('home')">${t('Go Home','返回首页')}</button>
+      <button class="btn btn-secondary" onclick="navigate('contact')">${t('Contact Support','联系支持')}</button>
+    </div>
+  </div>`;
+}
+
 function toggleMobileMenu() {
   const menu = document.getElementById('navMenu');
   menu?.classList.toggle('open');
+}
+
+function togglePassword(platform) {
+  const input = document.getElementById('pwInput_' + platform);
+  const icon = document.getElementById('pwIcon_' + platform);
+  if (!input) return;
+  const isPassword = input.type === 'password';
+  input.type = isPassword ? 'text' : 'password';
+  // Switch icon between eye and eye-off
+  icon.innerHTML = isPassword
+    ? `<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>`
+    : `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>`;
 }
 
 /* ─────────────────────────────────────────────
@@ -1800,4 +2243,5 @@ function toggleMobileMenu() {
 document.addEventListener('DOMContentLoaded', () => {
   renderPage('home');
   applyLang();
+  updateNavActive('home');
 });

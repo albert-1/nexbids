@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexBids | Global Programmatic Advertising Solutions</title>
+  <meta name="description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo" onclick="navigate('home')">
+      <svg class="nexbids-logo" width="148" height="36" viewBox="0 0 148 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NexBids">
+        <!-- N -->
+        <text x="0" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">N</text>
+        <!-- e -->
+        <text x="22" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">e</text>
+        <!-- x -->
+        <text x="41" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">x</text>
+        <!-- B shell (outer letter with hole for lightning) -->
+        <text x="60" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">B</text>
+        <!-- Lightning bolt overlay inside B -->
+        <polygon points="76,7  69,20  74,20  70,30  80,17  74.5,17" fill="#9934FF"/>
+        <!-- ids -->
+        <text x="82" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">ids</text>
+        <!-- Accent dot after s -->
+        <circle cx="144" cy="7" r="4" fill="#9934FF"/>
+      </svg>
+    </a>
+
+    <div class="nav-menu" id="navMenu">
+      <!-- Solutions -->
+      <div class="nav-item dropdown">
+        <button class="nav-link dropdown-trigger" onclick="navigate('solutions')">
+          <span data-en="Solutions" data-zh="解决方案">Solutions</span>
+          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="navigate('solutions-advertiser')">
+            <span class="di-icon">📈</span>
+            <div>
+              <div class="di-title" data-en="Advertiser Launch Solutions" data-zh="广告主投放解决方案">Advertiser Launch Solutions</div>
+              <div class="di-sub" data-en="Scale campaigns globally" data-zh="在全球范围内扩展营销活动">Scale campaigns globally</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('solutions-publisher')">
+            <span class="di-icon">💰</span>
+            <div>
+              <div class="di-title" data-en="Publisher & Developer Monetization" data-zh="发布商/开发者变现解决方案">Publisher & Developer Monetization</div>
+              <div class="di-sub" data-en="Maximize your ad revenue" data-zh="最大化广告收益">Maximize your ad revenue</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('solutions-agency')">
+            <span class="di-icon">🤝</span>
+            <div>
+              <div class="di-title" data-en="Agency Cooperation Solutions" data-zh="代理合作解决方案">Agency Cooperation Solutions</div>
+              <div class="di-sub" data-en="One platform for all clients" data-zh="一个平台管理所有客户">One platform for all clients</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="nav-item dropdown">
+        <button class="nav-link dropdown-trigger" onclick="navigate('products')">
+          <span data-en="Products" data-zh="产品">Products</span>
+          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="navigate('products-dsp')">
+            <span class="di-icon dsp-icon">DSP</span>
+            <div>
+              <div class="di-title" data-en="NexBids DSP" data-zh="NexBids DSP">NexBids DSP</div>
+              <div class="di-sub" data-en="Demand-Side Platform" data-zh="需求方平台">Demand-Side Platform</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('products-adx')">
+            <span class="di-icon adx-icon">ADX</span>
+            <div>
+              <div class="di-title" data-en="NexBids ADX" data-zh="NexBids ADX">NexBids ADX</div>
+              <div class="di-sub" data-en="Ad Exchange" data-zh="广告交易中枢">Ad Exchange</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('products-ssp')">
+            <span class="di-icon ssp-icon">SSP</span>
+            <div>
+              <div class="di-title" data-en="NexBids SSP" data-zh="NexBids SSP">NexBids SSP</div>
+              <div class="di-sub" data-en="Supply-Side Platform" data-zh="供应方平台">Supply-Side Platform</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-link" onclick="navigate('technology')">
+          <span data-en="Technology" data-zh="技术优势">Technology</span>
+        </button>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-link" onclick="navigate('resources')">
+          <span data-en="Resources" data-zh="资源文档">Resources</span>
+        </button>
+      </div>
+
+      <!-- Case Studies -->
+      <div class="nav-item dropdown">
+        <button class="nav-link dropdown-trigger" onclick="navigate('case-studies')">
+          <span data-en="Case Studies" data-zh="客户案例">Case Studies</span>
+          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="navigate('cases-advertiser')">
+            <span class="di-icon">🚀</span>
+            <div>
+              <div class="di-title" data-en="Advertiser Growth Cases" data-zh="广告主增长案例">Advertiser Growth Cases</div>
+              <div class="di-sub" data-en="E-Commerce, Gaming, Utilities, Media" data-zh="电商、游戏、工具、媒体">E-Commerce, Gaming, Utilities, Media</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('cases-publisher')">
+            <span class="di-icon">📊</span>
+            <div>
+              <div class="di-title" data-en="Publisher & Developer Growth Cases" data-zh="发布商/开发者增长案例">Publisher & Developer Growth Cases</div>
+              <div class="di-sub" data-en="Web, App, Game, OTT" data-zh="网页、应用、游戏、OTT">Web, App, Game, OTT</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="nav-item dropdown">
+        <button class="nav-link dropdown-trigger" onclick="navigate('company')">
+          <span data-en="Company" data-zh="公司">Company</span>
+          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" onclick="navigate('about')">
+            <span class="di-icon">🌐</span>
+            <div>
+              <div class="di-title" data-en="About Us" data-zh="关于我们">About Us</div>
+              <div class="di-sub" data-en="Our story & mission" data-zh="我们的故事与使命">Our story & mission</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('careers')">
+            <span class="di-icon">💼</span>
+            <div>
+              <div class="di-title" data-en="Careers" data-zh="招贤纳士">Careers</div>
+              <div class="di-sub" data-en="Join the global team" data-zh="加入全球团队">Join the global team</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button class="nav-link" onclick="navigate('contact')">
+          <span data-en="Contact Us" data-zh="联系我们">Contact Us</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Language Toggle -->
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+        <span id="langLabel">EN | 中文</span>
+      </button>
+
+      <!-- Login Dropdown -->
+      <div class="nav-item dropdown login-dropdown">
+        <button class="btn-login dropdown-trigger">
+          <span data-en="Login" data-zh="登录">Login</span>
+          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="dropdown-menu login-menu">
+          <a class="dropdown-item" onclick="navigate('login-dsp')">
+            <span class="di-icon dsp-icon">DSP</span>
+            <div>
+              <div class="di-title">NexBids DSP</div>
+              <div class="di-sub" data-en="Advertiser Platform" data-zh="广告主平台">Advertiser Platform</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('login-ssp')">
+            <span class="di-icon ssp-icon">SSP</span>
+            <div>
+              <div class="di-title">NexBids SSP</div>
+              <div class="di-sub" data-en="Publisher Platform" data-zh="发布商平台">Publisher Platform</div>
+            </div>
+          </a>
+          <a class="dropdown-item" onclick="navigate('login-adx')">
+            <span class="di-icon adx-icon">ADX</span>
+            <div>
+              <div class="di-title">NexBids ADX</div>
+              <div class="di-sub" data-en="Exchange Platform" data-zh="交易平台">Exchange Platform</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== PAGE CONTAINER ===================== -->
+<main id="pageContainer">
+  <!-- All pages rendered by JS -->
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg class="nexbids-logo" width="130" height="32" viewBox="0 0 148 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NexBids">
+            <text x="0" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">N</text>
+            <text x="22" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">e</text>
+            <text x="41" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">x</text>
+            <text x="60" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">B</text>
+            <polygon points="76,7  69,20  74,20  70,30  80,17  74.5,17" fill="#9934FF"/>
+            <text x="82" y="28" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="900" fill="#0057FF" letter-spacing="-1">ids</text>
+            <circle cx="144" cy="7" r="4" fill="#9934FF"/>
+          </svg>
+        </div>
+        <p class="footer-tagline" data-en="Powering the World's Programmatic Advertising" data-zh="驱动全球程序化广告">Powering the World's Programmatic Advertising</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">in</a>
+          <a href="#" class="social-link">𝕏</a>
+          <a href="#" class="social-link">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Solutions" data-zh="解决方案">Solutions</h4>
+        <ul>
+          <li><a onclick="navigate('solutions-advertiser')" data-en="Advertiser Launch Solutions" data-zh="广告主投放解决方案">Advertiser Launch Solutions</a></li>
+          <li><a onclick="navigate('solutions-publisher')" data-en="Publisher & Developer Monetization" data-zh="发布商/开发者变现解决方案">Publisher & Developer Monetization</a></li>
+          <li><a onclick="navigate('solutions-agency')" data-en="Agency Cooperation Solutions" data-zh="代理合作解决方案">Agency Cooperation Solutions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Products" data-zh="产品">Products</h4>
+        <ul>
+          <li><a onclick="navigate('products-dsp')">NexBids DSP</a></li>
+          <li><a onclick="navigate('products-adx')">NexBids ADX</a></li>
+          <li><a onclick="navigate('products-ssp')">NexBids SSP</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Company" data-zh="公司">Company</h4>
+        <ul>
+          <li><a onclick="navigate('about')" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a onclick="navigate('careers')" data-en="Careers" data-zh="招贤纳士">Careers</a></li>
+          <li><a onclick="navigate('technology')" data-en="Technology" data-zh="技术优势">Technology</a></li>
+          <li><a onclick="navigate('case-studies')" data-en="Case Studies" data-zh="客户案例">Case Studies</a></li>
+          <li><a onclick="navigate('resources')" data-en="Resources" data-zh="资源文档">Resources</a></li>
+          <li><a onclick="navigate('contact')" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-en="Legal & Contact" data-zh="法律与联系">Legal & Contact</h4>
+        <ul>
+          <li><a href="#" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a></li>
+          <li><a href="#" data-en="Terms of Service" data-zh="服务条款">Terms of Service</a></li>
+          <li><a href="#" data-en="Cookie Policy" data-zh="Cookie政策">Cookie Policy</a></li>
+          <li><a href="mailto:contact@nexbids.com">contact@nexbids.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-en="© 2026 NexBids. All rights reserved." data-zh="© 2026 NexBids. 保留所有权利。">© 2026 NexBids. All rights reserved.</p>
+      <button class="lang-toggle-sm" onclick="toggleLang()">
+        <span id="footerLangLabel">EN | 中文</span>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -8,6 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- D3 + TopoJSON for accurate world map rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 </head>
 <body>
 
@@ -168,10 +171,14 @@
     </div>
 
     <div class="nav-actions">
-      <!-- Language Toggle -->
-      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
-        <span id="langLabel">EN | 中文</span>
-      </button>
+      <!-- Language Selector -->
+      <div class="lang-selector" id="langSelector">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown()" aria-label="Select language">
+          🇺🇸 <span>English</span>
+          <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+        <div class="lang-dropdown" id="langDropdown" role="listbox" aria-label="Language options"></div>
+      </div>
 
       <!-- Login Dropdown -->
       <div class="nav-item dropdown login-dropdown">
@@ -229,7 +236,7 @@
             <rect x="156" y="0" width="11" height="11" rx="3" fill="#7C2FFF"/>
           </svg>
         </div>
-        <p class="footer-tagline" data-en="Powering the World's Programmatic Advertising" data-zh="驱动全球程序化广告">Powering the World's Programmatic Advertising</p>
+        <p class="footer-tagline" id="footerTagline" data-en="Power Your Growth with Intelligent Programmatic" data-zh="用智能程序化广告驱动增长">Power Your Growth with Intelligent Programmatic</p>
         <div class="footer-social">
           <a href="#" class="social-link" aria-label="LinkedIn">in</a>
           <a href="#" class="social-link" aria-label="X / Twitter">𝕏</a>
@@ -286,10 +293,13 @@
     </div>
 
     <div class="footer-bottom">
-      <p data-en="© 2026 NexBids. All rights reserved." data-zh="© 2026 NexBids. 保留所有权利。">© 2026 NexBids. All rights reserved.</p>
-      <button class="lang-toggle-sm" onclick="toggleLang()">
-        <span id="footerLangLabel">EN | 中文</span>
-      </button>
+      <p id="footerCopyright" data-en="© 2026 NexBids. All rights reserved." data-zh="© 2026 NexBids. 保留所有权利。">© 2026 NexBids. All rights reserved.</p>
+      <div class="lang-selector lang-selector-sm" id="langSelectorFooter">
+        <button class="lang-btn lang-btn-sm" id="langBtnFooter" onclick="toggleLangDropdown()" aria-label="Select language">
+          🇺🇸 EN
+          <svg width="8" height="6" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </footer>

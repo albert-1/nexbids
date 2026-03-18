@@ -403,7 +403,7 @@ const CONTENT_T = {
   'E-Commerce \u2014 Fashion': { es:'E-Commerce \u2014 Moda', fr:'E-Commerce \u2014 Mode', de:'E-Commerce \u2014 Mode', pt:'E-Commerce \u2014 Moda', ru:'Электронная торговля \u2014 Мода', zh:'电商—时尚', ko:'이커머스 — 패션', ja:'Eコマース — ファッション', ms:'E-Dagang \u2014 Fesyen', th:'อีคอมเมิร์ซ — แฟชั่น', vi:'Thương Mại Điện Tử — Thời Trang', hi:'ई-कॉमर्स — फैशन', ar:'التجارة الإلكترونية — الأزياء' },
   'News Publisher': { es:'Editorial de Noticias', fr:'Éditeur de Nouvelles', de:'Nachrichtenverlag', pt:'Publicadora de Notícias', ru:'Новостной издатель', zh:'新闻发布商', ko:'뉴스 퍼블리셔', ja:'ニュースパブリッシャー', ms:'Penerbit Berita', th:'ผู้เผยแพร่ข่าวสาร', vi:'Nhà Xuất Bản Tin Tức', hi:'न्यूज़ प्रकाशक', ar:'ناشر الأخبار' },
   'Languages': { es:'Idiomas', fr:'Langues', de:'Sprachen', pt:'Idiomas', ru:'Языки', zh:'语言', ko:'언어', ja:'言語', ms:'Bahasa', th:'ภาษา', vi:'Ngôn Ngữ', hi:'भाषाएं', ar:'اللغات' },
-  'Power Your Growth with': { es:'Impulsa Tu Crecimiento con', fr:'Boostez Votre Croissance avec', de:'Steigern Sie Ihr Wachstum mit', pt:'Impulsione Seu Crescimento com', ru:'Ускорьте Рост с', zh:'用…驱动增长', ko:'로 성장을 가속하세요', ja:'であなたの成長を加速', ms:'Pacu Pertumbuhan Anda dengan', th:'เร่งการเติบโตของคุณด้วย', vi:'Thúc Đẩy Tăng Trưởng với', hi:'से अपनी ग्रोथ बढ़ाएं', ar:'عزّز نموك بـ' },
+  'Power Your Growth with': { es:'Impulsa Tu Crecimiento con', fr:'Boostez Votre Croissance avec', de:'Steigern Sie Ihr Wachstum mit', pt:'Impulsione Seu Crescimento com', ru:'Ускорьте Рост с', zh:'用…驱动增长', ko:'로 성장을 가속하세요', ja:'で成長を加速', ms:'Pacu Pertumbuhan Anda dengan', th:'เร่งการเติบโตของคุณด้วย', vi:'Thúc Đẩy Tăng Trưởng với', hi:'से अपनी ग्रोथ बढ़ाएं', ar:'عزّز نموك بـ' },
 
   // ── Products / Platform descriptions ──
   'Demand-Side Platform. AI-powered buying platform with global reach, premium inventory access, and advanced audience targeting across every digital channel.': {
@@ -2103,7 +2103,7 @@ const CONTENT_T = {
     pt:'Pronto para Maximizar Sua Receita?',
     fr:'Prêt à Maximiser Vos Revenus?',
     ja:'収益を最大化する準備はできていますか？',
-    zh:"准备好最大化您的收益了吗？"
+    zh:'启动您的首个DSP广告活动'
   },
   'Want to Go Deeper?': {
     es:'¿Quiere Profundizar?',
@@ -2112,7 +2112,7 @@ const CONTENT_T = {
     pt:'Quer Se Aprofundar?',
     fr:'Vous Voulez Aller Plus Loin?',
     ja:'さらに詳しく知りたいですか？',
-    zh:"想要深入了解？"
+    zh:'与NexBids ADX集成'
   },
   'Want Results Like These?': {
     es:'¿Quiere Resultados Como Estos?',
@@ -2240,6 +2240,7 @@ const CONTENT_T = {
     pt:'Candidate-se hoje para acessar preços por volume, opções de white-label e suporte dedicado.',
     fr:'Candidatez aujourd\'hui pour accéder aux tarifs de volume, aux options white-label et au support agence dédié.',
     ja:'ボリュームプライシング、ホワイトラベルオプション、専任エージェンシーサポートにアクセスするために今すぐ申し込む。',
+    zh:'加入已有30,000+发布商通过NexBids SSP最大化收益的行列。'
   },
   'Apply Now': {
     es:'Aplicar Ahora',
@@ -2312,7 +2313,7 @@ const CONTENT_T = {
     pt:'Ver Documentação de Integração',
     fr:'Voir la Documentation d\'Intégration',
     ja:'統合ドキュメントを見る',
-    zh:"查看集成文档"
+    zh:'查看API文档'
   },
   'Our engineering team is happy to discuss the technical details of our infrastructure and integration options.': {
     zh:'我们的工程团队很乐意讨论我们基础设施的技术细节和集成选项。',
@@ -2330,7 +2331,7 @@ const CONTENT_T = {
     pt:'Falar com a Engenharia',
     fr:'Parler à l\'Ingénierie',
     ja:'エンジニアリングに問い合わせる',
-    zh:"与工程团队交谈"
+    zh:'加入30,000+使用NexBids SSP的发布商，几分钟内即可开始。'
   },
   'Join thousands of advertisers and publishers already achieving breakthrough growth with NexBids.': {
     es:'Únase a miles de anunciantes y publicadores que ya logran un crecimiento sin precedentes con NexBids.',
@@ -2610,7 +2611,7 @@ const CONTENT_T = {
     pt:'Inovação Incansável',
     fr:'Innovation Sans Relâche',
     ja:'絶え間ないイノベーション',
-    zh:"不懈创新"
+    zh:'全球推出DSP+ADX'
   },
   'Global Perspective': {
     es:'Perspectiva Global',
@@ -2619,7 +2620,7 @@ const CONTENT_T = {
     pt:'Perspectiva Global',
     fr:'Perspective Mondiale',
     ja:'グローバルな視点',
-    zh:"全球视野"
+    zh:'每日500亿次竞价里程碑'
   },
   'Application Review': {
     es:'Revisión de Solicitud',
@@ -2628,7 +2629,7 @@ const CONTENT_T = {
     pt:'Revisão de Candidatura',
     fr:'Examen de Candidature',
     ja:'書類選考',
-    zh:"申请审核"
+    zh:'150+国家，驱动20亿美元+收益'
   },
   'Intro Call': {
     es:'Llamada Introductoria',
@@ -2637,7 +2638,7 @@ const CONTENT_T = {
     pt:'Chamada Introdutória',
     fr:'Appel d\'Introduction',
     ja:'初回面談',
-    zh:"初步通话"
+    zh:'全栈生态，500+团队'
   },
   'Technical / Skills Interview': {
     es:'Entrevista Técnica / de Habilidades',
@@ -2655,7 +2656,7 @@ const CONTENT_T = {
     pt:'Entrevista com a Equipe',
     fr:'Entretien d\'Équipe',
     ja:'チーム面接',
-    zh:"团队面试"
+    zh:'彻底透明'
   },
   'Offer': {
     es:'Oferta',
@@ -2664,7 +2665,7 @@ const CONTENT_T = {
     pt:'Oferta',
     fr:'Offre',
     ja:'内定',
-    zh:"录用通知"
+    zh:'持续创新'
   },
   'Annual Spend': {
     es:'Gasto Anual',
@@ -2700,7 +2701,7 @@ const CONTENT_T = {
     pt:'Redução de CPA',
     fr:'Réduction CPA',
     ja:'CPA削減',
-    zh:"CPA降低"
+    zh:'初步沟通'
   },
   'Revenue Lift': {
     es:'Mejora de Ingresos',
@@ -2709,7 +2710,7 @@ const CONTENT_T = {
     pt:'Aumento de Receita',
     fr:'Hausse des Revenus',
     ja:'収益向上',
-    zh:"收益提升"
+    zh:'技术/技能面试'
   },
   'eCPM Growth': {
     es:'Crecimiento de eCPM',
@@ -2718,7 +2719,7 @@ const CONTENT_T = {
     pt:'Crescimento de eCPM',
     fr:'Croissance eCPM',
     ja:'eCPM成長',
-    zh:"eCPM增长"
+    zh:'团队面试'
   },
   'Global Cases': {
     es:'Casos Globales',
@@ -2727,7 +2728,7 @@ const CONTENT_T = {
     pt:'Casos Globais',
     fr:'Cas Mondiaux',
     ja:'グローバル事例',
-    zh:"全球案例"
+    zh:'录用通知'
   },
   'CPA Drop': {
     es:'Caída de CPA',
@@ -2736,7 +2737,7 @@ const CONTENT_T = {
     pt:'Queda de CPA',
     fr:'Baisse CPA',
     ja:'CPA低下',
-    zh:"CPA下降"
+    zh:'年度支出'
   },
   'Revenue': {
     zh:'收益',
@@ -2809,7 +2810,8 @@ const CONTENT_T = {
     hi:'LTV सकारात्मक',
     pt:'LTV Positivo',
     fr:'LTV Positif',
-    ja:'LTVプラス'
+    ja:'LTVプラス',
+    zh:'收益'
   },
   'Scaled Up': {
     zh:'已扩展',
@@ -2936,7 +2938,7 @@ const CONTENT_T = {
     pt:'Lançamento do DSP — NexBids DSP chega à disponibilidade geral. 50+ anunciantes no H1.',
     fr:'Lancement DSP — NexBids DSP en disponibilité générale. 50+ annonceurs au S1.',
     ja:'DSPローンチ — NexBids DSPが一般提供開始。上半期に50社以上の広告主を獲得。',
-    zh:'DSP推出 — NexBids DSP正式上线。上半年获得50+广告主。'
+    zh:'横幅+视频'
   },
   'Full-Stack Platform — SSP & ADX launch. Singapore office opens.': {
     es:'Plataforma Full-Stack — Lanzamiento de SSP y ADX. Apertura de la oficina de Singapur.',
@@ -2945,7 +2947,7 @@ const CONTENT_T = {
     pt:'Plataforma Full-Stack — Lançamento de SSP e ADX. Abertura do escritório de Singapura.',
     fr:'Plateforme Full-Stack — Lancement SSP & ADX. Ouverture du bureau de Singapour.',
     ja:'フルスタックプラットフォーム — SSP・ADXローンチ。シンガポールオフィス開設。',
-    zh:"全栈平台 — SSP和ADX推出。新加坡办公室开设。"
+    zh:'激励广告'
   },
   'Scale Milestone — 10,000+ publishers. 100B+ daily bid requests. Tokyo & Beijing offices.': {
     es:'Hito de Escala — 10,000+ publicadores. 100B+ solicitudes de puja diarias. Oficinas en Tokio y Pekín.',
@@ -2954,7 +2956,7 @@ const CONTENT_T = {
     pt:'Marco de Escala — 10.000+ publicadores. 100B+ solicitações de lance diárias. Escritórios em Tóquio e Pequim.',
     fr:'Jalon de Croissance — 10 000+ éditeurs. 100B+ demandes d\'enchères quotidiennes. Bureaux à Tokyo et Pékin.',
     ja:'スケールマイルストーン — 10,000社以上のパブリッシャー。1日1,000億件以上の入札。東京・北京オフィス開設。',
-    zh:"规模里程碑 — 10,000+发布商。每日100B+出价请求。东京和北京办公室。"
+    zh:'创建账户'
   },
   'AI-First Initiative — Next-gen ML engine launched. Privacy Sandbox integration complete.': {
     es:'Iniciativa AI-First — Motor ML de próxima generación lanzado. Integración de Privacy Sandbox completada.',
@@ -2963,7 +2965,7 @@ const CONTENT_T = {
     pt:'Iniciativa AI-First — Motor ML de próxima geração lançado. Integração do Privacy Sandbox concluída.',
     fr:'Initiative AI-First — Moteur ML nouvelle génération lancé. Intégration Privacy Sandbox complète.',
     ja:'AI-ファーストイニシアチブ — 次世代MLエンジンローンチ。Privacy Sandbox統合完了。',
-    zh:"AI优先计划 — 推出下一代ML引擎。Privacy Sandbox集成完成。"
+    zh:'添加您的广告资源'
   },
   '50K Publisher Milestone — $500M+ advertiser spend managed annually.': {
     es:'Hito de 50K Publicadores — $500M+ de gasto de anunciantes gestionado anualmente.',
@@ -2972,7 +2974,7 @@ const CONTENT_T = {
     pt:'Marco de 50K Publicadores — $500M+ de gastos de anunciantes gerenciados anualmente.',
     fr:'Jalon 50K Éditeurs — $500M+ de dépenses annonceurs gérées annuellement.',
     ja:'5万社パブリッシャーマイルストーン — 年間5億ドル以上の広告主支出を管理。',
-    zh:"5万发布商标杆 — 每年管理5亿美元以上广告主支出。"
+    zh:'集成'
   },
   'CTV & Audio Expansion — Full CTV, programmatic audio, and DOOH capabilities.': {
     es:'Expansión CTV y Audio — Capacidades completas de CTV, audio programático y DOOH.',
@@ -2981,7 +2983,7 @@ const CONTENT_T = {
     pt:'Expansão CTV e Áudio — Capacidades completas de CTV, áudio programático e DOOH.',
     fr:'Expansion CTV & Audio — Capacités CTV complètes, audio programmatique et DOOH.',
     ja:'CTV・オーディオ拡張 — 完全なCTV、プログラマティックオーディオ、DOOH対応。',
-    zh:"CTV和音频扩展 — 完整的CTV、程序化音频和DOOH功能。"
+    zh:'开始盈利'
   },
   'Global Leadership — 50B+ daily impressions. Top 10 Global Ad Tech Platform.': {
     es:'Liderazgo Global — 50B+ impresiones diarias. Top 10 Plataforma de Ad Tech.',
@@ -2990,7 +2992,7 @@ const CONTENT_T = {
     pt:'Liderança Global — 50B+ impressões diárias. Top 10 Plataforma de Ad Tech Global.',
     fr:'Leadership Mondial — 50B+ impressions quotidiennes. Top 10 Plateforme Ad Tech.',
     ja:'グローバルリーダーシップ — 1日500億以上のインプレッション。グローバルアドテクプラットフォームトップ10。',
-    zh:"全球领导地位 — 500亿+日展示量。全球十大广告技术平台。"
+    zh:'创立——核心RTB基础设施与ML基础构建完成。'
   },
   'San Francisco + Barcelona': {
     zh:'旧金山 + 巴塞罗那',
@@ -3118,7 +3120,7 @@ const CONTENT_T = {
     pt:'30K+ Editores',
     fr:'30K+ Éditeurs',
     ja:'30K+パブリッシャー',
-    zh:'30K+发布商'
+    zh:'24%广告活动'
   },
   '50B+ Daily Impressions | <100ms Latency | 99.9% Uptime': {
     es:'50B+ Impresiones Diarias | <100ms Latencia | 99.9% Disponibilidad',
@@ -3127,7 +3129,7 @@ const CONTENT_T = {
     pt:'50B+ Impressões Diárias | <100ms Latência | 99.9% Disponibilidade',
     fr:'50B+ Impressions Quotidiennes | <100ms Latence | 99.9% Disponibilité',
     ja:'50B+日次インプレッション | <100msレイテンシ | 99.9%稼働率',
-    zh:'500亿+日展示量 | <100ms延迟 | 99.9%在线率'
+    zh:'14%广告活动'
   },
   '50K+ Advertisers': {
     es:'50K+ Anunciantes',
@@ -3136,7 +3138,7 @@ const CONTENT_T = {
     pt:'50K+ Anunciantes',
     fr:'50K+ Annonceurs',
     ja:'50K+広告主',
-    zh:'50K+广告主'
+    zh:'500亿以上'
   },
   'ADX Routing': {
     zh:'ADX路由',
@@ -3190,7 +3192,7 @@ const CONTENT_T = {
     pt:'Anunciantes e Agências',
     fr:'Annonceurs et Agences',
     ja:'広告主とエージェンシー',
-    zh:'广告主和代理商'
+    zh:'"迁移到NexBids SSP后，我们的月度广告收益在90天内增长了328%。"'
   },
   'Advertisers & Brands': {
     zh:'广告主和品牌',
@@ -3208,7 +3210,7 @@ const CONTENT_T = {
     pt:'Parcerias com Agências',
     fr:'Partenariats Agences',
     ja:'エージェンシーパートナーシップ',
-    zh:'代理商合作伙伴'
+    zh:'"NexBids DSP帮助我们在全球营销活动中实现了4.2倍的ROAS。"'
   },
   'Auction': {
     es:'Subasta',
@@ -3217,7 +3219,7 @@ const CONTENT_T = {
     pt:'Leilão',
     fr:'Enchère',
     ja:'オークション',
-    zh:'拍卖'
+    zh:'30,000+发布商'
   },
   'Avg Bid Response': {
     es:'Respuesta de Puja Promedio',
@@ -3244,7 +3246,7 @@ const CONTENT_T = {
     pt:'Europa',
     fr:'Europe',
     ja:'ヨーロッパ',
-    zh:'欧洲'
+    zh:'ADX路由'
   },
   'Formats': {
     es:'Formatos',
@@ -3253,7 +3255,7 @@ const CONTENT_T = {
     pt:'Formatos',
     fr:'Formats',
     ja:'フォーマット',
-    zh:'格式'
+    zh:'ADX验证请求并路由到合格的DSP'
   },
   'Geographic Coverage': {
     es:'Cobertura Geográfica',
@@ -3289,7 +3291,7 @@ const CONTENT_T = {
     pt:'América Latina',
     fr:'Amérique Latine',
     ja:'ラテンアメリカ',
-    zh:'拉丁美洲'
+    zh:'广告主销售'
   },
   'Marketplace Infrastructure': {
     es:'Infraestructura del Marketplace',
@@ -3298,7 +3300,7 @@ const CONTENT_T = {
     pt:'Infraestrutura do Marketplace',
     fr:'Infrastructure Marketplace',
     ja:'マーケットプレイスインフラ',
-    zh:'市场基础设施'
+    zh:'广告主和代理商'
   },
   'Markets': {
     zh:'市场',
@@ -3344,7 +3346,7 @@ const CONTENT_T = {
     pt:'Oriente Médio',
     fr:'Moyen-Orient',
     ja:'中東',
-    zh:'中东'
+    zh:'最佳实践'
   },
   'Mobile Ad Formats': {
     es:'Formatos de Anuncios Móviles',
@@ -3353,7 +3355,7 @@ const CONTENT_T = {
     pt:'Formatos de Anúncios Mobile',
     fr:'Formats Publicitaires Mobiles',
     ja:'モバイル広告フォーマット',
-    zh:'移动广告格式'
+    zh:'欧洲'
   },
   'NexBids ML models score bid price & conversion probability': {
     es:'Los modelos ML de NexBids puntúan el precio de oferta y la probabilidad de conversión',
@@ -3362,7 +3364,7 @@ const CONTENT_T = {
     pt:'Os modelos ML da NexBids pontuam o preço do lance e a probabilidade de conversão',
     fr:'Les modèles ML de NexBids évaluent le prix de l\'offre et la probabilité de conversion',
     ja:'NexBids MLモデルが入札価格とコンバージョン確率をスコアリングします',
-    zh:'NexBids ML模型对出价价格和转化概率进行评分'
+    zh:'格式'
   },
   'North America': {
     zh:'北美',
@@ -3380,7 +3382,7 @@ const CONTENT_T = {
     pt:'OpenRTB 2.6 Nativo',
     fr:'OpenRTB 2.6 Natif',
     ja:'OpenRTB 2.6 ネイティブ',
-    zh:'OpenRTB 2.6 原生'
+    zh:'地理覆盖范围'
   },
   'Peak Bid Throughput': {
     es:'Rendimiento Máximo de Pujas',
@@ -3389,7 +3391,7 @@ const CONTENT_T = {
     pt:'Throughput Máximo de Lances',
     fr:'Débit de Pointe des Offres',
     ja:'ピーク入札スループット',
-    zh:'峰值竞价吞吐量'
+    zh:'行业报告'
   },
   'Platform Docs': {
     es:'Documentación de Plataforma',
@@ -3398,7 +3400,7 @@ const CONTENT_T = {
     pt:'Documentação da Plataforma',
     fr:'Documentation Plateforme',
     ja:'プラットフォームドキュメント',
-    zh:'平台文档'
+    zh:'Kubernetes'
   },
   'Prebid.js': {
     es:'Prebid.js',
@@ -3407,7 +3409,7 @@ const CONTENT_T = {
     pt:'Prebid.js',
     fr:'Prebid.js',
     ja:'Prebid.js',
-    zh:'Prebid.js'
+    zh:'拉丁美洲'
   },
   'Publisher Partnerships': {
     es:'Asociaciones con Editores',
@@ -3416,7 +3418,7 @@ const CONTENT_T = {
     pt:'Parcerias com Editores',
     fr:'Partenariats Éditeurs',
     ja:'パブリッシャーパートナーシップ',
-    zh:'发布商合作伙伴'
+    zh:'市场基础设施'
   },
   'SE Asia': {
     zh:'东南亚',
@@ -3443,7 +3445,7 @@ const CONTENT_T = {
     pt:'Segmentos',
     fr:'Segments',
     ja:'セグメント',
-    zh:'细分'
+    zh:'媒体和新闻'
   },
   'Sub-100ms Bid Processing': {
     zh:'100毫秒以下竞价处理',
@@ -3461,7 +3463,7 @@ const CONTENT_T = {
     pt:'Tomada de decisão em tempo real em escala global com garantia de disponibilidade de 99.98%.',
     fr:'Prise de décision en temps réel à l\'échelle mondiale avec une garantie de disponibilité de 99.98%.',
     ja:'99.98%稼働率保証でグローバル規模のリアルタイム意思決定。',
-    zh:'全球规模实时决策，99.98%在线率保证。'
+    zh:'媒体和发布商'
   },
   'AI/ML Optimization Engine': {
     es:'Motor de Optimización IA/ML',
@@ -3470,7 +3472,7 @@ const CONTENT_T = {
     pt:'Motor de Otimização IA/ML',
     fr:'Moteur d\'Optimisation IA/ML',
     ja:'AI/ML最適化エンジン',
-    zh:'AI/ML优化引擎'
+    zh:'中东'
   },
   'Deep learning models continuously optimize bids, budgets, and audience targeting.': {
     es:'Los modelos de aprendizaje profundo optimizan continuamente pujas, presupuestos y segmentación de audiencia.',
@@ -3479,7 +3481,7 @@ const CONTENT_T = {
     pt:'Modelos de aprendizado profundo otimizam continuamente lances, orçamentos e segmentação de audiência.',
     fr:'Les modèles de deep learning optimisent en permanence les enchères, les budgets et le ciblage d\'audience.',
     ja:'ディープラーニングモデルが入札、予算、オーディエンスターゲティングを継続的に最適化します。',
-    zh:'深度学习模型持续优化竞价、预算和受众定向。'
+    zh:'移动广告格式'
   },
   'Privacy-First Architecture': {
     es:'Arquitectura con Privacidad Prioritaria',
@@ -3488,7 +3490,7 @@ const CONTENT_T = {
     pt:'Arquitetura com Privacidade em Primeiro Lugar',
     fr:'Architecture Axée sur la Confidentialité',
     ja:'プライバシーファーストアーキテクチャ',
-    zh:'隐私优先架构'
+    zh:'NexBids的ML模型对竞价价格和转化概率进行评分'
   },
   'Cookieless targeting solutions ready for a privacy-compliant future.': {
     es:'Soluciones de segmentación sin cookies listas para un futuro que cumpla con la privacidad.',
@@ -3497,7 +3499,7 @@ const CONTENT_T = {
     pt:'Soluções de segmentação sem cookies prontas para um futuro em conformidade com privacidade.',
     fr:'Solutions de ciblage sans cookies prêtes pour un avenir respectueux de la vie privée.',
     ja:'プライバシー準拠の未来に向けたクッキーレスターゲティングソリューション。',
-    zh:'为符合隐私的未来准备的无Cookie定向解决方案。'
+    zh:'北美'
   },
   'Technical Support': {
     es:'Soporte Técnico',
@@ -3506,7 +3508,7 @@ const CONTENT_T = {
     pt:'Suporte Técnico',
     fr:'Support Technique',
     ja:'テクニカルサポート',
-    zh:'技术支持'
+    zh:'OpenRTB 2.6原生'
   },
   'Traffic Quality Score': {
     es:'Puntuación de Calidad de Tráfico',
@@ -3515,7 +3517,7 @@ const CONTENT_T = {
     pt:'Pontuação de Qualidade de Tráfego',
     fr:'Score de Qualité du Trafic',
     ja:'トラフィッククオリティスコア',
-    zh:'流量质量评分'
+    zh:'峰值竞价吞吐量'
   },
   'User loads page/app; SSP fires bid request': {
     es:'El usuario carga la página/app; SSP envía solicitud de puja',
@@ -3524,7 +3526,7 @@ const CONTENT_T = {
     pt:'Usuário carrega a página/app; SSP envia solicitação de lance',
     fr:'L\'utilisateur charge la page/app ; le SSP envoie une demande d\'enchère',
     ja:'ユーザーがページ/アプリを読み込む; SSPが入札リクエストを送信',
-    zh:'用户加载页面/应用; SSP发起出价请求'
+    zh:'平台文档'
   },
   'Winner Notified': {
     zh:'赢家已通知',
@@ -3566,7 +3568,8 @@ const CONTENT_T = {
     th:'คำขอ/วิ',
     vi:'yêu cầu/s',
     hi:'अनुरोध/से',
-    ar:'طلب/ثانية'
+    ar:'طلب/ثانية',
+    zh:'所有合格竞价者之间的二价拍卖'
   },
   'countries': {
     es:'países',
@@ -3581,7 +3584,8 @@ const CONTENT_T = {
     th:'ประเทศ',
     vi:'quốc gia',
     hi:'देश',
-    ar:'دولة'
+    ar:'دولة',
+    zh:'100ms以内的竞价处理'
   },
   'formats': {
     es:'formatos',
@@ -3596,7 +3600,8 @@ const CONTENT_T = {
     th:'รูปแบบ',
     vi:'định dạng',
     hi:'प्रारूप',
-    ar:'تنسيق'
+    ar:'تنسيق',
+    zh:'AI/ML优化引擎'
   },
   'quality': {
     es:'calidad',
@@ -4120,8 +4125,9 @@ const CONTENT_T = {
   'Apr 15, 2026': {zh:'2026年4月15日', es:'15 abr 2026', fr:'15 avr 2026', pt:'15 de abr 2026', hi:'15 अप्रैल 2026', ar:'15 أبريل 2026', ja:'2026年4月15日'},
   '24 hours': {zh:'24小时', es:'24 horas', fr:'24 heures', pt:'24 horas', hi:'24 घंटे', ar:'24 ساعة', ja:'24時間'},
   '1 business day': {zh:'1个工作日', es:'1 día hábil', fr:'1 jour ouvré', pt:'1 dia útil', hi:'1 कार्यदिवस', ar:'يوم عمل واحد', ja:'1営業日'},
-  '2 business days': {zh:'2个工作日', es:'2 días hábiles', fr:'2 jours ouvrés', pt:'2 dias úteis', hi:'2 कार्यदिवस', ar:'يومان عمل', ja:'2営業日'},
-  'Audience Similarity (Lookalike)': {zh:'受众相似度（相似受众）', es:'Similitud de Audiencia (Lookalike)', fr:'Similarité d\'Audience (Sosie)', pt:'Similaridade de Audiência (Lookalike)', hi:'ऑडियंस सिमिलैरिटी (लुकअलाइक)', ar:'تشابه الجمهور (المشابه)', ja:'オーディエンス類似（ルックアライク）'},
+  '2 business days': {zh:'2个工作日', es:'2 días hábiles', fr:'2 jours ouvrés', pt:'2 dias úteis', hi:'2 कार्यदिवस', ar:'يومان عमل', ja:'2営業日'},
+  'P1 < 1hr, Std < 4hrs': {en:'P1 < 1hr, Std < 4hrs', zh:'P1 <1小时，标准 <4小时', es:'P1 < 1h, Std < 4h', fr:'P1 < 1h, Std < 4h', pt:'P1 < 1h, Padrão < 4h', hi:'P1 < 1 घंटा, Std < 4 घंटे', ar:'P1 < ساعة واحدة، Std < 4 ساعات', ja:'P1 < 1時間、標準 < 4時間'},
+  'Audience Similarity (Lookalike)': {zh:'受众相似度（相似受众）', es:'Similitud de Audiencia (Lookalike)', fr:'Similarité d\'Audience (Sosie)', pt:'Similaridade de Audiência (Lookalike)', hi:'ऑडियंस सिमिलैरिटी (लुकअलाइक)', ar:'تشابह الجمهور (المشابه)', ja:'オーディエンス類似（ルックアライク）'},
   'Bid Price Prediction': {zh:'竞价价格预测', es:'Predicción de Precio de Puja', fr:'Prédiction du Prix d\'Enchère', pt:'Predição de Preço de Lance', hi:'बिड प्राइस प्रेडिक्शन', ar:'التنبؤ بسعر المزايدة', ja:'入札価格予測'},
   'CTR Prediction': {zh:'CTR预测模型', es:'Predicción de CTR', fr:'Prédiction du CTR', pt:'Predição de CTR', hi:'CTR प्रेडिक्शन', ar:'التنبؤ بنسبة النقر', ja:'CTR予測'},
   'Conversion Probability': {zh:'转化概率模型', es:'Probabilidad de Conversión', fr:'Probabilité de Conversion', pt:'Probabilidade de Conversão', hi:'कन्वर्जन प्रोबेबिलिटी', ar:'احتمالية التحويل', ja:'コンバージョン確率'},
@@ -4141,6 +4147,23 @@ const CONTENT_T = {
   'Data Engineer, Real-Time Streaming': {zh:'数据工程师，实时流处理', es:'Ingeniero de Datos, Streaming en Tiempo Real', fr:'Ingénieur Données, Streaming en Temps Réel', pt:'Engenheiro de Dados, Streaming em Tempo Real', hi:'डेटा इंजीनियर, रियल-टाइम स्ट्रीमिंग', ar:'مهندس بيانات، البث في الوقت الفعلي', ja:'データエンジニア、リアルタイムストリーミング'},
   'Account Executive, Advertiser Sales (EMEA)': {zh:'客户主管，广告主销售（欧中东非）', es:'Ejecutivo de Cuenta, Ventas a Anunciantes (EMEA)', fr:'Chargé de Compte, Ventes Annonceurs (EMEA)', pt:'Executivo de Contas, Vendas para Anunciantes (EMEA)', hi:'अकाउंट एक्जीक्यूटिव, एडवर्टाइजर सेल्स (EMEA)', ar:'مدير حساب، مبيعات المعلنين (EMEA)', ja:'アカウントエグゼクティブ、広告主営業（EMEA）'},
   'Agency Partnerships Manager (North America)': {zh:'代理商合作伙伴经理（北美）', es:'Gerente de Asociaciones con Agencias (Norteamérica)', fr:'Responsable Partenariats Agences (Amérique du Nord)', pt:'Gerente de Parcerias com Agências (América do Norte)', hi:'एजेंसी पार्टनरशिप मैनेजर (नॉर्थ अमेरिका)', ar:'مدير شراكات الوكالات (أمريكا الشمالية)', ja:'代理店パートナーシップマネージャー（北米）'},
+  // ── Technology Philosophy Cards ──
+  'Intelligent': { es:'Inteligente', fr:'Intelligent', de:'Intelligent', pt:'Inteligente', ru:'Умный', zh:'智能的', ko:'지능형', ja:'インテリジェント', ms:'Cerdas', th:'อัจฉริยะ', vi:'Thông Minh', hi:'बुद्धिमान', ar:'ذكي' },
+  // ── Login Page Texts ──
+  'Back to nexbids.com': { es:'Volver a nexbids.com', fr:'Retour à nexbids.com', de:'Zurück zu nexbids.com', pt:'Voltar para nexbids.com', ru:'Вернуться на nexbids.com', zh:'返回 nexbids.com', ko:'nexbids.com으로 돌아가기', ja:'nexbids.comに戻る', ms:'Kembali ke nexbids.com', th:'กลับไปที่ nexbids.com', vi:'Quay lại nexbids.com', hi:'nexbids.com पर वापस जाएं', ar:'العودة إلى nexbids.com' },
+  'Enter your credentials to access the platform.': { es:'Ingrese sus credenciales para acceder a la plataforma.', fr:'Entrez vos identifiants pour accéder à la plateforme.', de:'Geben Sie Ihre Anmeldedaten ein, um auf die Plattform zuzugreifen.', pt:'Digite suas credenciais para acessar a plataforma.', ru:'Введите свои учетные данные для доступа к платформе.', zh:'输入您的凭据以访问平台。', ko:'플랫폼에 액세스하려면 자격증명을 입력하세요.', ja:'プラットフォームにアクセスするための認証情報を入力してください。', ms:'Masukkan kredensial Anda untuk mengakses platform.', th:'ป้อนข้อมูลประจำตัวของคุณเพื่อเข้าถึงแพลตฟอร์ม', vi:'Nhập thông tin đăng nhập của bạn để truy cập nền tảng.', hi:'प्लेटफॉर्म तक पहुंचने के लिए अपनी साख दर्ज करें।', ar:'أدخل بيانات اعتمادك للوصول إلى المنصة.' },
+  'Email Address': { es:'Dirección de correo electrónico', fr:'Adresse e-mail', de:'E-Mail-Adresse', pt:'Endereço de email', ru:'Адрес электронной почты', zh:'邮箱地址', ko:'이메일 주소', ja:'メールアドレス', ms:'Alamat Email', th:'ที่อยู่อีเมล', vi:'Địa chỉ Email', hi:'ईमेल पता', ar:'عنوان البريد الإلكتروني' },
+  'Password': { es:'Contraseña', fr:'Mot de passe', de:'Passwort', pt:'Senha', ru:'Пароль', zh:'密码', ko:'비밀번호', ja:'パスワード', ms:'Kata Sandi', th:'รหัสผ่าน', vi:'Mật khẩu', hi:'पासवर्ड', ar:'كلمة المرور' },
+  'Remember me': { es:'Recuérdame', fr:'Se souvenir de moi', de:'Passwort speichern', pt:'Lembre-se de mim', ru:'Запомнить меня', zh:'记住我', ko:'기억하기', ja:'自分を覚えておく', ms:'Ingat saya', th:'จำฉันไว้', vi:'Nhớ tôi', hi:'मुझे याद रखें', ar:'تذكرني' },
+  'Sign In': { es:'Iniciar sesión', fr:'Se connecter', de:'Anmelden', pt:'Entrar', ru:'Войти', zh:'登录', ko:'로그인', ja:'ログイン', ms:'Masuk', th:'ลงชื่อเข้า', vi:'Đăng nhập', hi:'साइन इन करें', ar:'تسجيل الدخول' },
+  'Help': { es:'Ayuda', fr:'Aide', de:'Hilfe', pt:'Ajuda', ru:'Помощь', zh:'帮助', ko:'도움말', ja:'ヘルプ', ms:'Bantuan', th:'ความช่วยเหลือ', vi:'Trợ giúp', hi:'मदद', ar:'مساعدة' },
+  'Not just automated — genuinely smart. Our ML systems learn and improve continuously from every auction signal.': { es:'No es solo automatización, es genuinamente inteligente. Nuestros sistemas ML aprenden y mejoran continuamente de cada señal de subasta.', fr:'Ce n\'est pas seulement automatisé — c\'est vraiment intelligent. Nos systèmes ML apprennent et s\'améliorent continuellement à partir de chaque signal d\'enchère.', de:'Nicht nur automatisiert — echte Intelligenz. Unsere ML-Systeme lernen kontinuierlich aus jedem Auktionssignal und verbessern sich.', pt:'Não é apenas automatizado — é genuinamente inteligente. Nossos sistemas ML aprendem e melhoram continuamente de cada sinal de leilão.', ru:'Это не просто автоматизация — это подлинный интеллект. Наши системы ML постоянно учатся и совершенствуются на основе каждого сигнала аукциона.', zh:'不仅仅是自动化，而是真正智能。我们的ML系统从每个竞价信号持续学习和改进。', ko:'자동화일 뿐만 아니라 진정으로 지능형입니다. 우리의 ML 시스템은 모든 경매 신호에서 지속적으로 학습하고 개선됩니다.', ja:'自動化されているだけでなく、本当に賢いです。当社のMLシステムは、すべてのオークション信号から継続的に学習し、改善されます。', ms:'Bukan hanya automatisasi — benar-benar pintar. Sistem ML kami terus belajar dan meningkat dari setiap sinyal lelang.', th:'ไม่ใช่แค่ระบบอัตโนมัติ มันเป็นระบบที่แท้จริงอัจฉริยะ ระบบ ML ของเราเรียนรู้และปรับปรุงอย่างต่อเนื่องจากสัญญาณการประมูลทุกครั้ง', vi:'Không chỉ tự động hóa — thực sự thông minh. Các hệ thống ML của chúng tôi liên tục học hỏi và cải thiện từ mọi tín hiệu đấu giá.', hi:'सिर्फ स्वचालन नहीं — वास्तव में स्मार्ट। हमारी ML प्रणालियां हर नीलामी सिग्नल से लगातार सीखती और सुधार करती हैं।', ar:'ليست مجرد أتمتة — بل ذكية حقًا. تتعلم أنظمتنا الآلية وتتحسن باستمرار من كل إشارة مزايدة.' },
+  'Fast': { es:'Rápido', fr:'Rapide', de:'Schnell', pt:'Rápido', ru:'Быстро', zh:'快速的', ko:'빠른', ja:'高速', ms:'Cepat', th:'เร็ว', vi:'Nhanh', hi:'तेज', ar:'سريع' },
+  'Millisecond-level decisions at global scale. Sub-100ms bid processing at 50B+ daily requests.': { es:'Decisiones de nivel milisegundo a escala global. Procesamiento de ofertas sub-100ms con 50B+ solicitudes diarias.', fr:'Décisions au niveau des millisecondes à l\'échelle mondiale. Traitement des enchères <100ms avec 50B+ requêtes quotidiennes.', de:'Entscheidungen auf Millisekundenbasis im globalen Maßstab. Geboteverarbeitung <100ms bei 50B+ täglichen Anfragen.', pt:'Decisões em nível de milissegundo em escala global. Processamento de lances <100ms com 50B+ requisições diárias.', ru:'Решения на уровне миллисекунд в глобальном масштабе. Обработка ставок <100ms при 50B+ суточных запросов.', zh:'全球规模下毫秒级决策，不做任何妥协。在500亿+日请求下竞价处理低于100毫秒。', ko:'글로벌 규모의 밀리초 단위 의사결정. 50B+ 일일 요청에서 100ms 미만의 입찰 처리.', ja:'グローバル規模でのミリ秒単位の意思決定。50B+日次リクエストで<100ms入札処理。', ms:'Keputusan peringkat milidetik dalam skala global. Pemrosesan tawaran <100ms dengan 50B+ permintaan harian.', th:'การตัดสินใจในระดับมิลลิวินาทีในมาตราส่วนทั่วโลก การประมวลผลการเสนอราคา <100ms ด้วยคำขอ 50B+ รายวัน', vi:'Quyết định ở mức mili giây ở quy mô toàn cầu. Xử lý đấu giá <100ms với 50B+ yêu cầu hàng ngày.', hi:'वैश्विक पैमाने पर मिलीसेकंड स्तर के निर्णय। 50B+ दैनिक अनुरोधों के साथ <100ms बिड प्रोसेसिंग।', ar:'قرارات على مستوى الميلي ثانية على نطاق عالمي. معالجة العروض أقل من 100ms مع 50B+ طلبات يومية.' },
+  'Transparent': { es:'Transparente', fr:'Transparent', de:'Transparent', pt:'Transparente', ru:'Прозрачность', zh:'透明的', ko:'투명한', ja:'透明性', ms:'Telus', th:'โปร่งใส', vi:'Minh Bạch', hi:'पारदर्शी', ar:'شفاف' },
+  'Privacy-First': { es:'Privacidad Primero', fr:'Confidentialité d\'abord', de:'Datenschutz an erster Stelle', pt:'Privacidade em Primeiro Lugar', ru:'Конфиденциальность превыше всего', zh:'隐私优先的', ko:'프라이버시 우선', ja:'プライバシーファースト', ms:'Privasi Pertama', th:'ความเป็นส่วนตัวอันดับแรก', vi:'Quyền Riêng Tư Trước Tiên', hi:'गोपनीयता प्रथम', ar:'الخصوصية أولاً' },
+  'Reliable': { es:'Confiable', fr:'Fiable', de:'Zuverlässig', pt:'Confiável', ru:'Надежный', zh:'可靠的', ko:'신뢰할 수 있는', ja:'信頼性', ms:'Boleh Dipercaya', th:'น่าเชื่อถือ', vi:'Đáng Tin Cậy', hi:'विश्वसनीय', ar:'موثوق' },
+  'Global': { es:'Global', fr:'Mondial', de:'Global', pt:'Global', ru:'Глобальный', zh:'全球化的', ko:'글로벌', ja:'グローバル', ms:'Global', th:'ระดับโลก', vi:'Toàn Cầu', hi:'वैश्विक', ar:'عالمي' },
   'Business Development Manager, EMEA Expansion': {zh:'商务拓展经理，EMEA市场扩张', es:'Gerente de Desarrollo de Negocios, Expansión EMEA', fr:'Responsable Développement Commercial, Expansion EMEA', pt:'Gerente de Desenvolvimento de Negócios, Expansão EMEA', hi:'बिजनेस डेवलपमेंट मैनेजर, EMEA एक्सपेंशन', ar:'مدير تطوير الأعمال، التوسع في EMEA', ja:'事業開発マネージャー、EMEA拡大'},
   'Customer Success Manager, Advertisers': {zh:'客户成功经理，广告主', es:'Gerente de Éxito del Cliente, Anunciantes', fr:'Responsable Succès Client, Annonceurs', pt:'Gerente de Sucesso do Cliente, Anunciantes', hi:'कस्टमर सक्सेस मैनेजर, एडवर्टाइजर', ar:'مدير نجاح العملاء، المعلنون', ja:'カスタマーサクセスマネージャー、広告主'},
   'Technical Implementation Specialist, Publisher': {zh:'技术实施专员，发布商', es:'Especialista en Implementación Técnica, Editor', fr:'Spécialiste en Implémentation Technique, Éditeur', pt:'Especialista em Implementação Técnica, Editor', hi:'टेक्निकल इम्प्लीमेंटेशन स्पेशलिस्ट, पब्लिशर', ar:'متخصص التنفيذ التقني، الناشر', ja:'テクニカル実装スペシャリスト、パブリッシャー'},
@@ -4279,6 +4302,7 @@ const CONTENT_T = {
     ar:'معتمد CIPP/E. يقود برنامج الخصوصية العالمي. عضو في مجموعة عمل الامتثال للخصوصية في IAB Tech Lab.',
     ja:'CIPP/E認定。グローバルプライバシープログラムをリード。IAB Tech Labプライバシーコンプライアンス作業部会メンバー。'
   },
+  'Demand-Side Platform': { es:'Plataforma de Demanda', fr:'Plateforme', de:'Demand-Side-Plattform', pt:'Plataforma', ru:'Платформа', ko:'플랫폼', ja:'プラットフォーム', ar:'منصة' }
 };
 
 /**
@@ -4341,8 +4365,6 @@ function setLang(code) {
   const footerBtn = document.getElementById('langBtnFooter');
   const _lang = LANGUAGES.find(l => l.code === code);
   if (footerBtn && _lang) footerBtn.innerHTML = `${_lang.flag} ${_lang.code.toUpperCase()} <svg width="8" height="6" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
-  // Remove mobile login section so it can be regenerated with new language on next menu open
-  document.querySelector('.mobile-login-section')?.remove();
   applyLang();
   renderPage(currentPage);
   // close both lang dropdowns
@@ -4409,8 +4431,8 @@ window.toggleLangDropdownFooter = function(e) {
 
 window.toggleLoginDropdown = function(e) {
   if (e) e.stopPropagation();
-  const menu = document.getElementById('loginMenu');
-  const btn  = document.getElementById('loginDropdownBtn');
+  const menu = document.getElementById('loginDropdown');
+  const btn  = document.getElementById('loginBtn');
   if (!menu) return;
   const opening = !menu.classList.contains('open');
   // close all first
@@ -4425,8 +4447,8 @@ window.toggleLoginDropdown = function(e) {
 };
 
 window.closeLoginDropdown = function() {
-  const menu = document.getElementById('loginMenu');
-  const btn  = document.getElementById('loginDropdownBtn');
+  const menu = document.getElementById('loginDropdown');
+  const btn  = document.getElementById('loginBtn');
   menu?.classList.remove('open');
   btn?.setAttribute('aria-expanded', 'false');
 };
@@ -4524,6 +4546,7 @@ function handleDropdownTrigger(page, event) {
 }
 
 function renderPage(page) {
+  console.log('[DEBUG] renderPage("' + page + '") called');
   const container = document.getElementById('pageContainer');
   const renderers = {
     'home':                 renderHome,
@@ -4555,8 +4578,11 @@ function renderPage(page) {
   }
   const actualFn = fn || renderHome;
   try {
-    container.innerHTML = `<div class="page-transition">${actualFn()}</div>`;
-    console.log(`[renderPage] Successfully rendered page: "${page}"`);
+    console.log('[DEBUG] Calling actualFn() for page:', page);
+    const html = actualFn();
+    console.log('[DEBUG] Got ' + html.length + ' chars from actualFn()');
+    container.innerHTML = `<div class="page-transition">${html}</div>`;
+    console.log('[DEBUG] innerHTML set successfully');
   } catch (err) {
     console.error('[renderPage] Error rendering page "' + page + '":', err);
     container.innerHTML = '<div style="padding:40px;text-align:center;color:#F87171">Page render error — please check the console.</div>';
@@ -5529,15 +5555,13 @@ function iconColor(cls) {
    HOME PAGE
 ───────────────────────────────────────────── */
 function renderHome() {
+  console.log('[DEBUG] renderHome() called');
   return `
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content hero-layout">
+    <div class="container">
       <div class="hero-text">
-        ${sectionTag('Global Ad Tech Leader', '全球广告技术领导者')}
-        <h1>${currentLang === 'zh' ? '用<span class="gradient-text">智能程序化广告</span>驱动增长' : `${t('Power Your Growth with')}<br><span class="gradient-text">${t('Intelligent Programmatic')}</span>`}</h1>
-        <p>${t('NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.',
-               'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。')}</p>
+        <h1>${t('The Fastest Programmatic Advertising Platform', '最快的程序化广告平台')}</h1>
+        <p class="hero-subtitle">${t('Proven to increase ROAS by 3.2x | Real-time bidding at scale with unmatched speed, control, and ROI', '经证实可将ROAS提高3.2倍 | 大规模实时竞价，具有无与伦比的速度、控制力和投资回报率')}</p>
         <div class="btn-group">
           <button class="btn btn-primary" onclick="navigate('contact')">${t('Get Started Free', '免费开始')}</button>
           <button class="btn btn-secondary" onclick="navigate('products')">${t('Explore Platforms', '探索平台')}</button>
@@ -6991,15 +7015,15 @@ function renderAbout() {
           ${sectionTag('Company Timeline','公司里程碑')}
           <div class="timeline">
             ${[
-              ['2018','Founded: NexBids incorporated. Core engineering team begins building the RTB infrastructure and ML foundation.','创立：NexBids成立。核心工程团队开始构建RTB基础设施和ML基础。'],
-              ['2019','First Partnerships: First advertiser and publisher beta partners onboarded. London office opens.','首批合作伙伴：首批广告主和发布商合作伙伴入驻。伦敦办公室开业。'],
-              ['2020','DSP Launch: NexBids DSP officially launches to general availability. 50+ advertisers in first 6 months.','DSP发布：NexBids DSP正式推出。前6个月吸引50+广告主。'],
-              ['2021','Full-Stack Platform: NexBids SSP and ADX launch, completing the full-stack ecosystem. Singapore office opens.','全栈平台：NexBids SSP和ADX推出，完成全栈生态系统。新加坡办公室开业。'],
-              ['2022','Scale Milestone: 10,000+ publishers onboarded. 100B+ daily bid requests milestone reached. Tokyo and Beijing offices open.','规模里程碑：1万+发布商入驻。达到1000亿+日竞价请求里程碑。东京和北京办公室开业。'],
-              ['2023','AI-First Initiative: Full launch of NexBids\' next-generation ML optimization engine. Privacy Sandbox integration complete.','AI优先计划：NexBids下一代ML优化引擎全面推出。隐私沙盒集成完成。'],
-              ['2024','50,000 Publishers Milestone: 50,000 active publishers on NexBids SSP. $500M+ in advertiser spend managed through platform annually.','5万发布商里程碑：NexBids SSP上有5万+活跃发布商。平台每年管理广告主支出超过5亿+美元。'],
-              ['2025','CTV & Audio Expansion: Full CTV and programmatic audio capability launched. DOOH supply connections completed.','CTV与音频扩展：完整CTV和程序化音频能力推出。DOOH供应连接完成。'],
-              ['2026','Global Leadership: 2,000+ global advertisers. 500B+ daily impressions. 150+ countries served. Recognized as Top 10 Global Ad Tech Platform.','全球领导地位：2000+全球广告主。每日500亿+展示。服务150+国家。被认可为全球十大广告技术平台。'],
+              ['2018','Founded — Core RTB infrastructure & ML foundation built.','创立——构建核心RTB基础设施和ML基础。'],
+              ['2019','First Partnerships — Beta advertisers & publishers onboarded. London office opens.','首批合作伙伴——Beta广告主和发布商入驻。伦敦办公室开业。'],
+              ['2020','DSP Launch — NexBids DSP goes to general availability. 50+ advertisers in H1.','DSP发布——NexBids DSP正式上线。上半年吸引50+广告主。'],
+              ['2021','Full-Stack Platform — SSP & ADX launch. Singapore office opens.','全栈平台——SSP和ADX上线。新加坡办公室开业。'],
+              ['2022','Scale Milestone — 10,000+ publishers. 100B+ daily bid requests. Tokyo & Beijing offices.','规模里程碑——1万+发布商，1000亿+日竞价请求，东京和北京开设办公室。'],
+              ['2023','AI-First Initiative — Next-gen ML engine launched. Privacy Sandbox integration complete.','AI优先计划——下一代ML引擎发布，隐私沙盒集成完成。'],
+              ['2024','50K Publisher Milestone — $500M+ advertiser spend managed annually.','5万发布商里程碑——每年管理5亿+美元广告支出。'],
+              ['2025','CTV & Audio Expansion — Full CTV, programmatic audio, and DOOH capabilities.','CTV与音频扩展——完整CTV、程序化音频和DOOH能力。'],
+              ['2026','Global Leadership — 50B+ daily impressions. Top 10 Global Ad Tech Platform.','全球领导地位——每日500亿+展示，跻身全球十大广告技术平台。'],
             ].map(([yr,en,zh])=>`
             <div class="timeline-item">
               <div class="timeline-dot"></div>
@@ -7248,29 +7272,29 @@ function renderContact() {
         ${[
           [
             `<span class="gi gi-blue gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>`,
-            'I want to advertise with NexBids','我想在NexBids投放广告','Speak with our advertiser sales team about launching campaigns, pricing, or getting a platform demo.','与我们的广告主销售团队交流，了解启动营销活动、定价或获取平台演示。','Contact Advertiser Sales','联系广告主销售','1 business day','1个工作日'],
+            'I want to advertise with NexBids','我想在NexBids投放广告','Speak with our advertiser sales team about launching campaigns, pricing, or getting a platform demo.','与我们的广告主销售团队交流，了解启动营销活动、定价或获取平台演示。','Contact Advertiser Sales','联系广告主销售','1 business day', '1 business day'],
           [
             `<span class="gi gi-green gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>`,
-            'I want to monetize my traffic','我想变现我的流量','Connect with our publisher partnerships team to discuss SSP integration and monetization strategy.','联系我们的发布商合作伙伴团队，讨论SSP集成和变现策略。','Contact Publisher Team','联系发布商团队','1 business day','1个工作日'],
+            'I want to monetize my traffic','我想变现我的流量','Connect with our publisher partnerships team to discuss SSP integration and monetization strategy.','联系我们的发布商合作伙伴团队，讨论SSP集成和变现策略。','Contact Publisher Team','联系发布商团队','1 business day', '1 business day'],
           [
             `<span class="gi gi-purple gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>`,
-            'I\'m an agency looking to partner','我是一家代理商，希望合作','Talk to our agency partnerships team about commercial arrangements and platform access.','与我们的代理商合作伙伴团队交流商业安排和平台访问。','Contact Agency Partnerships','联系代理商合作伙伴','1 business day','1个工作日'],
+            'I\'m an agency looking to partner','我是一家代理商，希望合作','Talk to our agency partnerships team about commercial arrangements and platform access.','与我们的代理商合作伙伴团队交流商业安排和平台访问。','Contact Agency Partnerships','联系代理商合作伙伴','1 business day', '1 business day'],
           [
             `<span class="gi gi-amber gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17" stroke-width="2.5" stroke-linecap="round"/></svg></span>`,
-            'I need technical support','我需要技术支持','For platform issues, integration questions, or bug reports. Priority support for existing clients.','针对平台问题、集成疑问或缺陷报告。现有客户享受优先支持。','Open Support Ticket','提交支持工单','P1 < 1hr, Std < 4hrs','P1 <1小时，标准 <4小时'],
+            'I need technical support','我需要技术支持','For platform issues, integration questions, or bug reports. Priority support for existing clients.','针对平台问题、集成疑问或缺陷报告。现有客户享受优先支持。','Open Support Ticket','提交支持工单','P1 < 1hr, Std < 4hrs', 'P1 < 1hr, Std < 4hrs'],
           [
             `<span class="gi gi-teal gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg></span>`,
-            'Media & Press Inquiries','媒体与新闻咨询','For journalists, analysts, and media professionals seeking comment, data, or speaking opportunities.','面向寻求评论、数据或演讲机会的记者、分析师和媒体专业人士。','Contact Press Team','联系公关团队','24 hours','24小时'],
+            'Media & Press Inquiries','媒体与新闻咨询','For journalists, analysts, and media professionals seeking comment, data, or speaking opportunities.','面向寻求评论、数据或演讲机会的记者、分析师和媒体专业人士。','Contact Press Team','联系公关团队','24 hours', '24 hours'],
           [
             `<span class="gi gi-neutral gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9" y2="10" stroke-width="2.5" stroke-linecap="round"/><line x1="12" y1="10" x2="12" y2="10" stroke-width="2.5" stroke-linecap="round"/><line x1="15" y1="10" x2="15" y2="10" stroke-width="2.5" stroke-linecap="round"/></svg></span>`,
-            'Something else?','其他问题？','For any other questions, partnership ideas, or feedback. We read everything.','任何其他问题、合作想法或反馈。我们会阅读所有内容。','Send a Message','发送消息','2 business days','2个工作日'],
+            'Something else?','其他问题？','For any other questions, partnership ideas, or feedback. We read everything.','任何其他问题、合作想法或反馈。我们会阅读所有内容。','Send a Message','发送消息','2 business days', '2 business days'],
         ].map(([icon,en,zh,enD,zhD,ctaEn,ctaZh,respEn,respZh])=>`
         <div class="contact-card" style="display:flex;flex-direction:column">
           <div class="contact-icon" style="font-size:inherit;margin-bottom:16px">${icon}</div>
           <h3>${t(en,zh)}</h3>
           <p style="flex:1">${t(enD,zhD)}</p>
           <button class="btn btn-primary" style="width:100%;margin-bottom:10px" onclick="document.getElementById('contactFormSection').scrollIntoView({behavior:'smooth'})">${t(ctaEn,ctaZh)}</button>
-          <div class="contact-response">${t('Typical response:','典型响应时间：')} ${t(respEn,respZh)}</div>
+          <div class="contact-response">${t('Typical response:','典型响应时间：')} ${t(respEn, respZh)}</div>
         </div>`).join('')}
       </div>
 
@@ -7567,57 +7591,66 @@ function closePrivacyModal() {
 /* ─────────────────────────────────────────────
    LOGIN PAGE
 ───────────────────────────────────────────── */
+/* ─────────────────────────────────────────────
+   LOGIN PAGE
+───────────────────────────────────────────── */
+// Multi-language login configuration helper
+const LOGIN_CFG_ML = {
+  dsp: {
+    class:'dsp', badge:'DSP', badgeColor:'#EC4899',
+    subtitle: { en:'Demand-Side Platform', zh:'需求方平台' },
+    tagline: { en:'Reach the world. Drive results.', zh:'触达全球。驱动成果。' },
+    heading: { en:'Sign in to NexBids DSP', zh:'登录 NexBids DSP' },
+    newLink: { en:'New to NexBids DSP? Contact Sales', zh:'NexBids DSP新用户？联系销售' },
+    stats: [['50K+','Advertisers','广告主'],['30+','Ad Formats','广告格式']],
+    quoteEn: 'NexBids DSP transformed our ROAS by 3.2x in just 90 days.',
+    quoteZh: 'NexBids DSP 在短短90天内将我们的ROAS提高了3.2倍。',
+    quoteByEn: '— Marketing Director, Global E-commerce Brand',
+    quoteByZh: '— 全球电商品牌营销总监'
+  },
+  ssp: {
+    class:'ssp', badge:'SSP', badgeColor:'#34D399',
+    subtitle: { en:'Supply-Side Platform', zh:'供应方平台' },
+    tagline: { en:'More demand. More revenue. More control.', zh:'更多需求。更多收益。更多控制。' },
+    heading: { en:'Sign in to NexBids SSP', zh:'登录 NexBids SSP' },
+    newLink: { en:'New publisher? Start Monetizing', zh:'新发布商？开始变现' },
+    stats: [['30K+','Publishers','发布商'],['+52%','Avg eCPM Lift','平均eCPM提升']],
+    quoteEn: 'Our eCPM increased by 67% after implementing NexBids header bidding.',
+    quoteZh: '实现NexBids头部竞价后，我们的eCPM提升了67%。',
+    quoteByEn: '— Publisher Operations Lead, Regional News Network',
+    quoteByZh: '— 区域新闻网络发布商运营负责人'
+  },
+  adx: {
+    class:'adx', badge:'ADX', badgeColor:'#A78BFA',
+    subtitle: { en:'Ad Exchange', zh:'广告交易中枢' },
+    tagline: { en:'The world\'s most transparent programmatic marketplace.', zh:'全球最透明的程序化广告市场。' },
+    heading: { en:'Sign in to NexBids ADX', zh:'登录 NexBids ADX' },
+    newLink: { en:'New ADX partner? Contact ADX Team', zh:'新ADX合作伙伴？联系ADX团队' },
+    stats: [['50B+','Daily Auctions','日竞价'],['<100ms','Bid Response','竞价响应']],
+    quoteEn: 'NexBids ADX provides unmatched transparency and speed in programmatic buying.',
+    quoteZh: 'NexBids ADX在程序化购买中提供无与伦比的透明度和速度。',
+    quoteByEn: '— Ad Operations Director, Premium Publisher Network',
+    quoteByZh: '— 高端发布商网络广告运营总监'
+  }
+};
+
 function renderLogin(platform) {
-  const cfg = {
-    dsp: {
-      class:'dsp', badge:'DSP', badgeColor:'#60A5FA',
-      titleEn:'NexBids DSP', titleZh:'NexBids DSP',
-      subtitleEn:'Demand-Side Platform', subtitleZh:'需求方平台',
-      taglineEn:'Reach the world. Drive results.', taglineZh:'触达全球。驱动成果。',
-      stats:[['50K+','Active Advertisers','活跃广告主'],['150+','Countries','国家'],['$12B+','Annual Spend','年支出']],
-      quoteEn:'"NexBids DSP helped us achieve 4.2x ROAS across our global campaigns."',
-      quoteZh:'"NexBids DSP帮助我们在全球营销活动中实现了4.2x ROAS。"',
-      quoteByEn:'— Head of Performance Marketing, Global E-Commerce Brand',
-      quoteByZh:'— 绩效营销负责人，全球电商品牌',
-      headingEn:'Sign in to NexBids DSP', headingZh:'登录 NexBids DSP',
-      newLinkEn:'New to NexBids DSP? Contact Sales', newLinkZh:'NexBids DSP新用户？联系销售',
-    },
-    ssp: {
-      class:'ssp', badge:'SSP', badgeColor:'#34D399',
-      titleEn:'NexBids SSP', titleZh:'NexBids SSP',
-      subtitleEn:'Supply-Side Platform', subtitleZh:'供应方平台',
-      taglineEn:'More demand. More revenue. More control.', taglineZh:'更多需求。更多收益。更多控制。',
-      stats:[['+52%','Avg eCPM Lift','平均eCPM提升'],['30K+','Publishers','发布商'],['99.5%+','Fill Rate','填充率']],
-      quoteEn:'"Migrating to NexBids SSP increased our monthly ad revenue by 328% in 90 days."',
-      quoteZh:'"迁移至NexBids SSP在90天内使我们的月广告收入增长了328%。"',
-      quoteByEn:'— CEO, Independent Finance News Platform',
-      quoteByZh:'— CEO，独立财经新闻平台',
-      headingEn:'Sign in to NexBids SSP', headingZh:'登录 NexBids SSP',
-      newLinkEn:'New publisher? Start Monetizing', newLinkZh:'新发布商？开始变现',
-    },
-    adx: {
-      class:'adx', badge:'ADX', badgeColor:'#A78BFA',
-      titleEn:'NexBids ADX', titleZh:'NexBids ADX',
-      subtitleEn:'Ad Exchange', subtitleZh:'广告交易中枢',
-      taglineEn:"The world's most transparent programmatic marketplace.", taglineZh:'全球最透明的程序化广告市场。',
-      stats:[['50B+','Daily Auctions','日竞价'],['<100ms','Latency','延迟'],['10K+','Partners','合作伙伴']],
-      quoteEn:'50B+ Daily Impressions | <100ms Latency | 99.9% Uptime',
-      quoteZh:'每日展示500亿+ | 延迟<100ms | 可用性99.9%',
-      quoteByEn:'', quoteByZh:'',
-      headingEn:'Sign in to NexBids ADX', headingZh:'登录 NexBids ADX',
-      newLinkEn:'New ADX partner? Contact ADX Team', newLinkZh:'新ADX合作伙伴？联系ADX团队',
-    },
+  const mlCfg = LOGIN_CFG_ML[platform];
+  const lang = currentLang || "en";
+  const getLocalized = (field) => {
+    if (!mlCfg[field]) return "";
+    return mlCfg[field][lang] || mlCfg[field].en || "";
   };
-  const c = cfg[platform];
+  const c = mlCfg;
   return `
   <div class="login-page">
     <div class="login-left ${c.class}">
       <a onclick="navigate('home')" style="font-size:13px;color:var(--text-muted);margin-bottom:40px;display:inline-block">← ${t('Back to nexbids.com','返回 nexbids.com')}</a>
       <div class="login-platform-badge" style="background:rgba(255,255,255,0.08);color:${c.badgeColor}">
-        ${c.badge} — ${t(c.subtitleEn, c.subtitleZh)}
+        ${c.badge} — ${getLocalized("subtitle")}
       </div>
-      <h2>${t(c.taglineEn, c.taglineZh)}</h2>
-      <p>${t('Welcome back to '+c.titleEn+'. The programmatic platform trusted by thousands of global partners.','欢迎回到'+c.titleZh+'。受全球数千名合作伙伴信赖的程序化广告平台。')}</p>
+      <h2>${getLocalized("tagline")}</h2>
+      <p>${getLocalized('welcome_text')}</p>
       <div class="login-stat-row">
         ${c.stats.map(([n,en,zh])=>`<div class="login-stat"><strong>${n}</strong>${t(en,zh)}</div>`).join('')}
       </div>
@@ -7631,7 +7664,7 @@ function renderLogin(platform) {
         <div style="margin-bottom:24px">
           <img src="nexbids-logo.png" alt="NexBids" height="36" style="display:block;object-fit:contain;max-width:180px;" />
         </div>
-        <h3>${t(c.headingEn,c.headingZh)}</h3>
+        <h3>${getLocalized("heading")}</h3>
         <p>${t('Enter your credentials to access the platform.','输入您的凭据以访问平台。')}</p>
         <div class="form-group">
           <label>${t('Email Address','邮箱地址')}</label>
@@ -7653,7 +7686,7 @@ function renderLogin(platform) {
         </div>
         <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px" onclick="handleLoginSubmit(this,'${platform}')">${t('Sign In','登录')}</button>
         <div class="login-links" style="margin-top:20px">
-          <a onclick="navigate('contact')" style="color:var(--text-muted);font-size:13px">${t(c.newLinkEn,c.newLinkZh)}</a>
+          <a onclick="navigate('contact')" style="color:var(--text-muted);font-size:13px">${getLocalized("newLink")}</a>
           <a onclick="navigate('contact')" style="color:var(--primary-light);font-size:13px;cursor:pointer">${t('Help','帮助')}</a>
         </div>
       </div>
@@ -7908,11 +7941,14 @@ function togglePassword(platform) {
 /* ─────────────────────────────────────────────
    GLOBAL TRAFFIC MAP — CANVAS ANIMATION
 ───────────────────────────────────────────── */
+console.log('[DEBUG] Starting IIFE initGlobalTrafficMap...');
 (function initGlobalTrafficMap() {
+  console.log('[DEBUG] Inside IIFE initGlobalTrafficMap');
   // Run after each page render, only on home page canvas
   let _gtmRAF = null;
   let _gtmObserver = null;
   let _bidCount = 0, _winCount = 0, _adValue = 0;
+  let _bidCountDisplay = 0, _winCountDisplay = 0, _adValueDisplay = 0;
 
   // City nodes — stored as real [longitude, latitude]; pixel coords computed via D3 projection
   const NODES = [
@@ -8197,7 +8233,6 @@ function togglePassword(platform) {
   window._initGTM = function() {
     cancelAnimationFrame(_gtmRAF);
     _bidCount = 0; _winCount = 0; _adValue = 0;
-    _bidCountDisplay = 0; _winCountDisplay = 0; _adValueDisplay = 0;
     particles.length = 0;
     const canvas = document.getElementById('globalTrafficCanvas');
     if (!canvas) return;
@@ -8240,12 +8275,55 @@ function togglePassword(platform) {
     // Also handle resize
     window._gtmResizeHandler = () => { /* canvas auto-resizes in animate() */ };
   };
+  console.log('[DEBUG] IIFE initialization complete - _initGTM function defined');
 })();
+console.log('[DEBUG] IIFE executed successfully');
 
 /* ─────────────────────────────────────────────
    BOOT
 ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('[DEBUG] DOMContentLoaded fired');
+  console.log('[DEBUG] pageContainer element:', !!document.getElementById('pageContainer'));
+  console.log('[DEBUG] navMenu element:', !!document.getElementById('navMenu'));
+  console.log('[DEBUG] footer element:', !!document.getElementById('footer'));
+  
+  // Build navigation menu
+  const navMenu = document.getElementById('navMenu');
+  console.log('[DEBUG] Building nav menu, navMenu element:', !!navMenu);
+  if (navMenu) {
+    navMenu.innerHTML = `
+      <button class="nav-item" onclick="navigate('home')" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">${t('Home', '首页')}</button>
+      <div class="nav-item dropdown" style="position:relative;display:inline-block">
+        <button onclick="document.getElementById('solutionsDropdown').style.display = document.getElementById('solutionsDropdown').style.display === 'none' ? 'block' : 'none'; event.stopPropagation()" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0;display:flex;align-items:center;gap:6px">${t('Solutions', '解决方案')} <span style="font-size:10px">▼</span></button>
+        <div id="solutionsDropdown" class="dropdown-menu" style="position:absolute;top:calc(100% + 8px);left:0;background:#0F1629;border:1px solid rgba(255,255,255,0.1);border-radius:8px;min-width:200px;display:none;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.4)">
+          <a class="dropdown-item" onclick="navigate('solutions-advertiser'); document.getElementById('solutionsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">${t('Advertiser Solutions', '广告主解决方案')}</a>
+          <a class="dropdown-item" onclick="navigate('solutions-publisher'); document.getElementById('solutionsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">${t('Publisher Solutions', '发布商解决方案')}</a>
+          <a class="dropdown-item" onclick="navigate('solutions-agency'); document.getElementById('solutionsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">${t('Agency Solutions', '代理商解决方案')}</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown" style="position:relative;display:inline-block">
+        <button onclick="document.getElementById('productsDropdown').style.display = document.getElementById('productsDropdown').style.display === 'none' ? 'block' : 'none'; event.stopPropagation()" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0;display:flex;align-items:center;gap:6px">${t('Products', '产品')} <span style="font-size:10px">▼</span></button>
+        <div id="productsDropdown" class="dropdown-menu" style="position:absolute;top:calc(100% + 8px);left:0;background:#0F1629;border:1px solid rgba(255,255,255,0.1);border-radius:8px;min-width:200px;display:none;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.4)">
+          <a class="dropdown-item" onclick="navigate('products-dsp'); document.getElementById('productsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">NexBids DSP</a>
+          <a class="dropdown-item" onclick="navigate('products-adx'); document.getElementById('productsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">NexBids ADX</a>
+          <a class="dropdown-item" onclick="navigate('products-ssp'); document.getElementById('productsDropdown').style.display='none'" style="display:block;padding:12px 16px;cursor:pointer;color:inherit;text-decoration:none;transition:background 0.2s">NexBids SSP</a>
+        </div>
+      </div>
+      <button class="nav-item" onclick="navigate('technology')" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">${t('Technology', '技术')}</button>
+      <button class="nav-item" onclick="navigate('resources')" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">${t('Resources', '资源')}</button>
+      <button class="nav-item" onclick="navigate('case-studies')" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">${t('Case Studies', '案例')}</button>
+      <button class="nav-item" onclick="navigate('company')" style="background:none;border:none;color:inherit;font-size:inherit;cursor:pointer;padding:0">${t('Company', '公司')}</button>
+    `;
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        document.getElementById('solutionsDropdown').style.display = 'none';
+        document.getElementById('productsDropdown').style.display = 'none';
+      }
+    });
+  }
+  
   // Build language dropdown list (navbar)
   const langDropdown = document.getElementById('langDropdown');
   if (langDropdown) {
@@ -8260,7 +8338,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
-  // Build language dropdown list (footer)
+  // Build language dropdown list (footer) — only if footer lang dropdown exists
   const langDropdownFooter = document.getElementById('langDropdownFooter');
   if (langDropdownFooter) {
     langDropdownFooter.innerHTML = LANGUAGES.map(lang => `
@@ -8272,6 +8350,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="lang-name">${lang.label}</span>
       </button>
     `).join('');
+  } else {
+    console.log('[DEBUG] langDropdownFooter not found (optional, for footer language selector)');
   }
 
   // Close lang + login dropdowns when clicking outside
@@ -8324,9 +8404,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initFooterAccordion();
 
-  renderPage('home');
-  applyLang();
-  updateNavActive('home');
+  // Generate footer
+  const footer = document.getElementById('footer');
+  console.log('[DEBUG] Before render: footer element:', !!footer);
+  if (footer) {
+    console.log('[DEBUG] Generating footer HTML...');
+    footer.innerHTML = `
+    <div class="container">
+      <div class="footer-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;margin-bottom:40px;">
+        <div class="footer-col">
+          <h4 style="font-weight:700;margin-bottom:12px;cursor:pointer;user-select:none">${t('Solutions', '解决方案')}</h4>
+          <ul style="list-style:none;opacity:0.8">
+            <li><a onclick="navigate('solutions-advertiser')" style="cursor:pointer">${t('For Advertisers', '广告主方案')}</a></li>
+            <li><a onclick="navigate('solutions-publisher')" style="cursor:pointer">${t('For Publishers', '发布商方案')}</a></li>
+            <li><a onclick="navigate('solutions-agency')" style="cursor:pointer">${t('For Agencies', '代理商方案')}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 style="font-weight:700;margin-bottom:12px;cursor:pointer;user-select:none">${t('Products', '产品')}</h4>
+          <ul style="list-style:none;opacity:0.8">
+            <li><a onclick="navigate('products-dsp')" style="cursor:pointer">NexBids DSP</a></li>
+            <li><a onclick="navigate('products-adx')" style="cursor:pointer">NexBids ADX</a></li>
+            <li><a onclick="navigate('products-ssp')" style="cursor:pointer">NexBids SSP</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 style="font-weight:700;margin-bottom:12px;cursor:pointer;user-select:none">${t('Resources', '资源')}</h4>
+          <ul style="list-style:none;opacity:0.8">
+            <li><a onclick="navigate('resources')" style="cursor:pointer">${t('Documentation', '文档')}</a></li>
+            <li><a onclick="navigate('technology')" style="cursor:pointer">${t('Technology', '技术')}</a></li>
+            <li><a onclick="navigate('case-studies')" style="cursor:pointer">${t('Case Studies', '案例')}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 style="font-weight:700;margin-bottom:12px;cursor:pointer;user-select:none">${t('Company', '公司')}</h4>
+          <ul style="list-style:none;opacity:0.8">
+            <li><a onclick="navigate('company')" style="cursor:pointer">${t('About', '关于')}</a></li>
+            <li><a onclick="navigate('careers')" style="cursor:pointer">${t('Careers', '加入我们')}</a></li>
+            <li><a onclick="navigate('contact')" style="cursor:pointer">${t('Contact', '联系我们')}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+        <div>
+          <div id="footerTagline" style="font-size:14px;opacity:0.8;margin-bottom:8px"></div>
+          <div id="footerCopyright" style="font-size:12px;opacity:0.6"></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center">
+          <div id="langSelectorFooter" style="position:relative">
+            <button id="langBtnFooter" onclick="toggleLangDropdownFooter()" style="background:none;border:1px solid rgba(255,255,255,0.2);padding:6px 12px;border-radius:4px;color:inherit;cursor:pointer;font-size:12px"></button>
+            <div id="langDropdownFooter" style="position:absolute;bottom:calc(100% + 8px);right:0;background:#0F1629;border:1px solid #333;border-radius:8px;min-width:150px;display:none;z-index:100"></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  console.log('[DEBUG] Before renderPage: renderHome is:', typeof renderHome);
+  console.log('[DEBUG] Before renderPage: currentPage is:', currentPage);
+  console.log('[DEBUG] Before renderPage: pageContainer is:', !!document.getElementById('pageContainer'));
+  
+  try {
+    console.log('[DEBUG] About to call renderPage("home")');
+    renderPage('home');
+    console.log('[DEBUG] After renderPage - success!');
+  } catch (e) {
+    console.error('[ERROR] renderPage failed:', e.message);
+    console.error('[ERROR] Stack:', e.stack);
+    // Fallback: show error message
+    const container = document.getElementById('pageContainer');
+    if (container) {
+      container.innerHTML = `<div style="padding: 100px 32px; text-align: center; color: #f00;">Error loading page: ${e.message}</div>`;
+    }
+  }
+  
+  try {
+    applyLang();
+    console.log('[DEBUG] After applyLang');
+  } catch (e) {
+    console.error('[ERROR] applyLang failed:', e.message);
+  }
+  
+  try {
+    updateNavActive('home');
+    console.log('[DEBUG] After updateNavActive');
+  } catch (e) {
+    console.error('[ERROR] updateNavActive failed:', e.message);
+  }
+  
+  console.log('[DEBUG] DOMContentLoaded complete');
 });
 
 

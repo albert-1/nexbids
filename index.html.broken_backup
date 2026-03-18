@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexBids - Programmatic Advertising Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="nav-logo">
+        <span class="logo-icon">◆</span>
+        <span>NexBids</span>
+      </div>
+
+      <!-- Menu -->
+      <div id="navMenu" class="nav-menu"></div>
+
+      <!-- Right side: lang selector + login -->
+      <div style="display: flex; gap: 12px; align-items: center; margin-left: auto;">
+        <!-- Language Selector -->
+        <div id="langSelector" style="position: relative;">
+          <button id="langBtn" style="background: none; border: none; color: inherit; cursor: pointer; padding: 6px 8px; font-size: 16px;">🌐</button>
+          <div id="langDropdown" style="position: absolute; top: calc(100% + 8px); right: 0; background: #0F1629; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; min-width: 140px; display: none; z-index: 1001;"></div>
+        </div>
+
+        <!-- Login Button / Dropdown -->
+        <div id="loginDropdownWrap" style="position: relative;">
+          <button id="loginBtn" onclick="toggleLoginDropdown()" style="background: linear-gradient(135deg, #0057FF 0%, #7C3AED 100%); color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 6px;">
+            Login <span style="font-size: 10px;">▼</span>
+          </button>
+          <div id="loginDropdown" style="position: absolute; top: calc(100% + 8px); right: 0; background: #0F1629; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; min-width: 160px; display: none; z-index: 1001; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+            <a onclick="navigate('login')" style="display: block; padding: 12px 16px; color: inherit; text-decoration: none; cursor: pointer; transition: background 0.2s;">Sign In</a>
+            <a onclick="navigate('register')" style="display: block; padding: 12px 16px; color: inherit; text-decoration: none; cursor: pointer; transition: background 0.2s; border-top: 1px solid rgba(255,255,255,0.1);">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="pageContainer" style="background: #080C16; color: #F9FAFB; min-height: calc(100vh - 76px);"></main>
+
+  <!-- Footer -->
+  <footer id="footer" style="background: #0F1629; border-top: 1px solid rgba(255,255,255,0.08);"></footer>
+
+  <!-- Back to top button -->
+  <button id="backToTop" style="position: fixed; bottom: 32px; right: 32px; width: 48px; height: 48px; background: rgba(0,87,255,0.8); border: 1px solid rgba(0,87,255,0.4); border-radius: 6px; color: white; cursor: pointer; opacity: 0; transition: all 0.3s; z-index: 999; display: none; align-items: center; justify-content: center; font-size: 20px; backdrop-filter: blur(12px);" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+
+  <!-- Script to show initial loading state -->
+  <script>
+    window.addEventListener('error', function(e) {
+      console.error('GLOBAL ERROR:', e.message, e.filename, e.lineno);
+      document.getElementById('pageContainer').innerHTML = `<div style="padding: 50px; background: #f00; color: #fff;"><h2>Error Loading App</h2><p>${e.message}</p><p>${e.filename}:${e.lineno}</p></div>`;
+    });
+    document.getElementById('pageContainer').innerHTML = '<div style="padding: 200px 32px; text-align: center; color: #999;">Loading...</div>';
+  </script>
+
+  <!-- Main app script -->
+  <script src="app.js" onerror="document.getElementById('pageContainer').innerHTML = '<div style=\'padding: 50px; background: #f00; color: #fff;\'>Failed to load app.js</div>'"></script>
+</body>
+</html>

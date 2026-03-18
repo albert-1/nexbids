@@ -1585,7 +1585,7 @@ const CONTENT_T = {
     pt:'Para Compradores',
     fr:'Pour les Acheteurs',
     ja:'バイヤー向け',
-    zh:'为买方'
+    
   },
   'For Sellers': {
     es:'Para Vendedores',
@@ -1658,7 +1658,7 @@ const CONTENT_T = {
     pt:'Fluxo de Leilão RTB',
     fr:'Flux d\'Enchères RTB',
     ja:'RTBオークションフロー',
-    zh:'RTB竞价流程'
+    
   },
   'Privacy & Security': {
     es:'Privacidad y Seguridad',
@@ -1731,7 +1731,7 @@ const CONTENT_T = {
     pt:'Missão e Valores',
     fr:'Mission et Valeurs',
     ja:'ミッションと価値観',
-    zh:'使命与价值观'
+    
   },
   'Leadership Team': {
     zh:'领导团队',
@@ -1876,7 +1876,7 @@ const CONTENT_T = {
     pt:'Formatos de Anúncios Suportados',
     fr:'Formats Publicitaires Supportés',
     ja:'対応広告フォーマット数',
-    zh:'平均CPA降低'
+    
   },
   'Avg eCPM Lift for New Publishers': {
     es:'Aumento Prom. de eCPM para Nuevos Pub.',
@@ -1949,7 +1949,7 @@ const CONTENT_T = {
     pt:'Parceiros Integrados',
     fr:'Partenaires Intégrés',
     ja:'連携パートナー数',
-    zh:'竞价胜出透明度'
+    
   },
   'Audience Segments': {
     es:'Segmentos de Audiencia',
@@ -2022,7 +2022,7 @@ const CONTENT_T = {
     pt:'Regiões Globais de Data Centers',
     fr:'Régions de Centres de Données Mondiaux',
     ja:'グローバルデータセンター地域数',
-    zh:'发布商收益管理额'
+    
   },
   'Global PoP Network': {
     es:'Red Global de PoP',
@@ -2103,7 +2103,7 @@ const CONTENT_T = {
     pt:'Pronto para Maximizar Sua Receita?',
     fr:'Prêt à Maximiser Vos Revenus?',
     ja:'収益を最大化する準備はできていますか？',
-    zh:"准备好最大化您的收益了吗？"
+    zh:'启动您的首个DSP广告活动'
   },
   'Want to Go Deeper?': {
     es:'¿Quiere Profundizar?',
@@ -2112,7 +2112,7 @@ const CONTENT_T = {
     pt:'Quer Se Aprofundar?',
     fr:'Vous Voulez Aller Plus Loin?',
     ja:'さらに詳しく知りたいですか？',
-    zh:"想要深入了解？"
+    zh:'与NexBids ADX集成'
   },
   'Want Results Like These?': {
     es:'¿Quiere Resultados Como Estos?',
@@ -2167,7 +2167,7 @@ const CONTENT_T = {
     pt:'Comece Gratuitamente',
     fr:'Commencer Gratuitement',
     ja:'無料で始める',
-    zh:'准备好变革您的广告业务了吗？'
+    
   },
   'Talk to Sales': {
     es:'Hablar con Ventas',
@@ -2240,6 +2240,7 @@ const CONTENT_T = {
     pt:'Candidate-se hoje para acessar preços por volume, opções de white-label e suporte dedicado.',
     fr:'Candidatez aujourd\'hui pour accéder aux tarifs de volume, aux options white-label et au support agence dédié.',
     ja:'ボリュームプライシング、ホワイトラベルオプション、専任エージェンシーサポートにアクセスするために今すぐ申し込む。',
+    
   },
   'Apply Now': {
     es:'Aplicar Ahora',
@@ -2312,7 +2313,7 @@ const CONTENT_T = {
     pt:'Ver Documentação de Integração',
     fr:'Voir la Documentation d\'Intégration',
     ja:'統合ドキュメントを見る',
-    zh:"查看集成文档"
+    
   },
   'Our engineering team is happy to discuss the technical details of our infrastructure and integration options.': {
     zh:'我们的工程团队很乐意讨论我们基础设施的技术细节和集成选项。',
@@ -2330,7 +2331,7 @@ const CONTENT_T = {
     pt:'Falar com a Engenharia',
     fr:'Parler à l\'Ingénierie',
     ja:'エンジニアリングに問い合わせる',
-    zh:"与工程团队交谈"
+    zh:'加入30,000+使用NexBids SSP的发布商，几分钟内即可开始。'
   },
   'Join thousands of advertisers and publishers already achieving breakthrough growth with NexBids.': {
     es:'Únase a miles de anunciantes y publicadores que ya logran un crecimiento sin precedentes con NexBids.',
@@ -2394,7 +2395,7 @@ const CONTENT_T = {
     pt:'Contatar Nossa Equipe',
     fr:'Contacter Notre Équipe',
     ja:'チームに連絡する',
-    zh:'探索DSP'
+    
   },
   'Advertiser Revenue Driven': {
     es:'Ingresos de Anunciantes Generados',
@@ -2610,7 +2611,7 @@ const CONTENT_T = {
     pt:'Inovação Incansável',
     fr:'Innovation Sans Relâche',
     ja:'絶え間ないイノベーション',
-    zh:"不懈创新"
+    zh:'全球推出DSP+ADX'
   },
   'Global Perspective': {
     es:'Perspectiva Global',
@@ -2619,7 +2620,7 @@ const CONTENT_T = {
     pt:'Perspectiva Global',
     fr:'Perspective Mondiale',
     ja:'グローバルな視点',
-    zh:"全球视野"
+    zh:'每日500亿次竞价里程碑'
   },
   'Application Review': {
     es:'Revisión de Solicitud',
@@ -2628,7 +2629,7 @@ const CONTENT_T = {
     pt:'Revisão de Candidatura',
     fr:'Examen de Candidature',
     ja:'書類選考',
-    zh:"申请审核"
+    zh:'150+国家，驱动20亿美元+收益'
   },
   'Intro Call': {
     es:'Llamada Introductoria',
@@ -2637,7 +2638,7 @@ const CONTENT_T = {
     pt:'Chamada Introdutória',
     fr:'Appel d\'Introduction',
     ja:'初回面談',
-    zh:"初步通话"
+    zh:'全栈生态，500+团队'
   },
   'Technical / Skills Interview': {
     es:'Entrevista Técnica / de Habilidades',
@@ -2655,7 +2656,7 @@ const CONTENT_T = {
     pt:'Entrevista com a Equipe',
     fr:'Entretien d\'Équipe',
     ja:'チーム面接',
-    zh:"团队面试"
+    zh:'彻底透明'
   },
   'Offer': {
     es:'Oferta',
@@ -2664,7 +2665,7 @@ const CONTENT_T = {
     pt:'Oferta',
     fr:'Offre',
     ja:'内定',
-    zh:"录用通知"
+    zh:'持续创新'
   },
   'Annual Spend': {
     es:'Gasto Anual',
@@ -2700,7 +2701,7 @@ const CONTENT_T = {
     pt:'Redução de CPA',
     fr:'Réduction CPA',
     ja:'CPA削減',
-    zh:"CPA降低"
+    zh:'初步沟通'
   },
   'Revenue Lift': {
     es:'Mejora de Ingresos',
@@ -2709,7 +2710,7 @@ const CONTENT_T = {
     pt:'Aumento de Receita',
     fr:'Hausse des Revenus',
     ja:'収益向上',
-    zh:"收益提升"
+    zh:'技术/技能面试'
   },
   'eCPM Growth': {
     es:'Crecimiento de eCPM',
@@ -2718,7 +2719,7 @@ const CONTENT_T = {
     pt:'Crescimento de eCPM',
     fr:'Croissance eCPM',
     ja:'eCPM成長',
-    zh:"eCPM增长"
+    zh:'团队面试'
   },
   'Global Cases': {
     es:'Casos Globales',
@@ -2727,7 +2728,7 @@ const CONTENT_T = {
     pt:'Casos Globais',
     fr:'Cas Mondiaux',
     ja:'グローバル事例',
-    zh:"全球案例"
+    zh:'录用通知'
   },
   'CPA Drop': {
     es:'Caída de CPA',
@@ -2736,7 +2737,7 @@ const CONTENT_T = {
     pt:'Queda de CPA',
     fr:'Baisse CPA',
     ja:'CPA低下',
-    zh:"CPA下降"
+    zh:'年度支出'
   },
   'Revenue': {
     zh:'收益',
@@ -2773,7 +2774,7 @@ const CONTENT_T = {
     pt:'Taxa de Preenchimento',
     fr:'Taux de Remplissage',
     ja:'フィルレート',
-    zh:'收益提升'
+    
   },
   'Rev Tripled': {
     es:'Ingresos Triplicados',
@@ -2809,7 +2810,8 @@ const CONTENT_T = {
     hi:'LTV सकारात्मक',
     pt:'LTV Positivo',
     fr:'LTV Positif',
-    ja:'LTVプラス'
+    ja:'LTVプラス',
+    
   },
   'Scaled Up': {
     zh:'已扩展',
@@ -2842,7 +2844,7 @@ const CONTENT_T = {
     zh:'增至三倍',
     es:'Triplicado',
     ar:'تضاعف ثلاثة أضعاف',
-    zh:'翻三倍',
+    ,
     hi:'तीन गुना',
     pt:'Triplicado',
     fr:'Triplé',
@@ -2936,7 +2938,7 @@ const CONTENT_T = {
     pt:'Lançamento do DSP — NexBids DSP chega à disponibilidade geral. 50+ anunciantes no H1.',
     fr:'Lancement DSP — NexBids DSP en disponibilité générale. 50+ annonceurs au S1.',
     ja:'DSPローンチ — NexBids DSPが一般提供開始。上半期に50社以上の広告主を獲得。',
-    zh:'DSP推出 — NexBids DSP正式上线。上半年获得50+广告主。'
+    zh:'横幅+视频'
   },
   'Full-Stack Platform — SSP & ADX launch. Singapore office opens.': {
     es:'Plataforma Full-Stack — Lanzamiento de SSP y ADX. Apertura de la oficina de Singapur.',
@@ -2945,7 +2947,7 @@ const CONTENT_T = {
     pt:'Plataforma Full-Stack — Lançamento de SSP e ADX. Abertura do escritório de Singapura.',
     fr:'Plateforme Full-Stack — Lancement SSP & ADX. Ouverture du bureau de Singapour.',
     ja:'フルスタックプラットフォーム — SSP・ADXローンチ。シンガポールオフィス開設。',
-    zh:"全栈平台 — SSP和ADX推出。新加坡办公室开设。"
+    zh:'激励广告'
   },
   'Scale Milestone — 10,000+ publishers. 100B+ daily bid requests. Tokyo & Beijing offices.': {
     es:'Hito de Escala — 10,000+ publicadores. 100B+ solicitudes de puja diarias. Oficinas en Tokio y Pekín.',
@@ -2954,7 +2956,7 @@ const CONTENT_T = {
     pt:'Marco de Escala — 10.000+ publicadores. 100B+ solicitações de lance diárias. Escritórios em Tóquio e Pequim.',
     fr:'Jalon de Croissance — 10 000+ éditeurs. 100B+ demandes d\'enchères quotidiennes. Bureaux à Tokyo et Pékin.',
     ja:'スケールマイルストーン — 10,000社以上のパブリッシャー。1日1,000億件以上の入札。東京・北京オフィス開設。',
-    zh:"规模里程碑 — 10,000+发布商。每日100B+出价请求。东京和北京办公室。"
+    zh:'创建账户'
   },
   'AI-First Initiative — Next-gen ML engine launched. Privacy Sandbox integration complete.': {
     es:'Iniciativa AI-First — Motor ML de próxima generación lanzado. Integración de Privacy Sandbox completada.',
@@ -2963,7 +2965,7 @@ const CONTENT_T = {
     pt:'Iniciativa AI-First — Motor ML de próxima geração lançado. Integração do Privacy Sandbox concluída.',
     fr:'Initiative AI-First — Moteur ML nouvelle génération lancé. Intégration Privacy Sandbox complète.',
     ja:'AI-ファーストイニシアチブ — 次世代MLエンジンローンチ。Privacy Sandbox統合完了。',
-    zh:"AI优先计划 — 推出下一代ML引擎。Privacy Sandbox集成完成。"
+    zh:'添加您的广告资源'
   },
   '50K Publisher Milestone — $500M+ advertiser spend managed annually.': {
     es:'Hito de 50K Publicadores — $500M+ de gasto de anunciantes gestionado anualmente.',
@@ -2972,7 +2974,7 @@ const CONTENT_T = {
     pt:'Marco de 50K Publicadores — $500M+ de gastos de anunciantes gerenciados anualmente.',
     fr:'Jalon 50K Éditeurs — $500M+ de dépenses annonceurs gérées annuellement.',
     ja:'5万社パブリッシャーマイルストーン — 年間5億ドル以上の広告主支出を管理。',
-    zh:"5万发布商标杆 — 每年管理5亿美元以上广告主支出。"
+    zh:'集成'
   },
   'CTV & Audio Expansion — Full CTV, programmatic audio, and DOOH capabilities.': {
     es:'Expansión CTV y Audio — Capacidades completas de CTV, audio programático y DOOH.',
@@ -2981,7 +2983,7 @@ const CONTENT_T = {
     pt:'Expansão CTV e Áudio — Capacidades completas de CTV, áudio programático e DOOH.',
     fr:'Expansion CTV & Audio — Capacités CTV complètes, audio programmatique et DOOH.',
     ja:'CTV・オーディオ拡張 — 完全なCTV、プログラマティックオーディオ、DOOH対応。',
-    zh:"CTV和音频扩展 — 完整的CTV、程序化音频和DOOH功能。"
+    zh:'开始盈利'
   },
   'Global Leadership — 50B+ daily impressions. Top 10 Global Ad Tech Platform.': {
     es:'Liderazgo Global — 50B+ impresiones diarias. Top 10 Plataforma de Ad Tech.',
@@ -2990,7 +2992,7 @@ const CONTENT_T = {
     pt:'Liderança Global — 50B+ impressões diárias. Top 10 Plataforma de Ad Tech Global.',
     fr:'Leadership Mondial — 50B+ impressions quotidiennes. Top 10 Plateforme Ad Tech.',
     ja:'グローバルリーダーシップ — 1日500億以上のインプレッション。グローバルアドテクプラットフォームトップ10。',
-    zh:"全球领导地位 — 500亿+日展示量。全球十大广告技术平台。"
+    zh:'创立——核心RTB基础设施与ML基础构建完成。'
   },
   'San Francisco + Barcelona': {
     zh:'旧金山 + 巴塞罗那',
@@ -3054,7 +3056,7 @@ const CONTENT_T = {
     pt:'<100ms',
     fr:'<100ms',
     ja:'100ms未満',
-    zh:'5万发布商里程碑——年度管理广告支出超过5亿美元。'
+    
   },
   '50B+/day': {
     es:'50B+/día',
@@ -3118,7 +3120,7 @@ const CONTENT_T = {
     pt:'30K+ Editores',
     fr:'30K+ Éditeurs',
     ja:'30K+パブリッシャー',
-    zh:'30K+发布商'
+    zh:'24%广告活动'
   },
   '50B+ Daily Impressions | <100ms Latency | 99.9% Uptime': {
     es:'50B+ Impresiones Diarias | <100ms Latencia | 99.9% Disponibilidad',
@@ -3127,7 +3129,7 @@ const CONTENT_T = {
     pt:'50B+ Impressões Diárias | <100ms Latência | 99.9% Disponibilidade',
     fr:'50B+ Impressions Quotidiennes | <100ms Latence | 99.9% Disponibilité',
     ja:'50B+日次インプレッション | <100msレイテンシ | 99.9%稼働率',
-    zh:'500亿+日展示量 | <100ms延迟 | 99.9%在线率'
+    zh:'14%广告活动'
   },
   '50K+ Advertisers': {
     es:'50K+ Anunciantes',
@@ -3136,7 +3138,7 @@ const CONTENT_T = {
     pt:'50K+ Anunciantes',
     fr:'50K+ Annonceurs',
     ja:'50K+広告主',
-    zh:'50K+广告主'
+    zh:'500亿以上'
   },
   'ADX Routing': {
     zh:'ADX路由',
@@ -3190,7 +3192,7 @@ const CONTENT_T = {
     pt:'Anunciantes e Agências',
     fr:'Annonceurs et Agences',
     ja:'広告主とエージェンシー',
-    zh:'广告主和代理商'
+    zh:'"迁移到NexBids SSP后，我们的月度广告收益在90天内增长了328%。"'
   },
   'Advertisers & Brands': {
     zh:'广告主和品牌',
@@ -3208,7 +3210,7 @@ const CONTENT_T = {
     pt:'Parcerias com Agências',
     fr:'Partenariats Agences',
     ja:'エージェンシーパートナーシップ',
-    zh:'代理商合作伙伴'
+    zh:'"NexBids DSP帮助我们在全球营销活动中实现了4.2倍的ROAS。"'
   },
   'Auction': {
     es:'Subasta',
@@ -3217,7 +3219,7 @@ const CONTENT_T = {
     pt:'Leilão',
     fr:'Enchère',
     ja:'オークション',
-    zh:'拍卖'
+    zh:'30,000+发布商'
   },
   'Avg Bid Response': {
     es:'Respuesta de Puja Promedio',
@@ -3308,7 +3310,7 @@ const CONTENT_T = {
     pt:'Mercados',
     fr:'Marchés',
     ja:'マーケット',
-    zh:'广告主和品牌'
+    
   },
   'Measurement & Analytics': {
     es:'Medición y Analítica',
@@ -3362,7 +3364,7 @@ const CONTENT_T = {
     pt:'Os modelos ML da NexBids pontuam o preço do lance e a probabilidade de conversão',
     fr:'Les modèles ML de NexBids évaluent le prix de l\'offre et la probabilité de conversion',
     ja:'NexBids MLモデルが入札価格とコンバージョン確率をスコアリングします',
-    zh:'NexBids ML模型对出价价格和转化概率进行评分'
+    zh:'格式'
   },
   'North America': {
     zh:'北美',
@@ -3380,7 +3382,7 @@ const CONTENT_T = {
     pt:'OpenRTB 2.6 Nativo',
     fr:'OpenRTB 2.6 Natif',
     ja:'OpenRTB 2.6 ネイティブ',
-    zh:'OpenRTB 2.6 原生'
+    zh:'地理覆盖范围'
   },
   'Peak Bid Throughput': {
     es:'Rendimiento Máximo de Pujas',
@@ -3389,7 +3391,7 @@ const CONTENT_T = {
     pt:'Throughput Máximo de Lances',
     fr:'Débit de Pointe des Offres',
     ja:'ピーク入札スループット',
-    zh:'峰值竞价吞吐量'
+    zh:'行业报告'
   },
   'Platform Docs': {
     es:'Documentación de Plataforma',
@@ -3398,7 +3400,7 @@ const CONTENT_T = {
     pt:'Documentação da Plataforma',
     fr:'Documentation Plateforme',
     ja:'プラットフォームドキュメント',
-    zh:'平台文档'
+    zh:'Kubernetes'
   },
   'Prebid.js': {
     es:'Prebid.js',
@@ -3407,7 +3409,7 @@ const CONTENT_T = {
     pt:'Prebid.js',
     fr:'Prebid.js',
     ja:'Prebid.js',
-    zh:'Prebid.js'
+    zh:'拉丁美洲'
   },
   'Publisher Partnerships': {
     es:'Asociaciones con Editores',
@@ -3416,7 +3418,7 @@ const CONTENT_T = {
     pt:'Parcerias com Editores',
     fr:'Partenariats Éditeurs',
     ja:'パブリッシャーパートナーシップ',
-    zh:'发布商合作伙伴'
+    zh:'市场基础设施'
   },
   'SE Asia': {
     zh:'东南亚',
@@ -3443,7 +3445,7 @@ const CONTENT_T = {
     pt:'Segmentos',
     fr:'Segments',
     ja:'セグメント',
-    zh:'细分'
+    zh:'媒体和新闻'
   },
   'Sub-100ms Bid Processing': {
     zh:'100毫秒以下竞价处理',
@@ -3497,7 +3499,7 @@ const CONTENT_T = {
     pt:'Soluções de segmentação sem cookies prontas para um futuro em conformidade com privacidade.',
     fr:'Solutions de ciblage sans cookies prêtes pour un avenir respectueux de la vie privée.',
     ja:'プライバシー準拠の未来に向けたクッキーレスターゲティングソリューション。',
-    zh:'为符合隐私的未来准备的无Cookie定向解决方案。'
+    zh:'北美'
   },
   'Technical Support': {
     es:'Soporte Técnico',
@@ -3506,7 +3508,7 @@ const CONTENT_T = {
     pt:'Suporte Técnico',
     fr:'Support Technique',
     ja:'テクニカルサポート',
-    zh:'技术支持'
+    zh:'OpenRTB 2.6原生'
   },
   'Traffic Quality Score': {
     es:'Puntuación de Calidad de Tráfico',
@@ -3515,7 +3517,7 @@ const CONTENT_T = {
     pt:'Pontuação de Qualidade de Tráfego',
     fr:'Score de Qualité du Trafic',
     ja:'トラフィッククオリティスコア',
-    zh:'流量质量评分'
+    zh:'峰值竞价吞吐量'
   },
   'User loads page/app; SSP fires bid request': {
     es:'El usuario carga la página/app; SSP envía solicitud de puja',
@@ -3524,7 +3526,7 @@ const CONTENT_T = {
     pt:'Usuário carrega a página/app; SSP envia solicitação de lance',
     fr:'L\'utilisateur charge la page/app ; le SSP envoie une demande d\'enchère',
     ja:'ユーザーがページ/アプリを読み込む; SSPが入札リクエストを送信',
-    zh:'用户加载页面/应用; SSP发起出价请求'
+    zh:'平台文档'
   },
   'Winner Notified': {
     zh:'赢家已通知',
@@ -3566,7 +3568,8 @@ const CONTENT_T = {
     th:'คำขอ/วิ',
     vi:'yêu cầu/s',
     hi:'अनुरोध/से',
-    ar:'طلب/ثانية'
+    ar:'طلب/ثانية',
+    
   },
   'countries': {
     es:'países',
@@ -3581,7 +3584,8 @@ const CONTENT_T = {
     th:'ประเทศ',
     vi:'quốc gia',
     hi:'देश',
-    ar:'دولة'
+    ar:'دولة',
+    
   },
   'formats': {
     es:'formatos',
@@ -3596,7 +3600,8 @@ const CONTENT_T = {
     th:'รูปแบบ',
     vi:'định dạng',
     hi:'प्रारूप',
-    ar:'تنسيق'
+    ar:'تنسيق',
+    
   },
   'quality': {
     es:'calidad',
@@ -3627,7 +3632,7 @@ const CONTENT_T = {
     vi:'phản hồi',
     hi:'प्रतिक्रिया',
     ar:'استجابة',
-    zh:'为隐私合规的未来准备的无Cookie定向解决方案。'
+    
   },
   'Revenue +400%': {
     es:'Ingresos +400%',
@@ -3643,7 +3648,7 @@ const CONTENT_T = {
     vi:'Doanh thu +400%',
     hi:'राजस्व +400%',
     ar:'الإيرادات +400%',
-    zh:'流量质量评分'
+    
   },
   'Revenue +145%': {
     es:'Ingresos +145%',
@@ -3659,7 +3664,7 @@ const CONTENT_T = {
     vi:'Doanh thu +145%',
     hi:'राजस्व +145%',
     ar:'الإيرادات +145%',
-    zh:'通知胜出者'
+    
   },
   'Revenue x3': {
     es:'Ingresos x3',

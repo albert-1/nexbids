@@ -16,19 +16,13 @@ let currentPage = 'home';
 ───────────────────────────────────────────── */
 const LANGUAGES = [
   { code: 'en',  label: 'English',    flag: '🇺🇸', dir: 'ltr' },
-  { code: 'es',  label: 'Español',    flag: '🇪🇸', dir: 'ltr' },
-  { code: 'fr',  label: 'Français',   flag: '🇫🇷', dir: 'ltr' },
-  { code: 'de',  label: 'Deutsch',    flag: '🇩🇪', dir: 'ltr' },
-  { code: 'pt',  label: 'Português',  flag: '🇧🇷', dir: 'ltr' },
-  { code: 'ru',  label: 'Русский',    flag: '🇷🇺', dir: 'ltr' },
   { code: 'zh',  label: '中文',        flag: '🇨🇳', dir: 'ltr' },
-  { code: 'ko',  label: '한국어',      flag: '🇰🇷', dir: 'ltr' },
-  { code: 'ja',  label: '日本語',      flag: '🇯🇵', dir: 'ltr' },
-  { code: 'ms',  label: 'Melayu',     flag: '🇲🇾', dir: 'ltr' },
-  { code: 'th',  label: 'ภาษาไทย',   flag: '🇹🇭', dir: 'ltr' },
-  { code: 'vi',  label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr' },
-  { code: 'hi',  label: 'हिन्दी',     flag: '🇮🇳', dir: 'ltr' },
+  { code: 'es',  label: 'Español',    flag: '🇪🇸', dir: 'ltr' },
   { code: 'ar',  label: 'العربية',    flag: '🇸🇦', dir: 'rtl' },
+  { code: 'hi',  label: 'हिन्दी',     flag: '🇮🇳', dir: 'ltr' },
+  { code: 'pt',  label: 'Português',  flag: '🇧🇷', dir: 'ltr' },
+  { code: 'fr',  label: 'Français',   flag: '🇫🇷', dir: 'ltr' },
+  { code: 'ja',  label: '日本語',      flag: '🇯🇵', dir: 'ltr' },
 ];
 
 /* Core UI strings translated to all 14 languages */
@@ -46,6 +40,76 @@ const UI_STRINGS = {
   // Footer
   copyright:    { en:'© 2026 NexBids. All rights reserved.', es:'© 2026 NexBids. Todos los derechos reservados.', fr:'© 2026 NexBids. Tous droits réservés.', de:'© 2026 NexBids. Alle Rechte vorbehalten.', pt:'© 2026 NexBids. Todos os direitos reservados.', ru:'© 2026 NexBids. Все права защищены.', zh:'© 2026 NexBids. 保留所有权利。', ko:'© 2026 NexBids. 모든 권리 보유.', ja:'© 2026 NexBids. 全ての権利を保有。', ms:'© 2026 NexBids. Hak cipta terpelihara.', th:'© 2026 NexBids. สงวนสิทธิ์ทั้งหมด', vi:'© 2026 NexBids. Đã đăng ký bản quyền.', hi:'© 2026 NexBids. सर्वाधिकार सुरक्षित।', ar:'© 2026 NexBids. جميع الحقوق محفوظة.' },
   tagline:      { en:"Power Your Growth with Intelligent Programmatic", es:'Impulsa Tu Crecimiento con Programática Inteligente', fr:'Boostez Votre Croissance avec la Programmatique Intelligente', de:'Steigern Sie Ihr Wachstum mit intelligenter Programmatik', pt:'Impulsione Seu Crescimento com Programática Inteligente', ru:'Ускорьте Рост с Интеллектуальной Программатикой', zh:'用智能程序化广告驱动增长', ko:'지능형 프로그래매틱으로 성장을 가속하세요', ja:'インテリジェントなプログラマティックで成長を加速', ms:'Pacu Pertumbuhan Anda dengan Programatik Cerdas', th:'เร่งการเติบโตของคุณด้วย Programmatic อัจฉริยะ', vi:'Thúc Đẩy Tăng Trưởng với Programmatic Thông Minh', hi:'इंटेलिजेंट प्रोग्रामेटिक से अपनी ग्रोथ बढ़ाएं', ar:'عزّز نموك بالإعلانات البرمجية الذكية' },
+
+  // About
+  mission: { en:'To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.', zh:'让全球最优秀的程序化广告技术人人可及——赋能所有广告主、发布商和代理机构，无论规模大小，都能在全球数字经济中竞争、成长并取得成功。', es:'Democratizar el acceso a la mejor tecnología publicitaria programática del mundo — empoderando a cada anunciante, editor y agencia, independientemente de su tamaño, para competir, crecer y tener éxito en la economía digital global.', fr:'Démocratiser l\'accès à la meilleure technologie publicitaire programmatique au monde — donner à chaque annonceur, éditeur et agence, quelle que soit sa taille, les moyens de concurrencer, grandir et réussir dans l\'économie numérique mondiale.', de:'Demokratisierung des Zugangs zur weltweit besten programmatic Advertising-Technologie — jeder Werbetreibende, Publisher und Agentur wird befähigt, unabhängig von der Größe, im globalen digitalen Markt zu konkurrieren, zu wachsen und erfolgreich zu sein.', pt:'Democratizar o acesso à melhor tecnologia de publicidade programática do mundo — capacitar cada anunciante, editor e agência, independentemente do tamanho, a competir, crescer e ter sucesso na economia digital global.', ru:'Демократизация доступа к лучшим технологиям программатической рекламы в мире — придание возможностей каждому рекламодателю, издателю и агентству, независимо от размера, конкурировать, расти и добиваться успеха в глобальной цифровой экономике.', ko:'세계 최고의 프로그래매틱 광고 기술에 대한 접근을 민주화하여 — 모든 광고주, 게시자 및 에이전시, 규모에 상관없이, 글로벌 디지털 경제에서 경쟁하고, 성장하고 성공할 수 있도록 지원합니다.', ja:'世界最高のプログラマティック広告テクノロジーへのアクセスを民主化し — すべての広告主、パブリッシャー、エージェンシー、規模に関係なく、グローバルデジタル経済で競争し、成長し、成功できるよう支援します。', ms:'Demokratikan akses kepada teknologi pengiklanan programatik terbaik di dunia — memberdayakan setiap pengiklan, penerbit dan agensi, tanpa mengira saiz, untuk bersaing, berkembang dan berjaya dalam ekonomi digital global.', th:'ทำให้เข้าถึงเทคโนโลยีโฆษณาแบบโปรแกรมเมติกที่ดีที่สุดในโลกได้ง่ายขึ้น — ให้พลังแก่ผู้โฆษณา ผู้เผยแพร่ และบริษัท PR ทุกคน ไม่ว่าขนาดจะเล็กหรือใหญ่ สามารถแข่งขัน เติบโต และประสบความสำเร็จในเศรษฐกิจดิจิทัลทั่วโลก', vi:'Dân chủ hóa quyền truy cập công nghệ quảng cáo programmatic tốt nhất thế giới — trao quyền cho mọi nhà quảng cáo, nhà xuất bản và đại lý, bất kể quy mô, để cạnh tranh, phát triển và thành công trong nền kinh tế kỹ thuật số toàn cầu.', hi:'दुनिया की सर्वोत्तम प्रोग्रामेटिक विज्ञापन तकनीक तक पहुंच को लोकतांत्रिक बनाना — हर विज्ञापनदाता, प्रकाशक और एजेंसी को आकार की परवाह किए बिना वैश्विक डिजिटल अर्थव्यवस्था में प्रतिस्पर्धा, विकास और सफलता के लिए सशक्त बनाना।', ar:'إتاحة الوصول الديمقراطي إلى أفضل تقنيات الإعلانات البرمجية في العالم — تمكين كل معلن وناشر ووكالة، بغض النظر عن الحجم، للمنافسة والنمو والنجاح في الاقتصاد الرقمي العالمي.' },
+
+  // Technology
+  fastBidResponse: { en:'<80ms Bid Response', zh:'<80毫秒竞价响应', es:'<80ms Respuesta de Oferta', fr:'<80ms Réponse Offre', de:'<80ms Gebotsantwort', pt:'<80ms Resposta da Oferta', ru:'<80мс Ответ на ставку', ko:'<80ms 입찰 응답', ja:'<80ms 入札応答', ms:'<80ms Tindak Balas Bidaan', th:'<80ms การตอบสนองการประมูล', vi:'<80ms Phản hồi Đấu giá', hi:'<80ms बिड प्रतिक्रिया', ar:'<80ms استجابة العرض' },
+  aiPlatformProcess: { en:'Our AI platform processes trillions of historical auction signals to power real-time optimization across every dimension of programmatic advertising.', zh:'我们的AI平台处理数万亿历史竞价信号，为程序化广告的每个维度提供实时优化支持。', es:'Nuestra plataforma AI procesa billones de señales históricas de subastas para impulsar la optimización en tiempo real en todas las dimensiones de la publicidad programática.', fr:'Notre plateforme IA traite des billions de signaux d\'enchères historiques pour alimenter l\'optimisation en temps réel dans toutes les dimensions de la publicité programmatique.', de:'Unsere KI-Plattform verarbeitet Billionen historischer Auktions-Signale für Echtzeitoptimierung aller Dimensionen des programmatic Marketings.', pt:'Nossa plataforma AI processa trilhões de sinais históricos de leilões para alimentar otimização em tempo real em todas as dimensões da publicidade programática.', ru:'Наша платформа AI обрабатывает триллионы исторических сигналов аукционов для обеспечения оптимизации в реальном времени по всем измерениям программатической рекламы.', ko:'우리의 AI 플랫폼은 수조 개의 역경매 신호를 처리하여 프로그래매틱 광고의 모든 차원에서 실시간 최적화를 제공합니다.', ja:'当社のAIプラットフォームは数兆の過去のオークションシグナルを処理し、プログラマティック広告のあらゆる次元でリアルタイム最適化を駆動します。', ms:'Platform AI kami memproses trilionan isyarat lelongan bersejarah untuk memberdayakan pengoptimuman masa nyata merentasi setiap dimensi pengiklanan programatik.', th:'แพลตฟอร์ม AI ของเราประมวลผลสัญญาณประมูลในประวัติศาสตร์จำนวนล้านล้านครั้งเพื่อขับเคลื่อนการเพิ่มประสิทธิภาพแบบเรียลไทม์ทุกมิติของโฆษณาแบบโปรแกรมเมติก', vi:'Nền tảng AI của chúng tôi xử lý hàng nghìn tỷ tín hiệu đấu giá lịch sử để thúc đẩy tối ưu hóa theo thời gian thực trên mọi khía cạnh của quảng cáo programmatic.', hi:'हमारा AI प्लेटफ़ॉर्म ट्रिलियन ऐतिहासिक नीलामी संकेतों को संसाधित करता है ताकि प्रोग्रामेटिक विज्ञापन के हर आयाम में रीयल-टाइम अनुकूलन का समर्थन किया जा सके।', ar:'تقوم منصة AI الخاصة بنا بمعالجة تريليونات من إشارات المزادات التاريخية لدعم التحسين في الوقت الفعلي عبر جميع أبعاد الإعلانات البرمجية.' },
+  proprietaryAI: { en:'Our proprietary AI/ML infrastructure processes 50 billion bid requests daily, making real-time optimization decisions in under 100 milliseconds.', zh:'我们专有的AI/ML基础设施每天处理500亿次竞价请求，在100毫秒内做出实时优化决策。', es:'Nuestra infraestructura AI/ML propietaria procesa 50 mil millones de solicitudes de oferta diarias, tomando decisiones de optimización en tiempo real en menos de 100 milisegundos.', fr:'Notre infrastructure AI/ML propriétaire traite 50 milliards de demandes d\'offres quotidiennes, prenant des décisions d\'optimisation en temps réel en moins de 100 millisecondes.', de:'Unsere proprietäre KI/ML-Infrastruktur verarbeitet täglich 50 Milliarden Gebotsanfragen und trifft Echtzeitoptimierungsentscheidungen in unter 100 Millisekunden.', pt:'Nossa infraestrutura AI/ML proprietária processa 50 bilhões de solicitações de oferta diárias, tomando decisões de otimização em tempo real em menos de 100 milissegundos.', ru:'Наша собственная AI/ML инфраструктура обрабатывает ежедневно 50 миллиардов запросов ставок, принимая решения по оптимизации в реальном времени менее чем за 100 миллисекунд.', ko:'우리의 독자적 AI/ML 인프라는 매일 500억 개의 입찰 요청을 처리하며, 100ms 미만의 실시간 최적화 결정을 내립니다.', ja:'当社の独自AI/MLインフラは日次で500億件の入札リクエストを処理し、100ミリ秒未満でリアルタイム最適化決定を行います。', ms:'Infrastruktur AI/ML milik kami memproses 50 bilion permintaan bidaan harian, membuat keputusan pengoptimuman masa nyata dalam bawah 100 milisaat.', th:'โครงสร้าง AI/ML ที่เป็นกรรมสิทธิ์ของเราประมวลผลคำขอการประมูล 50,000 ล้านครั้งต่อวัน ทำการตัดสินใจการเพิ่มประสิทธิภาพแบบเรียลไทม์ภายใน 100 มิลลิวินาที', vi:'Cơ sở hạ tầng AI/ML độc quyền của chúng tôi xử lý 50 tỷ yêu cầu đấu giá hàng ngày, đưa ra quyết định tối ưu hóa theo thời gian thực trong dưới 100 mili-giây.', hi:'हमारा स्वामित्व वाला AI/ML इन्फ्रास्ट्रक्चर रोजाना 50 बिलियन बिड अनुरोधों को प्रोसेस करता है और 100 मिलीसेकंड से कम समय में रीयल-टाइम अनुकूलन निर्णय लेता है।', ar:'تقوم بنية AI/ML المملوكة لنا بمعالجة 50 مليار طلب عروض يوميًا، مع اتخاذ قرارات التحسين في الوقت الفعلي في أقل من 100 ميلي ثانية.' },
+
+  // Platform descriptions
+  dscPlatformDesc: { en:'The AI-powered demand-side platform built for performance. Reach the right audiences across 150+ countries, optimize to your KPIs in real time, and scale campaigns with confidence.', zh:'专为效果打造的AI驱动需求方平台。覆盖150+国家的精准受众，实时优化至您的KPI，有信心地扩展营销活动。', es:'La plataforma del lado de la demanda con IA para rendimiento. Alcanza las audiencias correctas en más de 150 países, optimiza hacia tus KPIs en tiempo real y escala campañas con confianza.', fr:'La plateforme côté demande alimentée par IA pour la performance. Atteignez les bonnes audiences dans plus de 150 pays, optimisez selon vos KPIs en temps réel et développez vos campagnes en toute confiance.', de:'Die KI-gesteuerte Demand-Side-Plattform für Performance. Erreichen Sie die richtigen Zielgruppen in über 150 Ländern, optimieren Sie auf Ihre KPIs in Echtzeit und skalieren Sie Kampagnen mit Zuversicht.', pt:'A plataforma do lado da demanda com IA para desempenho. Alcance as audiências certas em mais de 150 países, otimize para seus KPIs em tempo real e escale campanhas com confiança.', ru:'Платформа на стороне спроса на базе ИИ для эффективности. Охватите правильные аудитории в более чем 150 странах, оптимизируйте по вашим KPI в реальном времени и масштабируйте кампании с уверенностью.', ko:'성과를 위한 AI 기반 수요측 플랫폼. 150+ 국가의 올바른 오디언스에 도달하고, 실시간으로 KPI에 맞게 최적화하며, 자신감 있게 캠페인을 확장하세요.', ja:'パフォーマンスのためのAI駆動デマンドサイドプラットフォーム。150以上の国で適切なオーディエンスに到達し、リアルタイムでKPIに最適化し、自信を持ってキャンペーンをスケーリングできます。', ms:'Platform sisi permintaan dengan AI untuk prestasi. Capai khalayak yang betul di 150+ negara, optimum kepada KPI anda pada masa nyata dan skala kempen dengan yakin.', th:'แพลตฟอร์มด้านความต้องการที่ขับเคลื่อนด้วย AI สำหรับประสิทธิภาพ สามารถเข้าถึงผู้ชมที่เหมาะสมใน 150+ ประเทศ ปรับให้เหมาะสมกับ KPI ของคุณแบบเรียลไทม์ และขยายแคมเปญด้วยความมั่นใจ', vi:'Nền tảng phía cầu được hỗ trợ bởi AI dành cho hiệu suất. Tiếp cận đúng khán giả tại hơn 150 quốc gia, tối ưu hóa theo KPI của bạn theo thời gian thực và mở rộng chiến dịch với sự tự tin.', hi:'प्रदर्शन के लिए निर्मित AI-संचालित डिमांड-साइड प्लेटफॉर्म। 150+ देशों में सही दर्शकों तक पहुंचें, रीयल-टाइम में अपने KPI के अनुसार अनुकूलित करें, और आत्मविश्वास के साथ अभियानों को स्केल करें।', ar:'منصة الطلب المدعومة بالذكاء الاصطناعي للأداء. الوصول إلى الجماهير المناسبة في أكثر من 150 دولة، وتحسين وفقًا لمؤشرات الأداء الرئيسية الخاصة بك في الوقت الفعلي، وتوسيع الحملات بثقة.' },
+  adxPlatformDesc: { en:'The high-performance, neutral ad exchange connecting premium supply with quality demand — processing 50 billion auctions daily with sub-100ms latency.', zh:'高性能、中立广告交易平台，连接优质供应与优质需求——每天处理500亿次竞价，延迟低于100毫秒。', es:'El intercambio de anuncios de alto rendimiento y neutral conectando suministro premium con demanda de calidad — procesando 50 mil millones de subastas diarias con latencia menor a 100ms.', fr:'L\'échange publicitaire haute performance et neutre connectant l\'offre premium à la demande de qualité — traitant 50 milliards d\'enchères quotidiennes avec une latence inférieure à 100ms.', de:'Der Hochleistungs-, neutrale Ad-Exchange, der Premium-Inventory mit Qualitätsnachfrage verbindet — verarbeitet täglich 50 Milliarden Auktionen mit einer Latenz unter 100ms.', pt:'A exchange de anúncios de alto desempenho e neutro conectando oferta premium com demanda de qualidade — processando 50 bilhões de leilões diários com latência abaixo de 100ms.', ru:'Высокопроизводительная, нейтральная рекламная биржа, соединяющая премиальный инвентарь с качественным спросом — обрабатывает 50 миллиардов аукционов ежедневно с задержкой менее 100 мс.', ko:'고성능, 중립적 광고 거래소로 프리미엄 공급을 품질 높은 수요와 연결합니다 — 100ms 미만의 대기 시간으로 하루 500억 회의 경매를 처리합니다.', ja:'高性能、ニュートラルな広告エクスチェンジで、プレミアムサプライとクオリティデマンドを接続 — 100ms未満のレイテンシで日次500億オークションを処理。', ms:'Exchange iklan berprestasi tinggi dan neutral yang menghubungkan bekalan premium dengan permintaan berkualiti — memproses 50 bilion lelongan harian dengan latensi bawah 100ms.', th:'ตลาดแลกเปลี่ยนโฆษณาประสิทธิภาพสูงและเป็นกลางที่เชื่อมต่ออุปทานพรีเมียมกับความต้องการคุณภาพสูง — ประมวลผลการประมูล 50,000 ล้านครั้งต่อวันด้วยเวลาแฝงต่ำกว่า 100ms', vi:'Sàn giao dịch quảng cáo hiệu suất cao và trung lập kết nối cung ứng cao cấp với nhu cầu chất lượng — xử lý 50 tỷ đấu giá hàng ngày với độ trễ dưới 100 mili-giây.', hi:'उच्च-प्रदर्शन, तटस्थ विज्ञापन एक्सचेंज जो प्रीमियम सप्लाई को गुणवत्ता वाली डिमांड के साथ जोड़ता है — 100ms से कम लैटेंसी के साथ रोजाना 50 बिलियन नीलामियां संसाधित करता है।', ar:'بورصة الإعلانات عالية الأداء والمحايدة التي تربط بين العرض المتميز والطلب المتميز — تعالج 50 مليار مزاد يوميًا بزمن استجابة أقل من 100 ميلي ثانية.' },
+  sspPlatformDesc: { en:'The intelligent supply-side platform that maximizes publisher revenue through header bidding, AI yield optimization, direct deal access, and seamless SDK integration.', zh:'智能供应方平台，通过头部竞价、AI收益优化、直接交易访问和无缝SDK集成最大化发布商收益。', es:'La plataforma del lado de la oferta inteligente que maximiza los ingresos de los editores a través de header bidding, optimización de ingresos con IA, acceso a tratos directos e integración de SDK fluida.', fr:'La plateforme côté offre intelligente qui maximise les revenus des éditeurs grâce au header bidding, l\'optimisation des revenus par IA, l\'accès aux transactions directes et l\'intégration SDK transparente.', de:'Die intelligente Supply-Side-Plattform, die Publisher-Einnahmen durch Header Bidding, KI-Ertragsoptimierung, Direct-Deal-Zugang und nahtlose SDK-Integration maximiert.', pt:'A plataforma do lado da oferta inteligente que maximiza os receitas dos editores através de header bidding, otimização de receitas com IA, acesso a negócios diretos e integração de SDK contínua.', ru:'Интеллектуальная платформа на стороне предложения, которая максимизирует доходы издателей через header bidding, AI-оптимизацию доходов, доступ к прямым сделкам и бесшовную интеграцию SDK.', ko:'지능형 공급측 플랫폼으로 헤더 비딩, AI 수익 최적화, 직거래 접근 및 매끄러운 SDK 통합을 통해 퍼블리셔 수익을 극대화합니다.', ja:'ヘッダービディング、AI収益最適化、ダイレクトディールアクセス、シームレスなSDK統合により、パブリッシャーの収益を最大化するインテリジェントなサプライサイドプラットフォーム。', ms:'Platform sisi penawaran pintar yang memaksimumkan pendapatan penerbit melalui pembidaan tajuk, pengoptimuman hasil AI, akses urusan terus dan integrasi SDK yang lancar.', th:'แพลตฟอร์มด้านอุปทานอัจฉริยะที่ขยายผลกำไรของผู้เผยแพร่ให้สูงสุดผ่าน header bidding การปรับให้เหมาะสมผลกำไร AI การเข้าถึงการแลกเปลี่ยนโดยตรง และการผสานรวม SDK อย่างราบรื่น', vi:'Nền tảng phía cung cấp thông minh tối đa hóa doanh thu của nhà xuất bản thông qua header bidding, tối ưu hóa doanh thu AI, quyền truy cập giao dịch trực tiếp và tích hợp SDK liền mạch.', hi:'इंटेलिजेंट सप्लाई-साइड प्लेटफॉर्म जो हेडर बिडिंग, AI यील्ड ऑप्टिमाइज़ेशन, डायरेक्ट डील एक्सेस और सीमलेस SDK एकीकरण के माध्यम से पब्लिशर राजस्व को अधिकतम करता है।', ar:'منصة العرض الذكية التي تعظم إيرادات الناشرين من خلال العطاءات الرأسية، وتحسين العائد بالذكاء الاصطناعي، والوصول إلى الصفقات المباشرة، والتكامل السلس لبرمجة التطوير البرمجية (SDK).' },
+
+  // Solutions
+  agencySolutions: { en:'NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.', zh:'NexBids代理解决方案为效果导向和全案代理机构提供工具、定价和支持，赢得更多客户，交付卓越的程序化广告效果。', es:'Las Soluciones de Agencia NexBids dan a las agencias de desempeño y de servicio completo las herramientas, precios y soporte para ganar más clientes y entregar resultados programáticos excepcionales.', fr:'Les Solutions d\'Agence NexBids donnent aux agences de performance et de service complet les outils, tarifs et support pour gagner plus de clients et livrer des résultats programmatiques exceptionnels.', de:'NexBids Agenturlösungen geben Performance- und Fullservice-Agenturen die Werkzeuge, Preise und den Support, um mehr Kunden zu gewinnen und außergewöhnliche programmatische Ergebnisse zu liefern.', pt:'As Soluções de Agência NexBids dão às agências de desempenho e de serviço completo as ferramentas, preços e suporte para ganhar mais clientes e entregar resultados programáticos excepcionais.', ru:'Решения NexBids для агентств предоставляют перформанс- и фуллсервис-агентствам инструменты, цены и поддержку для привлечения большего числа клиентов и выдачи исключительных результатов программатической рекламы.', ko:'NexBids 에이전시 솔루션은 성과 및 풀서비스 에이전시에 더 많은 클라이언트를 확보하고 우수한 프로그래매틱 성과를 제공하는 데 필요한 도구, 가격 및 지원을 제공합니다.', ja:'NexBids エージェンシーソリューションは、パフォーマンスエージェンシーとフルサービスエージェンシーに、より多くのクライアントを獲得し、卓越したプログラマティック成果を提供するためのツール、価格、サポートを提供します。', ms:'Penyelesaian Agensi NexBids memberikan agensi prestasi dan layanan penuh alat, harga dan sokongan untuk memenangi lebih ramai pelanggan dan menghantar hasil programatik yang luar biasa.', th:'โซลูชันสำหรับบริษัท PR ของ NexBids มอบเครื่องมือ ราคา และการสนับสนุนให้กับบริษัท PR ด้านประสิทธิภาพและบริการเต็มรูปแบบ เพื่อชนะลูกค้ามากขึ้นและส่งมอบผลลัพธ์แบบโปรแกรมเมติกที่ยอดเยี่ยม', vi:'Giải pháp Đại lý NexBids cung cấp cho các đại lý hiệu suất và dịch vụ đầy đủ các công cụ, định giá và hỗ trợ để giành được nhiều khách hàng hơn và mang lại kết quả programmatic xuất sắc.', hi:'NexBids एजेंसी समाधान परफॉरमेंस और फुल-सर्विस एजेंसियों को अधिक क्लाइंट्स जीतने और उत्कृष्ट प्रोग्रामेटिक परिणाम देने के लिए टूल्स, प्राइसिंग और सपोर्ट प्रदान करते हैं।', ar:'توفر حلول NexBids للوكالات أدواتًا وأسعارًا ودعمًا لوكالات الأداء والخدمة الكاملة للفوز بالمزيد من العملاء وتقديم نتائج إعلانية برمجية استثنائية.' },
+
+  // Case Studies
+  discoverHow: { en:'Discover how global brands, app developers, publishers, and agencies use NexBids to drive measurable, sustainable growth.', zh:'了解全球品牌、应用开发者、发布商和代理机构如何使用 NexBids 推动可衡量、可持续的增长。', es:'Descubra cómo marcas globales, desarrolladores de aplicaciones, editores y agencias usan NexBids para impulsar un crecimiento medible y sostenible.', fr:'Découvrez comment les marques mondiales, développeurs d\'apps, éditeurs et agences utilisent NexBids pour stimuler une croissance mesurable et durable.', de:'Entdecken Sie, wie globale Marken, App-Entwickler, Publisher und Agenturen NexBids nutzen, um messbares, nachhaltiges Wachstum zu erreichen.', pt:'Descubra como marcas globais, desenvolvedores de apps, editores e agências usam NexBids para impulsionar um crescimento mensurável e sustentável.', ru:'Узнайте, как глобальные бренды, разработчики приложений, издатели и агентства используют NexBids для достижения измеримого, устойчивого роста.', ko:'글로벌 브랜드, 앱 개발자, 퍼블리셔 및 에이전시가 NexBids를 사용하여 측정 가능하고 지속 가능한 성장을 어떻게 달성하는지 알아보세요.', ja:'グローバルブランド、アプリデベロッパー、パブリッシャー、エージェンシーがどのように NexBids を使用して測定可能で持続可能な成長を実現しているかを発見しましょう。', ms:'Temui bagaimana jenama global, pembangun aplikasi, penerbit dan agensi menggunakan NexBids untuk memacu pertumbuhan yang boleh diukur dan mampan.', th:'ค้นพบว่าแบรนด์ทั่วโลก นักพัฒนาแอป ผู้เผยแพร่ และบริษัท PR ใช้ NexBids เพื่อขับเคลื่อนการเติบโตที่วัดได้และยั่งยืนอย่างไร', vi:'Khám phá cách các thương hiệu toàn cầu, nhà phát triển ứng dụng, nhà xuất bản và đại lý sử dụng NexBids để thúc đẩy tăng trưởng có thể đo lường và bền vững.', hi:'जानें कि वैश्विक ब्रांड, ऐप डेवलपर्स, पब्लिशर्स और एजेंसियां NexBids का उपयोग करके मापने योग्य और स्थायी विकास कैसे चला रहे हैं।', ar:'اكتشف كيف تستخدم العلامات التجارية العالمية ومطورو التطبيقات والناشرون والوكالات NexBids لدفع النمو القابل للقياس والمستدام.' },
+
+  // ─── Visual/Dashboard Labels ───
+  'NexBids Ecosystem': { en:'NexBids Ecosystem', zh:'NexBids 生态系统', es:'Ecosistema NexBids', fr:'Écosystème NexBids', de:'NexBids Ökosystem', pt:'Ecossistema NexBids', ru:'Экосистема NexBids', ko:'NexBids 생태계', ja:'NexBids エコシステム', ms:'Ekosistem NexBids', th:'ระบบนิเวศ NexBids', vi:'Hệ Sinh Thái NexBids', hi:'NexBids इकोसिस्टम', ar:'نظام بيئي NexBids' },
+  'Campaign Performance': { en:'Campaign Performance', zh:'活动性能', es:'Desempeño de Campaña', fr:'Performance de Campagne', de:'Kampagnenleistung', pt:'Desempenho da Campanha', ru:'Производительность кампании', ko:'캠페인 성과', ja:'キャンペーン成果', ms:'Prestasi Kempen', th:'ประสิทธิภาพแคมเปญ', vi:'Hiệu Suất Chiến Dịch', hi:'अभियान प्रदर्शन', ar:'أداء الحملة' },
+  'ROAS': { en:'ROAS', zh:'ROAS', es:'ROAS', fr:'ROAS', de:'ROAS', pt:'ROAS', ru:'ROAS', ko:'ROAS', ja:'ROAS', ms:'ROAS', th:'ROAS', vi:'ROAS', hi:'ROAS', ar:'ROAS' },
+  'CPA': { en:'CPA', zh:'CPA', es:'CPA', fr:'CPA', de:'CPA', pt:'CPA', ru:'CPA', ko:'CPA', ja:'CPA', ms:'CPA', th:'CPA', vi:'CPA', hi:'CPA', ar:'CPA' },
+  'CTR': { en:'CTR', zh:'CTR', es:'CTR', fr:'CTR', de:'CTR', pt:'CTR', ru:'CTR', ko:'CTR', ja:'CTR', ms:'CTR', th:'CTR', vi:'CTR', hi:'CTR', ar:'CTR' },
+  'Countries': { en:'Countries', zh:'国家', es:'Países', fr:'Pays', de:'Länder', pt:'Países', ru:'Страны', ko:'국가', ja:'国', ms:'Negara', th:'ประเทศ', vi:'Quốc gia', hi:'देश', ar:'دولة' },
+  'Optimizer': { en:'Optimizer', zh:'优化器', es:'Optimizador', fr:'Optimiseur', de:'Optimierer', pt:'Otimizador', ru:'Оптимизатор', ko:'최적화기', ja:'オプティマイザー', ms:'Pengoptimum', th:'ตัวเพิ่มประสิทธิภาพ', vi:'Trình Tối Ưu Hóa', hi:'ऑप्टिमाइज़र', ar:'أداة التحسين' },
+  'Ad Formats': { en:'Ad Formats', zh:'广告格式', es:'Formatos de Anuncio', fr:'Formats de Publicité', de:'Anzeigenformate', pt:'Formatos de Anúncio', ru:'Форматы объявлений', ko:'광고 형식', ja:'広告フォーマット', ms:'Format Iklan', th:'รูปแบบโฆษณา', vi:'Định Dạng Quảng Cáo', hi:'विज्ञापन प्रारूप', ar:'تنسيقات الإعلانات' },
+  'Publisher Revenue Dashboard': { en:'Publisher Revenue Dashboard', zh:'发布商收入仪表板', es:'Panel de Ingresos del Editor', fr:'Tableau de Bord des Revenus de l\'Éditeur', de:'Publisher-Umsatz-Dashboard', pt:'Painel de Receita do Editor', ru:'Панель доходов издателя', ko:'퍼블리셔 수익 대시보드', ja:'パブリッシャー収益ダッシュボード', ms:'Papan Pemuka Pendapatan Penerbit', th:'แดชบอร์ดรายได้ผู้เผยแพร่', vi:'Bảng Điều Khiển Thu Nhập Nhà Xuất Bản', hi:'प्रकाशक राजस्व डैशबोर्ड', ar:'لوحة تحكم إيرادات الناشر' },
+  'Fill Rate': { en:'Fill Rate', zh:'填充率', es:'Tasa de Relleno', fr:'Taux de Remplissage', de:'Füllrate', pt:'Taxa de Preenchimento', ru:'Процент заполнения', ko:'채우기 비율', ja:'フィル率', ms:'Kadar Isian', th:'อัตราการเติม', vi:'Tỷ Lệ Lấp Đầy', hi:'भरण दर', ar:'معدل الملء' },
+  'REVENUE BY FORMAT': { en:'REVENUE BY FORMAT', zh:'按格式划分的收入', es:'INGRESOS POR FORMATO', fr:'REVENUS PAR FORMAT', de:'UMSATZ NACH FORMAT', pt:'RECEITA POR FORMATO', ru:'ДОХОД ПО ФОРМАТУ', ko:'형식별 수익', ja:'形式別収益', ms:'PENDAPATAN MENGIKUT FORMAT', th:'รายได้ตามรูปแบบ', vi:'THU NHẬP THEO ĐỊNH DẠNG', hi:'प्रारूप के अनुसार राजस्व', ar:'الإيرادات حسب الصيغة' },
+  'Active Publishers': { en:'Active Publishers', zh:'活跃发布商', es:'Editores Activos', fr:'Éditeurs Actifs', de:'Aktive Herausgeber', pt:'Editores Ativos', ru:'Активные издатели', ko:'활성 퍼블리셔', ja:'アクティブなパブリッシャー', ms:'Penerbit Aktif', th:'ผู้เผยแพร่ที่ใช้งาน', vi:'Nhà Xuất Bản Hoạt Động', hi:'सक्रिय प्रकाशक', ar:'الناشرون النشطون' },
+  'Demand Sources': { en:'Demand Sources', zh:'需求来源', es:'Fuentes de Demanda', fr:'Sources de Demande', de:'Nachfragequellen', pt:'Fontes de Demanda', ru:'Источники спроса', ko:'수요 출처', ja:'需要ソース', ms:'Sumber Permintaan', th:'แหล่งความต้องการ', vi:'Nguồn Cầu', hi:'मांग स्रोत', ar:'مصادر الطلب' },
+  'Active Clients': { en:'Active Clients', zh:'活跃客户', es:'Clientes Activos', fr:'Clients Actifs', de:'Aktive Kunden', pt:'Clientes Ativos', ru:'Активные клиенты', ko:'활성 클라이언트', ja:'アクティブなクライアント', ms:'Klien Aktif', th:'ลูกค้าที่ใช้งาน', vi:'Khách Hàng Hoạt Động', hi:'सक्रिय ग्राहक', ar:'العملاء النشطون' },
+  'Monthly Spend': { en:'Monthly Spend', zh:'月支出', es:'Gasto Mensual', fr:'Dépenses Mensuelles', de:'Monatliche Ausgaben', pt:'Despesas Mensais', ru:'Ежемесячные затраты', ko:'월간 지출', ja:'月間支出', ms:'Perbelanjaan Bulanan', th:'รายจ่ายรายเดือน', vi:'Chi Phí Hàng Tháng', hi:'मासिक व्यय', ar:'النفقات الشهرية' },
+  'Avg ROAS': { en:'Avg ROAS', zh:'平均 ROAS', es:'ROAS Promedio', fr:'ROAS Moyen', de:'Durchschn. ROAS', pt:'ROAS Médio', ru:'Средн. ROAS', ko:'평균 ROAS', ja:'平均 ROAS', ms:'ROAS Purata', th:'ROAS เฉลี่ย', vi:'ROAS Trung Bình', hi:'औसत ROAS', ar:'متوسط ROAS' },
+  'Volume Pricing': { en:'Volume Pricing', zh:'批量定价', es:'Precios por Volumen', fr:'Tarification au Volume', de:'Mengenpreise', pt:'Preços por Volume', ru:'Объёмные цены', ko:'볼륨 가격', ja:'ボリューム価格', ms:'Harga Volum', th:'ราคาตามปริมาณ', vi:'Giá Theo Khối Lượng', hi:'मात्रा मूल्य निर्धारण', ar:'تسعير حسب الحجم' },
+  'API Access': { en:'API Access', zh:'API 访问权限', es:'Acceso API', fr:'Accès API', de:'API-Zugriff', pt:'Acesso à API', ru:'Доступ к API', ko:'API 접근', ja:'APIアクセス', ms:'Akses API', th:'การเข้าถึง API', vi:'Truy Cập API', hi:'एपीआई प्रवेशाधिकार', ar:'وصول API' },
+  'NexBids Full Stack': { en:'NexBids Full Stack', zh:'NexBids 完整堆栈', es:'NexBids Pila Completa', fr:'NexBids Pile Complète', de:'NexBids Vollständiger Stack', pt:'NexBids Pilha Completa', ru:'Полный стек NexBids', ko:'NexBids 풀 스택', ja:'NexBids フルスタック', ms:'NexBids Tumpukan Lengkap', th:'NexBids สแต็กเต็ม', vi:'NexBids Ngăn Xếp Đầy Đủ', hi:'NexBids पूर्ण स्टैक', ar:'كومة NexBids الكاملة' },
+
+  // ─── Additional Dashboard Labels ───
+  'RESPONSE TIME': { en:'RESPONSE TIME', zh:'响应时间', es:'TIEMPO DE RESPUESTA', fr:'TEMPS DE RÉPONSE', de:'ANTWORTZEIT', pt:'TEMPO DE RESPOSTA', ru:'ВРЕМЯ ОТКЛИКА', ko:'응답 시간', ja:'応答時間', ms:'MASA TINDAK BALAS', th:'เวลาการตอบสนอง', vi:'THỜI GIAN PHẢN HỒI', hi:'प्रतिक्रिया समय', ar:'وقت الاستجابة' },
+  'AI BIDDING STRATEGY': { en:'AI BIDDING STRATEGY', zh:'AI 竞价策略', es:'ESTRATEGIA DE PUJA CON IA', fr:'STRATÉGIE D\'ENCHÈRES IA', de:'KI-BIETERSTRATEGIE', pt:'ESTRATÉGIA DE LANCE COM IA', ru:'СТРАТЕГИЯ ТОРГОВ НА ОСНОВЕ ИИ', ko:'AI 입찰 전략', ja:'AI入札戦略', ms:'STRATEGI PEMBIDAAN AI', th:'กลยุทธ์การเสนอราคา AI', vi:'CHIẾN LƯỢC BID AI', hi:'AI बोली देने की रणनीति', ar:'استراتيجية العطاءات بالذكاء الاصطناعي' },
+  'DSP': { en:'DSP', zh:'DSP', es:'DSP', fr:'DSP', de:'DSP', pt:'DSP', ru:'DSP', ko:'DSP', ja:'DSP', ms:'DSP', th:'DSP', vi:'DSP', hi:'DSP', ar:'DSP' },
+  'Buyers': { en:'Buyers', zh:'买家', es:'Compradores', fr:'Acheteurs', de:'Käufer', pt:'Compradores', ru:'Покупатели', ko:'구매자', ja:'買い手', ms:'Pembeli', th:'ผู้ซื้อ', vi:'Người Mua', hi:'खरीदार', ar:'المشترون' },
+  'ADX': { en:'ADX', zh:'ADX', es:'ADX', fr:'ADX', de:'ADX', pt:'ADX', ru:'ADX', ko:'ADX', ja:'ADX', ms:'ADX', th:'ADX', vi:'ADX', hi:'ADX', ar:'ADX' },
+  'Exchange': { en:'Exchange', zh:'交易所', es:'Intercambio', fr:'Échange', de:'Börse', pt:'Câmbio', ru:'Обмен', ko:'교환', ja:'交換', ms:'Pertukaran', th:'การแลกเปลี่ยน', vi:'Trao Đổi', hi:'विनिमय', ar:'التبادل' },
+  'SSP': { en:'SSP', zh:'SSP', es:'SSP', fr:'SSP', de:'SSP', pt:'SSP', ru:'SSP', ko:'SSP', ja:'SSP', ms:'SSP', th:'SSP', vi:'SSP', hi:'SSP', ar:'SSP' },
+  'Sellers': { en:'Sellers', zh:'卖家', es:'Vendedores', fr:'Vendeurs', de:'Verkäufer', pt:'Vendedores', ru:'Продавцы', ko:'판매자', ja:'売り手', ms:'Penjual', th:'ผู้ขาย', vi:'Người Bán', hi:'विक्रेता', ar:'البائعون' },
+  'PMP Deals': { en:'PMP Deals', zh:'PMP 交易', es:'Acuerdos PMP', fr:'Accords PMP', de:'PMP-Vereinbarungen', pt:'Negócios PMP', ru:'Приватные сделки', ko:'PMP 거래', ja:'PMP取引', ms:'Perjanjian PMP', th:'ข้อตกลง PMP', vi:'Thỏa Thuận PMP', hi:'PMP सौदे', ar:'صفقات PMP' },
+  'FILL RATE': { en:'FILL RATE', zh:'填充率', es:'TASA DE RELLENO', fr:'TAUX DE REMPLISSAGE', de:'FÜLLRATE', pt:'TAXA DE PREENCHIMENTO', ru:'ПРОЦЕНТ ЗАПОЛНЕНИЯ', ko:'채우기 비율', ja:'フィル率', ms:'KADAR ISIAN', th:'อัตราการเติม', vi:'TỶ LỆ LẤP ĐẦY', hi:'भरण दर', ar:'معدل الملء' },
+  'GLOBAL DATA CENTERS': { en:'GLOBAL DATA CENTERS', zh:'全球数据中心', es:'CENTROS DE DATOS GLOBALES', fr:'CENTRES DE DONNÉES MONDIAUX', de:'GLOBALE RECHENZENTREN', pt:'CENTROS DE DADOS GLOBAIS', ru:'ГЛОБАЛЬНЫЕ ЦЕНТРЫ ОБРАБОТКИ ДАННЫХ', ko:'글로벌 데이터 센터', ja:'グローバルデータセンター', ms:'PUSAT DATA GLOBAL', th:'ศูนย์ข้อมูลทั่วโลก', vi:'TRUNG TÂM DỮ LIỆU TOÀN CẦU', hi:'वैश्विक डेटा केंद्र', ar:'مراكز البيانات العالمية' },
+  'Resource Center': { en:'Resource Center', zh:'资源中心', es:'Centro de Recursos', fr:'Centre de Ressources', de:'Ressourcenzentrum', pt:'Centro de Recursos', ru:'Центр ресурсов', ko:'리소스 센터', ja:'リソースセンター', ms:'Pusat Sumber', th:'ศูนย์ทรัพยากร', vi:'Trung Tâm Tài Nguyên', hi:'संसाधन केंद्र', ar:'مركز الموارد' },
+  'Partner Success Metrics': { en:'Partner Success Metrics', zh:'合作伙伴成功指标', es:'Métricas de Éxito del Socio', fr:'Métriques de Succès des Partenaires', de:'Erfolgsmetriken von Partnern', pt:'Métricas de Sucesso do Parceiro', ru:'Показатели успеха партнера', ko:'파트너 성공 메트릭', ja:'パートナー成功メトリクス', ms:'Metrik Kejayaan Rakan', th:'เมตริกความสำเร็จของพันธมิตร', vi:'Chỉ Số Thành Công Đối Tác', hi:'साझेदार सफलता मेट्रिक्स', ar:'مقاييس نجاح الشريك' },
+  'Case Study Coverage': { en:'Case Study Coverage', zh:'案例研究覆盖范围', es:'Cobertura de Estudios de Caso', fr:'Couverture d\'Études de Cas', de:'Fallstudienabdeckung', pt:'Cobertura de Estudo de Caso', ru:'Охват примеров из практики', ko:'사례 연구 범위', ja:'ケーススタディカバレッジ', ms:'Liputan Kajian Kes', th:'การครอบคลุมศึกษาเคส', vi:'Phạm Vi Trường Hợp Nghiên Cứu', hi:'केस स्टडी कवरेज', ar:'تغطية دراسة الحالة' },
+  'Industry Breakdown': { en:'Industry Breakdown', zh:'行业分布', es:'Desglose de Industrias', fr:'Ventilation de l\'Industrie', de:'Industrieaufschlüsselung', pt:'Detalhamento da Indústria', ru:'Разбивка по отраслям', ko:'산업별 분류', ja:'業界別内訳', ms:'Pecahan Industri', th:'การแบ่งปันอุตสาหกรรม', vi:'Phân Tích Theo Ngành', hi:'उद्योग विभाजन', ar:'توزيع الصناعة' },
+  'Advertiser Performance Lift': { en:'Advertiser Performance Lift', zh:'广告主性能提升', es:'Aumento de Rendimiento del Anunciante', fr:'Amélioration des Performances du Publiciste', de:'Leistungssteigerung des Anzeigentreibenden', pt:'Aumento de Desempenho do Anunciante', ru:'Повышение производительности рекламодателя', ko:'광고주 성과 향상', ja:'広告主のパフォーマンス向上', ms:'Peningkatan Prestasi Pengiklan', th:'การเพิ่มขึ้นของประสิทธิภาพผู้โฆษณา', vi:'Nâng Cao Hiệu Suất Nhà Quảng Cáo', hi:'विज्ञापनदाता प्रदर्शन वृद्धि', ar:'تحسن أداء المعلن' },
+  'Avg ROAS by Channel': { en:'Avg ROAS by Channel', zh:'按渠道平均 ROAS', es:'ROAS Promedio por Canal', fr:'ROAS Moyen par Canal', de:'Durchschn. ROAS nach Kanal', pt:'ROAS Médio por Canal', ru:'Средн. ROAS по каналам', ko:'채널별 평균 ROAS', ja:'チャネル別平均ROAS', ms:'ROAS Purata mengikut Saluran', th:'ROAS เฉลี่ยตามช่องสัญญาณ', vi:'ROAS Trung Bình Theo Kênh', hi:'चैनल के अनुसार औसत ROAS', ar:'متوسط ROAS حسب القناة' },
+  'Revenue Lift by Format': { en:'Revenue Lift by Format', zh:'按格式收入提升', es:'Aumento de Ingresos por Formato', fr:'Amélioration des Revenus par Format', de:'Umsatzsteigerung nach Format', pt:'Aumento de Receita por Formato', ru:'Прирост доходов по формату', ko:'형식별 수익 향상', ja:'形式別収益向上', ms:'Peningkatan Hasil Pendapatan mengikut Format', th:'การเพิ่มรายได้ตามรูปแบบ', vi:'Nâng Cao Doanh Thu Theo Định Dạng', hi:'प्रारूप के अनुसार राजस्व वृद्धि', ar:'تحسن الإيرادات حسب الصيغة' },
+  'Growth Timeline': { en:'Growth Timeline', zh:'增长时间表', es:'Cronograma de Crecimiento', fr:'Chronologie de Croissance', de:'Wachstums-Zeitstrahl', pt:'Cronograma de Crescimento', ru:'График роста', ko:'성장 타임라인', ja:'成長タイムライン', ms:'Garis Masa Pertumbuhan', th:'ไทม์ไลน์การเติบโต', vi:'Dòng Thời Gian Phát Triển', hi:'विकास समयरेखा', ar:'الجدول الزمني للنمو' },
+
+    'Benchmark → +38%': {zh:'基准 → +38%'},
+    '3 → 28': {zh:'3 → 28'},
+    '+38%': {zh:'+38%'},
+    '-41%': {zh:'-41%'},
+    '+156%': {zh:'+156%'},
+    '+340%': {zh:'+340%'},
+    '+22%': {zh:'+22%'},
+    'x9.3': {zh:'x9.3'},
 };
 
 /* Helper: get UI string in current language */
@@ -425,6 +489,3801 @@ const CONTENT_T = {
   'Today, NexBids operates across 6 global offices, serves 2,000+ advertisers and 30,000+ publishers in 150+ countries, and processes 50B+ ad auctions daily.': { es:'Hoy, NexBids opera en 6 oficinas globales, sirve a más de 2.000 anunciantes y 30.000 editores en más de 150 países, y procesa más de 50B de subastas de anuncios diariamente.', fr:"Aujourd'hui, NexBids opère dans 6 bureaux mondiaux, sert plus de 2 000 annonceurs et 30 000 éditeurs dans plus de 150 pays, et traite plus de 50 milliards d'enchères publicitaires quotidiennement.", de:'Heute ist NexBids in 6 globalen Büros tätig, bedient mehr als 2.000 Werbetreibende und 30.000 Publisher in mehr als 150 Ländern und verarbeitet täglich mehr als 50 Milliarden Werbeauktionen.', pt:'Hoje, NexBids opera em 6 escritórios globais, atende mais de 2.000 anunciantes e 30.000 editores em mais de 150 países e processa mais de 50B de leilões de anúncios diariamente.', ru:'Сегодня NexBids работает в 6 глобальных офисах, обслуживает более 2 000 рекламодателей и 30 000 издателей в более чем 150 странах и ежедневно обрабатывает более 50 млрд рекламных аукционов.', zh:'如今，NexBids在全球6个办公室运营，服务于150多个国家的2,000多个广告主和30,000多个发布商，每天处理500亿以上的广告拍卖。', ko:'오늘날 NexBids는 6개의 글로벌 사무소에서 운영되며, 150개 이상의 국가에서 2,000개 이상의 광고주와 30,000개 이상의 퍼블리셔를 서비스하며, 매일 500억 개 이상의 광고 경매를 처리합니다.', ja:'今日、NexBidsは6つのグローバルオフィスで運営され、150以上の国で2,000以上の広告主と30,000以上のパブリッシャーにサービスを提供し、毎日500億以上の広告オークションを処理しています。', ms:'Hari ini, NexBids beroperasi di 6 pejabat global, melayani 2,000+ pengiklan dan 30,000+ penerbit di 150+ negara, dan memproses 50B+ lelongan iklan setiap hari.', th:'ปัจจุบัน NexBids ดำเนินงานใน 6 สำนักงานทั่วโลก ให้บริการผู้ลงโฆษณากว่า 2,000 รายและผู้เผยแพร่กว่า 30,000 รายใน 150+ ประเทศ และประมวลผลการประมูลโฆษณากว่า 50 พันล้านรายการต่อวัน', vi:'Ngày nay, NexBids hoạt động trên 6 văn phòng toàn cầu, phục vụ hơn 2.000 nhà quảng cáo và 30.000 nhà xuất bản tại hơn 150 quốc gia, xử lý hơn 50 tỷ phiên đấu giá quảng cáo mỗi ngày.', hi:'आज, NexBids 6 वैश्विक कार्यालयों में काम करता है, 150+ देशों में 2,000+ विज्ञापनदाताओं और 30,000+ प्रकाशकों की सेवा करता है, और प्रतिदिन 50B+ विज्ञापन नीलामियां प्रोसेस करता है।', ar:'اليوم، تعمل NexBids عبر 6 مكاتب عالمية، وتخدم أكثر من 2,000 معلن و30,000 ناشر في أكثر من 150 دولة، وتعالج أكثر من 50 مليار مزاد إعلاني يومياً.' },
   'We respect your time. Our process is efficient, transparent, and typically completes in 2–3 weeks.': { es:'Respetamos su tiempo. Nuestro proceso es eficiente, transparente y generalmente se completa en 2-3 semanas.', fr:"Nous respectons votre temps. Notre processus est efficace, transparent et se termine généralement en 2 à 3 semaines.", de:'Wir respektieren Ihre Zeit. Unser Prozess ist effizient, transparent und wird in der Regel in 2-3 Wochen abgeschlossen.', pt:'Respeitamos o seu tempo. Nosso processo é eficiente, transparente e normalmente se completa em 2 a 3 semanas.', ru:'Мы уважаем ваше время. Наш процесс эффективен, прозрачен и обычно завершается за 2-3 недели.', zh:'我们尊重您的时间。我们的流程高效透明，通常在2-3周内完成。', ko:'저희는 귀하의 시간을 존중합니다. 저희 프로세스는 효율적이고 투명하며 일반적으로 2-3주 안에 완료됩니다.', ja:'お客様のお時間を大切にしています。プロセスは効率的で透明であり、通常2〜3週間で完了します。', ms:'Kami menghormati masa anda. Proses kami adalah cekap, telus dan biasanya selesai dalam 2-3 minggu.', th:'เราเคารพเวลาของคุณ กระบวนการของเราเป็นไปอย่างมีประสิทธิภาพ โปร่งใส และโดยปกติจะเสร็จสิ้นภายใน 2-3 สัปดาห์', vi:'Chúng tôi tôn trọng thời gian của bạn. Quy trình của chúng tôi hiệu quả, minh bạch và thường hoàn thành trong 2-3 tuần.', hi:'हम आपके समय का सम्मान करते हैं। हमारी प्रक्रिया कुशल, पारदर्शी है और आमतौर पर 2-3 सप्ताह में पूरी हो जाती है।', ar:'نحن نحترم وقتك. عمليتنا فعالة وشفافة وعادة ما تكتمل في 2-3 أسابيع.' },
 
+  'NexBids delivers a full-stack programmatic advertising ecosystem — DSP': {
+    zh: 'NexBids 提供全栈程序化广告生态系统 — DSP',
+    es: 'NexBids ofrece un ecosistema completo de publicidad programática — DSP',
+    ar: 'تقدم NexBids نظامًا بيئيًا متكاملًا للإعلان البرمجي — DSP',
+    hi: 'NexBids एक पूर्ण-स्टैक प्रोग्रामेटिक विज्ञापन इकोसिस्टम प्रदान करता है — DSP',
+    pt: 'NexBids oferece um ecossistema completo de publicidade programática — DSP',
+    fr: 'NexBids offre un écosystème publicitaire programmatique complet — DSP',
+    ja: 'NexBidsはフルスタックのプログラマティック広告エコシステムを提供します — DSP',
+  },
+  '<80ms Bid Response': {
+    zh: '<80ms 竞价响应',
+    es: '<80ms Respuesta de puja',
+    ar: '<80 مللي ثانية وقت استجابة المزايدة',
+    hi: '<80ms बोली प्रतिक्रिया',
+    pt: '<80ms Resposta de lance',
+    fr: '<80ms Réponse aux enchères',
+    ja: '<80ms 入札レスポンス',
+  },
+  'E-commerce, gaming studios, app developers, and brand marketers looking': {
+    zh: '电商、游戏工作室、应用开发者和品牌营销人员',
+    es: 'Comercio electrónico, estudios de juegos, desarrolladores de apps y marcas',
+    ar: 'التجارة الإلكترونية واستوديوهات الألعاب ومطوري التطبيقات والمسوقين',
+    hi: 'ई-कॉमर्स, गेमिंग स्टूडियो, ऐप डेवलपर्स और ब्रांड मार्केटर्स',
+    pt: 'E-commerce, estúdios de jogos, desenvolvedores de apps e marcas',
+    fr: 'E-commerce, studios de jeux, développeurs d\'apps et marques',
+    ja: 'Eコマース、ゲームスタジオ、アプリ開発者、ブランドマーケター',
+  },
+  'Website owners, mobile app developers, game studios, and digital media': {
+    zh: '网站所有者、移动应用开发者、游戏工作室和数字媒体',
+    es: 'Propietarios de sitios web, desarrolladores de apps, estudios de juegos y medios digitales',
+    ar: 'أصحاب المواقع ومطورو التطبيقات واستوديوهات الألعاب والإعلام الرقمي',
+    hi: 'वेबसाइट मालिक, मोबाइल ऐप डेवलपर्स, गेम स्टूडियो और डिजिटल मीडिया',
+    pt: 'Proprietários de sites, desenvolvedores de apps, estúdios de jogos e mídia digital',
+    fr: 'Propriétaires de sites, développeurs d\'apps, studios de jeux et médias numériques',
+    ja: 'ウェブサイトオーナー、モバイルアプリ開発者、ゲームスタジオ、デジタルメディア',
+  },
+  'Full-service and performance agencies managing programmatic campaigns': {
+    zh: '管理程序化广告活动的全服务和效果代理',
+    es: 'Agencias de servicio completo y rendimiento que gestionan campañas programáticas',
+    ar: 'وكالات الخدمة الكاملة والأداء التي تدير الحملات البرمجية',
+    hi: 'प्रोग्रामेटिक अभियान प्रबंधित करने वाली फुल-सर्विस और परफॉर्मेंस एजेंसियां',
+    pt: 'Agências de serviço completo e performance gerenciando campanhas programáticas',
+    fr: 'Agences de service complet et de performance gérant des campagnes programmatiques',
+    ja: 'プログラマティックキャンペーンを管理するフルサービス・パフォーマンスエージェンシー',
+  },
+  'Our proprietary AI/ML infrastructure processes 50 billion bid requests': {
+    zh: '我们专有的 AI/ML 基础设施每天处理 500 亿次竞价请求',
+    es: 'Nuestra infraestructura de IA/ML procesa 50 mil millones de solicitudes de puja',
+    ar: 'تعالج بنيتنا التحتية للذكاء الاصطناعي 50 مليار طلب مزايدة',
+    hi: 'हमारा AI/ML इन्फ्रास्ट्रक्चर 500 बिलियन बिड अनुरोध प्रोसेस करता है',
+    pt: 'Nossa infraestrutura de IA/ML processa 50 bilhões de solicitações de lance',
+    fr: 'Notre infrastructure IA/ML traite 50 milliards de demandes d\'enchères',
+    ja: '独自のAI/MLインフラが500億件の入札リクエストを処理します',
+  },
+  'Whether you\'re an advertiser seeking global reach, a publisher maximiz': {
+    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商',
+    es: 'Ya sea que sea un anunciante que busca alcance global o un publisher que maximiza ingresos',
+    ar: 'سواء كنت معلنًا يسعى للوصول العالمي أو ناشرًا يعظم الإيرادات',
+    hi: 'चाहे आप वैश्विक पहुंच चाहने वाले विज्ञापनदाता हों या राजस्व अधिकतम करने वाले प्रकाशक',
+    pt: 'Seja um anunciante buscando alcance global ou um publisher maximizando receitas',
+    fr: 'Que vous soyez un annonceur cherchant une portée mondiale ou un éditeur maximisant ses revenus',
+    ja: 'グローバルリーチを求める広告主でも、収益を最大化するパブリッシャーでも',
+  },
+  'NexBids DSP gives advertisers AI-powered tools to reach the right audi': {
+    zh: 'NexBids DSP 为广告主提供 AI 驱动的工具，精准触达目标受众',
+    es: 'NexBids DSP brinda a los anunciantes herramientas de IA para llegar a la audiencia correcta',
+    ar: 'يمنح NexBids DSP المعلنين أدوات مدعومة بالذكاء الاصطناعي للوصول إلى الجمهور المناسب',
+    hi: 'NexBids DSP विज्ञापनदाताओं को सही दर्शकों तक पहुंचने के लिए AI-संचालित टूल देता है',
+    pt: 'NexBids DSP fornece aos anunciantes ferramentas de IA para alcançar o público certo',
+    fr: 'NexBids DSP donne aux annonceurs des outils IA pour atteindre la bonne audience',
+    ja: 'NexBids DSPは広告主にAI搭載ツールで適切なオーディエンスへのリーチを提供します',
+  },
+  'Everything You Need to Win in Programmatic': {
+    zh: '赢得程序化广告所需的一切',
+    es: 'Todo lo que necesitas para ganar en programática',
+    ar: 'كل ما تحتاجه للفوز في الإعلان البرمجي',
+    hi: 'प्रोग्रामेटिक में जीतने के लिए आपको जो कुछ भी चाहिए',
+    pt: 'Tudo que você precisa para vencer no programático',
+    fr: 'Tout ce dont vous avez besoin pour gagner en programmatique',
+    ja: 'プログラマティックで勝つために必要なすべて',
+  },
+  'NexBids SSP connects your inventory to 50,000+ premium advertisers wor': {
+    zh: 'NexBids SSP 将您的广告资源连接到全球 50,000+ 优质广告主',
+    es: 'NexBids SSP conecta tu inventario con más de 50,000 anunciantes premium en todo el mundo',
+    ar: 'يربط NexBids SSP مخزونك بأكثر من 50,000 معلن متميز حول العالم',
+    hi: 'NexBids SSP आपकी इन्वेंटरी को दुनिया भर के 50,000+ प्रीमियम विज्ञापनदाताओं से जोड़ता है',
+    pt: 'NexBids SSP conecta seu inventário a mais de 50.000 anunciantes premium mundialmente',
+    fr: 'NexBids SSP connecte votre inventaire à plus de 50 000 annonceurs premium dans le monde',
+    ja: 'NexBids SSPはあなたのインベントリを世界中の50,000以上のプレミアム広告主に接続します',
+  },
+  'NexBids Agency Solutions give performance and full-service agencies th': {
+    zh: 'NexBids 代理解决方案为效果和全服务代理提供所需工具',
+    es: 'NexBids Agency Solutions da a las agencias las herramientas que necesitan',
+    ar: 'يمنح NexBids Agency Solutions الوكالات الأدوات التي تحتاجها',
+    hi: 'NexBids एजेंसी सॉल्यूशंस परफॉर्मेंस और फुल-सर्विस एजेंसियों को जरूरी टूल देता है',
+    pt: 'NexBids Agency Solutions fornece às agências as ferramentas de que precisam',
+    fr: 'NexBids Agency Solutions donne aux agences les outils dont elles ont besoin',
+    ja: 'NexBidsエージェンシーソリューションは、エージェンシーに必要なツールを提供します',
+  },
+  'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP —': {
+    zh: 'NexBids 全栈程序化基础设施 — DSP、ADX 和 SSP',
+    es: 'La infraestructura programática completa de NexBids — DSP, ADX y SSP',
+    ar: 'البنية التحتية البرمجية الكاملة لـ NexBids — DSP وADX وSSP',
+    hi: 'NexBids का फुल-स्टैक प्रोग्रामेटिक इन्फ्रास्ट्रक्चर — DSP, ADX, और SSP',
+    pt: 'A infraestrutura programática completa da NexBids — DSP, ADX e SSP',
+    fr: 'L\'infrastructure programmatique complète de NexBids — DSP, ADX et SSP',
+    ja: 'NexBidsのフルスタックプログラマティックインフラ — DSP、ADX、SSP',
+  },
+  'The AI-powered demand-side platform built for performance. Reach the r': {
+    zh: '专为效果而生的 AI 驱动需求方平台，精准触达受众',
+    es: 'La plataforma del lado de la demanda impulsada por IA construida para el rendimiento',
+    ar: 'منصة جانب الطلب المدعومة بالذكاء الاصطناعي المبنية للأداء',
+    hi: 'परफॉर्मेंस के लिए बनाया गया AI-संचालित डिमांड-साइड प्लेटफॉर्म',
+    pt: 'A plataforma do lado da demanda alimentada por IA criada para performance',
+    fr: 'La plateforme côté demande alimentée par l\'IA conçue pour la performance',
+    ja: 'パフォーマンスのために構築されたAI搭載のデマンドサイドプラットフォーム',
+  },
+  'The high-performance, neutral ad exchange connecting premium supply wi': {
+    zh: '高性能中立广告交易所，连接优质供应与全球需求',
+    es: 'El intercambio de anuncios neutral y de alto rendimiento que conecta oferta premium con demanda global',
+    ar: 'بورصة الإعلانات المحايدة عالية الأداء التي تربط العرض المتميز بالطلب العالمي',
+    hi: 'उच्च-प्रदर्शन, तटस्थ विज्ञापन एक्सचेंज जो प्रीमियम सप्लाई को वैश्विक मांग से जोड़ता है',
+    pt: 'A bolsa de anúncios neutra e de alto desempenho que conecta oferta premium à demanda global',
+    fr: 'L\'exchange publicitaire neutre et haute performance reliant l\'offre premium à la demande mondiale',
+    ja: '高性能・中立的な広告エクスチェンジ、プレミアム供給とグローバル需要を接続',
+  },
+  'The intelligent supply-side platform that maximizes publisher revenue': {
+    zh: '智能供应方平台，最大化发布商收益',
+    es: 'La plataforma del lado de la oferta inteligente que maximiza los ingresos del publisher',
+    ar: 'منصة جانب العرض الذكية التي تعظم إيرادات الناشر',
+    hi: 'इंटेलिजेंट सप्लाई-साइड प्लेटफॉर्म जो प्रकाशक राजस्व को अधिकतम करता है',
+    pt: 'A plataforma inteligente do lado da oferta que maximiza a receita do publisher',
+    fr: 'La plateforme côté offre intelligente qui maximise les revenus des éditeurs',
+    ja: 'パブリッシャーの収益を最大化するインテリジェントなサプライサイドプラットフォーム',
+  },
+  'NexBids is engineered from the ground up for speed, intelligence, and': {
+    zh: 'NexBids 从零开始为速度、智能和规模而设计',
+    es: 'NexBids está diseñado desde cero para velocidad, inteligencia y escala',
+    ar: 'تم تصميم NexBids من الصفر للسرعة والذكاء والحجم',
+    hi: 'NexBids को गति, बुद्धिमत्ता और स्केल के लिए शुरू से बनाया गया है',
+    pt: 'NexBids é projetado do zero para velocidade, inteligência e escala',
+    fr: 'NexBids est conçu depuis le début pour la vitesse, l\'intelligence et l\'échelle',
+    ja: 'NexBidsはスピード、インテリジェンス、スケールのために一から設計されています',
+  },
+  'Our AI platform processes trillions of historical auction signals to p': {
+    zh: '我们的 AI 平台处理数万亿历史拍卖信号以预测最优出价',
+    es: 'Nuestra plataforma de IA procesa billones de señales de subasta históricas para predecir la puja óptima',
+    ar: 'تعالج منصتنا للذكاء الاصطناعي تريليونات من إشارات المزاد التاريخية للتنبؤ بالمزايدة المثلى',
+    hi: 'हमारा AI प्लेटफॉर्म इष्टतम बोली की भविष्यवाणी के लिए खरबों ऐतिहासिक नीलामी संकेतों को प्रोसेस करता है',
+    pt: 'Nossa plataforma de IA processa trilhões de sinais de leilão históricos para prever o lance ideal',
+    fr: 'Notre plateforme IA traite des billions de signaux d\'enchères historiques pour prédire l\'enchère optimale',
+    ja: '私たちのAIプラットフォームは数兆の過去のオークションシグナルを処理して最適な入札を予測します',
+  },
+  'Discover how global brands, app developers, publishers, and agencies u': {
+    zh: '了解全球品牌、应用开发者、发布商和代理如何使用 NexBids',
+    es: 'Descubra cómo las marcas globales, desarrolladores de apps, publishers y agencias usan NexBids',
+    ar: 'اكتشف كيف تستخدم العلامات التجارية العالمية ومطورو التطبيقات والناشرون والوكالات NexBids',
+    hi: 'जानें कि वैश्विक ब्रांड, ऐप डेवलपर्स, प्रकाशक और एजेंसियां NexBids का उपयोग कैसे करती हैं',
+    pt: 'Descubra como marcas globais, desenvolvedores de apps, publishers e agências usam NexBids',
+    fr: 'Découvrez comment les marques mondiales, développeurs d\'apps, éditeurs et agences utilisent NexBids',
+    ja: 'グローバルブランド、アプリ開発者、パブリッシャー、エージェンシーがNexBidsをどのように使うか',
+  },
+  'From global e-commerce brands scaling into new markets, to mobile gami': {
+    zh: '从进入新市场的全球电商品牌到移动游戏工作室',
+    es: 'Desde marcas globales de e-commerce que escalan a nuevos mercados hasta estudios de juegos móviles',
+    ar: 'من العلامات التجارية العالمية للتجارة الإلكترونية التي تتوسع إلى أسواق جديدة إلى استوديوهات الألعاب',
+    hi: 'नए बाजारों में स्केल करने वाले वैश्विक ई-कॉमर्स ब्रांड से लेकर मोबाइल गेमिंग स्टूडियो तक',
+    pt: 'De marcas globais de e-commerce expandindo para novos mercados a estúdios de jogos móveis',
+    fr: 'Des marques mondiales d\'e-commerce qui s\'étendent vers de nouveaux marchés aux studios de jeux mobiles',
+    ja: '新市場に拡大するグローバルEコマースブランドからモバイルゲームスタジオまで',
+  },
+  'E-Commerce — Fashion': {
+    zh: '电子商务 — 时尚',
+    es: 'E-Commerce — Moda',
+    ar: 'التجارة الإلكترونية — الموضة',
+    hi: 'ई-कॉमर्स — फैशन',
+    pt: 'E-Commerce — Moda',
+    fr: 'E-Commerce — Mode',
+    ja: 'Eコマース — ファッション',
+  },
+  'Global Fashion Brand — ROAS Transformation': {
+    zh: '全球时尚品牌 — ROAS 转型',
+    es: 'Marca de Moda Global — Transformación del ROAS',
+    ar: 'علامة تجارية للموضة العالمية — تحول عائد الإنفاق الإعلاني',
+    hi: 'ग्लोबल फैशन ब्रांड — ROAS ट्रांसफॉर्मेशन',
+    pt: 'Marca de Moda Global — Transformação do ROAS',
+    fr: 'Marque de Mode Mondiale — Transformation du ROAS',
+    ja: 'グローバルファッションブランド — ROAS変革',
+  },
+  'A fast-growing global fashion e-commerce brand operating in 12 countri': {
+    zh: '一个在 12 个国家运营的快速增长的全球时尚电商品牌',
+    es: 'Una marca de moda global de rápido crecimiento que opera en 12 países',
+    ar: 'علامة تجارية للأزياء العالمية سريعة النمو تعمل في 12 دولة',
+    hi: 'एक तेजी से बढ़ता हुआ वैश्विक फैशन ई-कॉमर्स ब्रांड जो 12 देशों में काम करता है',
+    pt: 'Uma marca de moda global de rápido crescimento operando em 12 países',
+    fr: 'Une marque de mode mondiale en croissance rapide opérant dans 12 pays',
+    ja: '12カ国で展開する急成長中のグローバルファッションEコマースブランド',
+  },
+  '"NexBids transformed programmatic from a channel we had written off in': {
+    zh: '"NexBids 将程序化广告从我们几乎放弃的渠道，转变为我们最高效的获客渠道。"',
+    es: '"NexBids transformó el programático de un canal que habíamos descartado en nuestro canal de adquisición más eficiente."',
+    ar: '"حوّل NexBids الإعلان البرمجي من قناة كنا قد تخلينا عنها إلى قناتنا الأكثر كفاءة للاستحواذ."',
+    hi: '"NexBids ने प्रोग्रामेटिक को उस चैनल से बदल दिया जिसे हमने छोड़ दिया था, हमारे सबसे कुशल अधिग्रहण चैनल में।"',
+    pt: '"NexBids transformou o programático de um canal que havíamos descartado no nosso canal de aquisição mais eficiente."',
+    fr: '"NexBids a transformé le programmatique d\'un canal que nous avions abandonné en notre canal d\'acquisition le plus efficace."',
+    ja: '"NexBidsはプログラマティックを諦めていたチャネルから、最も効率的な獲得チャネルへと変革してくれました。"',
+  },
+  '— Chief Marketing Officer, Global Fashion E-Commerce Brand': {
+    zh: '— 首席营销官，全球时尚电商品牌',
+    es: '— Director de Marketing, Marca Global de Moda E-Commerce',
+    ar: '— كبير مسؤولي التسويق، العلامة التجارية العالمية للأزياء الإلكترونية',
+    hi: '— चीफ मार्केटिंग ऑफिसर, ग्लोबल फैशन ई-कॉमर्स ब्रांड',
+    pt: '— Diretor de Marketing, Marca Global de Moda E-Commerce',
+    fr: '— Directeur Marketing, Marque Mondiale de Mode E-Commerce',
+    ja: '— チーフマーケティングオフィサー、グローバルファッションEコマースブランド',
+  },
+  'Top Mobile RPG — Scale & Quality Player Acquisition': {
+    zh: '顶级手机 RPG — 规模化与高质量玩家获取',
+    es: 'RPG Móvil Top — Adquisición de Jugadores a Escala y Calidad',
+    ar: 'لعبة RPG للجوال الأعلى — اكتساب اللاعبين بالحجم والجودة',
+    hi: 'टॉप मोबाइल RPG — स्केल और क्वालिटी प्लेयर एक्विजिशन',
+    pt: 'RPG Móvel Top — Aquisição de Jogadores em Escala e Qualidade',
+    fr: 'RPG Mobile Top — Acquisition de Joueurs à Échelle et Qualité',
+    ja: 'トップモバイルRPG — スケールと品質のプレイヤー獲得',
+  },
+  'A top-grossing mobile RPG studio needed to scale beyond their existing': {
+    zh: '一家顶级收益移动 RPG 工作室需要突破现有规模瓶颈',
+    es: 'Un estudio de RPG móvil de los más rentables necesitaba escalar más allá de sus canales existentes',
+    ar: 'احتاج استوديو RPG للجوال الأعلى ربحًا إلى التوسع إلى ما بعد قنواته الحالية',
+    hi: 'एक टॉप-ग्रॉसिंग मोबाइल RPG स्टूडियो को अपने मौजूदा चैनलों से परे स्केल करने की जरूरत थी',
+    pt: 'Um estúdio de RPG móvel de alta receita precisava escalar além de seus canais existentes',
+    fr: 'Un studio de RPG mobile très rentable avait besoin de se développer au-delà de ses canaux existants',
+    ja: '高収益モバイルRPGスタジオが既存チャネルを超えてスケールする必要がありました',
+  },
+  '"We\'d tried every major DSP and none could match the quality of player': {
+    zh: '"我们尝试了所有主要 DSP，没有一个能匹配 NexBids 带来的玩家质量。"',
+    es: '"Probamos todos los principales DSP y ninguno pudo igualar la calidad de los jugadores de NexBids."',
+    ar: '"جربنا كل DSP رئيسي ولم يستطع أي منهم مضاهاة جودة اللاعبين من NexBids."',
+    hi: '"हमने हर प्रमुख DSP आजमाया और कोई भी NexBids की खिलाड़ी गुणवत्ता से मेल नहीं खा सका।"',
+    pt: '"Experimentamos todos os principais DSPs e nenhum conseguiu igualar a qualidade dos jogadores do NexBids."',
+    fr: '"Nous avons essayé tous les principaux DSP et aucun ne pouvait égaler la qualité des joueurs de NexBids."',
+    ja: '"主要なDSPをすべて試しましたが、NexBidsのプレイヤー品質に匹敵するものはありませんでした。"',
+  },
+  '— User Acquisition Lead, Top-5 Grossing Mobile RPG Studio': {
+    zh: '— 用户获取负责人，全球收益前五移动 RPG 工作室',
+    es: '— Responsable de Adquisición de Usuarios, Estudio de RPG Móvil Top-5',
+    ar: '— مسؤول اكتساب المستخدمين، استوديو RPG للجوال ضمن أفضل 5',
+    hi: '— यूजर एक्विजिशन लीड, टॉप-5 ग्रॉसिंग मोबाइल RPG स्टूडियो',
+    pt: '— Líder de Aquisição de Usuários, Estúdio de RPG Móvel Top-5',
+    fr: '— Responsable Acquisition Utilisateurs, Studio de RPG Mobile Top-5',
+    ja: '— ユーザー獲得リード、トップ5収益モバイルRPGスタジオ',
+  },
+  'Productivity App — From 3 Markets to Global': {
+    zh: '效率应用 — 从 3 个市场走向全球',
+    es: 'App de Productividad — De 3 Mercados a Global',
+    ar: 'تطبيق الإنتاجية — من 3 أسواق إلى العالمية',
+    hi: 'प्रोडक्टिविटी ऐप — 3 मार्केट से ग्लोबल तक',
+    pt: 'App de Produtividade — De 3 Mercados para Global',
+    fr: 'App de Productivité — De 3 Marchés au Mondial',
+    ja: '生産性アプリ — 3市場からグローバルへ',
+  },
+  'A productivity app needed a programmatic partner to support rapid glob': {
+    zh: '一款效率应用需要程序化合作伙伴支持快速全球扩张',
+    es: 'Una app de productividad necesitaba un socio programático para apoyar la expansión global rápida',
+    ar: 'احتاج تطبيق الإنتاجية إلى شريك برمجي لدعم التوسع العالمي السريع',
+    hi: 'एक प्रोडक्टिविटी ऐप को तेजी से वैश्विक विस्तार का समर्थन करने के लिए प्रोग्रामेटिक पार्टनर की जरूरत थी',
+    pt: 'Um app de produtividade precisava de um parceiro programático para apoiar a expansão global rápida',
+    fr: 'Une app de productivité avait besoin d\'un partenaire programmatique pour soutenir l\'expansion mondiale rapide',
+    ja: '生産性アプリが急速なグローバル展開を支援するプログラマティックパートナーを必要としていました',
+  },
+  'From independent news sites to mobile game studios — see how publisher': {
+    zh: '从独立新闻网站到移动游戏工作室 — 看看发布商如何使用 NexBids',
+    es: 'Desde sitios de noticias independientes hasta estudios de juegos móviles — vea cómo los publishers usan NexBids',
+    ar: 'من مواقع الأخبار المستقلة إلى استوديوهات الألعاب — انظر كيف يستخدم الناشرون NexBids',
+    hi: 'स्वतंत्र समाचार साइटों से लेकर मोबाइल गेम स्टूडियो तक — देखें प्रकाशक NexBids का उपयोग कैसे करते हैं',
+    pt: 'De sites de notícias independentes a estúdios de jogos móveis — veja como publishers usam NexBids',
+    fr: 'Des sites d\'actualités indépendants aux studios de jeux mobiles — voyez comment les éditeurs utilisent NexBids',
+    ja: '独立ニュースサイトからモバイルゲームスタジオまで — パブリッシャーがNexBidsをどう使うか',
+  },
+  'Regional Finance News Network — eCPM Growth & Revenue Transformation': {
+    zh: '区域金融新闻网络 — eCPM 增长与收益转型',
+    es: 'Red de Noticias Financieras Regional — Crecimiento de eCPM y Transformación de Ingresos',
+    ar: 'شبكة أخبار التمويل الإقليمية — نمو eCPM وتحول الإيرادات',
+    hi: 'रीजनल फाइनेंस न्यूज नेटवर्क — eCPM ग्रोथ और रेवेन्यू ट्रांसफॉर्मेशन',
+    pt: 'Rede de Notícias Financeiras Regional — Crescimento de eCPM e Transformação de Receita',
+    fr: 'Réseau d\'Actualités Financières Régional — Croissance eCPM et Transformation des Revenus',
+    ja: '地域金融ニュースネットワーク — eCPM成長と収益変革',
+  },
+  'A leading regional finance news platform migrated from a single SSP wa': {
+    zh: '一家领先的区域金融新闻平台从单一 SSP 迁移，实现收益突破',
+    es: 'Una plataforma líder de noticias financieras regionales migró desde un único SSP para lograr una transformación de ingresos',
+    ar: 'انتقلت منصة أخبار مالية إقليمية رائدة من SSP واحد لتحقيق تحول في الإيرادات',
+    hi: 'एक प्रमुख क्षेत्रीय वित्त समाचार प्लेटफॉर्म एकल SSP से माइग्रेट होकर राजस्व परिवर्तन प्राप्त किया',
+    pt: 'Uma plataforma líder de notícias financeiras regionais migrou de um único SSP para uma transformação de receita',
+    fr: 'Une plateforme leader d\'actualités financières régionales a migré d\'un seul SSP pour une transformation des revenus',
+    ja: '大手地域金融ニュースプラットフォームが単一SSPから移行して収益変革を実現',
+  },
+  '"The NexBids header bidding implementation was transformative. Within': {
+    zh: '"NexBids 的头部竞价实施具有变革性。不到三个月，我们的收益翻番。"',
+    es: '"La implementación de header bidding de NexBids fue transformadora. En menos de tres meses, duplicamos nuestros ingresos."',
+    ar: '"كان تطبيق header bidding من NexBids تحويليًا. في غضون ثلاثة أشهر، تضاعفت إيراداتنا."',
+    hi: '"NexBids का हेडर बिडिंग इम्प्लीमेंटेशन परिवर्तनकारी था। तीन महीनों के भीतर, हमारा राजस्व दोगुना हो गया।"',
+    pt: '"A implementação de header bidding da NexBids foi transformadora. Em menos de três meses, dobramos nossa receita."',
+    fr: '"La mise en œuvre du header bidding de NexBids a été transformatrice. En moins de trois mois, nos revenus ont doublé."',
+    ja: '"NexBidsのヘッダービディング実装は変革的でした。3ヶ月以内に収益が倍増しました。"',
+  },
+  '— Head of Digital Revenue, Regional Finance News Platform': {
+    zh: '— 数字收益总监，区域金融新闻平台',
+    es: '— Director de Ingresos Digitales, Plataforma de Noticias Financieras Regional',
+    ar: '— رئيس الإيرادات الرقمية، منصة أخبار التمويل الإقليمية',
+    hi: '— हेड ऑफ डिजिटल रेवेन्यू, रीजनल फाइनेंस न्यूज प्लेटफॉर्म',
+    pt: '— Diretor de Receita Digital, Plataforma de Notícias Financeiras Regional',
+    fr: '— Directeur des Revenus Numériques, Plateforme d\'Actualités Financières Régionale',
+    ja: '— デジタル収益責任者、地域金融ニュースプラットフォーム',
+  },
+  'Lifestyle App — Monetization Overhaul via SDK Migration': {
+    zh: '生活方式应用 — 通过 SDK 迁移重构变现',
+    es: 'App de Lifestyle — Renovación de Monetización vía Migración de SDK',
+    ar: 'تطبيق نمط الحياة — إعادة هيكلة تحقيق الدخل عبر ترحيل SDK',
+    hi: 'लाइफस्टाइल ऐप — SDK माइग्रेशन के जरिए मॉनेटाइजेशन ओवरहॉल',
+    pt: 'App de Lifestyle — Reformulação de Monetização via Migração de SDK',
+    fr: 'App Lifestyle — Refonte de la Monétisation via Migration de SDK',
+    ja: 'ライフスタイルアプリ — SDK移行による収益化刷新',
+  },
+  'A popular lifestyle and wellness app with 8M+ MAU had been monetizing': {
+    zh: '一款拥有 800 万+ 月活用户的热门生活健康应用正在重构变现策略',
+    es: 'Una popular app de lifestyle y bienestar con más de 8M de MAU estaba renovando su estrategia de monetización',
+    ar: 'تطبيق نمط حياة وعافية شهير مع أكثر من 8 ملايين مستخدم نشط شهريًا كان يعيد هيكلة استراتيجية تحقيق الدخل',
+    hi: '8M+ MAU वाला एक लोकप्रिय लाइफस्टाइल और वेलनेस ऐप अपनी मॉनेटाइजेशन स्ट्रैटेजी को ओवरहॉल कर रहा था',
+    pt: 'Um popular app de lifestyle e bem-estar com mais de 8M de MAU estava renovando sua estratégia de monetização',
+    fr: 'Une app de lifestyle et bien-être populaire avec plus de 8M de MAU refondait sa stratégie de monétisation',
+    ja: '800万以上のMAUを持つ人気ライフスタイル・ウェルネスアプリが収益化戦略を刷新',
+  },
+  '"We were skeptical that adding rewarded video could increase revenue w': {
+    zh: '"我们曾怀疑添加激励视频是否真能在不影响体验的情况下提升收益，但结果证明我们错了。"',
+    es: '"Éramos escépticos de que añadir video recompensado pudiera aumentar los ingresos sin afectar la experiencia, pero los resultados nos demostraron que estábamos equivocados."',
+    ar: '"كنا متشككين في أن إضافة الفيديو المكافأ يمكن أن يزيد الإيرادات دون التأثير على التجربة، لكن النتائج أثبتت أننا كنا مخطئين."',
+    hi: '"हम संशय में थे कि रिवॉर्डेड वीडियो जोड़ने से अनुभव को प्रभावित किए बिना राजस्व बढ़ सकता है, लेकिन परिणामों ने साबित किया कि हम गलत थे।"',
+    pt: '"Éramos céticos de que adicionar vídeo recompensado poderia aumentar receita sem afetar a experiência, mas os resultados provaram que estávamos errados."',
+    fr: '"Nous étions sceptiques que l\'ajout de vidéo récompensée pourrait augmenter les revenus sans affecter l\'expérience, mais les résultats ont prouvé que nous avions tort."',
+    ja: '"リワード動画を追加することでエクスペリエンスを損なわずに収益を増やせるか疑っていましたが、結果が私たちが間違っていたことを証明しました。"',
+  },
+  '— Growth & Monetization Lead, Lifestyle Wellness App': {
+    zh: '— 增长与变现负责人，生活健康应用',
+    es: '— Responsable de Crecimiento y Monetización, App de Bienestar Lifestyle',
+    ar: '— مسؤول النمو وتحقيق الدخل، تطبيق العافية',
+    hi: '— ग्रोथ और मॉनेटाइजेशन लीड, लाइफस्टाइल वेलनेस ऐप',
+    pt: '— Líder de Crescimento e Monetização, App de Bem-estar Lifestyle',
+    fr: '— Responsable Croissance et Monétisation, App Lifestyle Bien-être',
+    ja: '— グロース＆マネタイズリード、ライフスタイルウェルネスアプリ',
+  },
+  'Casual Game Studio — Revenue Maximization via Rewarded Video': {
+    zh: '休闲游戏工作室 — 通过激励视频最大化收益',
+    es: 'Estudio de Juegos Casuales — Maximización de Ingresos vía Video Recompensado',
+    ar: 'استوديو الألعاب العرضية — تعظيم الإيرادات عبر الفيديو المكافأ',
+    hi: 'कैजुअल गेम स्टूडियो — रिवॉर्डेड वीडियो के जरिए रेवेन्यू मैक्सिमाइजेशन',
+    pt: 'Estúdio de Jogos Casuais — Maximização de Receita via Vídeo Recompensado',
+    fr: 'Studio de Jeux Casuales — Maximisation des Revenus via Vidéo Récompensée',
+    ja: 'カジュアルゲームスタジオ — リワード動画による収益最大化',
+  },
+  'A casual mobile game studio with 15M+ downloads integrated NexBids SSP': {
+    zh: '一家拥有 1500 万+ 下载量的休闲移动游戏工作室接入了 NexBids SSP',
+    es: 'Un estudio de juegos móviles casuales con más de 15M de descargas integró NexBids SSP',
+    ar: 'دمج استوديو ألعاب الجوال العرضية مع أكثر من 15 مليون تنزيل NexBids SSP',
+    hi: '15M+ डाउनलोड वाले एक कैजुअल मोबाइल गेम स्टूडियो ने NexBids SSP को इंटीग्रेट किया',
+    pt: 'Um estúdio de jogos móveis casuais com mais de 15M de downloads integrou NexBids SSP',
+    fr: 'Un studio de jeux mobiles casuales avec plus de 15M de téléchargements a intégré NexBids SSP',
+    ja: '1500万以上のダウンロードを持つカジュアルモバイルゲームスタジオがNexBids SSPを統合',
+  },
+  'The Company Behind the World\'s Programmatic Infrastructure': {
+    zh: '全球程序化广告基础设施背后的公司',
+    es: 'La Empresa Detrás de la Infraestructura Programática Mundial',
+    ar: 'الشركة وراء البنية التحتية البرمجية العالمية',
+    hi: 'दुनिया के प्रोग्रामेटिक इन्फ्रास्ट्रक्चर के पीछे की कंपनी',
+    pt: 'A Empresa por Trás da Infraestrutura Programática Mundial',
+    fr: 'L\'Entreprise Derrière l\'Infrastructure Programmatique Mondiale',
+    ja: '世界のプログラマティックインフラを支える会社',
+  },
+  'From a bold founding vision in 2018 to a global ad tech leader serving': {
+    zh: '从 2018 年的大胆创立愿景到服务全球的广告技术领导者',
+    es: 'De una audaz visión fundacional en 2018 a un líder global de ad tech',
+    ar: 'من رؤية تأسيسية جريئة في 2018 إلى قائد عالمي في تقنية الإعلانات',
+    hi: '2018 में एक साहसी संस्थापन दृष्टि से लेकर एक वैश्विक एड टेक नेता तक',
+    pt: 'De uma visão fundacional ousada em 2018 a um líder global de ad tech',
+    fr: 'D\'une vision fondatrice audacieuse en 2018 à un leader mondial de l\'ad tech',
+    ja: '2018年の大胆な創業ビジョンからグローバルなアドテクリーダーへ',
+  },
+  'From a small team with a big idea to a global ad tech company serving': {
+    zh: '从一支抱有远大想法的小团队，成长为服务全球的广告科技公司',
+    es: 'De un pequeño equipo con una gran idea a una empresa global de ad tech',
+    ar: 'من فريق صغير بفكرة كبيرة إلى شركة عالمية لتقنية الإعلانات',
+    hi: 'एक बड़े विचार वाली छोटी टीम से एक वैश्विक एड टेक कंपनी तक',
+    pt: 'De uma pequena equipe com uma grande ideia a uma empresa global de ad tech',
+    fr: 'D\'une petite équipe avec une grande idée à une entreprise mondiale d\'ad tech',
+    ja: '大きなアイデアを持つ小さなチームからグローバルなアドテク企業へ',
+  },
+  'NexBids was founded in 2018 by a team of advertising technology vetera': {
+    zh: 'NexBids 于 2018 年由一支广告技术老兵团队创立',
+    es: 'NexBids fue fundada en 2018 por un equipo de veteranos de la tecnología publicitaria',
+    ar: 'تأسست NexBids عام 2018 على يد فريق من المخضرمين في تقنية الإعلانات',
+    hi: 'NexBids की स्थापना 2018 में विज्ञापन प्रौद्योगिकी के अनुभवी लोगों की एक टीम ने की थी',
+    pt: 'NexBids foi fundada em 2018 por uma equipe de veteranos em tecnologia de publicidade',
+    fr: 'NexBids a été fondée en 2018 par une équipe de vétérans de la technologie publicitaire',
+    ja: 'NexBidsは2018年に広告テクノロジーのベテランチームによって設立されました',
+  },
+  'The founding vision: build a full-stack programmatic platform that com': {
+    zh: '创立愿景：打造一个将完整程序化广告堆栈整合为单一平台的全栈解决方案',
+    es: 'La visión fundacional: construir una plataforma programática completa que combine todo el stack',
+    ar: 'الرؤية التأسيسية: بناء منصة برمجية متكاملة تجمع الحزمة الكاملة في منصة واحدة',
+    hi: 'संस्थापन दृष्टि: एक पूर्ण-स्टैक प्रोग्रामेटिक प्लेटफॉर्म बनाना जो पूरे स्टैक को एकत्रित करे',
+    pt: 'A visão fundacional: construir uma plataforma programática completa que combine todo o stack',
+    fr: 'La vision fondatrice: construire une plateforme programmatique complète combinant toute la pile',
+    ja: '創業ビジョン：完全なプログラマティックスタックを1つのプラットフォームに統合するフルスタックプラットフォームの構築',
+  },
+  'To democratize access to the world\'s best programmatic advertising tec': {
+    zh: '让全球最优秀的程序化广告技术触手可及',
+    es: 'Democratizar el acceso a la mejor tecnología de publicidad programática del mundo',
+    ar: 'إضفاء الطابع الديمقراطي على الوصول إلى أفضل تقنية إعلانية برمجية في العالم',
+    hi: 'दुनिया की सर्वश्रेष्ठ प्रोग्रामेटिक विज्ञापन तकनीक तक पहुंच को लोकतांत्रिक बनाना',
+    pt: 'Democratizar o acesso à melhor tecnologia de publicidade programática do mundo',
+    fr: 'Démocratiser l\'accès à la meilleure technologie de publicité programmatique au monde',
+    ja: '世界最高のプログラマティック広告テクノロジーへのアクセスを民主化する',
+  },
+  'A digital advertising ecosystem that is intelligent, transparent, effi': {
+    zh: '一个智能、透明、高效且对所有人开放的数字广告生态系统',
+    es: 'Un ecosistema de publicidad digital que sea inteligente, transparente, eficiente y accesible para todos',
+    ar: 'نظام بيئي للإعلان الرقمي يكون ذكيًا وشفافًا وفعالًا ومتاحًا للجميع',
+    hi: 'एक डिजिटल विज्ञापन इकोसिस्टम जो बुद्धिमान, पारदर्शी, कुशल और सभी के लिए सुलभ हो',
+    pt: 'Um ecossistema de publicidade digital que seja inteligente, transparente, eficiente e acessível a todos',
+    fr: 'Un écosystème publicitaire numérique qui soit intelligent, transparent, efficace et accessible à tous',
+    ja: 'インテリジェントで透明、効率的で誰もがアクセス可能なデジタル広告エコシステム',
+  },
+  'At NexBids, we\'re on a mission to make programmatic advertising smarte': {
+    zh: '在 NexBids，我们的使命是让程序化广告更智能、更公平',
+    es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente y justa',
+    ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وإنصافًا',
+    hi: 'NexBids में, हमारा मिशन प्रोग्रामेटिक विज्ञापन को और अधिक स्मार्ट और निष्पक्ष बनाना है',
+    pt: 'Na NexBids, nossa missão é tornar a publicidade programática mais inteligente e justa',
+    fr: 'Chez NexBids, notre mission est de rendre la publicité programmatique plus intelligente et équitable',
+    ja: 'NexBidsでは、プログラマティック広告をよりスマートで公平にすることが使命です',
+  },
+  'I agree to NexBids\'': {
+    zh: '我同意 NexBids 的',
+    es: 'Acepto los',
+    ar: 'أوافق على',
+    hi: 'मैं NexBids की',
+    pt: 'Concordo com os',
+    fr: 'J\'accepte les',
+    ja: 'NexBidsの',
+  },
+  'Sorry, the page you are looking for doesn\'t exist or is temporarily un': {
+    zh: '抱歉，您访问的页面不存在或暂时无法访问。',
+    es: 'Lo sentimos, la página que busca no existe o no está disponible temporalmente.',
+    ar: 'عذرًا، الصفحة التي تبحث عنها غير موجودة أو غير متاحة مؤقتًا.',
+    hi: 'क्षमा करें, आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है या अस्थायी रूप से अनुपलब्ध है।',
+    pt: 'Desculpe, a página que você está procurando não existe ou está temporariamente indisponível.',
+    fr: 'Désolé, la page que vous recherchez n\'existe pas ou est temporairement indisponible.',
+    ja: '申し訳ありませんが、お探しのページは存在しないか、一時的に利用できません。',
+  },
+  'Language': {
+    zh: '语言',
+    es: 'Idioma',
+    ar: 'اللغة',
+    hi: 'भाषा',
+    pt: 'Idioma',
+    fr: 'Langue',
+    ja: '言語',
+  },
+  'Login to Platform': {
+    zh: '登录平台',
+    es: 'Iniciar sesión en la plataforma',
+    ar: 'تسجيل الدخول إلى المنصة',
+    hi: 'प्लेटफॉर्म में लॉगिन करें',
+    pt: 'Entrar na plataforma',
+    fr: 'Se connecter à la plateforme',
+    ja: 'プラットフォームにログイン',
+  },
+  'Advertiser Platform': {
+    zh: '广告主平台',
+    es: 'Plataforma para Anunciantes',
+    ar: 'منصة المعلنين',
+    hi: 'विज्ञापनदाता प्लेटफॉर्म',
+    pt: 'Plataforma para Anunciantes',
+    fr: 'Plateforme Annonceurs',
+    ja: '広告主プラットフォーム',
+  },
+  'Publisher Platform': {
+    zh: '发布商平台',
+    es: 'Plataforma para Publishers',
+    ar: 'منصة الناشرين',
+    hi: 'प्रकाशक प्लेटफॉर्म',
+    pt: 'Plataforma para Publishers',
+    fr: 'Plateforme Éditeurs',
+    ja: 'パブリッシャープラットフォーム',
+  },
+  'Exchange Platform': {
+    zh: '交易所平台',
+    es: 'Plataforma de Exchange',
+    ar: 'منصة التبادل',
+    hi: 'एक्सचेंज प्लेटफॉर्म',
+    pt: 'Plataforma de Exchange',
+    fr: 'Plateforme Exchange',
+    ja: 'エクスチェンジプラットフォーム',
+  },
+  'Signing in…': {
+    zh: '登录中…',
+    es: 'Iniciando sesión…',
+    ar: 'جارٍ تسجيل الدخول…',
+    hi: 'साइन इन हो रहा है…',
+    pt: 'Entrando…',
+    fr: 'Connexion en cours…',
+    ja: 'サインイン中…',
+  },
+  'Demo environment — Login not available in preview mode.': {
+    zh: '演示环境 — 预览模式下登录不可用。',
+    es: 'Entorno de demo — Inicio de sesión no disponible en modo de vista previa.',
+    ar: 'بيئة تجريبية — تسجيل الدخول غير متاح في وضع المعاينة.',
+    hi: 'डेमो वातावरण — पूर्वावलोकन मोड में लॉगिन उपलब्ध नहीं है।',
+    pt: 'Ambiente de demonstração — Login não disponível no modo de pré-visualização.',
+    fr: 'Environnement de démonstration — Connexion non disponible en mode prévisualisation.',
+    ja: 'デモ環境 — プレビューモードではログインが利用できません。',
+  },
+  'NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.': {
+    zh: 'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。',
+    es: 'NexBids ofrece un ecosistema completo de publicidad programática — DSP, ADX y SSP — para anunciantes, publishers, desarrolladores y agencias.',
+    ar: 'تقدم NexBids نظامًا بيئيًا متكاملًا للإعلان البرمجي — DSP وADX وSSP.',
+    hi: 'NexBids एक पूर्ण-स्टैक प्रोग्रामेटिक विज्ञापन इकोसिस्टम प्रदान करता है।',
+    pt: 'NexBids oferece um ecossistema completo de publicidade programática — DSP, ADX e SSP.',
+    fr: 'NexBids offre un écosystème publicitaire programmatique complet — DSP, ADX et SSP.',
+    ja: 'NexBidsはフルスタックのプログラマティック広告エコシステムを提供します。',
+  },
+  '&lt;80ms Bid Response': {
+    zh: '&lt;80ms竞价响应',
+    es: '<80ms Respuesta de puja',
+    ar: 'استجابة مزايدة أقل من 80 مللي ثانية',
+    hi: '<80ms बोली प्रतिक्रिया',
+    pt: '<80ms Resposta de lance',
+    fr: '<80ms Réponse aux enchères',
+    ja: '<80ms 入札レスポンス',
+  },
+  'E-commerce, gaming studios, app developers, and brand marketers looking to acquire users and drive revenue globally.': {
+    zh: '电商、游戏工作室、应用开发者和品牌营销人员，希望在全球范围内获取用户并增加收益。',
+    es: 'E-commerce, estudios de juegos, desarrolladores de apps y marcas que buscan adquirir usuarios e impulsar ingresos globalmente.',
+    ar: 'التجارة الإلكترونية واستوديوهات الألعاب ومطورو التطبيقات والمسوقون الراغبون في اكتساب المستخدمين وزيادة الإيرادات عالميًا.',
+    hi: 'ई-कॉमर्स, गेमिंग स्टूडियो, ऐप डेवलपर्स और ब्रांड मार्केटर्स जो वैश्विक स्तर पर यूजर्स हासिल करना चाहते हैं।',
+    pt: 'E-commerce, estúdios de jogos, desenvolvedores de apps e marcas buscando adquirir usuários e aumentar receitas globalmente.',
+    fr: 'E-commerce, studios de jeux, développeurs d\'apps et marques cherchant à acquérir des utilisateurs mondialement.',
+    ja: 'Eコマース、ゲームスタジオ、アプリ開発者がグローバルにユーザー獲得と収益成長を目指します。',
+  },
+  'Website owners, mobile app developers, game studios, and digital media companies seeking to maximize ad revenue.': {
+    zh: '网站所有者、移动应用开发者、游戏工作室和数字媒体公司，希望最大化广告收益。',
+    es: 'Propietarios de sitios web, desarrolladores de apps, estudios de juegos y empresas de medios digitales que buscan maximizar ingresos publicitarios.',
+    ar: 'أصحاب المواقع ومطورو تطبيقات الجوال واستوديوهات الألعاب وشركات الإعلام الرقمي الساعون إلى تعظيم إيرادات الإعلانات.',
+    hi: 'वेबसाइट मालिक, मोबाइल ऐप डेवलपर्स, गेम स्टूडियो और डिजिटल मीडिया कंपनियां।',
+    pt: 'Proprietários de sites, desenvolvedores de apps, estúdios de jogos e empresas de mídia digital.',
+    fr: 'Propriétaires de sites, développeurs d\'apps, studios de jeux et entreprises de médias numériques.',
+    ja: 'ウェブサイトオーナー、モバイルアプリ開発者、ゲームスタジオ、デジタルメディア企業。',
+  },
+  'Full-service and performance agencies managing programmatic campaigns for multiple advertiser clients worldwide.': {
+    zh: '为全球多个广告主客户管理程序化营销活动的全服务和绩效代理商。',
+    es: 'Agencias de servicio completo y rendimiento que gestionan campañas programáticas para múltiples clientes anunciantes en todo el mundo.',
+    ar: 'وكالات الخدمة الكاملة والأداء التي تدير الحملات البرمجية لعملاء معلنين متعددين حول العالم.',
+    hi: 'प्रदर्शन और पूर्ण-सेवा एजेंसियां जो दुनिया भर में कई विज्ञापनदाताओं के लिए अभियान प्रबंधित करती हैं।',
+    pt: 'Agências de serviço completo e de performance que gerenciam campanhas programáticas para múltiplos clientes no mundo todo.',
+    fr: 'Agences de service complet et de performance gérant des campagnes programmatiques pour de nombreux clients dans le monde.',
+    ja: '世界中の複数の広告主向けにプログラマティックキャンペーンを管理するエージェンシー。',
+  },
+  'Our proprietary AI/ML infrastructure processes 50 billion bid requests daily, making real-time optimization decisions in under 100 milliseconds.': {
+    zh: '我们的专有AI/ML基础设施每天处理500亿次竞价请求，在100毫秒内做出实时优化决策。',
+    es: 'Nuestra infraestructura propietaria de IA/ML procesa 50 mil millones de solicitudes de puja diariamente en menos de 100 milisegundos.',
+    ar: 'تعالج بنيتنا التحتية الخاصة للذكاء الاصطناعي 50 مليار طلب مزايدة يوميًا في أقل من 100 مللي ثانية.',
+    hi: 'हमारा AI/ML इन्फ्रास्ट्रक्चर प्रतिदिन 500 बिलियन बिड अनुरोध 100ms से कम में प्रोसेस करता है।',
+    pt: 'Nossa infraestrutura de IA/ML processa 50 bilhões de solicitações de lance diariamente em menos de 100 milissegundos.',
+    fr: 'Notre infrastructure IA/ML traite 50 milliards de demandes d\'enchères par jour en moins de 100 millisecondes.',
+    ja: '独自のAI/MLインフラが毎日500億件の入札リクエストを100ms以内に処理します。',
+  },
+  'Whether you\'re an advertiser seeking global reach, a publisher maximizing revenue, or an agency scaling programmatic operations — NexBids has the solution.': {
+    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商，还是扩展程序化运营的代理商——NexBids 都有适合您的解决方案。',
+    es: 'Ya sea anunciante buscando alcance global, publisher maximizando ingresos o agencia — NexBids tiene la solución.',
+    ar: 'سواء كنت معلنًا أو ناشرًا أو وكالة — NexBids لديه الحل.',
+    hi: 'चाहे आप विज्ञापनदाता हों, प्रकाशक हों, या एजेंसी — NexBids के पास समाधान है।',
+    pt: 'Seja anunciante, publisher ou agência — NexBids tem a solução.',
+    fr: 'Que vous soyez annonceur, éditeur ou agence — NexBids a la solution.',
+    ja: '広告主、パブリッシャー、エージェンシーのいずれでも — NexBidsに解決策があります。',
+  },
+  'NexBids DSP gives advertisers AI-powered tools to reach the right audiences across 150+ countries, drive measurable ROAS, and dominate every digital channel.': {
+    zh: 'NexBids DSP为广告主提供AI驱动的工具，在150+个国家触达正确的受众，推动可衡量的ROAS，主导每个数字渠道。',
+    es: 'NexBids DSP brinda herramientas de IA para llegar a las audiencias correctas en 150+ países y dominar cada canal digital.',
+    ar: 'يمنح NexBids DSP المعلنين أدوات ذكاء اصطناعي للوصول إلى الجماهير المناسبة عبر 150+ دولة.',
+    hi: 'NexBids DSP विज्ञापनदाताओं को 150+ देशों में सही दर्शकों तक पहुंचने के लिए AI टूल देता है।',
+    pt: 'NexBids DSP fornece ferramentas de IA para alcançar o público certo em 150+ países.',
+    fr: 'NexBids DSP donne aux annonceurs des outils IA pour atteindre les bonnes audiences dans 150+ pays.',
+    ja: 'NexBids DSPは広告主に150カ国以上で適切なオーディエンスへリーチするAIツールを提供します。',
+  },
+  'NexBids SSP connects your inventory to 50,000+ premium advertisers worldwide, delivering higher eCPMs through header bidding, AI floor optimization, and direct deal access.': {
+    zh: 'NexBids SSP将您的广告资源连接至全球50,000+优质广告主，通过头部竞价、AI底价优化和直接交易访问，提供更高的eCPM。',
+    es: 'Todo lo que necesitas para ganar en programática',
+    ar: 'كل ما تحتاجه للفوز في الإعلان البرمجي',
+    hi: 'प्रोग्रामेटिक में जीतने के लिए जो कुछ भी चाहिए',
+    pt: 'Tudo que você precisa para vencer no programático',
+    fr: 'Tout ce dont vous avez besoin pour gagner en programmatique',
+    ja: 'プログラマティックで勝つために必要なすべて',
+  },
+  'NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.': {
+    zh: 'NexBids代理商解决方案为绩效和全服务代理商提供工具、定价和支持，帮助赢得更多客户并提供卓越的程序化成果。',
+    es: 'NexBids SSP conecta tu inventario con 50.000+ anunciantes premium en todo el mundo mediante header bidding y optimización de floor con IA.',
+    ar: 'يربط NexBids SSP مخزونك بأكثر من 50,000 معلن متميز حول العالم.',
+    hi: 'NexBids SSP आपकी इन्वेंटरी को दुनिया भर के 50,000+ प्रीमियम विज्ञापनदाताओं से जोड़ता है।',
+    pt: 'NexBids SSP conecta seu inventário a 50.000+ anunciantes premium mundialmente.',
+    fr: 'NexBids SSP connecte votre inventaire à 50 000+ annonceurs premium dans le monde.',
+    ja: 'NexBids SSPはあなたのインベントリを世界中の50,000以上のプレミアム広告主に接続します。',
+  },
+  'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP — works seamlessly together to power every side of the digital advertising marketplace.': {
+    zh: 'NexBids的全栈程序化广告基础设施——DSP、ADX和SSP——无缝协作，驱动数字广告市场的每一方。',
+    es: 'NexBids Agency Solutions da a las agencias las herramientas, precios y soporte para ganar más clientes y entregar resultados programáticos excepcionales.',
+    ar: 'يمنح NexBids Agency Solutions الوكالات الأدوات والأسعار والدعم لكسب المزيد من العملاء.',
+    hi: 'NexBids Agency Solutions एजेंसियों को अधिक क्लाइंट जीतने के लिए टूल, प्राइसिंग और सपोर्ट देता है।',
+    pt: 'NexBids Agency Solutions dá às agências as ferramentas, preços e suporte para conquistar mais clientes.',
+    fr: 'NexBids Agency Solutions donne aux agences les outils, les prix et le support pour gagner plus de clients.',
+    ja: 'NexBidsエージェンシーソリューションは更多くのクライアントを獲得するためのツール・価格・サポートを提供します。',
+  },
+  'The AI-powered demand-side platform built for performance. Reach the right audiences across 150+ countries, optimize to your KPIs in real time, and scale campaigns with confidence.': {
+    zh: 'AI驱动的绩效需求方平台。在150+个国家触达正确的受众，实时优化您的KPI，并自信地扩展营销活动。',
+    es: 'La infraestructura programática completa de NexBids — DSP, ADX y SSP — trabaja perfectamente junta para impulsar el mercado de publicidad digital.',
+    ar: 'تعمل البنية التحتية البرمجية الكاملة لـ NexBids معًا بسلاسة لتشغيل سوق الإعلانات الرقمية.',
+    hi: 'NexBids का फुल-स्टैक इन्फ्रास्ट्रक्चर डिजिटल विज्ञापन मार्केटप्लेस के हर पहलू को शक्ति देता है।',
+    pt: 'A infraestrutura completa da NexBids trabalha em conjunto para impulsionar o mercado de publicidade digital.',
+    fr: 'L\'infrastructure complète de NexBids fonctionne parfaitement ensemble pour alimenter le marché publicitaire numérique.',
+    ja: 'NexBidsのフルスタックインフラがデジタル広告マーケットプレイスのあらゆる側面を支えます。',
+  },
+  'The high-performance, neutral ad exchange connecting premium supply with quality demand — processing 50 billion auctions daily with sub-100ms latency.': {
+    zh: '高性能中立广告交易所，将优质供应与高质量需求相连——每天处理500亿次拍卖，延迟低于100毫秒。',
+    es: 'La DSP impulsada por IA para el rendimiento. Alcanza audiencias en 150+ países, optimiza KPIs en tiempo real y escala con confianza.',
+    ar: 'منصة جانب الطلب المدعومة بالذكاء الاصطناعي للأداء. تصل إلى الجماهير عبر 150+ دولة.',
+    hi: 'परफॉर्मेंस के लिए AI-संचालित DSP। 150+ देशों में सही दर्शकों तक पहुंचें।',
+    pt: 'A DSP alimentada por IA para performance. Alcance o público certo em 150+ países.',
+    fr: 'La DSP alimentée par l\'IA pour la performance. Atteignez les bonnes audiences dans 150+ pays.',
+    ja: 'パフォーマンスのためのAI搭載DSP。150カ国以上で適切なオーディエンスへリーチします。',
+  },
+  'The intelligent supply-side platform that maximizes publisher revenue through header bidding, AI yield optimization, direct deal access, and seamless SDK integration.': {
+    zh: '智能供应方平台，通过头部竞价、AI收益优化、直接交易访问和无缝SDK集成，最大化发布商收益。',
+    es: 'El exchange de anuncios neutral y de alto rendimiento que procesa 50 mil millones de subastas diariamente con latencia inferior a 100ms.',
+    ar: 'بورصة الإعلانات المحايدة عالية الأداء التي تعالج 50 مليار مزاد يوميًا بأقل من 100 مللي ثانية.',
+    hi: 'उच्च-प्रदर्शन, तटस्थ एड एक्सचेंज जो 100ms से कम लेटेंसी के साथ प्रतिदिन 500 बिलियन नीलामी प्रोसेस करता है।',
+    pt: 'O exchange neutro e de alto desempenho processando 50 bilhões de leilões diariamente com latência abaixo de 100ms.',
+    fr: 'L\'exchange publicitaire neutre et haute performance traitant 50 milliards d\'enchères par jour en moins de 100ms.',
+    ja: '毎日500億件のオークションを100ms以下のレイテンシで処理する高性能・中立的な広告エクスチェンジ。',
+  },
+  'NexBids is engineered from the ground up for speed, intelligence, and global scale. Our technology stack processes trillions of data signals daily, enabling smarter decisions, faster auctions, and better outcomes for every participant.': {
+    zh: 'NexBids从底层为速度、智能和全球规模而设计。我们的技术栈每天处理数万亿数据信号，为每个参与者实现更智能的决策、更快的竞价和更好的结果。',
+    es: 'La SSP inteligente que maximiza los ingresos del publisher mediante header bidding, optimización de rendimiento con IA e integración de SDK.',
+    ar: 'منصة جانب العرض الذكية التي تعظم إيرادات الناشر من خلال header bidding وتحسين العائد بالذكاء الاصطناعي.',
+    hi: 'इंटेलिजेंट SSP जो हेडर बिडिंग और AI यील्ड ऑप्टिमाइजेशन के जरिए प्रकाशक राजस्व को अधिकतम करता है।',
+    pt: 'A SSP inteligente que maximiza a receita do publisher por header bidding e otimização de yield com IA.',
+    fr: 'La SSP intelligente qui maximise les revenus des éditeurs via header bidding et optimisation du rendement par IA.',
+    ja: 'ヘッダービディングとAI収益最適化でパブリッシャー収益を最大化するインテリジェントSSP。',
+  },
+  'Our AI platform processes trillions of historical auction signals to power real-time optimization across every dimension of programmatic advertising.': {
+    zh: '我们的AI平台处理数万亿历史竞价信号，驱动程序化广告各维度的实时优化。',
+    es: 'NexBids está diseñado desde cero para velocidad, inteligencia y escala global. Nuestra pila tecnológica procesa billones de señales de datos diariamente.',
+    ar: 'صُمِّم NexBids من الصفر للسرعة والذكاء والحجم العالمي. تعالج تقنياتنا تريليونات إشارات البيانات يوميًا.',
+    hi: 'NexBids को गति, बुद्धिमत्ता और वैश्विक स्केल के लिए डिज़ाइन किया गया है। हमारा टेक स्टैक प्रतिदिन खरबों डेटा सिग्नल प्रोसेस करता है।',
+    pt: 'NexBids é projetado do zero para velocidade, inteligência e escala global. Nossa pilha tecnológica processa trilhões de sinais de dados diariamente.',
+    fr: 'NexBids est conçu depuis le début pour la vitesse, l\'intelligence et l\'échelle mondiale. Notre pile technologique traite des billions de signaux de données quotidiennement.',
+    ja: 'NexBidsはスピード、インテリジェンス、グローバルスケールのために一から設計されています。',
+  },
+  'Discover how global brands, app developers, publishers, and agencies use NexBids to drive measurable, sustainable growth.': {
+    zh: '探索各行业的全球品牌、应用开发者、发布商和代理商如何使用NexBids推动可衡量、可持续的增长。',
+    es: 'Nuestra plataforma de IA procesa billones de señales de subasta históricas para impulsar la optimización en tiempo real en la publicidad programática.',
+    ar: 'تعالج منصتنا للذكاء الاصطناعي تريليونات من إشارات المزاد التاريخية للتحسين الفوري.',
+    hi: 'हमारा AI प्लेटफॉर्म रियल-टाइम ऑप्टिमाइजेशन के लिए खरबों ऐतिहासिक नीलामी सिग्नल प्रोसेस करता है।',
+    pt: 'Nossa plataforma de IA processa trilhões de sinais de leilão históricos para otimização em tempo real.',
+    fr: 'Notre plateforme IA traite des billions de signaux d\'enchères historiques pour l\'optimisation en temps réel.',
+    ja: '私たちのAIプラットフォームはリアルタイム最適化のために数兆の過去のオークションシグナルを処理します。',
+  },
+  'From global e-commerce brands scaling into new markets, to mobile gaming studios acquiring millions of engaged players — NexBids powers performance at every stage of growth.': {
+    zh: '从进入新市场的全球电商品牌，到获取数百万高参与度玩家的移动游戏工作室——NexBids在增长的每个阶段驱动绩效。',
+    es: 'Descubre cómo marcas globales, desarrolladores de apps, publishers y agencias usan NexBids para impulsar un crecimiento medible y sostenible.',
+    ar: 'اكتشف كيف تستخدم العلامات التجارية العالمية ومطورو التطبيقات والناشرون NexBids لتحقيق نمو مستدام.',
+    hi: 'जानें कि वैश्विक ब्रांड, ऐप डेवलपर्स, प्रकाशक और एजेंसियां NexBids का उपयोग कैसे करती हैं।',
+    pt: 'Descubra como marcas globais, desenvolvedores de apps, publishers e agências usam NexBids para crescimento mensurável.',
+    fr: 'Découvrez comment les marques mondiales, développeurs d\'apps, éditeurs et agences utilisent NexBids.',
+    ja: 'グローバルブランド、アプリ開発者、パブリッシャー、エージェンシーがNexBidsをどのように活用するか。',
+  },
+  'A fast-growing global fashion e-commerce brand operating in 12 countries transformed programmatic from a write-off into their fastest-growing revenue driver.': {
+    zh: '一个在12个国家运营的快速成长全球时尚电商品牌，将程序化广告从被放弃的渠道转变为增长最快的收益驱动器。',
+    es: 'Desde marcas globales de e-commerce que escalan a nuevos mercados hasta estudios de juegos móviles — NexBids impulsa el rendimiento en cada etapa.',
+    ar: 'من العلامات التجارية للتجارة الإلكترونية إلى استوديوهات الألعاب — NexBids يدفع الأداء في كل مرحلة.',
+    hi: 'वैश्विक ई-कॉमर्स ब्रांडों से मोबाइल गेमिंग स्टूडियो तक — NexBids विकास के हर चरण में परफॉर्मेंस को शक्ति देता है।',
+    pt: 'De marcas globais de e-commerce a estúdios de jogos móveis — NexBids impulsiona performance em cada etapa.',
+    fr: 'Des marques mondiales d\'e-commerce aux studios de jeux mobiles — NexBids propulse la performance à chaque étape.',
+    ja: 'グローバルEコマースブランドからモバイルゲームスタジオまで、NexBidsは成長のあらゆる段階を支えます。',
+  },
+  '"NexBids transformed programmatic from a channel we had written off into our fastest-growing revenue driver. The combination of their dynamic creative technology and AI bidding delivered ROAS we never thought achievable."': {
+    zh: '"NexBids将程序化广告从我们已放弃的渠道转变为增长最快的收益驱动器。他们的动态创意技术和AI竞价的组合带来了我们认为无法实现的ROAS。"',
+    es: 'Una marca de moda e-commerce global de rápido crecimiento en 12 países transformó el programático en su motor de ingresos de más rápido crecimiento.',
+    ar: 'حوّلت علامة تجارية للأزياء الإلكترونية تعمل في 12 دولة الإعلان البرمجي إلى محركها الأسرع نموًا.',
+    hi: '12 देशों में काम करने वाले एक वैश्विक फैशन ई-कॉमर्स ब्रांड ने प्रोग्रामेटिक को अपना सबसे तेज़ राजस्व चालक बना दिया।',
+    pt: 'Uma marca global de moda e-commerce em 12 países transformou o programático em seu motor de receita de crescimento mais rápido.',
+    fr: 'Une marque mondiale de mode e-commerce dans 12 pays a transformé le programmatique en son moteur de revenus à la croissance la plus rapide.',
+    ja: '12カ国で展開するグローバルファッションEコマースブランドがプログラマティックを最急成長収益ドライバーに変えました。',
+  },
+  'A top-grossing mobile RPG studio needed to scale beyond their existing channels without sacrificing the player quality that drove their monetization.': {
+    zh: '一家顶级收入移动RPG工作室需要超越现有渠道进行扩展，同时不牺牲推动变现的玩家质量。',
+    es: '"NexBids transformó el programático de un canal descartado en nuestro motor de ingresos de mayor crecimiento. El ROAS logrado superó todo lo que creíamos posible."',
+    ar: '"حوّل NexBids الإعلان البرمجي من قناة كنا قد تخلينا عنها إلى محرك إيراداتنا الأسرع نموًا."',
+    hi: '"NexBids ने प्रोग्रामेटिक को छोड़े गए चैनल से सबसे तेज़ बढ़ते राजस्व चालक में बदल दिया।"',
+    pt: '"NexBids transformou o programático de um canal descartado no nosso motor de receita de maior crescimento."',
+    fr: '"NexBids a transformé le programmatique d\'un canal abandonné en notre moteur de revenus à la plus forte croissance."',
+    ja: '"NexBidsはプログラマティックを諦めていたチャネルから最も急成長する収益ドライバーへと変革しました。"',
+  },
+  '"We\'d tried every major DSP and none could match the quality of players NexBids delivered. Their LTV Optimizer changed everything — we\'re now profitable on a D180 basis across all markets."': {
+    zh: '"我们尝试过每一家主要DSP，没有一家能匹配NexBids带来的玩家质量。他们的LTV优化器改变了一切——我们现在在所有市场的D180基础上都是盈利的。"',
+    es: 'Un estudio de RPG móvil top necesitaba escalar más allá de sus canales existentes sin sacrificar la calidad de los jugadores.',
+    ar: 'احتاج استوديو RPG للجوال إلى التوسع إلى ما بعد قنواته الحالية دون التضحية بجودة اللاعبين.',
+    hi: 'एक टॉप-ग्रॉसिंग मोबाइल RPG स्टूडियो को खिलाड़ी की गुणवत्ता का बलिदान किए बिना स्केल करने की जरूरत थी।',
+    pt: 'Um estúdio de RPG móvel dos mais rentáveis precisava escalar sem sacrificar a qualidade dos jogadores.',
+    fr: 'Un studio de RPG mobile top devait se développer sans sacrifier la qualité des joueurs.',
+    ja: 'トップ収益モバイルRPGスタジオがプレイヤー品質を犠牲にせずにスケールする必要がありました。',
+  },
+  'A productivity app needed a programmatic partner to support rapid global expansion from 3 to 28 markets while maintaining CPA targets.': {
+    zh: '一款生产力应用需要程序化合作伙伴支持从3个市场扩展到28个市场的快速全球扩张，同时保持CPA目标。',
+    es: '"Probamos todos los DSP principales y ninguno igualó la calidad de jugadores de NexBids. Su LTV Optimizer lo cambió todo — ahora somos rentables D180 en todos los mercados."',
+    ar: '"جربنا كل DSP رئيسي ولم يستطع أحد مضاهاة جودة لاعبي NexBids. غيّر LTV Optimizer كل شيء."',
+    hi: '"हमने हर DSP आजमाया, कोई भी NexBids की खिलाड़ी गुणवत्ता से मेल नहीं खाया। LTV Optimizer ने सब बदल दिया।"',
+    pt: '"Experimentamos todos os DSPs e nenhum igualou a qualidade dos jogadores do NexBids. O LTV Optimizer mudou tudo."',
+    fr: '"Nous avons testé tous les DSP et aucun n\'a égalé la qualité des joueurs de NexBids. Le LTV Optimizer a tout changé."',
+    ja: '"主要なDSPをすべて試しましたがNexBidsのプレイヤー品質に匹敵するものはありませんでした。LTV Optimizerがすべてを変えました。"',
+  },
+  'From independent news sites to mobile game studios — see how publishers across web, app, and gaming unlock their true revenue potential with NexBids SSP.': {
+    zh: '从独立新闻网站到移动游戏工作室——了解网页、应用和游戏领域的发布商如何使用NexBids SSP释放真正的收益潜力。',
+    es: 'Una app de productividad necesitaba un socio programático para expandirse de 3 a 28 mercados globales manteniendo los objetivos de CPA.',
+    ar: 'احتاج تطبيق الإنتاجية إلى شريك برمجي للتوسع من 3 إلى 28 سوقًا مع الحفاظ على أهداف CPA.',
+    hi: 'एक प्रोडक्टिविटी ऐप को CPA लक्ष्य बनाए रखते हुए 3 से 28 बाजारों में विस्तार के लिए पार्टनर की जरूरत थी।',
+    pt: 'Um app de produtividade precisava de parceiro programático para expandir de 3 para 28 mercados mantendo metas de CPA.',
+    fr: 'Une app de productivité avait besoin d\'un partenaire programmatique pour s\'étendre de 3 à 28 marchés tout en maintenant les objectifs de CPA.',
+    ja: '生産性アプリがCPAターゲットを維持しながら3市場から28市場に拡大するプログラマティックパートナーを必要としていました。',
+  },
+  'A leading regional finance news platform migrated from a single SSP waterfall setup to NexBids header bidding, transforming their ad revenue performance in 90 days.': {
+    zh: '一家领先的区域财经新闻平台从单一SSP瀑布流迁移至NexBids头部竞价，在90天内彻底改变了广告收益表现。',
+    es: 'Desde sitios de noticias independientes hasta estudios de juegos móviles — descubre cómo los publishers desbloquean su verdadero potencial de ingresos con NexBids SSP.',
+    ar: 'من مواقع الأخبار إلى استوديوهات الألعاب — اكتشف كيف يطلق الناشرون إمكاناتهم الإيرادية مع NexBids SSP.',
+    hi: 'स्वतंत्र समाचार साइटों से मोबाइल गेम स्टूडियो तक — NexBids SSP के साथ राजस्व क्षमता अनलॉक करें।',
+    pt: 'De sites de notícias independentes a estúdios de jogos móveis — desbloqueie o potencial de receita com NexBids SSP.',
+    fr: 'Des sites d\'actualités aux studios de jeux mobiles — débloquent leur vrai potentiel de revenus avec NexBids SSP.',
+    ja: '独立ニュースサイトからモバイルゲームスタジオまでNexBids SSPで真の収益ポテンシャルを解放します。',
+  },
+  '"The NexBids header bidding implementation was transformative. Within 90 days, our CPMs had increased by 67% and our monthly revenue had grown by $200K. The yield optimization team was outstanding."': {
+    zh: '"NexBids头部竞价实施是变革性的。在90天内，我们的CPM提升了67%，月收入增长了20万美元。收益优化团队非常出色。"',
+    es: 'Una plataforma líder de noticias financieras regionales migró al header bidding de NexBids, transformando sus ingresos publicitarios en 90 días.',
+    ar: 'انتقلت منصة أخبار مالية إقليمية رائدة إلى NexBids header bidding وحوّلت أداء إيراداتها في 90 يومًا.',
+    hi: 'एक प्रमुख क्षेत्रीय वित्त समाचार प्लेटफॉर्म NexBids हेडर बिडिंग में माइग्रेट हुआ और 90 दिनों में राजस्व परिवर्तन हासिल किया।',
+    pt: 'Uma plataforma líder de notícias financeiras regionais migrou para o header bidding da NexBids, transformando receitas em 90 dias.',
+    fr: 'Une plateforme leader d\'actualités financières régionales a migré vers le header bidding NexBids, transformant ses revenus en 90 jours.',
+    ja: '大手地域金融ニュースプラットフォームがNexBidsヘッダービディングに移行し、90日で収益を変革しました。',
+  },
+  'A popular lifestyle and wellness app with 8M+ MAU had been monetizing with banner ads only. NexBids SSP integration unlocked rewarded video and interstitial formats, tripling monthly revenue.': {
+    zh: '一款拥有800万+月活用户的热门生活方式应用仅靠横幅广告变现。NexBids SSP集成解锁了激励视频和插页式格式，使月收入增长三倍。',
+    es: '"La implementación de header bidding de NexBids fue transformadora. En 90 días nuestros CPMs subieron 67% y los ingresos mensuales crecieron $200K."',
+    ar: '"كان تطبيق header bidding من NexBids تحويليًا. في 90 يومًا، ارتفعت CPMs 67% ونمت الإيرادات بـ200,000 دولار."',
+    hi: '"NexBids का हेडर बिडिंग परिवर्तनकारी था। 90 दिनों में CPM 67% बढ़े और मासिक राजस्व $200K बढ़ा।"',
+    pt: '"A implementação de header bidding da NexBids foi transformadora. Em 90 dias nossos CPMs subiram 67% e a receita mensal cresceu $200K."',
+    fr: '"La mise en œuvre du header bidding de NexBids a été transformatrice. En 90 jours nos CPMs ont augmenté de 67% et les revenus mensuels ont crû de 200 000$."',
+    ja: '"NexBidsのヘッダービディング実装は変革的でした。90日でCPMが67%上昇し、月次収益が20万ドル増加しました。"',
+  },
+  '"We were skeptical that adding rewarded video could increase revenue without hurting retention — NexBids proved us wrong on both counts. Revenue tripled and our retention actually improved."': {
+    zh: '"我们对激励视频在不损害留存的情况下增加收益持怀疑态度——NexBids在两方面都证明我们错了。收入增长了三倍，留存率实际上也提高了。"',
+    es: 'Un popular app de lifestyle con más de 8M de MAU solo monetizaba con banners. NexBids SSP desbloqueó video recompensado e intersticiales, triplicando los ingresos mensuales.',
+    ar: 'كان تطبيق نمط حياة مع 8 ملايين مستخدم يحقق الدخل فقط من البانر. أطلق NexBids SSP الفيديو المكافأ والإعلانات البينية.',
+    hi: '8M+ MAU वाला एक लाइफस्टाइल ऐप केवल बैनर से मोनेटाइज हो रहा था। NexBids SSP ने रिवॉर्डेड वीडियो अनलॉक किया।',
+    pt: 'Um app de lifestyle com mais de 8M de MAU só monetizava com banners. NexBids SSP desbloqueou vídeo recompensado e intersticiais.',
+    fr: 'Une app de lifestyle avec plus de 8M de MAU ne monétisait qu\'avec des bannières. NexBids SSP a débloqué la vidéo récompensée.',
+    ja: '800万MAUのライフスタイルアプリがバナーのみで収益化していました。NexBids SSPがリワード動画を解放しました。',
+  },
+  'A casual mobile game studio with 15M+ downloads integrated NexBids SSP across their portfolio, leveraging rewarded video optimization and mediation strategy for a 145% revenue lift.': {
+    zh: '一家拥有1500万+下载量的休闲移动游戏工作室在其产品组合中集成了NexBids SSP，通过激励视频优化和聚合策略实现了145%的收益提升。',
+    es: '"Éramos escépticos sobre el video recompensado — NexBids nos demostró estar equivocados. Los ingresos se triplicaron y la retención mejoró."',
+    ar: '"كنا متشككين في الفيديو المكافأ — NexBids أثبت أننا مخطئون. تضاعفت الإيرادات ثلاث مرات وتحسن الاحتفاظ."',
+    hi: '"रिवॉर्डेड वीडियो को लेकर संशय था — NexBids ने गलत साबित किया। राजस्व तीन गुना हुआ और रिटेंशन बेहतर हुई।"',
+    pt: '"Éramos céticos sobre o vídeo recompensado — NexBids provou que estávamos errados. A receita triplicou e a retenção melhorou."',
+    fr: '"Nous étions sceptiques sur la vidéo récompensée — NexBids a prouvé que nous avions tort. Les revenus ont triplé et la rétention s\'est améliorée."',
+    ja: '"リワード動画に懐疑的でしたがNexBidsが間違いを証明しました。収益は3倍になりリテンションも改善しました。"',
+  },
+  'The Company Behind the World\'s Programmatic Infrastructure': {
+    zh: '驱动全球程序化基础设施的公司',
+    es: 'Un estudio de juegos móviles casuales con más de 15M de descargas integró NexBids SSP y logró un aumento de ingresos del 145%.',
+    ar: 'دمج استوديو ألعاب الجوال العرضية مع 15 مليون تنزيل NexBids SSP وحقق زيادة في الإيرادات بنسبة 145%.',
+    hi: '15M+ डाउनलोड वाले एक कैजुअल गेम स्टूडियो ने NexBids SSP इंटीग्रेट किया और 145% राजस्व वृद्धि हासिल की।',
+    pt: 'Um estúdio de jogos casuais com mais de 15M de downloads integrou NexBids SSP e obteve 145% de aumento de receita.',
+    fr: 'Un studio de jeux casuales avec plus de 15M de téléchargements a intégré NexBids SSP et obtenu une hausse de revenus de 145%.',
+    ja: '1500万以上のダウンロードを持つカジュアルゲームスタジオがNexBids SSPで145%の収益増を達成しました。',
+  },
+  'From a bold founding vision in 2018 to a global ad tech leader serving 150+ countries — meet the team, the mission, and the values that power NexBids.': {
+    zh: '从2018年的大胆创始愿景，到服务150+国家的全球广告技术领导者——了解驱动NexBids的团队、使命与价值观。',
+    es: 'La Empresa Detrás de la Infraestructura Programática Mundial',
+    ar: 'الشركة وراء البنية التحتية البرمجية العالمية',
+    hi: 'दुनिया के प्रोग्रामेटिक इन्फ्रास्ट्रक्चर के पीछे की कंपनी',
+    pt: 'A Empresa por Trás da Infraestrutura Programática Mundial',
+    fr: 'L\'Entreprise Derrière l\'Infrastructure Programmatique Mondiale',
+    ja: '世界のプログラマティックインフラを支える会社',
+  },
+  'From a small team with a big idea to a global ad tech company serving thousands of advertisers, publishers, and agencies in 150+ countries — this is the NexBids story.': {
+    zh: '从一个拥有远大构想的小团队，到在150+国家服务数千名广告主、发布商和代理商的全球广告技术公司——这就是NexBids的故事。',
+    es: 'De una visión fundacional audaz en 2018 a un líder global de ad tech sirviendo 150+ países — conoce al equipo, la misión y los valores de NexBids.',
+    ar: 'من رؤية تأسيسية جريئة عام 2018 إلى قائد عالمي في تقنية الإعلانات يخدم 150+ دولة.',
+    hi: '2018 में एक साहसी दृष्टि से 150+ देशों की सेवा करने वाले वैश्विक एड टेक लीडर तक।',
+    pt: 'De uma visão fundacional ousada em 2018 a um líder global de ad tech servindo 150+ países.',
+    fr: 'D\'une vision fondatrice audacieuse en 2018 à un leader mondial de l\'ad tech servant 150+ pays.',
+    ja: '2018年の大胆な創業ビジョンから150カ国以上を支えるグローバルなアドテクリーダーへ。',
+  },
+  'NexBids was founded in 2018 by a team of advertising technology veterans who had spent their careers at some of the world\'s largest ad tech companies. They saw firsthand how programmatic advertising remained unnecessarily complex, opaque, and inaccessible for the vast majority of advertisers and publishers.': {
+    zh: 'NexBids由一支广告技术老兵团队于2018年创立。他们亲眼看到，程序化广告尽管前途光明，但对于绝大多数本可从中受益的广告主和发布商而言，仍然不必要地复杂、不透明且难以接触。',
+    es: 'De un pequeño equipo con una gran idea a una empresa global de ad tech sirviendo a miles de anunciantes, publishers y agencias en 150+ países.',
+    ar: 'من فريق صغير بفكرة كبيرة إلى شركة عالمية لتقنية الإعلانات تخدم آلاف المعلنين والناشرين في 150+ دولة.',
+    hi: 'एक बड़े विचार वाली छोटी टीम से 150+ देशों में हजारों की सेवा करने वाली वैश्विक एड टेक कंपनी तक।',
+    pt: 'De uma pequena equipe com uma grande ideia a uma empresa global de ad tech servindo milhares em 150+ países.',
+    fr: 'D\'une petite équipe avec une grande idée à une entreprise mondiale d\'ad tech servant des milliers dans 150+ pays.',
+    ja: '大きなアイデアの小さなチームから150カ国以上の何千もの顧客にサービスを提供するグローバルなアドテク企業へ。',
+  },
+  'The founding vision: build a full-stack programmatic platform that combined the technological sophistication of enterprise incumbents with the accessibility, transparency, and partnership ethos that the market desperately needed.': {
+    zh: '创立愿景：构建一个全栈程序化平台，将企业现有玩家的技术成熟度与市场迫切需要的可访问性、透明度和合作伙伴精神结合起来。',
+    es: 'NexBids fue fundada en 2018 por veteranos de la tecnología publicitaria. Vieron de primera mano cómo la publicidad programática seguía siendo innecesariamente compleja para la mayoría.',
+    ar: 'تأسست NexBids عام 2018 على يد خبراء في تقنية الإعلانات رأوا كيف ظل الإعلان البرمجي معقدًا بلا داعٍ.',
+    hi: 'NexBids की स्थापना 2018 में विज्ञापन प्रौद्योगिकी के अनुभवी लोगों ने की। उन्होंने देखा कि प्रोग्रामेटिक विज्ञापन अनावश्यक रूप से जटिल रहा।',
+    pt: 'NexBids foi fundada em 2018 por veteranos em tecnologia de publicidade que viram como a publicidade programática permanecia desnecessariamente complexa.',
+    fr: 'NexBids a été fondée en 2018 par des vétérans de la technologie publicitaire qui ont vu comment la publicité programmatique restait inutilement complexe.',
+    ja: 'NexBidsは2018年に広告テクノロジーのベテランたちによって設立されました。プログラマティック広告が不必要に複雑であることを目の当たりにしていました。',
+  },
+  'To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.': {
+    zh: '让全球最好的程序化广告技术人人可及——使每一位广告主、发布商和代理商，无论规模大小，都能在全球数字经济中竞争、成长和成功。',
+    es: 'La visión fundacional: construir una plataforma programática completa que combinara sofisticación tecnológica con accesibilidad y transparencia.',
+    ar: 'الرؤية التأسيسية: بناء منصة برمجية متكاملة تجمع التطور التكنولوجي مع سهولة الوصول والشفافية.',
+    hi: 'संस्थापन दृष्टि: तकनीकी परिष्कार को पहुंच और पारदर्शिता के साथ जोड़ने वाला फुल-स्टैक प्लेटफॉर्म बनाना।',
+    pt: 'A visão fundacional: construir uma plataforma programática completa que combinasse sofisticação tecnológica com acessibilidade e transparência.',
+    fr: 'La vision fondatrice: construire une plateforme programmatique complète combinant sophistication technologique, accessibilité et transparence.',
+    ja: '創業ビジョン：技術的洗練さとアクセシビリティ・透明性を組み合わせたフルスタックプログラマティックプラットフォームの構築。',
+  },
+  'A digital advertising ecosystem that is intelligent, transparent, efficient, and privacy-respecting — where every participant can trust that the technology is working for their benefit.': {
+    zh: '一个智能、透明、高效且尊重隐私的数字广告生态系统——每个参与者都能信任技术在为自己的利益服务。',
+    es: 'Democratizar el acceso a la mejor tecnología de publicidad programática — para que cada anunciante, publisher y agencia pueda competir y crecer.',
+    ar: 'إضفاء الطابع الديمقراطي على الوصول إلى أفضل تقنية إعلانية برمجية لكل معلن وناشر ووكالة.',
+    hi: 'दुनिया की सर्वश्रेष्ठ प्रोग्रामेटिक विज्ञापन तकनीक तक पहुंच को लोकतांत्रिक बनाना।',
+    pt: 'Democratizar o acesso à melhor tecnologia de publicidade programática para que cada anunciante, publisher e agência possa competir e crescer.',
+    fr: 'Démocratiser l\'accès à la meilleure technologie de publicité programmatique pour que chaque annonceur, éditeur et agence puisse concourir et grandir.',
+    ja: '世界最高のプログラマティック広告テクノロジーへのアクセスを民主化する。',
+  },
+  'At NexBids, we\'re on a mission to make programmatic advertising smarter, faster, and more accessible for everyone. We need brilliant, curious, driven people to help us get there.': {
+    zh: '在NexBids，我们的使命是让程序化广告对每个人来说更智能、更快速、更易获取。我们需要才华横溢、充满好奇心、充满动力的人来帮助我们实现这一目标。',
+    es: 'Un ecosistema de publicidad digital inteligente, transparente, eficiente y respetuoso de la privacidad para todos los participantes.',
+    ar: 'نظام بيئي للإعلان الرقمي ذكي وشفاف وفعال ومحترم للخصوصية لجميع المشاركين.',
+    hi: 'सभी प्रतिभागियों के लिए बुद्धिमान, पारदर्शी, कुशल और गोपनीयता का सम्मान करने वाला डिजिटल विज्ञापन इकोसिस्टम।',
+    pt: 'Um ecossistema de publicidade digital inteligente, transparente, eficiente e respeitoso da privacidade para todos os participantes.',
+    fr: 'Un écosystème publicitaire numérique intelligent, transparent, efficace et respectueux de la vie privée pour tous les participants.',
+    ja: 'すべての参加者のためのインテリジェントで透明、効率的でプライバシーを尊重するデジタル広告エコシステム。',
+  },
+  'I agree to NexBids\'': {
+    zh: '我同意NexBids的',
+    es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente, rápida y accesible para todos.',
+    ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وسرعة وسهولة للجميع.',
+    hi: 'NexBids में हमारा मिशन प्रोग्रामेटिक विज्ञापन को सभी के लिए स्मार्ट, तेज और अधिक सुलभ बनाना है।',
+    pt: 'Na NexBids, nossa missão é tornar a publicidade programática mais inteligente, rápida e acessível para todos.',
+    fr: 'Chez NexBids, notre mission est de rendre la publicité programmatique plus intelligente, plus rapide et plus accessible pour tous.',
+    ja: 'NexBidsでは、プログラマティック広告をすべての人にとってよりスマートで速く、アクセスしやすくすることが使命です。',
+  },
+  'Sorry, the page you are looking for doesn\'t exist or is temporarily unavailable. This may be due to a network issue.': {
+    zh: '抱歉，您访问的页面不存在或暂时无法访问，这可能是由于网络问题导致的。',
+    es: 'Acepto los',
+    ar: 'أوافق على',
+    hi: 'मैं सहमत हूं',
+    pt: 'Concordo com os',
+    fr: 'J\'accepte les',
+    ja: '同意します',
+  },
+  'Whether you\'re an advertiser seeking global reach, a publisher maximizing revenue, or an agency scaling programmatic operations — NexBids has the solution.': {
+    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商，还是扩展程序化运营的代理商——NexBids 都有适合您的解决方案。',
+    es: 'Ya sea anunciante buscando alcance global, publisher maximizando ingresos o agencia — NexBids tiene la solución.',
+    ar: 'سواء كنت معلنًا أو ناشرًا أو وكالة — NexBids لديه الحل.',
+    hi: 'चाहे आप विज्ञापनदाता हों, प्रकाशक हों, या एजेंसी — NexBids के पास समाधान है।',
+    pt: 'Seja anunciante, publisher ou agência — NexBids tem a solução.',
+    fr: 'Que vous soyez annonceur, éditeur ou agence — NexBids a la solution.',
+    ja: '広告主、パブリッシャー、エージェンシーのいずれでも — NexBidsに解決策があります。',
+  },
+  'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP — works seamlessly together to power every side of the digital advertising marketplace.': {
+    zh: 'NexBids的全栈程序化广告基础设施——DSP、ADX和SSP——无缝协作，驱动数字广告市场的每一方。',
+    es: 'La infraestructura programática completa de NexBids trabaja perfectamente junta para impulsar el mercado digital.',
+    ar: 'تعمل البنية التحتية الكاملة لـ NexBids معًا بسلاسة.',
+    hi: 'NexBids का फुल-स्टैक इन्फ्रास्ट्रक्चर डिजिटल विज्ञापन के हर पहलू को शक्ति देता है।',
+    pt: 'A infraestrutura completa da NexBids trabalha em conjunto para impulsionar o mercado.',
+    fr: 'L\'infrastructure complète de NexBids fonctionne parfaitement pour alimenter le marché publicitaire.',
+    ja: 'NexBidsのフルスタックインフラがデジタル広告マーケットプレイスのあらゆる側面を支えます。',
+  },
+  '"We\'d tried every major DSP and none could match the quality of players NexBids delivered. Their LTV Optimizer changed everything — we\'re now profitable on a D180 basis across all markets."': {
+    zh: '"我们尝试过每一家主要DSP，没有一家能匹配NexBids带来的玩家质量。他们的LTV优化器改变了一切——我们现在在所有市场的D180基础上都是盈利的。"',
+    es: '"Probamos todos los DSP principales y ninguno igualó la calidad de NexBids. Su LTV Optimizer lo cambió todo."',
+    ar: '"جربنا كل DSP ولم يستطع أحد مضاهاة جودة لاعبي NexBids. غيّر LTV Optimizer كل شيء."',
+    hi: '"हमने हर DSP आजमाया, कोई NexBids की खिलाड़ी गुणवत्ता से मेल नहीं खाया।"',
+    pt: '"Experimentamos todos os DSPs e nenhum igualou a qualidade do NexBids. O LTV Optimizer mudou tudo."',
+    fr: '"Nous avons testé tous les DSP et aucun n\'a égalé la qualité de NexBids. Le LTV Optimizer a tout changé."',
+    ja: '"主要なDSPをすべて試しましたがNexBidsのプレイヤー品質に匹敵するものはありませんでした。LTV Optimizerがすべてを変えました。"',
+  },
+  'The Company Behind the World\'s Programmatic Infrastructure': {
+    zh: '驱动全球程序化基础设施的公司',
+    es: 'La Empresa Detrás de la Infraestructura Programática Mundial',
+    ar: 'الشركة وراء البنية التحتية البرمجية العالمية',
+    hi: 'दुनिया के प्रोग्रामेटिक इन्फ्रास्ट्रक्चर के पीछे की कंपनी',
+    pt: 'A Empresa por Trás da Infraestrutura Programática Mundial',
+    fr: 'L\'Entreprise Derrière l\'Infrastructure Programmatique Mondiale',
+    ja: '世界のプログラマティックインフラを支える会社',
+  },
+  'NexBids was founded in 2018 by a team of advertising technology veterans who had spent their careers at some of the world\'s largest ad tech companies. They saw firsthand how programmatic advertising remained unnecessarily complex, opaque, and inaccessible for the vast majority of advertisers and publishers.': {
+    zh: 'NexBids由一支广告技术老兵团队于2018年创立，他们亲眼看到程序化广告对绝大多数广告主和发布商而言仍然不必要地复杂且难以接触。',
+    es: 'NexBids fue fundada en 2018 por veteranos del ad tech que vieron cómo el programático seguía siendo innecesariamente complejo.',
+    ar: 'تأسست NexBids عام 2018 على يد خبراء رأوا كيف ظل الإعلان البرمجي معقدًا بلا داعٍ.',
+    hi: 'NexBids की स्थापना 2018 में अनुभवी लोगों ने की जिन्होंने देखा कि प्रोग्रामेटिक अनावश्यक रूप से जटिल रहा।',
+    pt: 'NexBids foi fundada em 2018 por veteranos que viram como o programático permanecia desnecessariamente complexo.',
+    fr: 'NexBids a été fondée en 2018 par des vétérans qui ont vu comment le programmatique restait inutilement complexe.',
+    ja: 'NexBidsは2018年に広告テクノロジーのベテランたちによって設立されました。',
+  },
+  'To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.': {
+    zh: '让全球最好的程序化广告技术人人可及——使每一位广告主、发布商和代理商，无论规模大小，都能在全球数字经济中竞争、成长和成功。',
+    es: 'Democratizar el acceso a la mejor tecnología programática para que cada anunciante y publisher pueda competir y crecer.',
+    ar: 'إضفاء الطابع الديمقراطي على الوصول إلى أفضل تقنية إعلانية برمجية.',
+    hi: 'सर्वश्रेष्ठ प्रोग्रामेटिक तकनीक तक पहुंच को लोकतांत्रिक बनाना।',
+    pt: 'Democratizar o acesso à melhor tecnologia programática para que cada anunciante e publisher possa competir e crescer.',
+    fr: 'Démocratiser l\'accès à la meilleure technologie programmatique pour chaque annonceur et éditeur.',
+    ja: '世界最高のプログラマティック広告テクノロジーへのアクセスを民主化する。',
+  },
+  'At NexBids, we\'re on a mission to make programmatic advertising smarter, faster, and more accessible for everyone. We need brilliant, curious, driven people to help us get there.': {
+    zh: '在NexBids，我们的使命是让程序化广告更智能、更快速、更易获取。我们需要才华横溢、充满好奇心的人来帮助我们实现这一目标。',
+    es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente, rápida y accesible para todos.',
+    ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وسرعة وسهولة للجميع.',
+    hi: 'NexBids में हमारा मिशन प्रोग्रामेटिक विज्ञापन को सभी के लिए स्मार्ट और सुलभ बनाना है।',
+    pt: 'Na NexBids, nossa missão é tornar a publicidade programática mais inteligente e acessível para todos.',
+    fr: 'Chez NexBids, notre mission est de rendre la publicité programmatique plus intelligente et accessible pour tous.',
+    ja: 'NexBidsではプログラマティック広告をすべての人にとってよりスマートにすることが使命です。',
+  },
+  'I agree to NexBids\'': {
+    zh: '我同意NexBids的',
+    es: 'Acepto los',
+    ar: 'أوافق على',
+    hi: 'मैं सहमत हूं',
+    pt: 'Concordo com os',
+    fr: 'J\'accepte les',
+    ja: '同意します',
+  },
+  'Sorry, the page you are looking for doesn\'t exist or is temporarily unavailable. This may be due to a network issue.': {
+    zh: '抱歉，您访问的页面不存在或暂时无法访问，这可能是由于网络问题导致的。',
+    es: 'Lo sentimos, la página no existe o no está disponible temporalmente.',
+    ar: 'عذرًا، الصفحة غير موجودة أو غير متاحة مؤقتًا.',
+    hi: 'क्षमा करें, यह पृष्ठ मौजूद नहीं है या अस्थायी रूप से अनुपलब्ध है।',
+    pt: 'Desculpe, a página não existe ou está temporariamente indisponível.',
+    fr: 'Désolé, la page n\'existe pas ou est temporairement indisponible.',
+    ja: '申し訳ありませんが、ページが存在しないか一時的に利用できません。',
+  },
+  'Global Ad Tech Leader': {
+    es:'Líder Global en Ad Tech',
+    ar:'رائد عالمي في تقنية الإعلانات',
+    hi:'ग्लोबल एड टेक लीडर',
+    pt:'Líder Global em Ad Tech',
+    fr:'Leader Mondial en Ad Tech',
+    ja:'グローバル広告テクノロジーリーダー',
+    zh:'全球广告技术领导者'
+  },
+  'Our Platforms': {
+    es:'Nuestras Plataformas',
+    ar:'منصاتنا',
+    hi:'हमारे प्लेटफॉर्म',
+    pt:'Nossas Plataformas',
+    fr:'Nos Plateformes',
+    zh:'我们的平台',
+    ja:'プラットフォーム'
+  },
+  'Who We Serve': {
+    es:'A Quién Servimos',
+    ar:'من نخدم',
+    hi:'हम किसकी सेवा करते हैं',
+    pt:'Quem Servimos',
+    zh:'我们服务的对象',
+    fr:'Qui Nous Servons',
+    ja:'サービス対象'
+  },
+  'For Advertisers': {
+    es:'Para Anunciantes',
+    ar:'للمعلنين',
+    hi:'विज्ञापनदाताओं के लिए',
+    zh:'为广告主',
+    pt:'Para Anunciantes',
+    fr:'Pour les Annonceurs',
+    ja:'広告主向け'
+  },
+  'Who It\'s For': {
+    es:'Para Quién Es',
+    ar:'لمن هو',
+    hi:'यह किसके लिए है',
+    pt:'Para Quem É',
+    fr:'Pour Qui C\'est',
+    ja:'対象ユーザー'
+  },
+  'Core Capabilities': {
+    es:'Capacidades Principales',
+    ar:'القدرات الأساسية',
+    zh:'核心能力',
+    hi:'मुख्य क्षमताएं',
+    pt:'Capacidades Principais',
+    fr:'Capacités Principales',
+    ja:'コア機能'
+  },
+  'For Publishers & Developers': {
+    es:'Para Publicadores y Desarrolladores',
+    zh:'为发布商和开发者',
+    ar:'للناشرين والمطورين',
+    hi:'प्रकाशकों और डेवलपर्स के लिए',
+    pt:'Para Publicadores e Desenvolvedores',
+    fr:'Pour les Éditeurs et Développeurs',
+    ja:'パブリッシャー・開発者向け'
+  },
+  'Publisher Types': {
+    zh:'发布商类型',
+    es:'Tipos de Publicadores',
+    ar:'أنواع الناشرين',
+    hi:'प्रकाशक प्रकार',
+    pt:'Tipos de Publicadores',
+    fr:'Types d\'Éditeurs',
+    ja:'パブリッシャーの種類'
+  },
+  'Core Features': {
+    es:'Funciones Principales',
+    ar:'الميزات الأساسية',
+    hi:'मुख्य विशेषताएं',
+    pt:'Funcionalidades Principais',
+    fr:'Fonctionnalités Principales',
+    ja:'主要機能',
+    zh:'核心功能'
+  },
+  'For Agencies': {
+    es:'Para Agencias',
+    ar:'للوكالات',
+    hi:'एजेंसियों के लिए',
+    pt:'Para Agências',
+    fr:'Pour les Agences',
+    ja:'代理店向け',
+    zh:'为代理商'
+  },
+  'Agency Features': {
+    es:'Funciones para Agencias',
+    ar:'ميزات الوكالات',
+    hi:'एजेंसी सुविधाएं',
+    pt:'Funcionalidades para Agências',
+    fr:'Fonctionnalités Agences',
+    zh:'代理商功能',
+    ja:'代理店機能'
+  },
+  'DSP — Demand-Side Platform': {
+    es:'DSP — Plataforma del Lado de la Demanda',
+    ar:'DSP — منصة جانب الطلب',
+    hi:'DSP — डिमांड-साइड प्लेटफॉर्म',
+    pt:'DSP — Plataforma do Lado da Demanda',
+    zh:'DSP — 需求方平台',
+    fr:'DSP — Plateforme Côté Demande',
+    ja:'DSP — デマンドサイドプラットフォーム'
+  },
+  'Platform Features': {
+    es:'Características de la Plataforma',
+    ar:'ميزات المنصة',
+    hi:'प्लेटफॉर्म की विशेषताएं',
+    zh:'平台功能',
+    pt:'Recursos da Plataforma',
+    fr:'Fonctionnalités de la Plateforme',
+    ja:'プラットフォーム機能'
+  },
+  'Ad Formats': {
+    es:'Formatos de Anuncios',
+    ar:'صيغ الإعلانات',
+    zh:'广告格式',
+    hi:'विज्ञापन प्रारूप',
+    pt:'Formatos de Anúncios',
+    fr:'Formats Publicitaires',
+    ja:'広告フォーマット'
+  },
+  'ADX — Ad Exchange': {
+    es:'ADX — Bolsa de Anuncios',
+    zh:'ADX — 广告交易平台',
+    ar:'ADX — بورصة الإعلانات',
+    hi:'ADX — विज्ञापन एक्सचेंज',
+    pt:'ADX — Exchange de Anúncios',
+    fr:'ADX — Bourse Publicitaire',
+    ja:'ADX — 広告取引所'
+  },
+  'For Buyers': {
+    zh:'为买方',
+    es:'Para Compradores',
+    ar:'للمشترين',
+    hi:'खरीदारों के लिए',
+    pt:'Para Compradores',
+    fr:'Pour les Acheteurs',
+    ja:'バイヤー向け',
+    zh:'为买方'
+  },
+  'For Sellers': {
+    es:'Para Vendedores',
+    ar:'للبائعين',
+    hi:'विक्रेताओं के लिए',
+    pt:'Para Vendedores',
+    fr:'Pour les Vendeurs',
+    ja:'セラー向け',
+    zh:'为卖方'
+  },
+  'SSP — Supply-Side Platform': {
+    es:'SSP — Plataforma del Lado de la Oferta',
+    ar:'SSP — منصة جانب العرض',
+    hi:'SSP — सप्लाई-साइड प्लेटफॉर्म',
+    pt:'SSP — Plataforma do Lado da Oferta',
+    fr:'SSP — Plateforme Côté Offre',
+    ja:'SSP — サプライサイドプラットフォーム',
+    zh:'SSP — 供应方平台'
+  },
+  'Monetization Features': {
+    es:'Funciones de Monetización',
+    ar:'ميزات تحقيق الربح',
+    hi:'मोनेटाइज़ेशन सुविधाएं',
+    pt:'Recursos de Monetização',
+    fr:'Fonctionnalités de Monétisation',
+    zh:'变现功能',
+    ja:'収益化機能'
+  },
+  'Quick Integration': {
+    es:'Integración Rápida',
+    ar:'تكامل سريع',
+    hi:'त्वरित एकीकरण',
+    pt:'Integração Rápida',
+    zh:'快速集成',
+    fr:'Intégration Rapide',
+    ja:'クイックインテグレーション'
+  },
+  'Our Principles': {
+    es:'Nuestros Principios',
+    ar:'مبادئنا',
+    hi:'हमारे सिद्धांत',
+    zh:'我们的原则',
+    pt:'Nossos Princípios',
+    fr:'Nos Principes',
+    ja:'私たちの原則'
+  },
+  'AI & Machine Learning': {
+    es:'IA y Aprendizaje Automático',
+    ar:'الذكاء الاصطناعي والتعلم الآلي',
+    zh:'人工智能与机器学习',
+    hi:'एआई और मशीन लर्निंग',
+    pt:'IA e Aprendizado de Máquina',
+    fr:'IA et Apprentissage Automatique',
+    ja:'AIと機械学習'
+  },
+  'RTB Infrastructure': {
+    es:'Infraestructura RTB',
+    zh:'RTB基础设施',
+    ar:'بنية تحتية RTB',
+    hi:'RTB बुनियादी ढांचा',
+    pt:'Infraestrutura RTB',
+    fr:'Infrastructure RTB',
+    ja:'RTBインフラ'
+  },
+  'RTB Auction Flow': {
+    zh:'RTB竞价流程',
+    es:'Flujo de Subasta RTB',
+    ar:'تدفق مزاد RTB',
+    hi:'RTB नीलामी प्रवाह',
+    pt:'Fluxo de Leilão RTB',
+    fr:'Flux d\'Enchères RTB',
+    ja:'RTBオークションフロー',
+    zh:'RTB竞价流程'
+  },
+  'Privacy & Security': {
+    es:'Privacidad y Seguridad',
+    ar:'الخصوصية والأمان',
+    hi:'गोपनीयता और सुरक्षा',
+    pt:'Privacidade e Segurança',
+    fr:'Confidentialité et Sécurité',
+    ja:'プライバシーとセキュリティ',
+    zh:'隐私与安全'
+  },
+  'Advertiser Cases': {
+    zh:'广告主案例',
+    es:'Casos de Anunciantes',
+    ar:'حالات المعلنين',
+    hi:'विज्ञापनदाता केस',
+    pt:'Casos de Anunciantes',
+    fr:'Cas Annonceurs',
+    ja:'広告主事例',
+  },
+  'Publisher & Developer Cases': {
+    es:'Casos de Publicadores y Desarrolladores',
+    ar:'حالات الناشرين والمطورين',
+    hi:'प्रकाशक और डेवलपर केस',
+    pt:'Casos de Publicadores e Desenvolvedores',
+    fr:'Cas Éditeurs et Développeurs',
+    zh:'发布商与开发者案例',
+    ja:'パブリッシャー・開発者事例'
+  },
+  'Publisher Cases': {
+    es:'Casos de Publicadores',
+    ar:'حالات الناشرين',
+    hi:'प्रकाशक केस',
+    pt:'Casos de Publicadores',
+    zh:'发布商案例',
+    fr:'Cas Éditeurs',
+    ja:'パブリッシャー事例'
+  },
+  'NexBids Company': {
+    es:'Empresa NexBids',
+    ar:'شركة NexBids',
+    hi:'NexBids कंपनी',
+    zh:'NexBids公司',
+    pt:'Empresa NexBids',
+    fr:'Société NexBids',
+    ja:'NexBids社'
+  },
+  'Our Story': {
+    es:'Nuestra Historia',
+    ar:'قصتنا',
+    zh:'我们的故事',
+    hi:'हमारी कहानी',
+    pt:'Nossa História',
+    fr:'Notre Histoire',
+    ja:'私たちのストーリー'
+  },
+  'Company Timeline': {
+    es:'Cronología de la Empresa',
+    zh:'公司历程',
+    ar:'الجدول الزمني للشركة',
+    hi:'कंपनी टाइमलाइन',
+    pt:'Linha do Tempo da Empresa',
+    fr:'Chronologie de l\'Entreprise',
+    ja:'会社の歩み'
+  },
+  'Mission & Values': {
+    zh:'使命与价值观',
+    es:'Misión y Valores',
+    ar:'المهمة والقيم',
+    hi:'मिशन और मूल्य',
+    pt:'Missão e Valores',
+    fr:'Mission et Valeurs',
+    ja:'ミッションと価値観',
+    zh:'使命与价值观'
+  },
+  'Leadership Team': {
+    zh:'领导团队',
+    es:'Equipo Directivo',
+    ar:'فريق القيادة',
+    hi:'नेतृत्व टीम',
+    pt:'Equipe de Liderança',
+    fr:'Équipe de Direction',
+    ja:'リーダーシップチーム'
+  },
+  'Global Presence': {
+    zh:'全球存在',
+    es:'Presencia Global',
+    ar:'الحضور العالمي',
+    hi:'वैश्विक उपस्थिति',
+    pt:'Presença Global',
+    fr:'Présence Mondiale',
+    ja:'グローバルプレゼンス',
+  },
+  'Recognition': {
+    es:'Reconocimiento',
+    ar:'التقدير',
+    hi:'मान्यता',
+    pt:'Reconhecimento',
+    fr:'Reconnaissance',
+    zh:'荣誉认可',
+    ja:'受賞・評価'
+  },
+  'Why NexBids?': {
+    es:'¿Por Qué NexBids?',
+    ar:'لماذا NexBids؟',
+    hi:'NexBids क्यों?',
+    pt:'Por Que NexBids?',
+    zh:'为何选择NexBids？',
+    fr:'Pourquoi NexBids ?',
+    ja:'なぜNexBids？'
+  },
+  'Open Positions': {
+    es:'Puestos Abiertos',
+    ar:'الوظائف المتاحة',
+    hi:'खुले पद',
+    zh:'招聘职位',
+    pt:'Vagas Abertas',
+    fr:'Postes Ouverts',
+    ja:'募集ポジション'
+  },
+  'Hiring Process': {
+    es:'Proceso de Contratación',
+    ar:'عملية التوظيف',
+    zh:'招聘流程',
+    hi:'भर्ती प्रक्रिया',
+    pt:'Processo Seletivo',
+    fr:'Processus de Recrutement',
+    ja:'採用プロセス'
+  },
+  'Annual Ad Spend Managed': {
+    es:'Gasto Publicitario Anual Gestionado',
+    zh:'年度管理广告支出',
+    ar:'الإنفاق الإعلاني السنوي المُدار',
+    hi:'वार्षिक विज्ञापन व्यय प्रबंधित',
+    pt:'Gasto Anual em Publicidade Gerenciado',
+    fr:'Dépenses Publicitaires Annuelles Gérées',
+    ja:'年間広告支出管理額'
+  },
+  'Daily Bid Requests': {
+    zh:'每日竞价请求',
+    es:'Solicitudes de Puja Diarias',
+    ar:'طلبات المزايدة اليومية',
+    hi:'दैनिक बोली अनुरोध',
+    pt:'Solicitações de Lance Diárias',
+    fr:'Demandes d\'Enchères Quotidiennes',
+    ja:'1日あたりの入札リクエスト'
+  },
+  'Countries & Territories': {
+    es:'Países y Territorios',
+    ar:'الدول والأقاليم',
+    hi:'देश और क्षेत्र',
+    pt:'Países e Territórios',
+    fr:'Pays et Territoires',
+    ja:'国・地域',
+    zh:'每日竞价请求'
+  },
+  'Platform Uptime SLA': {
+    es:'SLA de Tiempo de Actividad',
+    ar:'اتفاقية مستوى الخدمة للتوفر',
+    hi:'प्लेटफॉर्म अपटाइम SLA',
+    pt:'SLA de Disponibilidade da Plataforma',
+    fr:'SLA de Disponibilité Plateforme',
+    ja:'プラットフォーム稼働率SLA',
+    zh:'覆盖国家和地区'
+  },
+  'Bid Response Time': {
+    es:'Tiempo de Respuesta de Puja',
+    ar:'وقت استجابة المزايدة',
+    hi:'बोली प्रतिक्रिया समय',
+    pt:'Tempo de Resposta do Lance',
+    fr:'Temps de Réponse aux Enchères',
+    zh:'竞价响应时间',
+    ja:'入札レスポンス時間'
+  },
+  'Platform Uptime': {
+    es:'Disponibilidad de la Plataforma',
+    ar:'وقت تشغيل المنصة',
+    hi:'प्लेटफॉर्म अपटाइम',
+    pt:'Disponibilidade da Plataforma',
+    zh:'平台可用率',
+    fr:'Disponibilité de la Plateforme',
+    ja:'プラットフォーム稼働率'
+  },
+  'Data Centers': {
+    es:'Centros de Datos',
+    ar:'مراكز البيانات',
+    hi:'डेटा केंद्र',
+    zh:'数据中心',
+    pt:'Centros de Dados',
+    fr:'Centres de Données',
+    ja:'データセンター'
+  },
+  'Avg ROAS Improvement Year 1': {
+    es:'Mejora Promedio de ROAS Año 1',
+    ar:'متوسط تحسين ROAS في السنة الأولى',
+    zh:'第一年平均ROAS提升',
+    hi:'पहले वर्ष औसत ROAS सुधार',
+    pt:'Melhoria Média de ROAS no Ano 1',
+    fr:'Amélioration Moyenne du ROAS en An 1',
+    ja:'初年度平均ROAS改善'
+  },
+  'Average CPA Reduction': {
+    es:'Reducción Promedio de CPA',
+    zh:'平均CPA降低',
+    ar:'متوسط تخفيض تكلفة الاكتساب',
+    hi:'औसत CPA कमी',
+    pt:'Redução Média de CPA',
+    fr:'Réduction Moyenne du CPA',
+    ja:'平均CPA削減率'
+  },
+  'Ad Formats Supported': {
+    zh:'支持的广告格式',
+    es:'Formatos de Anuncios Soportados',
+    ar:'صيغ الإعلانات المدعومة',
+    hi:'समर्थित विज्ञापन प्रारूप',
+    pt:'Formatos de Anúncios Suportados',
+    fr:'Formats Publicitaires Supportés',
+    ja:'対応広告フォーマット数',
+    zh:'平均CPA降低'
+  },
+  'Avg eCPM Lift for New Publishers': {
+    es:'Aumento Prom. de eCPM para Nuevos Pub.',
+    ar:'متوسط ارتفاع eCPM للناشرين الجدد',
+    hi:'नए प्रकाशकों के लिए औसत eCPM वृद्धि',
+    pt:'Aumento Médio de eCPM para Novos Pub.',
+    fr:'Hausse eCPM Moy. pour Nouveaux Éditeurs',
+    ja:'新規PV平均eCPM向上率',
+    zh:'支持的广告格式'
+  },
+  'Active Publishers': {
+    es:'Publicadores Activos',
+    ar:'الناشرون النشطون',
+    hi:'सक्रिय प्रकाशक',
+    pt:'Publicadores Ativos',
+    fr:'Éditeurs Actifs',
+    ja:'アクティブパブリッシャー',
+    zh:'新发布商平均eCPM提升'
+  },
+  'Connected Advertisers': {
+    es:'Anunciantes Conectados',
+    ar:'المعلنون المتصلون',
+    hi:'जुड़े हुए विज्ञापनदाता',
+    pt:'Anunciantes Conectados',
+    fr:'Annonceurs Connectés',
+    zh:'接入广告主',
+    ja:'接続済み広告主'
+  },
+  'Average Fill Rate': {
+    es:'Tasa de Llenado Promedio',
+    ar:'متوسط معدل الملء',
+    hi:'औसत भरण दर',
+    pt:'Taxa de Preenchimento Média',
+    zh:'平均填充率',
+    fr:'Taux de Remplissage Moyen',
+    ja:'平均フィルレート'
+  },
+  'Active Advertisers': {
+    es:'Anunciantes Activos',
+    ar:'المعلنون النشطون',
+    hi:'सक्रिय विज्ञापनदाता',
+    zh:'活跃广告主',
+    pt:'Anunciantes Ativos',
+    fr:'Annonceurs Actifs',
+    ja:'アクティブ広告主'
+  },
+  'Latency': {
+    es:'Latencia',
+    ar:'زمن الاستجابة',
+    zh:'延迟',
+    hi:'लेटेंसी',
+    pt:'Latência',
+    fr:'Latence',
+    ja:'レイテンシ'
+  },
+  'Bid Win Transparency': {
+    es:'Transparencia de Ganancias de Puja',
+    zh:'竞价胜出透明度',
+    ar:'شفافية الفوز بالمزايدة',
+    hi:'बोली जीत पारदर्शिता',
+    pt:'Transparência de Ganhos de Lance',
+    fr:'Transparence des Victoires d\'Enchères',
+    ja:'落札透明性'
+  },
+  'Integrated Partners': {
+    zh:'集成合作伙伴',
+    es:'Socios Integrados',
+    ar:'الشركاء المتكاملون',
+    hi:'एकीकृत भागीदार',
+    pt:'Parceiros Integrados',
+    fr:'Partenaires Intégrés',
+    ja:'連携パートナー数',
+    zh:'竞价胜出透明度'
+  },
+  'Audience Segments': {
+    es:'Segmentos de Audiencia',
+    ar:'شرائح الجمهور',
+    hi:'ऑडिएंस सेगमेंट',
+    pt:'Segmentos de Audiência',
+    fr:'Segments d\'Audience',
+    ja:'オーディエンスセグメント',
+    zh:'集成合作伙伴'
+  },
+  'Countries Covered': {
+    zh:'覆盖国家',
+    es:'Países Cubiertos',
+    ar:'الدول المشمولة',
+    hi:'कवर किए गए देश',
+    pt:'Países Cobertos',
+    fr:'Pays Couverts',
+    ja:'対応国数',
+  },
+  'Bid Response SLA': {
+    es:'SLA de Respuesta de Puja',
+    ar:'اتفاقية مستوى خدمة استجابة المزايدة',
+    hi:'बोली प्रतिक्रिया SLA',
+    pt:'SLA de Resposta de Lance',
+    fr:'SLA de Réponse aux Enchères',
+    zh:'竞价响应SLA',
+    ja:'入札レスポンスSLA'
+  },
+  'Bid Transparency': {
+    es:'Transparencia de Pujas',
+    ar:'شفافية المزايدة',
+    hi:'बोली पारदर्शिता',
+    pt:'Transparência de Lances',
+    zh:'竞价透明度',
+    fr:'Transparence des Enchères',
+    ja:'入札透明性'
+  },
+  'Avg eCPM Improvement': {
+    es:'Mejora Promedio de eCPM',
+    ar:'متوسط تحسين eCPM',
+    hi:'औसत eCPM सुधार',
+    zh:'平均eCPM提升',
+    pt:'Melhoria Média de eCPM',
+    fr:'Amélioration Moyenne eCPM',
+    ja:'平均eCPM改善率'
+  },
+  'Fill Rate Average': {
+    es:'Tasa de Llenado Promedio',
+    ar:'متوسط معدل الملء',
+    zh:'平均填充率',
+    hi:'औसत भरण दर',
+    pt:'Taxa de Preenchimento Média',
+    fr:'Taux de Remplissage Moyen',
+    ja:'平均フィルレート'
+  },
+  'Publisher Revenue Managed': {
+    es:'Ingresos de Publicadores Gestionados',
+    zh:'发布商收益管理额',
+    ar:'إيرادات الناشرين المُدارة',
+    hi:'प्रकाशक राजस्व प्रबंधित',
+    pt:'Receita de Publicadores Gerenciada',
+    fr:'Revenus Éditeurs Gérés',
+    ja:'パブリッシャー収益管理額'
+  },
+  'Global Data Center Regions': {
+    zh:'全球数据中心区域',
+    es:'Regiones Globales de Centros de Datos',
+    ar:'مناطق مراكز البيانات العالمية',
+    hi:'वैश्विक डेटा केंद्र क्षेत्र',
+    pt:'Regiões Globais de Data Centers',
+    fr:'Régions de Centres de Données Mondiaux',
+    ja:'グローバルデータセンター地域数',
+    zh:'发布商收益管理额'
+  },
+  'Global PoP Network': {
+    es:'Red Global de PoP',
+    ar:'شبكة PoP العالمية',
+    hi:'ग्लोबल PoP नेटवर्क',
+    pt:'Rede Global de PoP',
+    fr:'Réseau PoP Mondial',
+    ja:'グローバルPoPネットワーク',
+    zh:'全球PoP网络'
+  },
+  'Sub-100ms Processing': {
+    es:'Procesamiento Sub-100ms',
+    ar:'معالجة أقل من 100ms',
+    hi:'100ms से कम प्रोसेसिंग',
+    pt:'Processamento Sub-100ms',
+    fr:'Traitement Inférieur à 100ms',
+    ja:'100ms未満の処理速度',
+    zh:'全球数据中心区域'
+  },
+  'Not Sure Where to Start?': {
+    es:'¿No Sabe Por Dónde Empezar?',
+    ar:'لست متأكداً من أين تبدأ؟',
+    hi:'शुरुआत कहाँ से करें?',
+    pt:'Não Sabe Por Onde Começar?',
+    fr:'Vous Ne Savez Pas Par Où Commencer?',
+    zh:'不知道从哪里开始？',
+    ja:'どこから始めたらいいかわからない？'
+  },
+  'Ready to Scale Your Campaigns?': {
+    es:'¿Listo para Escalar Sus Campañas?',
+    ar:'هل أنت مستعد لتوسيع حملاتك؟',
+    hi:'अपने अभियान बढ़ाने के लिए तैयार?',
+    pt:'Pronto para Escalar Suas Campanhas?',
+    zh:'准备好扩大您的广告投放了吗？',
+    fr:'Prêt à Faire Évoluer Vos Campagnes?',
+    ja:'キャンペーンを拡大する準備はできていますか？'
+  },
+  'Ready to Grow Your Revenue?': {
+    es:'¿Listo para Aumentar Sus Ingresos?',
+    ar:'هل أنت مستعد لزيادة إيراداتك؟',
+    hi:'अपना राजस्व बढ़ाने के लिए तैयार?',
+    zh:'准备好增加您的收益了吗？',
+    pt:'Pronto para Aumentar Sua Receita?',
+    fr:'Prêt à Augmenter Vos Revenus?',
+    ja:'収益を拡大する準備はできていますか？'
+  },
+  'Become a NexBids Agency Partner': {
+    es:'Conviértase en Socio de Agencia NexBids',
+    ar:'كن شريك وكالة NexBids',
+    zh:'成为NexBids代理商合作伙伴',
+    hi:'NexBids एजेंसी पार्टनर बनें',
+    pt:'Torne-se um Parceiro de Agência NexBids',
+    fr:'Devenez Partenaire Agence NexBids',
+    ja:'NexBids代理店パートナーになる'
+  },
+  'Start Your First DSP Campaign': {
+    es:'Inicie Su Primera Campaña DSP',
+    zh:'启动您的首个DSP广告活动',
+    ar:'ابدأ حملتك الأولى على DSP',
+    hi:'अपना पहला DSP अभियान शुरू करें',
+    pt:'Inicie Sua Primeira Campanha DSP',
+    fr:'Démarrez Votre Première Campagne DSP',
+    ja:'最初のDSPキャンペーンを開始する'
+  },
+  'Integrate with NexBids ADX': {
+    zh:'与NexBids ADX集成',
+    es:'Intégrese con NexBids ADX',
+    ar:'تكامل مع NexBids ADX',
+    hi:'NexBids ADX के साथ एकीकृत करें',
+    pt:'Integre com o NexBids ADX',
+    fr:'Intégrez avec NexBids ADX',
+    ja:'NexBids ADXと連携する'
+  },
+  'Ready to Maximize Your Revenue?': {
+    es:'¿Listo para Maximizar Sus Ingresos?',
+    ar:'هل أنت مستعد لزيادة إيراداتك إلى أقصى حد؟',
+    hi:'अपना राजस्व अधिकतम करने के लिए तैयार?',
+    pt:'Pronto para Maximizar Sua Receita?',
+    fr:'Prêt à Maximiser Vos Revenus?',
+    ja:'収益を最大化する準備はできていますか？',
+    zh:'启动您的首个DSP广告活动'
+  },
+  'Want to Go Deeper?': {
+    es:'¿Quiere Profundizar?',
+    ar:'هل تريد التعمق أكثر؟',
+    hi:'और गहराई से जानना चाहते हैं?',
+    pt:'Quer Se Aprofundar?',
+    fr:'Vous Voulez Aller Plus Loin?',
+    ja:'さらに詳しく知りたいですか？',
+    zh:'与NexBids ADX集成'
+  },
+  'Want Results Like These?': {
+    es:'¿Quiere Resultados Como Estos?',
+    ar:'هل تريد نتائج كهذه؟',
+    hi:'ऐसे परिणाम चाहते हैं?',
+    pt:'Quer Resultados Como Estes?',
+    fr:'Vous Voulez des Résultats Comme Ceux-ci?',
+    zh:'想获得类似的成果？',
+    ja:'このような成果を望みますか？'
+  },
+  'Ready to Write Your Own Success Story?': {
+    es:'¿Listo para Escribir Su Propia Historia de Éxito?',
+    ar:'هل أنت مستعد لكتابة قصة نجاحك الخاصة؟',
+    hi:'अपनी सफलता की कहानी लिखने के लिए तैयार?',
+    pt:'Pronto para Escrever Sua Própria História de Sucesso?',
+    zh:'准备好书写您自己的成功故事了吗？',
+    fr:'Prêt à Écrire Votre Propre Histoire à Succès?',
+    ja:'あなたの成功ストーリーを書く準備はできていますか？'
+  },
+  'Ready to Work with NexBids?': {
+    es:'¿Listo para Trabajar con NexBids?',
+    ar:'هل أنت مستعد للعمل مع NexBids؟',
+    hi:'NexBids के साथ काम करने के लिए तैयार?',
+    zh:'准备好与NexBids合作了吗？',
+    pt:'Pronto para Trabalhar com a NexBids?',
+    fr:'Prêt à Travailler avec NexBids?',
+    ja:'NexBidsと一緒に仕事をする準備はできていますか？'
+  },
+  'Ready to Transform Your Advertising?': {
+    es:'¿Listo para Transformar Su Publicidad?',
+    ar:'هل أنت مستعد لتحويل إعلاناتك؟',
+    zh:'准备好变革您的广告业务了吗？',
+    hi:'अपनी विज्ञापन को बदलने के लिए तैयार?',
+    pt:'Pronto para Transformar Sua Publicidade?',
+    fr:'Prêt à Transformer Votre Publicité?',
+    ja:'広告を変革する準備はできていますか？'
+  },
+  'Join 50,000+ advertisers and 30,000+ publishers already using NexBids to drive growth.': {
+    es:'Únase a más de 50,000 anunciantes y 30,000 publicadores que ya usan NexBids para impulsar el crecimiento.',
+    zh:'加入已有50,000+广告主和30,000+发布商使用NexBids推动增长的行列。',
+    ar:'انضم إلى أكثر من 50,000 معلن و30,000 ناشر يستخدمون NexBids بالفعل لتحقيق النمو.',
+    hi:'50,000+ विज्ञापनदाताओं और 30,000+ प्रकाशकों से जुड़ें जो पहले से NexBids का उपयोग कर रहे हैं।',
+    pt:'Junte-se a mais de 50.000 anunciantes e 30.000 publicadores que já usam o NexBids para crescer.',
+    fr:'Rejoignez plus de 50 000 annonceurs et 30 000 éditeurs qui utilisent déjà NexBids pour stimuler leur croissance.',
+    ja:'すでにNexBidsを使って成長を加速している50,000人以上の広告主と30,000人以上のパブリッシャーに参加しましょう。'
+  },
+  'Start for Free': {
+    zh:'免费开始',
+    es:'Comenzar Gratis',
+    ar:'ابدأ مجاناً',
+    hi:'मुफ्त में शुरू करें',
+    pt:'Comece Gratuitamente',
+    fr:'Commencer Gratuitement',
+    ja:'無料で始める',
+    zh:'准备好变革您的广告业务了吗？'
+  },
+  'Talk to Sales': {
+    es:'Hablar con Ventas',
+    ar:'تحدث مع المبيعات',
+    hi:'सेल्स से बात करें',
+    pt:'Falar com Vendas',
+    fr:'Parler aux Ventes',
+    ja:'営業に問い合わせる',
+    zh:'加入已有50,000+广告主和30,000+发布商使用NexBids推动增长的行列。'
+  },
+  'Our team will help identify the right NexBids solution for your business goals.': {
+    zh:'我们的团队将帮助您找到适合您业务目标的NexBids解决方案。',
+    es:'Nuestro equipo le ayudará a identificar la solución NexBids adecuada para sus objetivos.',
+    ar:'سيساعدك فريقنا في تحديد حل NexBids المناسب لأهداف عملك.',
+    hi:'हमारी टीम आपके व्यावसायिक लक्ष्यों के लिए सही NexBids समाधान खोजने में मदद करेगी।',
+    pt:'Nossa equipe ajudará a identificar a solução NexBids certa para seus objetivos de negócios.',
+    fr:'Notre équipe vous aidera à identifier la bonne solution NexBids pour vos objectifs commerciaux.',
+    ja:'私たちのチームが、あなたのビジネス目標に最適なNexBidsソリューションを見つけるお手伝いをします。',
+  },
+  'View Products': {
+    es:'Ver Productos',
+    ar:'عرض المنتجات',
+    hi:'उत्पाद देखें',
+    pt:'Ver Produtos',
+    fr:'Voir les Produits',
+    zh:'查看产品',
+    ja:'製品を見る'
+  },
+  'Start with a free account or talk to our team about managed service options.': {
+    es:'Comience con una cuenta gratuita o hable con nuestro equipo sobre opciones de servicio administrado.',
+    ar:'ابدأ بحساب مجاني أو تحدث مع فريقنا حول خيارات الخدمة المُدارة.',
+    hi:'एक मुफ्त खाते से शुरू करें या हमारी टीम से प्रबंधित सेवा विकल्पों के बारे में बात करें।',
+    pt:'Comece com uma conta gratuita ou converse com nossa equipe sobre opções de serviço gerenciado.',
+    zh:'免费注册账户，或咨询我们的托管服务选项。',
+    fr:'Commencez avec un compte gratuit ou parlez à notre équipe des options de service géré.',
+    ja:'無料アカウントから始めるか、マネージドサービスについてチームにご相談ください。'
+  },
+  'Create Free Account': {
+    es:'Crear Cuenta Gratuita',
+    ar:'إنشاء حساب مجاني',
+    hi:'मुफ्त खाता बनाएं',
+    zh:'创建免费账户',
+    pt:'Criar Conta Gratuita',
+    fr:'Créer un Compte Gratuit',
+    ja:'無料アカウントを作成'
+  },
+  'Join 30,000+ publishers already maximizing revenue with NexBids SSP.': {
+    es:'Únase a más de 30,000 publicadores que ya maximizan sus ingresos con NexBids SSP.',
+    ar:'انضم إلى أكثر من 30,000 ناشر يعظّمون إيراداتهم بالفعل مع NexBids SSP.',
+    zh:'加入已有30,000+发布商通过NexBids SSP最大化收益的行列。',
+    hi:'30,000+ प्रकाशकों से जुड़ें जो पहले से NexBids SSP से राजस्व अधिकतम कर रहे हैं।',
+    pt:'Junte-se a mais de 30.000 publicadores que já maximizam receita com NexBids SSP.',
+    fr:'Rejoignez plus de 30 000 éditeurs qui maximisent déjà leurs revenus avec NexBids SSP.',
+    ja:'すでにNexBids SSPで収益を最大化している30,000人以上のパブリッシャーに参加しましょう。'
+  },
+  'Explore SSP': {
+    es:'Explorar SSP',
+    zh:'探索SSP',
+    ar:'استكشاف SSP',
+    hi:'SSP एक्सप्लोर करें',
+    pt:'Explorar SSP',
+    fr:'Explorer SSP',
+    ja:'SSPを探索する'
+  },
+  'Apply today to access volume pricing, white-label options, and dedicated agency support.': {
+    zh:'立即申请，获取批量定价、白标选项和专属代理商支持。',
+    es:'Aplique hoy para acceder a precios por volumen, opciones de marca blanca y soporte dedicado.',
+    ar:'قدّم طلبك اليوم للوصول إلى أسعار الحجم والخيارات ذات العلامة البيضاء والدعم المخصص للوكالات.',
+    hi:'वॉल्यूम प्राइसिंग, व्हाइट-लेबल विकल्पों और समर्पित एजेंसी सहायता के लिए आज आवेदन करें।',
+    pt:'Candidate-se hoje para acessar preços por volume, opções de white-label e suporte dedicado.',
+    fr:'Candidatez aujourd\'hui pour accéder aux tarifs de volume, aux options white-label et au support agence dédié.',
+    ja:'ボリュームプライシング、ホワイトラベルオプション、専任エージェンシーサポートにアクセスするために今すぐ申し込む。',
+    zh:'加入已有30,000+发布商通过NexBids SSP最大化收益的行列。'
+  },
+  'Apply Now': {
+    es:'Aplicar Ahora',
+    ar:'قدّم الآن',
+    hi:'अभी आवेदन करें',
+    pt:'Candidatar-se Agora',
+    fr:'Postuler Maintenant',
+    ja:'今すぐ申し込む',
+    zh:'探索SSP'
+  },
+  'View Case Studies': {
+    es:'Ver Casos de Estudio',
+    ar:'عرض دراسات الحالة',
+    hi:'केस स्टडी देखें',
+    pt:'Ver Estudos de Caso',
+    fr:'Voir les Études de Cas',
+    ja:'事例を見る',
+    zh:'查看案例研究'
+  },
+  'Set up your account in minutes and launch your first programmatic campaign today.': {
+    es:'Configure su cuenta en minutos y lance su primera campaña programática hoy.',
+    ar:'قم بإعداد حسابك في دقائق وأطلق حملتك البرمجية الأولى اليوم.',
+    hi:'कुछ मिनटों में अपना खाता सेट करें और आज अपना पहला प्रोग्रामेटिक अभियान लॉन्च करें।',
+    pt:'Configure sua conta em minutos e lance sua primeira campanha programática hoje.',
+    fr:'Configurez votre compte en quelques minutes et lancez votre première campagne programmatique aujourd\'hui.',
+    zh:'几分钟内完成账户设置，立即启动您的首个程序化广告活动。',
+    ja:'数分でアカウントを設定し、今日初めてのプログラマティックキャンペーンを開始しましょう。'
+  },
+  'Buyer or seller — our integration team will have you live in days.': {
+    es:'Comprador o vendedor — nuestro equipo de integración le pondrá en marcha en días.',
+    ar:'مشترياً أو بائعاً — سيجعلك فريق التكامل لدينا جاهزاً في أيام.',
+    hi:'खरीदार या विक्रेता — हमारी एकीकरण टीम आपको दिनों में लाइव कर देगी।',
+    pt:'Comprador ou vendedor — nossa equipe de integração o colocará ao vivo em dias.',
+    zh:'无论买方还是卖方——我们的集成团队将在几天内让您上线。',
+    fr:'Acheteur ou vendeur — notre équipe d\'intégration vous mettra en ligne en quelques jours.',
+    ja:'バイヤーでもセラーでも、統合チームが数日で稼働させます。'
+  },
+  'Start Integration': {
+    es:'Iniciar Integración',
+    ar:'بدء التكامل',
+    hi:'एकीकरण शुरू करें',
+    zh:'开始集成',
+    pt:'Iniciar Integração',
+    fr:'Démarrer l\'Intégration',
+    ja:'インテグレーションを開始'
+  },
+  'View API Docs': {
+    es:'Ver Documentación API',
+    ar:'عرض مستندات API',
+    zh:'查看API文档',
+    hi:'API दस्तावेज़ देखें',
+    pt:'Ver Documentação da API',
+    fr:'Voir la Documentation API',
+    ja:'APIドキュメントを見る'
+  },
+  'Join 30,000+ publishers using NexBids SSP. Get started in minutes.': {
+    es:'Únase a más de 30,000 publicadores con NexBids SSP. Comience en minutos.',
+    zh:'加入30,000+使用NexBids SSP的发布商，几分钟内即可开始。',
+    ar:'انضم إلى أكثر من 30,000 ناشر يستخدمون NexBids SSP. ابدأ في دقائق.',
+    hi:'NexBids SSP का उपयोग करने वाले 30,000+ प्रकाशकों से जुड़ें। मिनटों में शुरू करें।',
+    pt:'Junte-se a mais de 30.000 publicadores usando o NexBids SSP. Comece em minutos.',
+    fr:'Rejoignez plus de 30 000 éditeurs utilisant NexBids SSP. Démarrez en quelques minutes.',
+    ja:'NexBids SSPを使用する30,000人以上のパブリッシャーに参加しましょう。数分で始められます。'
+  },
+  'View Integration Docs': {
+    zh:'查看集成文档',
+    es:'Ver Documentación de Integración',
+    ar:'عرض مستندات التكامل',
+    hi:'एकीकरण दस्तावेज़ देखें',
+    pt:'Ver Documentação de Integração',
+    fr:'Voir la Documentation d\'Intégration',
+    ja:'統合ドキュメントを見る',
+    zh:'查看API文档'
+  },
+  'Our engineering team is happy to discuss the technical details of our infrastructure and integration options.': {
+    zh:'我们的工程团队很乐意讨论我们基础设施的技术细节和集成选项。',
+    es:'Nuestro equipo de ingeniería está feliz de discutir los detalles técnicos.',
+    ar:'يسعد فريق هندستنا مناقشة التفاصيل التقنية لبنيتنا التحتية وخيارات التكامل.',
+    hi:'हमारी इंजीनियरिंग टीम बुनियादी ढांचे और एकीकरण विकल्पों के तकनीकी विवरण पर चर्चा करने में खुश है।',
+    pt:'Nossa equipe de engenharia está feliz em discutir os detalhes técnicos da nossa infraestrutura.',
+    fr:'Notre équipe d\'ingénierie est heureuse de discuter des détails techniques de notre infrastructure.',
+    ja:'私たちのエンジニアリングチームは、インフラの技術的詳細や統合オプションについて喜んでご説明します。'
+  },
+  'Talk to Engineering': {
+    es:'Hablar con Ingeniería',
+    ar:'تحدث مع الهندسة',
+    hi:'इंजीनियरिंग से बात करें',
+    pt:'Falar com a Engenharia',
+    fr:'Parler à l\'Ingénierie',
+    ja:'エンジニアリングに問い合わせる',
+    zh:'加入30,000+使用NexBids SSP的发布商，几分钟内即可开始。'
+  },
+  'Join thousands of advertisers and publishers already achieving breakthrough growth with NexBids.': {
+    es:'Únase a miles de anunciantes y publicadores que ya logran un crecimiento sin precedentes con NexBids.',
+    ar:'انضم إلى آلاف المعلنين والناشرين الذين يحققون بالفعل نمواً استثنائياً مع NexBids.',
+    hi:'हजारों विज्ञापनदाताओं और प्रकाशकों से जुड़ें जो NexBids के साथ असाधारण वृद्धि हासिल कर रहे हैं।',
+    pt:'Junte-se a milhares de anunciantes e publicadores que já alcançam crescimento excepcional com NexBids.',
+    fr:'Rejoignez des milliers d\'annonceurs et d\'éditeurs qui réalisent déjà une croissance exceptionnelle avec NexBids.',
+    zh:'加入已与NexBids实现突破性增长的众多广告主和发布商。',
+    ja:'NexBidsで画期的な成長を達成している何千もの広告主とパブリッシャーに参加しましょう。'
+  },
+  'Talk to our team about how NexBids can drive results for your campaigns.': {
+    es:'Hable con nuestro equipo sobre cómo NexBids puede impulsar resultados para sus campañas.',
+    ar:'تحدث مع فريقنا حول كيفية تحقيق NexBids لنتائج حملاتك.',
+    hi:'हमारी टीम से बात करें कि NexBids आपके अभियानों के लिए परिणाम कैसे ला सकता है।',
+    pt:'Fale com nossa equipe sobre como o NexBids pode impulsionar resultados para suas campanhas.',
+    zh:'咨询我们的团队，了解NexBids如何为您的广告活动带来成果。',
+    fr:'Parlez à notre équipe de la façon dont NexBids peut générer des résultats pour vos campagnes.',
+    ja:'NexBidsがあなたのキャンペーンにどのような成果をもたらせるか、チームにお問い合わせください。'
+  },
+  'Contact Advertiser Sales': {
+    es:'Contactar Ventas para Anunciantes',
+    ar:'التواصل مع مبيعات المعلنين',
+    hi:'विज्ञापनदाता बिक्री से संपर्क करें',
+    zh:'联系广告主销售',
+    pt:'Contatar Vendas para Anunciantes',
+    fr:'Contacter les Ventes Annonceurs',
+    ja:'広告主営業に連絡'
+  },
+  'Explore DSP': {
+    es:'Explorar DSP',
+    ar:'استكشاف DSP',
+    zh:'探索DSP',
+    hi:'DSP एक्सप्लोर करें',
+    pt:'Explorar DSP',
+    fr:'Explorer DSP',
+    ja:'DSPを探索する'
+  },
+  'Join 30,000+ publishers maximizing revenue with NexBids SSP.': {
+    es:'Únase a más de 30,000 publicadores que maximizan sus ingresos con NexBids SSP.',
+    zh:'加入30,000+通过NexBids SSP最大化收益的发布商。',
+    ar:'انضم إلى أكثر من 30,000 ناشر يعظّمون إيراداتهم مع NexBids SSP.',
+    hi:'30,000+ प्रकाशकों से जुड़ें जो NexBids SSP से राजस्व अधिकतम कर रहे हैं।',
+    pt:'Junte-se a mais de 30.000 publicadores que maximizam receita com NexBids SSP.',
+    fr:'Rejoignez plus de 30 000 éditeurs qui maximisent leurs revenus avec NexBids SSP.',
+    ja:'NexBids SSPで収益を最大化している30,000人以上のパブリッシャーに参加しましょう。'
+  },
+  'Whether you\'re looking to start a campaign, monetize your traffic, or partner with us — we\'d love to hear from you.': {
+    es:'Ya sea que quiera iniciar una campaña, monetizar su tráfico o asociarse con nosotros, nos encantaría saber de usted.',
+    ar:'سواء كنت تتطلع إلى بدء حملة أو تحقيق الدخل من حركة مرورك أو الشراكة معنا — نود أن نسمع منك.',
+    hi:'चाहे आप एक अभियान शुरू करना चाहते हों, अपने ट्रैफिक से कमाई करना चाहते हों, या हमारे साथ साझेदारी करना चाहते हों — हम आपसे सुनना चाहेंगे।',
+    pt:'Seja para iniciar uma campanha, monetizar seu tráfego ou se tornar parceiro — adoraríamos ouvir de você.',
+    fr:'Que vous souhaitiez lancer une campagne, monétiser votre trafic ou nous rejoindre en tant que partenaire — nous adorons vous entendre.',
+    ja:'キャンペーンの開始、トラフィックの収益化、またはパートナーシップについて — ぜひご連絡ください。',
+    zh:'联系广告主销售'
+  },
+  'Contact Our Team': {
+    zh:'联系我们的团队',
+    es:'Contactar a Nuestro Equipo',
+    ar:'التواصل مع فريقنا',
+    hi:'हमारी टीम से संपर्क करें',
+    pt:'Contatar Nossa Equipe',
+    fr:'Contacter Notre Équipe',
+    ja:'チームに連絡する',
+    zh:'探索DSP'
+  },
+  'Advertiser Revenue Driven': {
+    es:'Ingresos de Anunciantes Generados',
+    ar:'إيرادات المعلنين المحققة',
+    hi:'विज्ञापनदाता राजस्व संचालित',
+    pt:'Receita de Anunciantes Gerada',
+    fr:'Revenus Annonceurs Générés',
+    ja:'広告主収益創出額',
+    zh:'加入30,000+通过NexBids SSP最大化收益的发布商。'
+  },
+  'Avg eCPM Lift for Publishers': {
+    zh:'发布商平均eCPM提升',
+    es:'Aumento Prom. de eCPM para Publicadores',
+    ar:'متوسط ارتفاع eCPM للناشرين',
+    hi:'प्रकाशकों के लिए औसत eCPM वृद्धि',
+    pt:'Aumento Médio de eCPM para Publicadores',
+    fr:'Hausse eCPM Moy. pour Éditeurs',
+    ja:'パブリッシャー平均eCPM向上率',
+  },
+  'Case Studies Globally': {
+    es:'Casos de Estudio a Nivel Global',
+    ar:'دراسات الحالة على مستوى العالم',
+    hi:'विश्वव्यापी केस स्टडीज',
+    pt:'Estudos de Caso Globalmente',
+    fr:'Études de Cas Mondiales',
+    ja:'グローバル事例数',
+    zh:'联系我们的团队'
+  },
+  'Employees': {
+    es:'Empleados',
+    ar:'الموظفون',
+    hi:'कर्मचारी',
+    pt:'Funcionários',
+    fr:'Employés',
+    ja:'従業員数',
+    zh:'广告主收益驱动'
+  },
+  'Global Offices': {
+    es:'Oficinas Globales',
+    ar:'المكاتب العالمية',
+    hi:'वैश्विक कार्यालय',
+    pt:'Escritórios Globais',
+    fr:'Bureaux Mondiaux',
+    ja:'グローバルオフィス',
+    zh:'全球办公室'
+  },
+  'Countries Served': {
+    es:'Países Atendidos',
+    ar:'الدول المخدومة',
+    hi:'सेवित देश',
+    pt:'Países Atendidos',
+    fr:'Pays Desservis',
+    ja:'サービス提供国',
+    zh:'发布商平均eCPM提升'
+  },
+  'Team Size': {
+    es:'Tamaño del Equipo',
+    ar:'حجم الفريق',
+    hi:'टीम का आकार',
+    pt:'Tamanho da Equipe',
+    fr:'Taille de l\'Équipe',
+    ja:'チーム規模',
+    zh:'全球客户案例'
+  },
+  'Nationalities': {
+    es:'Nacionalidades',
+    ar:'الجنسيات',
+    hi:'राष्ट्रीयताएं',
+    pt:'Nacionalidades',
+    fr:'Nationalités',
+    ja:'国籍数',
+    zh:'员工'
+  },
+  'Hard Problems at Scale': {
+    es:'Problemas Difíciles a Gran Escala',
+    ar:'مشاكل صعبة على نطاق واسع',
+    hi:'बड़े पैमाने पर कठिन समस्याएं',
+    pt:'Problemas Difíceis em Escala',
+    fr:'Problèmes Complexes à Grande Échelle',
+    ja:'大規模な難題',
+    zh:'全球办公室'
+  },
+  'International Team': {
+    es:'Equipo Internacional',
+    ar:'فريق دولي',
+    hi:'अंतर्राष्ट्रीय टीम',
+    pt:'Equipe Internacional',
+    fr:'Équipe Internationale',
+    ja:'インターナショナルチーム',
+    zh:'服务国家'
+  },
+  'Growth Stage': {
+    es:'Etapa de Crecimiento',
+    ar:'مرحلة النمو',
+    hi:'विकास चरण',
+    pt:'Estágio de Crescimento',
+    fr:'Phase de Croissance',
+    ja:'成長フェーズ',
+    zh:'团队规模'
+  },
+  '$2K Learning Budget': {
+    es:'Presupuesto de Aprendizaje $2K',
+    ar:'ميزانية تعلم $2K',
+    hi:'$2K सीखने का बजट',
+    pt:'Orçamento de Aprendizagem $2K',
+    fr:'Budget Formation $2K',
+    ja:'$2K学習予算',
+    zh:'国籍'
+  },
+  'Competitive Equity': {
+    es:'Equity Competitivo',
+    ar:'حقوق ملكية تنافسية',
+    hi:'प्रतिस्पर्धी इक्विटी',
+    pt:'Equity Competitivo',
+    fr:'Equity Compétitif',
+    ja:'競争力ある株式報酬',
+    zh:'大规模难题'
+  },
+  'Founded': {
+    zh:'成立',
+    es:'Fundada',
+    ar:'تأسست',
+    hi:'स्थापना',
+    pt:'Fundada',
+    fr:'Fondée',
+    ja:'設立'
+  },
+  'Funding Raised': {
+    es:'Financiación Recaudada',
+    ar:'التمويل المُجمَّع',
+    hi:'जुटाई गई फंडिंग',
+    pt:'Financiamento Captado',
+    fr:'Financement Levé',
+    ja:'調達資金',
+    zh:'国际团队'
+  },
+  'Employees Globally': {
+    es:'Empleados en todo el Mundo',
+    ar:'موظفون على مستوى العالم',
+    hi:'वैश्विक कर्मचारी',
+    pt:'Funcionários em Todo o Mundo',
+    fr:'Employés dans le Monde',
+    ja:'グローバル従業員数',
+    zh:'发展阶段'
+  },
+  'Founded in San Francisco': {
+    es:'Fundada en San Francisco',
+    ar:'تأسست في سان فرانسيسكو',
+    hi:'सैन फ्रांसिस्को में स्थापित',
+    pt:'Fundada em San Francisco',
+    fr:'Fondée à San Francisco',
+    ja:'サンフランシスコで設立',
+    zh:'2000美元学习预算'
+  },
+  'Launched DSP + ADX globally': {
+    es:'DSP + ADX lanzados globalmente',
+    ar:'إطلاق DSP + ADX على مستوى العالم',
+    hi:'DSP + ADX को वैश्विक स्तर पर लॉन्च किया',
+    pt:'DSP + ADX lançados globalmente',
+    fr:'DSP + ADX lancés mondialement',
+    ja:'DSP + ADXをグローバル展開',
+    zh:'有竞争力的股权'
+  },
+  '50B daily auctions milestone': {
+    es:'Hito de 50B subastas diarias',
+    ar:'علامة 50 مليار مزاد يومي',
+    hi:'50B दैनिक नीलामी का मील का पत्थर',
+    pt:'Marco de 50B leilões diários',
+    fr:'Jalon de 50B enchères quotidiennes',
+    ja:'1日500億回入札マイルストーン',
+    zh:'成立'
+  },
+  '150+ countries, $2B+ revenue driven': {
+    es:'150+ países, $2B+ ingresos generados',
+    ar:'150+ دولة، أكثر من $2B إيرادات محققة',
+    hi:'150+ देश, $2B+ राजस्व अर्जित',
+    pt:'150+ países, $2B+ de receita gerada',
+    fr:'150+ pays, $2B+ de revenus générés',
+    ja:'150か国以上、20億ドル以上の収益創出',
+    zh:'已融资额'
+  },
+  'Full-stack ecosystem, 500+ team': {
+    es:'Ecosistema completo, equipo de 500+',
+    ar:'نظام بيئي متكامل، فريق من 500+',
+    hi:'फुल-स्टैक इकोसिस्टम, 500+ टीम',
+    pt:'Ecossistema completo, equipe de 500+',
+    fr:'Écosystème complet, équipe de 500+',
+    ja:'フルスタックエコシステム、500人以上のチーム',
+    zh:'全球员工'
+  },
+  'Partner Success First': {
+    es:'El Éxito del Socio es lo Primero',
+    ar:'نجاح الشريك أولاً',
+    hi:'पार्टनर सफलता सबसे पहले',
+    pt:'Sucesso do Parceiro em Primeiro Lugar',
+    fr:'Succès Partenaire en Premier',
+    ja:'パートナーの成功を最優先',
+    zh:'创立于旧金山'
+  },
+  'Radical Transparency': {
+    es:'Transparencia Radical',
+    ar:'الشفافية الجذرية',
+    hi:'आमूल पारदर्शिता',
+    pt:'Transparência Radical',
+    fr:'Transparence Radicale',
+    ja:'根本的な透明性',
+    zh:'彻底透明'
+  },
+  'Relentless Innovation': {
+    es:'Innovación Implacable',
+    ar:'الابتكار الدؤوب',
+    hi:'निरंतर नवाचार',
+    pt:'Inovação Incansável',
+    fr:'Innovation Sans Relâche',
+    ja:'絶え間ないイノベーション',
+    zh:'全球推出DSP+ADX'
+  },
+  'Global Perspective': {
+    es:'Perspectiva Global',
+    ar:'منظور عالمي',
+    hi:'वैश्विक दृष्टिकोण',
+    pt:'Perspectiva Global',
+    fr:'Perspective Mondiale',
+    ja:'グローバルな視点',
+    zh:'每日500亿次竞价里程碑'
+  },
+  'Application Review': {
+    es:'Revisión de Solicitud',
+    ar:'مراجعة الطلب',
+    hi:'आवेदन समीक्षा',
+    pt:'Revisão de Candidatura',
+    fr:'Examen de Candidature',
+    ja:'書類選考',
+    zh:'150+国家，驱动20亿美元+收益'
+  },
+  'Intro Call': {
+    es:'Llamada Introductoria',
+    ar:'مكالمة تعريفية',
+    hi:'परिचय कॉल',
+    pt:'Chamada Introdutória',
+    fr:'Appel d\'Introduction',
+    ja:'初回面談',
+    zh:'全栈生态，500+团队'
+  },
+  'Technical / Skills Interview': {
+    es:'Entrevista Técnica / de Habilidades',
+    ar:'مقابلة تقنية / مهارات',
+    hi:'तकनीकी / कौशल साक्षात्कार',
+    pt:'Entrevista Técnica / de Habilidades',
+    fr:'Entretien Technique / Compétences',
+    ja:'技術・スキル面接',
+    zh:'合作伙伴成功优先'
+  },
+  'Team Interview': {
+    es:'Entrevista con el Equipo',
+    ar:'مقابلة الفريق',
+    hi:'टीम साक्षात्कार',
+    pt:'Entrevista com a Equipe',
+    fr:'Entretien d\'Équipe',
+    ja:'チーム面接',
+    zh:'彻底透明'
+  },
+  'Offer': {
+    es:'Oferta',
+    ar:'العرض',
+    hi:'ऑफर',
+    pt:'Oferta',
+    fr:'Offre',
+    ja:'内定',
+    zh:'持续创新'
+  },
+  'Annual Spend': {
+    es:'Gasto Anual',
+    ar:'الإنفاق السنوي',
+    hi:'वार्षिक व्यय',
+    pt:'Gasto Anual',
+    fr:'Dépense Annuelle',
+    ja:'年間支出',
+    zh:'全球视野'
+  },
+  'Partners': {
+    es:'Socios',
+    ar:'الشركاء',
+    hi:'साझेदार',
+    pt:'Parceiros',
+    fr:'Partenaires',
+    ja:'パートナー',
+    zh:'合作伙伴'
+  },
+  'ROAS Lift': {
+    es:'Mejora de ROAS',
+    ar:'رفع ROAS',
+    hi:'ROAS वृद्धि',
+    pt:'Aumento de ROAS',
+    fr:'Hausse ROAS',
+    ja:'ROAS向上',
+    zh:'申请审核'
+  },
+  'CPA Reduction': {
+    es:'Reducción de CPA',
+    ar:'تخفيض CPA',
+    hi:'CPA कमी',
+    pt:'Redução de CPA',
+    fr:'Réduction CPA',
+    ja:'CPA削減',
+    zh:'初步沟通'
+  },
+  'Revenue Lift': {
+    es:'Mejora de Ingresos',
+    ar:'رفع الإيرادات',
+    hi:'राजस्व वृद्धि',
+    pt:'Aumento de Receita',
+    fr:'Hausse des Revenus',
+    ja:'収益向上',
+    zh:'技术/技能面试'
+  },
+  'eCPM Growth': {
+    es:'Crecimiento de eCPM',
+    ar:'نمو eCPM',
+    hi:'eCPM वृद्धि',
+    pt:'Crescimento de eCPM',
+    fr:'Croissance eCPM',
+    ja:'eCPM成長',
+    zh:'团队面试'
+  },
+  'Global Cases': {
+    es:'Casos Globales',
+    ar:'الحالات العالمية',
+    hi:'वैश्विक केस',
+    pt:'Casos Globais',
+    fr:'Cas Mondiaux',
+    ja:'グローバル事例',
+    zh:'录用通知'
+  },
+  'CPA Drop': {
+    es:'Caída de CPA',
+    ar:'انخفاض CPA',
+    hi:'CPA में गिरावट',
+    pt:'Queda de CPA',
+    fr:'Baisse CPA',
+    ja:'CPA低下',
+    zh:'年度支出'
+  },
+  'Revenue': {
+    zh:'收益',
+    es:'Ingresos',
+    ar:'الإيرادات',
+    hi:'राजस्व',
+    pt:'Receita',
+    fr:'Revenus',
+    ja:'収益'
+  },
+  'CPI': {
+    es:'CPI',
+    ar:'تكلفة كل تثبيت',
+    hi:'CPI',
+    pt:'CPI',
+    zh:'每次安装成本',
+    fr:'CPI',
+    ja:'CPI'
+  },
+  'eCPM Lift': {
+    es:'Mejora de eCPM',
+    ar:'رفع eCPM',
+    hi:'eCPM वृद्धि',
+    zh:'eCPM提升',
+    pt:'Aumento de eCPM',
+    fr:'Hausse eCPM',
+    ja:'eCPM向上'
+  },
+  'Fill Rate': {
+    es:'Tasa de Llenado',
+    ar:'معدل الملء',
+    zh:'填充率',
+    hi:'भरण दर',
+    pt:'Taxa de Preenchimento',
+    fr:'Taux de Remplissage',
+    ja:'フィルレート',
+    zh:'收益提升'
+  },
+  'Rev Tripled': {
+    es:'Ingresos Triplicados',
+    ar:'تضاعفت الإيرادات ثلاثة أضعاف',
+    hi:'राजस्व तीन गुना',
+    pt:'Receita Triplicada',
+    fr:'Revenus Triplés',
+    ja:'収益3倍',
+    zh:'收益翻三倍'
+  },
+  'CPA at Target': {
+    zh:'CPA达标',
+    es:'CPA en Objetivo',
+    ar:'CPA عند الهدف',
+    hi:'लक्ष्य पर CPA',
+    pt:'CPA no Alvo',
+    fr:'CPA à l\'Objectif',
+    ja:'目標CPA達成'
+  },
+  'Optimized': {
+    zh:'已优化',
+    es:'Optimizado',
+    ar:'تم التحسين',
+    hi:'अनुकूलित',
+    pt:'Otimizado',
+    fr:'Optimisé',
+    ja:'最適化済み'
+  },
+  'LTV Positive': {
+    zh:'LTV为正',
+    es:'LTV Positivo',
+    ar:'قيمة عمر العميل إيجابية',
+    hi:'LTV सकारात्मक',
+    pt:'LTV Positivo',
+    fr:'LTV Positif',
+    ja:'LTVプラス',
+    zh:'收益'
+  },
+  'Scaled Up': {
+    zh:'已扩展',
+    es:'Escalado',
+    ar:'تم التوسع',
+    hi:'स्केल अप',
+    pt:'Escalado',
+    fr:'Mis à l\'Échelle',
+    ja:'スケールアップ'
+  },
+  'Maintained': {
+    zh:'保持稳定',
+    es:'Mantenido',
+    ar:'محافظ عليه',
+    hi:'बनाए रखा',
+    pt:'Mantido',
+    fr:'Maintenu',
+    ja:'維持'
+  },
+  'Improved': {
+    zh:'显著改善',
+    es:'Mejorado',
+    ar:'تم التحسين',
+    hi:'सुधरा',
+    pt:'Melhorado',
+    fr:'Amélioré',
+    ja:'改善'
+  },
+  'Tripled': {
+    zh:'增至三倍',
+    es:'Triplicado',
+    ar:'تضاعف ثلاثة أضعاف',
+    zh:'翻三倍',
+    hi:'तीन गुना',
+    pt:'Triplicado',
+    fr:'Triplé',
+    ja:'3倍'
+  },
+  'Native Ads': {
+    zh:'原生广告',
+    es:'Anuncios Nativos',
+    ar:'الإعلانات الأصلية',
+    hi:'नेटिव विज्ञापन',
+    pt:'Anúncios Nativos',
+    fr:'Publicités Natives',
+    ja:'ネイティブ広告'
+  },
+  'Banner+Video': {
+    zh:'横幅+视频',
+    es:'Banner+Video',
+    ar:'بانر+فيديو',
+    hi:'बैनर+वीडियो',
+    pt:'Banner+Vídeo',
+    fr:'Bannière+Vidéo',
+    ja:'バナー+動画'
+  },
+  'Rewarded': {
+    zh:'激励广告',
+    es:'Con Recompensa',
+    ar:'مكافأة',
+    hi:'रिवॉर्डेड',
+    pt:'Recompensado',
+    fr:'Récompensé',
+    ja:'リワード'
+  },
+  'Create Account': {
+    zh:'创建账户',
+    es:'Crear Cuenta',
+    ar:'إنشاء حساب',
+    hi:'खाता बनाएं',
+    pt:'Criar Conta',
+    fr:'Créer un Compte',
+    ja:'アカウント作成'
+  },
+  'Add Your Inventory': {
+    zh:'添加您的库存',
+    es:'Añadir Su Inventario',
+    ar:'أضف مخزونك',
+    hi:'अपनी इन्वेंटरी जोड़ें',
+    pt:'Adicionar Seu Inventário',
+    fr:'Ajouter Votre Inventaire',
+    ja:'インベントリを追加'
+  },
+  'Integrate': {
+    zh:'集成',
+    es:'Integrar',
+    ar:'تكامل',
+    hi:'एकीकृत करें',
+    pt:'Integrar',
+    fr:'Intégrer',
+    ja:'連携する'
+  },
+  'Start Earning': {
+    zh:'开始赚取',
+    es:'Empezar a Ganar',
+    ar:'ابدأ الكسب',
+    hi:'कमाई शुरू करें',
+    pt:'Começar a Ganhar',
+    fr:'Commencer à Gagner',
+    ja:'収益化を始める'
+  },
+  'Founded — Core RTB infrastructure & ML foundation built.': {
+    zh:'成立 — 核心RTB基础设施和ML基础已建立。',
+    es:'Fundación — Infraestructura RTB central y base de ML construida.',
+    ar:'التأسيس — تم بناء بنية RTB الأساسية وأساس التعلم الآلي.',
+    hi:'स्थापना — मुख्य RTB बुनियादी ढांचा और ML फाउंडेशन बनाया गया।',
+    pt:'Fundação — Infraestrutura RTB central e base de ML construída.',
+    fr:'Fondation — Infrastructure RTB centrale et base ML construite.',
+    ja:'設立 — コアRTBインフラとML基盤を構築。'
+  },
+  'First Partnerships — Beta advertisers & publishers onboarded. London office opens.': {
+    zh:'首次合作 — Beta广告主和发布商入驻。伦敦办公室开设。',
+    es:'Primeras Alianzas — Beta anunciantes y publicadores integrados. Apertura de la oficina de Londres.',
+    ar:'أولى الشراكات — إعداد معلنين وناشري بيتا. افتتاح مكتب لندن.',
+    hi:'पहली साझेदारी — बीटा विज्ञापनदाता और प्रकाशक शामिल। लंदन कार्यालय खुला।',
+    pt:'Primeiras Parcerias — Beta anunciantes e publicadores integrados. Abertura do escritório de Londres.',
+    fr:'Premiers Partenariats — Annonceurs et éditeurs bêta intégrés. Ouverture du bureau de Londres.',
+    ja:'最初のパートナーシップ — ベータ広告主・パブリッシャーをオンボード。ロンドンオフィス開設。'
+  },
+  'DSP Launch — NexBids DSP goes to general availability. 50+ advertisers in H1.': {
+    es:'Lanzamiento DSP — NexBids DSP llega a disponibilidad general. 50+ anunciantes en H1.',
+    ar:'إطلاق DSP — NexBids DSP يصل إلى التوفر العام. أكثر من 50 معلناً في النصف الأول.',
+    hi:'DSP लॉन्च — NexBids DSP सामान्य उपलब्धता पर जाता है। H1 में 50+ विज्ञापनदाता।',
+    pt:'Lançamento do DSP — NexBids DSP chega à disponibilidade geral. 50+ anunciantes no H1.',
+    fr:'Lancement DSP — NexBids DSP en disponibilité générale. 50+ annonceurs au S1.',
+    ja:'DSPローンチ — NexBids DSPが一般提供開始。上半期に50社以上の広告主を獲得。',
+    zh:'横幅+视频'
+  },
+  'Full-Stack Platform — SSP & ADX launch. Singapore office opens.': {
+    es:'Plataforma Full-Stack — Lanzamiento de SSP y ADX. Apertura de la oficina de Singapur.',
+    ar:'منصة متكاملة — إطلاق SSP وADX. افتتاح مكتب سنغافورة.',
+    hi:'फुल-स्टैक प्लेटफॉर्म — SSP और ADX लॉन्च। सिंगापुर कार्यालय खुला।',
+    pt:'Plataforma Full-Stack — Lançamento de SSP e ADX. Abertura do escritório de Singapura.',
+    fr:'Plateforme Full-Stack — Lancement SSP & ADX. Ouverture du bureau de Singapour.',
+    ja:'フルスタックプラットフォーム — SSP・ADXローンチ。シンガポールオフィス開設。',
+    zh:'激励广告'
+  },
+  'Scale Milestone — 10,000+ publishers. 100B+ daily bid requests. Tokyo & Beijing offices.': {
+    es:'Hito de Escala — 10,000+ publicadores. 100B+ solicitudes de puja diarias. Oficinas en Tokio y Pekín.',
+    ar:'معلم توسع — 10,000+ ناشر. أكثر من 100 مليار طلب مزايدة يومياً. مكاتب طوكيو وبكين.',
+    hi:'स्केल माइलस्टोन — 10,000+ प्रकाशक। 100B+ दैनिक बोली अनुरोध। टोक्यो और बीजिंग कार्यालय।',
+    pt:'Marco de Escala — 10.000+ publicadores. 100B+ solicitações de lance diárias. Escritórios em Tóquio e Pequim.',
+    fr:'Jalon de Croissance — 10 000+ éditeurs. 100B+ demandes d\'enchères quotidiennes. Bureaux à Tokyo et Pékin.',
+    ja:'スケールマイルストーン — 10,000社以上のパブリッシャー。1日1,000億件以上の入札。東京・北京オフィス開設。',
+    zh:'创建账户'
+  },
+  'AI-First Initiative — Next-gen ML engine launched. Privacy Sandbox integration complete.': {
+    es:'Iniciativa AI-First — Motor ML de próxima generación lanzado. Integración de Privacy Sandbox completada.',
+    ar:'مبادرة الذكاء الاصطناعي أولاً — إطلاق محرك ML من الجيل التالي. اكتمال تكامل Privacy Sandbox.',
+    hi:'AI-फर्स्ट पहल — नेक्स्ट-जेन ML इंजन लॉन्च। Privacy Sandbox एकीकरण पूर्ण।',
+    pt:'Iniciativa AI-First — Motor ML de próxima geração lançado. Integração do Privacy Sandbox concluída.',
+    fr:'Initiative AI-First — Moteur ML nouvelle génération lancé. Intégration Privacy Sandbox complète.',
+    ja:'AI-ファーストイニシアチブ — 次世代MLエンジンローンチ。Privacy Sandbox統合完了。',
+    zh:'添加您的广告资源'
+  },
+  '50K Publisher Milestone — $500M+ advertiser spend managed annually.': {
+    es:'Hito de 50K Publicadores — $500M+ de gasto de anunciantes gestionado anualmente.',
+    ar:'معلم 50K ناشر — أكثر من $500M إنفاق معلنين مُدار سنوياً.',
+    hi:'50K प्रकाशक माइलस्टोन — $500M+ विज्ञापनदाता व्यय वार्षिक प्रबंधित।',
+    pt:'Marco de 50K Publicadores — $500M+ de gastos de anunciantes gerenciados anualmente.',
+    fr:'Jalon 50K Éditeurs — $500M+ de dépenses annonceurs gérées annuellement.',
+    ja:'5万社パブリッシャーマイルストーン — 年間5億ドル以上の広告主支出を管理。',
+    zh:'集成'
+  },
+  'CTV & Audio Expansion — Full CTV, programmatic audio, and DOOH capabilities.': {
+    es:'Expansión CTV y Audio — Capacidades completas de CTV, audio programático y DOOH.',
+    ar:'توسع CTV والصوت — قدرات CTV الكاملة والصوت البرمجي وDOOH.',
+    hi:'CTV और ऑडियो विस्तार — पूर्ण CTV, प्रोग्रामेटिक ऑडियो और DOOH क्षमताएं।',
+    pt:'Expansão CTV e Áudio — Capacidades completas de CTV, áudio programático e DOOH.',
+    fr:'Expansion CTV & Audio — Capacités CTV complètes, audio programmatique et DOOH.',
+    ja:'CTV・オーディオ拡張 — 完全なCTV、プログラマティックオーディオ、DOOH対応。',
+    zh:'开始盈利'
+  },
+  'Global Leadership — 50B+ daily impressions. Top 10 Global Ad Tech Platform.': {
+    es:'Liderazgo Global — 50B+ impresiones diarias. Top 10 Plataforma de Ad Tech.',
+    ar:'قيادة عالمية — 50B+ انطباع يومي. أفضل 10 منصة تقنية إعلانية عالمية.',
+    hi:'वैश्विक नेतृत्व — 50B+ दैनिक इंप्रेशन। टॉप 10 ग्लोबल एड टेक प्लेटफॉर्म।',
+    pt:'Liderança Global — 50B+ impressões diárias. Top 10 Plataforma de Ad Tech Global.',
+    fr:'Leadership Mondial — 50B+ impressions quotidiennes. Top 10 Plateforme Ad Tech.',
+    ja:'グローバルリーダーシップ — 1日500億以上のインプレッション。グローバルアドテクプラットフォームトップ10。',
+    zh:'创立——核心RTB基础设施与ML基础构建完成。'
+  },
+  'San Francisco + Barcelona': {
+    zh:'旧金山 + 巴塞罗那',
+    es:'San Francisco + Barcelona',
+    ar:'سان فرانسيسكو + برشلونة',
+    hi:'सैन फ्रांसिसको + बार्सिलोना',
+    pt:'San Francisco + Barcelona',
+    fr:'San Francisco + Barcelone',
+    ja:'サンフランシスコ + バルセロナ'
+  },
+  'Glassdoor': {
+    zh:'Glassdoor',
+    es:'Glassdoor',
+    ar:'Glassdoor',
+    hi:'Glassdoor',
+    pt:'Glassdoor',
+    fr:'Glassdoor',
+    ja:'Glassdoor'
+  },
+  '62% campaigns': {
+    es:'62% campañas',
+    ar:'62% حملات',
+    hi:'62% अभियान',
+    pt:'62% campanhas',
+    fr:'62% campagnes',
+    ja:'62%キャンペーン',
+    zh:'DSP发布——NexBids DSP正式发布，上半年超50家广告主入驻。'
+  },
+  '24% campaigns': {
+    es:'24% campañas',
+    ar:'24% حملات',
+    hi:'24% अभियान',
+    pt:'24% campanhas',
+    fr:'24% campagnes',
+    ja:'24%キャンペーン',
+    zh:'全栈平台——SSP和ADX发布，新加坡办公室开业。'
+  },
+  '14% campaigns': {
+    es:'14% campañas',
+    ar:'14% حملات',
+    hi:'14% अभियान',
+    pt:'14% campanhas',
+    fr:'14% campagnes',
+    ja:'14%キャンペーン',
+    zh:'规模里程碑——10,000+发布商，每日100B+竞价请求，东京和北京办公室开业。'
+  },
+  '50B+': {
+    zh:'500亿+',
+    es:'50B+',
+    ar:'50B+',
+    hi:'50B+',
+    pt:'50B+',
+    fr:'50B+',
+    ja:'500億以上'
+  },
+  '<100ms': {
+    es:'<100ms',
+    ar:'<100ms',
+    zh:'小于100毫秒',
+    hi:'<100ms',
+    pt:'<100ms',
+    fr:'<100ms',
+    ja:'100ms未満',
+    zh:'5万发布商里程碑——年度管理广告支出超过5亿美元。'
+  },
+  '50B+/day': {
+    es:'50B+/día',
+    ar:'50B+/يوم',
+    hi:'50B+/दिन',
+    pt:'50B+/dia',
+    fr:'50B+/jour',
+    ja:'500億以上/日',
+    zh:'CTV和音频扩展——完整的CTV、程序化音频和DOOH能力。'
+  },
+  '6 Proprietary': {
+    es:'6 Propietarios',
+    ar:'6 ملكية',
+    hi:'6 स्वामित्व',
+    pt:'6 Proprietários',
+    fr:'6 Propriétaires',
+    ja:'6独自開発',
+    zh:'全球领导力——每日超500亿展示量，全球前10广告技术平台。'
+  },
+  'Who It\'s For': {
+    es:'Para Quién Es',
+    ar:'لمن هو',
+    hi:'यह किसके लिए है',
+    pt:'Para Quem É',
+    fr:'Pour Qui C\'est',
+    ja:'対象ユーザー',
+    zh:'旧金山+巴塞罗那'
+  },
+  'Whether you\'re looking to start a campaign, monetize your traffic, or partner with us — we\'d love to hear from you.': {
+    es:'Ya sea que quiera iniciar una campaña, monetizar su tráfico o asociarse — nos encantaría saber de usted.',
+    ar:'سواء كنت تتطلع إلى بدء حملة أو تحقيق الدخل من حركة مرورك أو الشراكة معنا — نود أن نسمع منك.',
+    hi:'चाहे आप अभियान शुरू करना, ट्रैफिक से कमाई करना, या साझेदारी करना चाहते हों — हम आपसे सुनना चाहेंगे।',
+    pt:'Seja para iniciar uma campanha, monetizar seu tráfego ou se tornar parceiro — adoraríamos ouvir de você.',
+    fr:'Que vous souhaitiez lancer une campagne, monétiser votre trafic ou nous rejoindre — nous serions ravis de vous entendre.',
+    ja:'キャンペーン開始、トラフィックの収益化、パートナーシップなど — ぜひご連絡ください。',
+    zh:'无论您是想开展活动、通过流量获利，还是与我们合作，我们很乐意听到您的声音。',
+  }
+,
+  '"Migrating to NexBids SSP increased our monthly ad revenue by 328% in 90 days."': {
+    es:'"Migrar a NexBids SSP aumentó nuestros ingresos publicitarios mensuales un 328% en 90 días."',
+    ar:'"أدى الانتقال إلى NexBids SSP إلى زيادة إيراداتنا الإعلانية الشهرية بنسبة 328% في 90 يومًا."',
+    hi:'"NexBids SSP पर माइग्रेट करने से 90 दिनों में हमारी मासिक विज्ञापन आय 328% बढ़ गई।"',
+    pt:'"Migrar para o NexBids SSP aumentou nossa receita publicitária mensal em 328% em 90 dias."',
+    fr:'"La migration vers NexBids SSP a augmenté nos revenus publicitaires mensuels de 328% en 90 jours."',
+    ja:'"NexBids SSPへの移行で、90日間で月次広告収益が328%増加しました。"',
+    zh:'"迁移到NexBids SSP使我们的月度广告收益在90天内增加了328%。"',
+  },
+  '"NexBids DSP helped us achieve 4.2x ROAS across our global campaigns."': {
+    zh:'"NexBids DSP帮助我们在全球营销活动中实现了4.2倍的投资回报率。"',
+    es:'"NexBids DSP nos ayudó a lograr 4.2x ROAS en todas nuestras campañas globales."',
+    ar:'"ساعدنا NexBids DSP على تحقيق عائد إنفاق إعلاني بمعدل 4.2x عبر حملاتنا العالمية."',
+    hi:'"NexBids DSP ने हमें अपने वैश्विक अभियानों में 4.2x ROAS हासिल करने में मदद की।"',
+    pt:'"O NexBids DSP nos ajudou a alcançar 4.2x ROAS em todas as nossas campanhas globais."',
+    fr:'"NexBids DSP nous a aidés à atteindre un ROAS de 4.2x sur toutes nos campagnes mondiales."',
+    ja:'"NexBids DSPのおかげで、グローバルキャンペーン全体で4.2x ROASを達成できました。"'
+  },
+  '30K+ Publishers': {
+    es:'30K+ Editores',
+    ar:'30K+ ناشر',
+    hi:'30K+ प्रकाशक',
+    pt:'30K+ Editores',
+    fr:'30K+ Éditeurs',
+    ja:'30K+パブリッシャー',
+    zh:'24%广告活动'
+  },
+  '50B+ Daily Impressions | <100ms Latency | 99.9% Uptime': {
+    es:'50B+ Impresiones Diarias | <100ms Latencia | 99.9% Disponibilidad',
+    ar:'50B+ مشاهدة يومية | <100ms زمن استجابة | 99.9% وقت تشغيل',
+    hi:'50B+ दैनिक इंप्रेशन | <100ms लेटेंसी | 99.9% अपटाइम',
+    pt:'50B+ Impressões Diárias | <100ms Latência | 99.9% Disponibilidade',
+    fr:'50B+ Impressions Quotidiennes | <100ms Latence | 99.9% Disponibilité',
+    ja:'50B+日次インプレッション | <100msレイテンシ | 99.9%稼働率',
+    zh:'14%广告活动'
+  },
+  '50K+ Advertisers': {
+    es:'50K+ Anunciantes',
+    ar:'50K+ معلن',
+    hi:'50K+ विज्ञापनदाता',
+    pt:'50K+ Anunciantes',
+    fr:'50K+ Annonceurs',
+    ja:'50K+広告主',
+    zh:'500亿以上'
+  },
+  'ADX Routing': {
+    zh:'ADX路由',
+    es:'Enrutamiento ADX',
+    ar:'توجيه ADX',
+    hi:'ADX रूटिंग',
+    pt:'Roteamento ADX',
+    fr:'Routage ADX',
+    ja:'ADXルーティング'
+  },
+  'ADX validates request & routes to eligible DSPs': {
+    es:'ADX valida la solicitud y la enruta a los DSP elegibles',
+    ar:'ADX يتحقق من الطلب ويوجهه إلى DSPs المؤهلة',
+    hi:'ADX अनुरोध को सत्यापित करता है और पात्र DSPs को रूट करता है',
+    pt:'ADX valida a solicitação e a roteia para DSPs elegíveis',
+    fr:'ADX valide la demande et la route vers les DSP éligibles',
+    ja:'ADXはリクエストを検証し、対象DSPにルーティングします',
+    zh:'每天500亿以上'
+  },
+  'AI Scoring': {
+    es:'Puntuación IA',
+    ar:'تسجيل الذكاء الاصطناعي',
+    hi:'AI स्कोरिंग',
+    pt:'Pontuação IA',
+    fr:'Scoring IA',
+    ja:'AIスコアリング',
+    zh:'6项专有'
+  },
+  'Ad Request': {
+    zh:'广告请求',
+    es:'Solicitud de Anuncio',
+    ar:'طلب الإعلان',
+    hi:'विज्ञापन अनुरोध',
+    pt:'Solicitação de Anúncio',
+    fr:'Demande d\'Annonce',
+    ja:'広告リクエスト'
+  },
+  'Advertiser Sales': {
+    zh:'广告主销售',
+    es:'Ventas a Anunciantes',
+    ar:'مبيعات المعلنين',
+    hi:'विज्ञापनदाता बिक्री',
+    pt:'Vendas para Anunciantes',
+    fr:'Ventes Annonceurs',
+    ja:'広告主営業'
+  },
+  'Advertisers & Agencies': {
+    es:'Anunciantes y Agencias',
+    ar:'المعلنون والوكالات',
+    hi:'विज्ञापनदाता और एजेंसियां',
+    pt:'Anunciantes e Agências',
+    fr:'Annonceurs et Agences',
+    ja:'広告主とエージェンシー',
+    zh:'"迁移到NexBids SSP后，我们的月度广告收益在90天内增长了328%。"'
+  },
+  'Advertisers & Brands': {
+    zh:'广告主和品牌',
+    es:'Anunciantes y Marcas',
+    ar:'المعلنون والعلامات التجارية',
+    hi:'विज्ञापनदाता और ब्रांड',
+    pt:'Anunciantes e Marcas',
+    fr:'Annonceurs et Marques',
+    ja:'広告主とブランド'
+  },
+  'Agency Partnerships': {
+    es:'Asociaciones con Agencias',
+    ar:'شراكات الوكالات',
+    hi:'एजेंसी पार्टनरशिप',
+    pt:'Parcerias com Agências',
+    fr:'Partenariats Agences',
+    ja:'エージェンシーパートナーシップ',
+    zh:'"NexBids DSP帮助我们在全球营销活动中实现了4.2倍的ROAS。"'
+  },
+  'Auction': {
+    es:'Subasta',
+    ar:'المزاد',
+    hi:'नीलामी',
+    pt:'Leilão',
+    fr:'Enchère',
+    ja:'オークション',
+    zh:'30,000+发布商'
+  },
+  'Avg Bid Response': {
+    es:'Respuesta de Puja Promedio',
+    ar:'متوسط استجابة العرض',
+    hi:'औसत बिड प्रतिक्रिया',
+    pt:'Resposta de Lance Médio',
+    fr:'Réponse d\'Offre Moy.',
+    ja:'平均入札応答',
+    zh:'每日500亿+展示量 | <100ms延迟 | 99.9%可用率'
+  },
+  'Best Practices': {
+    es:'Mejores Prácticas',
+    ar:'أفضل الممارسات',
+    hi:'सर्वोत्तम अभ्यास',
+    pt:'Melhores Práticas',
+    fr:'Meilleures Pratiques',
+    ja:'ベストプラクティス',
+    zh:'50,000+广告主'
+  },
+  'Europe': {
+    es:'Europa',
+    ar:'أوروبا',
+    hi:'यूरोप',
+    pt:'Europa',
+    fr:'Europe',
+    ja:'ヨーロッパ',
+    zh:'ADX路由'
+  },
+  'Formats': {
+    es:'Formatos',
+    ar:'التنسيقات',
+    hi:'प्रारूप',
+    pt:'Formatos',
+    fr:'Formats',
+    ja:'フォーマット',
+    zh:'ADX验证请求并路由到合格的DSP'
+  },
+  'Geographic Coverage': {
+    es:'Cobertura Geográfica',
+    ar:'التغطية الجغرافية',
+    hi:'भौगोलिक कवरेज',
+    pt:'Cobertura Geográfica',
+    fr:'Couverture Géographique',
+    ja:'地理的カバレッジ',
+    zh:'AI评分'
+  },
+  'Industry Reports': {
+    es:'Informes del Sector',
+    ar:'تقارير الصناعة',
+    hi:'उद्योग रिपोर्ट',
+    pt:'Relatórios do Setor',
+    fr:'Rapports Sectoriels',
+    ja:'業界レポート',
+    zh:'广告请求'
+  },
+  'Kubernetes': {
+    zh:'Kubernetes',
+    es:'Kubernetes',
+    ar:'Kubernetes',
+    hi:'Kubernetes',
+    pt:'Kubernetes',
+    fr:'Kubernetes',
+    ja:'Kubernetes'
+  },
+  'Latin America': {
+    es:'América Latina',
+    ar:'أمريكا اللاتينية',
+    hi:'लैटिन अमेरिका',
+    pt:'América Latina',
+    fr:'Amérique Latine',
+    ja:'ラテンアメリカ',
+    zh:'广告主销售'
+  },
+  'Marketplace Infrastructure': {
+    es:'Infraestructura del Marketplace',
+    ar:'بنية السوق التحتية',
+    hi:'मार्केटप्लेस इन्फ्रास्ट्रक्चर',
+    pt:'Infraestrutura do Marketplace',
+    fr:'Infrastructure Marketplace',
+    ja:'マーケットプレイスインフラ',
+    zh:'广告主和代理商'
+  },
+  'Markets': {
+    zh:'市场',
+    es:'Mercados',
+    ar:'الأسواق',
+    hi:'बाज़ार',
+    pt:'Mercados',
+    fr:'Marchés',
+    ja:'マーケット',
+    zh:'广告主和品牌'
+  },
+  'Measurement & Analytics': {
+    es:'Medición y Analítica',
+    ar:'القياس والتحليلات',
+    hi:'मापन और विश्लेषण',
+    pt:'Medição e Análise',
+    fr:'Mesure et Analytique',
+    ja:'計測とアナリティクス',
+    zh:'代理商合作关系'
+  },
+  'Media & Press': {
+    es:'Medios y Prensa',
+    ar:'الإعلام والصحافة',
+    hi:'मीडिया और प्रेस',
+    pt:'Mídia e Imprensa',
+    fr:'Médias et Presse',
+    ja:'メディア・プレス',
+    zh:'竞价'
+  },
+  'Media & Publishers': {
+    es:'Medios y Editores',
+    ar:'الإعلام والناشرون',
+    hi:'मीडिया और प्रकाशक',
+    pt:'Mídia e Editores',
+    fr:'Médias et Éditeurs',
+    ja:'メディアとパブリッシャー',
+    zh:'平均竞价响应'
+  },
+  'Middle East': {
+    es:'Oriente Medio',
+    ar:'الشرق الأوسط',
+    hi:'मध्य पूर्व',
+    pt:'Oriente Médio',
+    fr:'Moyen-Orient',
+    ja:'中東',
+    zh:'最佳实践'
+  },
+  'Mobile Ad Formats': {
+    es:'Formatos de Anuncios Móviles',
+    ar:'تنسيقات الإعلانات المحمولة',
+    hi:'मोबाइल विज्ञापन प्रारूप',
+    pt:'Formatos de Anúncios Mobile',
+    fr:'Formats Publicitaires Mobiles',
+    ja:'モバイル広告フォーマット',
+    zh:'欧洲'
+  },
+  'NexBids ML models score bid price & conversion probability': {
+    es:'Los modelos ML de NexBids puntúan el precio de oferta y la probabilidad de conversión',
+    ar:'تقوم نماذج ML لـ NexBids بتسجيل سعر العرض واحتمالية التحويل',
+    hi:'NexBids के ML मॉडल बिड प्राइस और कन्वर्जन प्रोबेबिलिटी को स्कोर करते हैं',
+    pt:'Os modelos ML da NexBids pontuam o preço do lance e a probabilidade de conversão',
+    fr:'Les modèles ML de NexBids évaluent le prix de l\'offre et la probabilité de conversion',
+    ja:'NexBids MLモデルが入札価格とコンバージョン確率をスコアリングします',
+    zh:'格式'
+  },
+  'North America': {
+    zh:'北美',
+    es:'Norteamérica',
+    ar:'أمريكا الشمالية',
+    hi:'उत्तरी अमेरिका',
+    pt:'América do Norte',
+    fr:'Amérique du Nord',
+    ja:'北米'
+  },
+  'OpenRTB 2.6 Native': {
+    es:'OpenRTB 2.6 Nativo',
+    ar:'OpenRTB 2.6 الأصلي',
+    hi:'OpenRTB 2.6 नेटिव',
+    pt:'OpenRTB 2.6 Nativo',
+    fr:'OpenRTB 2.6 Natif',
+    ja:'OpenRTB 2.6 ネイティブ',
+    zh:'地理覆盖范围'
+  },
+  'Peak Bid Throughput': {
+    es:'Rendimiento Máximo de Pujas',
+    ar:'ذروة إنتاجية العروض',
+    hi:'पीक बिड थ्रूपुट',
+    pt:'Throughput Máximo de Lances',
+    fr:'Débit de Pointe des Offres',
+    ja:'ピーク入札スループット',
+    zh:'行业报告'
+  },
+  'Platform Docs': {
+    es:'Documentación de Plataforma',
+    ar:'وثائق المنصة',
+    hi:'प्लेटफ़ॉर्म दस्तावेज़',
+    pt:'Documentação da Plataforma',
+    fr:'Documentation Plateforme',
+    ja:'プラットフォームドキュメント',
+    zh:'Kubernetes'
+  },
+  'Prebid.js': {
+    es:'Prebid.js',
+    ar:'Prebid.js',
+    hi:'Prebid.js',
+    pt:'Prebid.js',
+    fr:'Prebid.js',
+    ja:'Prebid.js',
+    zh:'拉丁美洲'
+  },
+  'Publisher Partnerships': {
+    es:'Asociaciones con Editores',
+    ar:'شراكات الناشرين',
+    hi:'प्रकाशक पार्टनरशिप',
+    pt:'Parcerias com Editores',
+    fr:'Partenariats Éditeurs',
+    ja:'パブリッシャーパートナーシップ',
+    zh:'市场基础设施'
+  },
+  'SE Asia': {
+    zh:'东南亚',
+    es:'Sudeste Asiático',
+    ar:'جنوب شرق آسيا',
+    hi:'दक्षिण पूर्व एशिया',
+    pt:'Sudeste Asiático',
+    fr:'Asie du Sud-Est',
+    ja:'東南アジア'
+  },
+  'Second-price auction among all qualified bidders': {
+    es:'Subasta de segundo precio entre todos los postores calificados',
+    ar:'مزاد السعر الثاني بين جميع المزايدين المؤهلين',
+    hi:'सभी योग्य बोलीदाताओं के बीच सेकंड-प्राइस ऑक्शन',
+    pt:'Leilão de segundo preço entre todos os licitantes qualificados',
+    fr:'Enchère au deuxième prix parmi tous les soumissionnaires qualifiés',
+    ja:'全資格入札者によるセカンドプライスオークション',
+    zh:'测量与分析'
+  },
+  'Segments': {
+    es:'Segmentos',
+    ar:'الشرائح',
+    hi:'सेगमेंट',
+    pt:'Segmentos',
+    fr:'Segments',
+    ja:'セグメント',
+    zh:'媒体和新闻'
+  },
+  'Sub-100ms Bid Processing': {
+    zh:'100毫秒以下竞价处理',
+    es:'Procesamiento de Puja en <100ms',
+    ar:'معالجة العروض في أقل من 100ms',
+    hi:'100ms से कम में बिड प्रोसेसिंग',
+    pt:'Processamento de Lance em <100ms',
+    fr:'Traitement des Offres en <100ms',
+    ja:'100ms未満の入札処理'
+  },
+  'Real-time decisioning at global scale with 99.98% uptime guarantee.': {
+    es:'Toma de decisiones en tiempo real a escala global con garantía de disponibilidad del 99.98%.',
+    ar:'اتخاذ القرار في الوقت الفعلي على نطاق عالمي مع ضمان وقت تشغيل 99.98%.',
+    hi:'99.98% अपटाइम गारंटी के साथ वैश्विक स्तर पर रीयल-टाइम निर्णय।',
+    pt:'Tomada de decisão em tempo real em escala global com garantia de disponibilidade de 99.98%.',
+    fr:'Prise de décision en temps réel à l\'échelle mondiale avec une garantie de disponibilité de 99.98%.',
+    ja:'99.98%稼働率保証でグローバル規模のリアルタイム意思決定。',
+    zh:'媒体和发布商'
+  },
+  'AI/ML Optimization Engine': {
+    es:'Motor de Optimización IA/ML',
+    ar:'محرك تحسين الذكاء الاصطناعي/ML',
+    hi:'AI/ML अनुकूलन इंजन',
+    pt:'Motor de Otimização IA/ML',
+    fr:'Moteur d\'Optimisation IA/ML',
+    ja:'AI/ML最適化エンジン',
+    zh:'中东'
+  },
+  'Deep learning models continuously optimize bids, budgets, and audience targeting.': {
+    es:'Los modelos de aprendizaje profundo optimizan continuamente pujas, presupuestos y segmentación de audiencia.',
+    ar:'تقوم نماذج التعلم العميق باستمرار بتحسين العروض والميزانيات واستهداف الجمهور.',
+    hi:'डीप लर्निंग मॉडल लगातार बिड, बजट और ऑडियंस टार्गेटिंग को ऑप्टिमाइज़ करते हैं।',
+    pt:'Modelos de aprendizado profundo otimizam continuamente lances, orçamentos e segmentação de audiência.',
+    fr:'Les modèles de deep learning optimisent en permanence les enchères, les budgets et le ciblage d\'audience.',
+    ja:'ディープラーニングモデルが入札、予算、オーディエンスターゲティングを継続的に最適化します。',
+    zh:'移动广告格式'
+  },
+  'Privacy-First Architecture': {
+    es:'Arquitectura con Privacidad Prioritaria',
+    ar:'هندسة تعطي الأولوية للخصوصية',
+    hi:'प्राइवेसी-फर्स्ट आर्किटेक्चर',
+    pt:'Arquitetura com Privacidade em Primeiro Lugar',
+    fr:'Architecture Axée sur la Confidentialité',
+    ja:'プライバシーファーストアーキテクチャ',
+    zh:'NexBids的ML模型对竞价价格和转化概率进行评分'
+  },
+  'Cookieless targeting solutions ready for a privacy-compliant future.': {
+    es:'Soluciones de segmentación sin cookies listas para un futuro que cumpla con la privacidad.',
+    ar:'حلول استهداف بدون ملفات تعريف الارتباط جاهزة لمستقبل متوافق مع الخصوصية.',
+    hi:'एक प्राइवेसी-कम्प्लायंट भविष्य के लिए कुकीलेस टार्गेटिंग समाधान।',
+    pt:'Soluções de segmentação sem cookies prontas para um futuro em conformidade com privacidade.',
+    fr:'Solutions de ciblage sans cookies prêtes pour un avenir respectueux de la vie privée.',
+    ja:'プライバシー準拠の未来に向けたクッキーレスターゲティングソリューション。',
+    zh:'北美'
+  },
+  'Technical Support': {
+    es:'Soporte Técnico',
+    ar:'الدعم الفني',
+    hi:'तकनीकी सहायता',
+    pt:'Suporte Técnico',
+    fr:'Support Technique',
+    ja:'テクニカルサポート',
+    zh:'OpenRTB 2.6原生'
+  },
+  'Traffic Quality Score': {
+    es:'Puntuación de Calidad de Tráfico',
+    ar:'درجة جودة حركة المرور',
+    hi:'ट्रैफिक क्वालिटी स्कोर',
+    pt:'Pontuação de Qualidade de Tráfego',
+    fr:'Score de Qualité du Trafic',
+    ja:'トラフィッククオリティスコア',
+    zh:'峰值竞价吞吐量'
+  },
+  'User loads page/app; SSP fires bid request': {
+    es:'El usuario carga la página/app; SSP envía solicitud de puja',
+    ar:'يحمّل المستخدم الصفحة/التطبيق؛ يرسل SSP طلب عرض',
+    hi:'उपयोगकर्ता पेज/ऐप लोड करता है; SSP बिड रिक्वेस्ट भेजता है',
+    pt:'Usuário carrega a página/app; SSP envia solicitação de lance',
+    fr:'L\'utilisateur charge la page/app ; le SSP envoie une demande d\'enchère',
+    ja:'ユーザーがページ/アプリを読み込む; SSPが入札リクエストを送信',
+    zh:'平台文档'
+  },
+  'Winner Notified': {
+    zh:'赢家已通知',
+    es:'Ganador Notificado',
+    ar:'إشعار الفائز',
+    hi:'विजेता को सूचित किया गया',
+    pt:'Vencedor Notificado',
+    fr:'Gagnant Notifié',
+    ja:'落札者に通知'
+  },
+  'Winning DSP receives win notice, ad is served': {
+    es:'El DSP ganador recibe el aviso de victoria y se sirve el anuncio',
+    ar:'يتلقى DSP الفائز إشعار الفوز ويتم عرض الإعلان',
+    hi:'जीतने वाले DSP को विन नोटिस मिलता है, विज्ञापन दिखाया जाता है',
+    pt:'O DSP vencedor recebe a notificação de vitória, o anúncio é exibido',
+    fr:'Le DSP gagnant reçoit la notification de victoire, l\'annonce est diffusée',
+    ja:'落札DSPが落札通知を受信し、広告が配信されます',
+    zh:'Prebid.js'
+  },
+  '2.3M Acquired': {
+    zh:'230万新增',
+    es:'2.3M Adquiridos',
+    ar:'2.3M مكتسب',
+    hi:'2.3M अर्जित',
+    pt:'2.3M Adquiridos',
+    fr:'2.3M Acquis',
+    ja:'230万人獲得'
+  },
+  'req/s': {
+    es:'sol/s',
+    fr:'req/s',
+    de:'Anf/s',
+    pt:'req/s',
+    ru:'запр/с',
+    zh:'次/秒',
+    ko:'요청/초',
+    ja:'リクエスト/秒',
+    ms:'permintaan/s',
+    th:'คำขอ/วิ',
+    vi:'yêu cầu/s',
+    hi:'अनुरोध/से',
+    ar:'طلب/ثانية',
+    zh:'所有合格竞价者之间的二价拍卖'
+  },
+  'countries': {
+    es:'países',
+    fr:'pays',
+    de:'Länder',
+    pt:'países',
+    ru:'стран',
+    zh:'个国家',
+    ko:'개국',
+    ja:'カ国',
+    ms:'negara',
+    th:'ประเทศ',
+    vi:'quốc gia',
+    hi:'देश',
+    ar:'دولة',
+    zh:'100ms以内的竞价处理'
+  },
+  'formats': {
+    es:'formatos',
+    fr:'formats',
+    de:'Formate',
+    pt:'formatos',
+    ru:'форматов',
+    zh:'种格式',
+    ko:'가지 형식',
+    ja:'種類',
+    ms:'format',
+    th:'รูปแบบ',
+    vi:'định dạng',
+    hi:'प्रारूप',
+    ar:'تنسيق',
+    zh:'AI/ML优化引擎'
+  },
+  'quality': {
+    es:'calidad',
+    fr:'qualité',
+    de:'Qualität',
+    pt:'qualidade',
+    ru:'качество',
+    zh:'质量',
+    ko:'품질',
+    ja:'品質',
+    ms:'kualiti',
+    th:'คุณภาพ',
+    vi:'chất lượng',
+    hi:'गुणवत्ता',
+    ar:'جودة'
+  },
+  'response': {
+    es:'respuesta',
+    fr:'réponse',
+    de:'Antwort',
+    pt:'resposta',
+    ru:'ответ',
+    zh:'响应',
+    ko:'응답',
+    ja:'レスポンス',
+    ms:'tindak balas',
+    th:'การตอบสนอง',
+    vi:'phản hồi',
+    hi:'प्रतिक्रिया',
+    ar:'استجابة',
+    zh:'为隐私合规的未来准备的无Cookie定向解决方案。'
+  },
+  'Revenue +400%': {
+    es:'Ingresos +400%',
+    fr:'Revenus +400%',
+    de:'Umsatz +400%',
+    pt:'Receita +400%',
+    ru:'Выручка +400%',
+    zh:'收入+400%',
+    ko:'수익 +400%',
+    ja:'売上 +400%',
+    ms:'Hasil +400%',
+    th:'รายได้ +400%',
+    vi:'Doanh thu +400%',
+    hi:'राजस्व +400%',
+    ar:'الإيرادات +400%',
+    zh:'流量质量评分'
+  },
+  'Revenue +145%': {
+    es:'Ingresos +145%',
+    fr:'Revenus +145%',
+    de:'Umsatz +145%',
+    pt:'Receita +145%',
+    ru:'Выручка +145%',
+    zh:'收入+145%',
+    ko:'수익 +145%',
+    ja:'売上 +145%',
+    ms:'Hasil +145%',
+    th:'รายได้ +145%',
+    vi:'Doanh thu +145%',
+    hi:'राजस्व +145%',
+    ar:'الإيرادات +145%',
+    zh:'通知胜出者'
+  },
+  'Revenue x3': {
+    es:'Ingresos x3',
+    fr:'Revenus x3',
+    de:'Umsatz x3',
+    pt:'Receita x3',
+    ru:'Выручка x3',
+    zh:'收入翻3倍',
+    ko:'수익 3배',
+    ja:'売上 3倍',
+    ms:'Hasil x3',
+    th:'รายได้ x3',
+    vi:'Doanh thu x3',
+    hi:'राजस्व x3',
+    ar:'الإيرادات x3'
+  },
+  'Brand Recall +34%': {
+    es:'Recuerdo de Marca +34%',
+    fr:'Rappel de Marque +34%',
+    de:'Marken-Erinnerung +34%',
+    pt:'Lembrança de Marca +34%',
+    ru:'Узнаваемость бренда +34%',
+    zh:'品牌回忆率+34%',
+    ko:'브랜드 회상 +34%',
+    ja:'ブランド想起 +34%',
+    ms:'Ingatan Jenama +34%',
+    th:'การจำแนกแบรนด์ +34%',
+    vi:'Nhớ Thương Hiệu +34%',
+    hi:'ब्रांड रिकॉल +34%',
+    ar:'تذكر العلامة +34%'
+  },
+  'VCR 78%': {
+    es:'VCR 78%',
+    fr:'VCR 78%',
+    de:'VCR 78%',
+    pt:'VCR 78%',
+    ru:'VCR 78%',
+    zh:'完播率78%',
+    ko:'VCR 78%',
+    ja:'VCR 78%',
+    ms:'VCR 78%',
+    th:'VCR 78%',
+    vi:'VCR 78%',
+    hi:'VCR 78%',
+    ar:'VCR 78%'
+  },
+  'Reach 120M': {
+    es:'Alcance 120M',
+    fr:'Portée 120M',
+    de:'Reichweite 120M',
+    pt:'Alcance 120M',
+    ru:'Охват 120М',
+    zh:'覆盖1.2亿',
+    ko:'도달 1.2억',
+    ja:'リーチ 1.2億',
+    ms:'Jangkauan 120J',
+    th:'เข้าถึง 120M',
+    vi:'Tiếp cận 120M',
+    hi:'रीच 120M',
+    ar:'الوصول 120 مليون'
+  },
+  'CPA -54%': {
+    es:'CPA -54%',
+    fr:'CPA -54%',
+    de:'CPA -54%',
+    pt:'CPA -54%',
+    ru:'CPA -54%',
+    zh:'CPA降低54%',
+    ko:'CPA -54%',
+    ja:'CPA -54%',
+    ms:'CPA -54%',
+    th:'CPA -54%',
+    vi:'CPA -54%',
+    hi:'CPA -54%',
+    ar:'CPA -54%'
+  },
+  'CPI -41%': {
+    es:'CPI -41%',
+    fr:'CPI -41%',
+    de:'CPI -41%',
+    pt:'CPI -41%',
+    ru:'CPI -41%',
+    zh:'CPI降低41%',
+    ko:'CPI -41%',
+    ja:'CPI -41%',
+    ms:'CPI -41%',
+    th:'CPI -41%',
+    vi:'CPI -41%',
+    hi:'CPI -41%',
+    ar:'CPI -41%'
+  },
+  'CVR +186%': {
+    es:'CVR +186%',
+    fr:'CVR +186%',
+    de:'CVR +186%',
+    pt:'CVR +186%',
+    ru:'CVR +186%',
+    zh:'转化率+186%',
+    ko:'CVR +186%',
+    ja:'CVR +186%',
+    ms:'CVR +186%',
+    th:'CVR +186%',
+    vi:'CVR +186%',
+    hi:'CVR +186%',
+    ar:'CVR +186%'
+  },
+  'eCPM +67%': {
+    es:'eCPM +67%',
+    fr:'eCPM +67%',
+    de:'eCPM +67%',
+    pt:'eCPM +67%',
+    ru:'eCPM +67%',
+    zh:'eCPM提升67%',
+    ko:'eCPM +67%',
+    ja:'eCPM +67%',
+    ms:'eCPM +67%',
+    th:'eCPM +67%',
+    vi:'eCPM +67%',
+    hi:'eCPM +67%',
+    ar:'eCPM +67%'
+  },
+  'eCPM +89%': {
+    es:'eCPM +89%',
+    fr:'eCPM +89%',
+    de:'eCPM +89%',
+    pt:'eCPM +89%',
+    ru:'eCPM +89%',
+    zh:'eCPM提升89%',
+    ko:'eCPM +89%',
+    ja:'eCPM +89%',
+    ms:'eCPM +89%',
+    th:'eCPM +89%',
+    vi:'eCPM +89%',
+    hi:'eCPM +89%',
+    ar:'eCPM +89%'
+  },
+  'eCPM +92%': {
+    es:'eCPM +92%',
+    fr:'eCPM +92%',
+    de:'eCPM +92%',
+    pt:'eCPM +92%',
+    ru:'eCPM +92%',
+    zh:'eCPM提升92%',
+    ko:'eCPM +92%',
+    ja:'eCPM +92%',
+    ms:'eCPM +92%',
+    th:'eCPM +92%',
+    vi:'eCPM +92%',
+    hi:'eCPM +92%',
+    ar:'eCPM +92%'
+  },
+  'ROAS +200%': {
+    es:'ROAS +200%',
+    fr:'ROAS +200%',
+    de:'ROAS +200%',
+    pt:'ROAS +200%',
+    ru:'ROAS +200%',
+    zh:'ROAS提升200%',
+    ko:'ROAS +200%',
+    ja:'ROAS +200%',
+    ms:'ROAS +200%',
+    th:'ROAS +200%',
+    vi:'ROAS +200%',
+    hi:'ROAS +200%',
+    ar:'ROAS +200%'
+  },
+  'ROAS 3.8x': {
+    es:'ROAS 3.8x',
+    fr:'ROAS 3.8x',
+    de:'ROAS 3.8x',
+    pt:'ROAS 3.8x',
+    ru:'ROAS 3.8x',
+    zh:'ROAS 3.8倍',
+    ko:'ROAS 3.8배',
+    ja:'ROAS 3.8倍',
+    ms:'ROAS 3.8x',
+    th:'ROAS 3.8x',
+    vi:'ROAS 3.8x',
+    hi:'ROAS 3.8x',
+    ar:'ROAS 3.8x'
+  },
+  'Fill +23%': {
+    es:'Fill +23%',
+    fr:'Remplissage +23%',
+    de:'Fill +23%',
+    pt:'Fill +23%',
+    ru:'Заполняемость +23%',
+    zh:'填充率+23%',
+    ko:'충전율 +23%',
+    ja:'フィル率 +23%',
+    ms:'Fill +23%',
+    th:'Fill +23%',
+    vi:'Tỷ lệ điền +23%',
+    hi:'फिल +23%',
+    ar:'نسبة التعبئة +23%'
+  },
+  '+$2.4M/yr': {
+    es:'+$2.4M/año',
+    fr:'+$2.4M/an',
+    de:'+$2.4M/Jahr',
+    pt:'+$2.4M/ano',
+    ru:'+$2.4M/год',
+    zh:'+240万美元/年',
+    ko:'+$2.4M/년',
+    ja:'+$2.4M/年',
+    ms:'+$2.4J/thn',
+    th:'+$2.4M/ปี',
+    vi:'+$2.4M/năm',
+    hi:'+$2.4M/वर्ष',
+    ar:'+$2.4M/سنة'
+  },
+  '2.3M Players': {
+    es:'2.3M Jugadores',
+    fr:'2.3M Joueurs',
+    de:'2.3M Spieler',
+    pt:'2.3M Jogadores',
+    ru:'2.3M Игроков',
+    zh:'230万玩家',
+    ko:'230만 플레이어',
+    ja:'230万プレイヤー',
+    ms:'2.3J Pemain',
+    th:'2.3M ผู้เล่น',
+    vi:'2.3M Người chơi',
+    hi:'2.3M खिलाड़ी',
+    ar:'2.3 مليون لاعب'
+  },
+  'D30 Ret +38%': {
+    es:'Ret D30 +38%',
+    fr:'Rét D30 +38%',
+    de:'D30 Ret +38%',
+    pt:'Ret D30 +38%',
+    ru:'Удержание D30 +38%',
+    zh:'D30留存+38%',
+    ko:'D30 유지 +38%',
+    ja:'D30 継続 +38%',
+    ms:'Ret D30 +38%',
+    th:'D30 คงอยู่ +38%',
+    vi:'Giữ chân D30 +38%',
+    hi:'D30 Ret +38%',
+    ar:'احتفاظ D30 +38%'
+  },
+  'D7 Ret +22%': {
+    es:'Ret D7 +22%',
+    fr:'Rét D7 +22%',
+    de:'D7 Ret +22%',
+    pt:'Ret D7 +22%',
+    ru:'Удержание D7 +22%',
+    zh:'D7留存+22%',
+    ko:'D7 유지 +22%',
+    ja:'D7 継続 +22%',
+    ms:'Ret D7 +22%',
+    th:'D7 คงอยู่ +22%',
+    vi:'Giữ chân D7 +22%',
+    hi:'D7 Ret +22%',
+    ar:'احتفاظ D7 +22%'
+  },
+  'DAU +18%': {
+    es:'DAU +18%',
+    fr:'DAU +18%',
+    de:'DAU +18%',
+    pt:'DAU +18%',
+    ru:'DAU +18%',
+    zh:'日活+18%',
+    ko:'DAU +18%',
+    ja:'DAU +18%',
+    ms:'DAU +18%',
+    th:'DAU +18%',
+    vi:'DAU +18%',
+    hi:'DAU +18%',
+    ar:'DAU +18%'
+  },
+  'Retention +12%': {
+    es:'Retención +12%',
+    fr:'Rétention +12%',
+    de:'Bindung +12%',
+    pt:'Retenção +12%',
+    ru:'Удержание +12%',
+    zh:'留存率+12%',
+    ko:'유지율 +12%',
+    ja:'継続率 +12%',
+    ms:'Pengekalan +12%',
+    th:'การคงอยู่ +12%',
+    vi:'Giữ chân +12%',
+    hi:'रिटेंशन +12%',
+    ar:'الاحتفاظ +12%'
+  },
+  'Conv +67%': {
+    es:'Conversión +67%',
+    fr:'Conversion +67%',
+    de:'Konversion +67%',
+    pt:'Conversão +67%',
+    ru:'Конверсия +67%',
+    zh:'转化+67%',
+    ko:'전환 +67%',
+    ja:'コンバージョン +67%',
+    ms:'Penukaran +67%',
+    th:'การแปลง +67%',
+    vi:'Chuyển đổi +67%',
+    hi:'कन्वर्ज़न +67%',
+    ar:'التحويل +67%'
+  },
+  'CAC -31%': {
+    es:'CAC -31%',
+    fr:'CAC -31%',
+    de:'CAC -31%',
+    pt:'CAC -31%',
+    ru:'CAC -31%',
+    zh:'获客成本-31%',
+    ko:'CAC -31%',
+    ja:'CAC -31%',
+    ms:'CAC -31%',
+    th:'CAC -31%',
+    vi:'CAC -31%',
+    hi:'CAC -31%',
+    ar:'CAC -31%'
+  },
+  'LTV +44%': {
+    es:'LTV +44%',
+    fr:'LTV +44%',
+    de:'LTV +44%',
+    pt:'LTV +44%',
+    ru:'LTV +44%',
+    zh:'用户价值+44%',
+    ko:'LTV +44%',
+    ja:'LTV +44%',
+    ms:'LTV +44%',
+    th:'LTV +44%',
+    vi:'LTV +44%',
+    hi:'LTV +44%',
+    ar:'LTV +44%'
+  },
+  '28 Countries': {
+    es:'28 Países',
+    fr:'28 Pays',
+    de:'28 Länder',
+    pt:'28 Países',
+    ru:'28 Стран',
+    zh:'28个国家',
+    ko:'28개국',
+    ja:'28カ国',
+    ms:'28 Negara',
+    th:'28 ประเทศ',
+    vi:'28 quốc gia',
+    hi:'28 देश',
+    ar:'28 دولة'
+  },
+  '4 Markets': {
+    es:'4 Mercados',
+    fr:'4 Marchés',
+    de:'4 Märkte',
+    pt:'4 Mercados',
+    ru:'4 Рынка',
+    zh:'4个市场',
+    ko:'4개 시장',
+    ja:'4市場',
+    ms:'4 Pasaran',
+    th:'4 ตลาด',
+    vi:'4 Thị trường',
+    hi:'4 बाज़ार',
+    ar:'4 أسواق'
+  },
+  'CPA at Target': {
+    es:'CPA en Objetivo',
+    fr:'CPA à l\'Objectif',
+    de:'CPA im Ziel',
+    pt:'CPA no Alvo',
+    ru:'CPA по цели',
+    zh:'CPA达标',
+    ko:'CPA 목표 달성',
+    ja:'CPA 目標達成',
+    ms:'CPA Mengikut Sasaran',
+    th:'CPA ตามเป้า',
+    vi:'CPA đạt mục tiêu',
+    hi:'CPA लक्ष्य पर',
+    ar:'CPA عند الهدف'
+  },
+
+  // ── Auto-generated batch translations ──
+  'Display Ads': {zh:'展示广告', es:'Anuncios Display', fr:'Annonces Display', pt:'Anúncios Display', hi:'डिस्प्ले विज्ञापन', ar:'إعلانات الشاشة', ja:'ディスプレイ広告'},
+  'Video Ads': {zh:'视频广告', es:'Anuncios en Video', fr:'Annonces Vidéo', pt:'Anúncios em Vídeo', hi:'वीडियो विज्ञापन', ar:'إعلانات الفيديو', ja:'動画広告'},
+  'Playable Ads': {zh:'可试玩广告', es:'Anuncios Jugables', fr:'Annonces Jouables', pt:'Anúncios Jogáveis', hi:'प्लेएबल विज्ञापन', ar:'الإعلانات القابلة للتشغيل', ja:'プレイアブル広告'},
+  'Banner, rich media, expandable formats across web and app inventory.': {zh:'网页和应用资源中的横幅、富媒体、可扩展格式。', es:'Formatos de banner, rich media y expandibles en inventario web y de aplicaciones.', fr:'Formats bannière, rich media et expansibles sur les inventaires web et application.', pt:'Formatos de banner, rich media e expansíveis em inventário web e de aplicativos.', hi:'वेब और ऐप इन्वेंटरी में बैनर, रिच मीडिया, एक्सपेंडेबल फॉर्मेट।', ar:'تنسيقات البانر ووسائط الإعلام الغنية والقابلة للتوسع عبر مخزون الويب والتطبيقات.', ja:'ウェブとアプリのインベントリ全体にわたるバナー、リッチメディア、拡張フォーマット。'},
+  'In-stream (pre/mid/post roll), out-stream, rewarded video, and CTV/OTT.': {zh:'前/中/后贴片、外置流、激励视频和CTV/OTT。', es:'In-stream (pre/mid/post roll), out-stream, video recompensado y CTV/OTT.', fr:'In-stream (pré/mi/post roll), out-stream, vidéo récompensée et CTV/OTT.', pt:'In-stream (pre/mid/post roll), out-stream, vídeo recompensado e CTV/OTT.', hi:'इन-स्ट्रीम (प्री/मिड/पोस्ट रोल), आउट-स्ट्रीम, रिवार्डेड वीडियो और CTV/OTT।', ar:'داخل البث (قبل/أثناء/بعد) وخارج البث والفيديو المكافأ وCTV/OTT.', ja:'インストリーム（プレ/ミッド/ポストロール）、アウトストリーム、報酬型動画、CTV/OTT。'},
+  'In-feed, content recommendation, and sponsored content formats that blend with the user experience.': {zh:'与用户体验融合的信息流、内容推荐和赞助内容格式。', es:'Formatos en feed, recomendación de contenido y contenido patrocinado que se integran con la experiencia del usuario.', fr:'Formats in-feed, recommandation de contenu et contenu sponsorisé qui s\'intègrent à l\'expérience utilisateur.', pt:'Formatos in-feed, recomendação de conteúdo e conteúdo patrocinado que se integram à experiência do usuário.', hi:'यूजर एक्सपीरियंस के साथ मिलने वाले इन-फीड, कंटेंट रिकमेंडेशन और स्पॉन्सर्ड कंटेंट फॉर्मेट।', ar:'تنسيقات داخل الخلاصة وتوصيات المحتوى والمحتوى المدعوم التي تمتزج مع تجربة المستخدم.', ja:'ユーザー体験に溶け込むインフィード、コンテンツレコメンデーション、スポンサードコンテンツ形式。'},
+  'Interactive mini-game ad units for gaming advertisers to showcase gameplay before install.': {zh:'游戏广告主在安装前展示玩法的互动迷你游戏广告单元。', es:'Unidades de anuncios de minijuegos interactivos para que los anunciantes de juegos muestren el juego antes de instalar.', fr:'Unités publicitaires de mini-jeux interactifs pour les annonceurs de jeux afin de montrer le gameplay avant l\'installation.', pt:'Unidades de anúncios de minijogos interativos para anunciantes de jogos mostrarem a jogabilidade antes da instalação.', hi:'गेमिंग विज्ञापनदाताओं के लिए इंटरेक्टिव मिनी-गेम विज्ञापन यूनिट जो इंस्टॉल से पहले गेमप्ले दिखाती हैं।', ar:'وحدات إعلانية لألعاب مصغرة تفاعلية لمعلني الألعاب لعرض طريقة اللعب قبل التثبيت.', ja:'インストール前にゲームプレイを紹介するゲーム広告主向けのインタラクティブミニゲーム広告ユニット。'},
+  'Precision Audience Targeting': {zh:'精准受众定向', es:'Segmentación de Audiencia de Precisión', fr:'Ciblage d\'Audience de Précision', pt:'Segmentação de Audiência de Precisão', hi:'सटीक ऑडियंस टार्गेटिंग', ar:'استهداف الجمهور بدقة', ja:'精密なオーディエンスターゲティング'},
+  'AI Bidding Engine': {zh:'AI竞价引擎', es:'Motor de Puja con IA', fr:'Moteur d\'Enchères IA', pt:'Motor de Lances com IA', hi:'AI बिडिंग इंजन', ar:'محرك المزايدة بالذكاء الاصطناعي', ja:'AI入札エンジン'},
+  'Dynamic Creative Optimization': {zh:'动态创意优化', es:'Optimización Creativa Dinámica', fr:'Optimisation Créative Dynamique', pt:'Otimização Criativa Dinâmica', hi:'डायनामिक क्रिएटिव ऑप्टिमाइज़ेशन', ar:'تحسين الإبداع الديناميكي', ja:'ダイナミッククリエイティブ最適化'},
+  'Real-Time Analytics': {zh:'实时分析', es:'Análisis en Tiempo Real', fr:'Analyse en Temps Réel', pt:'Análise em Tempo Real', hi:'रियल-टाइम एनालिटिक्स', ar:'التحليلات في الوقت الفعلي', ja:'リアルタイム分析'},
+  'Multi-Format Inventory': {zh:'多格式广告资源', es:'Inventario Multi-Formato', fr:'Inventaire Multi-Format', pt:'Inventário Multi-Formato', hi:'मल्टी-फॉर्मेट इन्वेंटरी', ar:'مخزون متعدد التنسيقات', ja:'マルチフォーマットインベントリ'},
+  'MMP & Third-Party Integrations': {zh:'MMP与第三方集成', es:'Integraciones MMP y de Terceros', fr:'Intégrations MMP et Tiers', pt:'Integrações MMP e de Terceiros', hi:'MMP और थर्ड-पार्टी इंटीग्रेशन', ar:'تكاملات MMP والجهات الخارجية', ja:'MMPおよびサードパーティ統合'},
+  'Contextual, behavioral, first-party, and lookalike audiences across 50+ targeting dimensions.': {zh:'跨50+定向维度的内容、行为、第一方和相似受众。', es:'Audiencias contextuales, de comportamiento, de primera parte y similares en más de 50 dimensiones de segmentación.', fr:'Audiences contextuelles, comportementales, first-party et similaires sur plus de 50 dimensions de ciblage.', pt:'Audiências contextuais, comportamentais, first-party e similares em mais de 50 dimensões de segmentação.', hi:'50+ टार्गेटिंग डायमेंशन में कॉन्टेक्स्चुअल, बिहेवियरल, फर्स्ट-पार्टी और लुकअलाइक ऑडियंस।', ar:'جماهير سياقية وسلوكية ومن الطرف الأول ومشابهة عبر أكثر من 50 بُعدًا للاستهداف.', ja:'50以上のターゲティング次元にわたるコンテクスチュアル、行動、ファーストパーティ、ルックアライクオーディエンス。'},
+  'Predict win probability, conversion likelihood, and optimal bid price in <10ms.': {zh:'在<10ms内预测胜出概率、转化可能性和最优竞价价格。', es:'Predice la probabilidad de ganar, la probabilidad de conversión y el precio de puja óptimo en <10ms.', fr:'Prédisez la probabilité de gain, la probabilité de conversion et le prix d\'enchère optimal en <10ms.', pt:'Preveja a probabilidade de ganho, a probabilidade de conversão e o preço de lance ideal em <10ms.', hi:'<10ms में जीत की संभावना, कन्वर्जन की संभावना और ऑप्टिमल बिड प्राइस की भविष्यवाणी।', ar:'توقع احتمالية الفوز واحتمالية التحويل وسعر المزايدة الأمثل في أقل من 10ms.', ja:'<10msで落札確率、コンバージョン確率、最適入札価格を予測。'},
+  'Auto-assemble the best-performing creative combinations. Multivariate testing at scale.': {zh:'自动组合最佳创意组合。大规模多变量测试。', es:'Ensambla automáticamente las mejores combinaciones creativas. Pruebas multivariadas a escala.', fr:'Assemblez automatiquement les meilleures combinaisons créatives. Tests multivariés à grande échelle.', pt:'Monte automaticamente as melhores combinações criativas. Testes multivariados em escala.', hi:'सबसे अच्छे क्रिएटिव कॉम्बिनेशन को ऑटो-असेंबल करें। बड़े पैमाने पर मल्टीवेरिएट टेस्टिंग।', ar:'تجميع تلقائي لأفضل تركيبات الإبداع. اختبار متعدد المتغيرات على نطاق واسع.', ja:'最高パフォーマンスのクリエイティブの組み合わせを自動構築。大規模な多変量テスト。'},
+  'Live campaign dashboards, custom reports, and attribution across the full funnel.': {zh:'实时营销活动仪表板、自定义报告和全漏斗归因。', es:'Paneles de campaña en vivo, informes personalizados y atribución en todo el embudo.', fr:'Tableaux de bord de campagne en direct, rapports personnalisés et attribution sur l\'ensemble du funnel.', pt:'Painéis de campanha ao vivo, relatórios personalizados e atribuição em todo o funil.', hi:'लाइव कैम्पेन डैशबोर्ड, कस्टम रिपोर्ट और फुल फनल के पार एट्रिब्यूशन।', ar:'لوحات معلومات الحملة المباشرة والتقارير المخصصة والإسناد عبر القمع الكامل.', ja:'ライブキャンペーンダッシュボード、カスタムレポート、ファネル全体のアトリビューション。'},
+  'Display, video, native, audio, CTV, DOOH, and in-app across 200+ SSP connections.': {zh:'通过200+个SSP连接覆盖展示、视频、原生、音频、CTV、DOOH和应用内广告。', es:'Display, video, nativo, audio, CTV, DOOH y en aplicaciones en más de 200 conexiones SSP.', fr:'Display, vidéo, natif, audio, CTV, DOOH et in-app sur plus de 200 connexions SSP.', pt:'Display, vídeo, nativo, áudio, CTV, DOOH e in-app em mais de 200 conexões SSP.', hi:'200+ SSP कनेक्शन के पार डिस्प्ले, वीडियो, नेटिव, ऑडियो, CTV, DOOH और इन-ऐप।', ar:'عرض وفيديو ومحتوى أصيل وصوت وCTV وDOOH وداخل التطبيق عبر أكثر من 200 اتصال SSP.', ja:'200以上のSSP接続でディスプレイ、動画、ネイティブ、オーディオ、CTV、DOOH、アプリ内広告。'},
+  'Pre-built integrations with Adjust, AppsFlyer, Kochava, Branch, and 30+ ad verification partners.': {zh:'与Adjust、AppsFlyer、Kochava、Branch及30+广告验证合作伙伴的预制集成。', es:'Integraciones preconstruidas con Adjust, AppsFlyer, Kochava, Branch y más de 30 socios de verificación.', fr:'Intégrations préconstruites avec Adjust, AppsFlyer, Kochava, Branch et plus de 30 partenaires de vérification.', pt:'Integrações pré-construídas com Adjust, AppsFlyer, Kochava, Branch e mais de 30 parceiros de verificação.', hi:'Adjust, AppsFlyer, Kochava, Branch और 30+ विज्ञापन वेरिफिकेशन पार्टनर के साथ प्री-बिल्ट इंटीग्रेशन।', ar:'تكاملات جاهزة مع Adjust وAppsFlyer وKochava وBranch وأكثر من 30 شريكًا للتحقق.', ja:'Adjust、AppsFlyer、Kochava、Branch、および30以上の広告検証パートナーとの事前統合。'},
+  'Company': {zh:'公司', es:'Empresa', fr:'Entreprise', pt:'Empresa', hi:'कंपनी', ar:'الشركة', ja:'会社概要'},
+  'Contact & Legal': {zh:'联系与法律', es:'Contacto y Legal', fr:'Contact et Mentions Légales', pt:'Contato e Legal', hi:'संपर्क और कानूनी', ar:'التواصل والشؤون القانونية', ja:'お問い合わせ・法務'},
+  'About Us': {zh:'关于我们', es:'Sobre Nosotros', fr:'À Propos de Nous', pt:'Sobre Nós', hi:'हमारे बारे में', ar:'من نحن', ja:'会社について'},
+  'Agency Cooperation': {zh:'代理商合作', es:'Cooperación con Agencias', fr:'Coopération avec les Agences', pt:'Cooperação com Agências', hi:'एजेंसी सहयोग', ar:'التعاون مع الوكالات', ja:'代理店との協力'},
+  'Top Mobile RPG — Scale & Quality': {zh:'顶级移动RPG——规模与质量', es:'RPG Móvil Líder — Escala y Calidad', fr:'RPG Mobile de Tête — Échelle et Qualité', pt:'RPG Mobile Líder — Escala e Qualidade', hi:'टॉप मोबाइल RPG — स्केल और क्वालिटी', ar:'أفضل RPG للجوال — الحجم والجودة', ja:'トップモバイルRPG — スケールと品質'},
+  'Regional News Network — eCPM Growth': {zh:'地区新闻网络——eCPM增长', es:'Red de Noticias Regional — Crecimiento de eCPM', fr:'Réseau d\'Info Régional — Croissance eCPM', pt:'Rede de Notícias Regional — Crescimento de eCPM', hi:'रीजनल न्यूज़ नेटवर्क — eCPM ग्रोथ', ar:'شبكة الأخبار الإقليمية — نمو eCPM', ja:'地域ニュースネットワーク — eCPM成長'},
+  'Finance News Network — eCPM Growth': {zh:'财经新闻网络——eCPM增长', es:'Red de Noticias Financieras — Crecimiento de eCPM', fr:'Réseau d\'Info Financière — Croissance eCPM', pt:'Rede de Notícias Financeiras — Crescimento de eCPM', hi:'फाइनेंस न्यूज़ नेटवर्क — eCPM ग्रोथ', ar:'شبكة الأخبار المالية — نمو eCPM', ja:'金融ニュースネットワーク — eCPM成長'},
+  'Casual Game Studio — Revenue Maximization': {zh:'休闲游戏工作室——收益最大化', es:'Estudio de Juegos Casual — Maximización de Ingresos', fr:'Studio de Jeux Casual — Maximisation des Revenus', pt:'Estúdio de Jogos Casual — Maximização de Receita', hi:'कैजुअल गेम स्टूडियो — रेवेन्यू मैक्सिमाइज़ेशन', ar:'استوديو ألعاب كاجوال — تعظيم الإيرادات', ja:'カジュアルゲームスタジオ — 収益最大化'},
+  'Global Fashion Brand — Performance': {zh:'全球时尚品牌——效果营销', es:'Marca de Moda Global — Rendimiento', fr:'Marque de Mode Mondiale — Performance', pt:'Marca de Moda Global — Performance', hi:'ग्लोबल फैशन ब्रांड — परफॉर्मेंस', ar:'علامة الأزياء العالمية — الأداء', ja:'グローバルファッションブランド — パフォーマンス'},
+  'Home Goods — SEA Market Expansion': {zh:'家居品牌——东南亚市场扩张', es:'Productos para el Hogar — Expansión en SEA', fr:'Produits Ménagers — Expansion SEA', pt:'Produtos para o Lar — Expansão SEA', hi:'होम गुड्स — SEA मार्केट एक्सपेंशन', ar:'السلع المنزلية — التوسع في SEA', ja:'ホームグッズ — 東南アジア市場拡大'},
+  'Lifestyle App — Monetization Overhaul': {zh:'生活方式应用——变现改造', es:'App de Estilo de Vida — Revisión de Monetización', fr:'App Lifestyle — Refonte de Monétisation', pt:'App de Estilo de Vida — Revisão de Monetização', hi:'लाइफस्टाइल ऐप — मोनेटाइजेशन ओवरहॉल', ar:'تطبيق نمط الحياة — إعادة هيكلة تحقيق الدخل', ja:'ライフスタイルアプリ — マネタイズ刷新'},
+  'Streaming Platform — Subscription Growth': {zh:'流媒体平台——订阅增长', es:'Plataforma de Streaming — Crecimiento de Suscripciones', fr:'Plateforme de Streaming — Croissance des Abonnements', pt:'Plataforma de Streaming — Crescimento de Assinaturas', hi:'स्ट्रीमिंग प्लेटफॉर्म — सब्सक्रिप्शन ग्रोथ', ar:'منصة البث — نمو الاشتراكات', ja:'ストリーミングプラットフォーム — サブスクリプション成長'},
+  'FMCG Brand — Digital Brand Building': {zh:'快消品品牌——数字品牌建设', es:'Marca FMCG — Construcción de Marca Digital', fr:'Marque FMCG — Construction de Marque Numérique', pt:'Marca FMCG — Construção de Marca Digital', hi:'FMCG ब्रांड — डिजिटल ब्रांड बिल्डिंग', ar:'علامة FMCG — بناء العلامة التجارية الرقمية', ja:'FMCGブランド — デジタルブランド構築'},
+  'Fast': {zh:'快速的', es:'Rápido', fr:'Rapide', pt:'Rápido', hi:'तेज़', ar:'سريع', ja:'高速'},
+  'Global': {zh:'全球化的', es:'Global', fr:'Mondial', pt:'Global', hi:'ग्लोबल', ar:'عالمي', ja:'グローバル'},
+  'Intelligent': {zh:'智能的', es:'Inteligente', fr:'Intelligent', pt:'Inteligente', hi:'बुद्धिमान', ar:'ذكي', ja:'インテリジェント'},
+  'Transparent': {zh:'透明的', es:'Transparente', fr:'Transparent', pt:'Transparente', hi:'पारदर्शी', ar:'شفاف', ja:'透明性'},
+  'Brand Awareness': {zh:'品牌知名度', es:'Reconocimiento de Marca', fr:'Notoriété de Marque', pt:'Reconhecimento de Marca', hi:'ब्रांड अवेयरनेस', ar:'الوعي بالعلامة التجارية', ja:'ブランド認知度'},
+  'E-Commerce': {zh:'电商', es:'Comercio Electrónico', fr:'E-Commerce', pt:'E-Commerce', hi:'ई-कॉमर्स', ar:'التجارة الإلكترونية', ja:'Eコマース'},
+  'E-Commerce Brands': {zh:'电商品牌', es:'Marcas de E-Commerce', fr:'Marques E-Commerce', pt:'Marcas de E-Commerce', hi:'ई-कॉमर्स ब्रांड', ar:'علامات التجارة الإلكترونية', ja:'Eコマースブランド'},
+  'Brand Advertisers': {zh:'品牌广告主', es:'Anunciantes de Marca', fr:'Annonceurs de Marque', pt:'Anunciantes de Marca', hi:'ब्रांड विज्ञापनदाता', ar:'معلنو العلامات التجارية', ja:'ブランド広告主'},
+  'App Developers': {zh:'应用开发者', es:'Desarrolladores de Aplicaciones', fr:'Développeurs d\'Applications', pt:'Desenvolvedores de Aplicativos', hi:'ऐप डेवलपर्स', ar:'مطورو التطبيقات', ja:'アプリ開発者'},
+  'Web Publishers': {zh:'网站发布商', es:'Editores Web', fr:'Éditeurs Web', pt:'Editores Web', hi:'वेब पब्लिशर्स', ar:'ناشرو الويب', ja:'ウェブパブリッシャー'},
+  'Game Developers': {zh:'游戏开发者', es:'Desarrolladores de Juegos', fr:'Développeurs de Jeux', pt:'Desenvolvedores de Jogos', hi:'गेम डेवलपर्स', ar:'مطورو الألعاب', ja:'ゲーム開発者'},
+  'For Advertisers & Agencies': {zh:'广告主与代理商', es:'Para Anunciantes y Agencias', fr:'Pour les Annonceurs et Agences', pt:'Para Anunciantes e Agências', hi:'विज्ञापनदाता और एजेंसी के लिए', ar:'للمعلنين والوكالات', ja:'広告主・代理店向け'},
+  'Send a Message': {zh:'发送消息', es:'Enviar un Mensaje', fr:'Envoyer un Message', pt:'Enviar uma Mensagem', hi:'संदेश भेजें', ar:'إرسال رسالة', ja:'メッセージを送る'},
+  'Something else?': {zh:'其他问题？', es:'¿Algo más?', fr:'Autre chose ?', pt:'Algo mais?', hi:'कुछ और?', ar:'شيء آخر؟', ja:'その他のご要件？'},
+  'I want to advertise with NexBids': {zh:'我想在NexBids投放广告', es:'Quiero anunciarme con NexBids', fr:'Je veux faire de la pub avec NexBids', pt:'Quero anunciar com NexBids', hi:'मैं NexBids के साथ विज्ञापन देना चाहता हूं', ar:'أريد الإعلان مع NexBids', ja:'NexBidsで広告を出したい'},
+  'I want to monetize my traffic': {zh:'我想变现我的流量', es:'Quiero monetizar mi tráfico', fr:'Je veux monétiser mon trafic', pt:'Quero monetizar meu tráfico', hi:'मैं अपनी ट्रैफिक मोनेटाइज़ करना चाहता हूं', ar:'أريد تحقيق الدخل من حركة مروري', ja:'自分のトラフィックを収益化したい'},
+  'I\'m an agency looking to partner': {zh:'我是一家代理商，希望合作', es:'Soy una agencia que busca asociarse', fr:'Je suis une agence qui cherche un partenariat', pt:'Sou uma agência procurando parceria', hi:'मैं एक एजेंसी हूं जो पार्टनर बनना चाहती है', ar:'أنا وكالة تبحث عن شراكة', ja:'パートナーシップを求める代理店です'},
+  'I need technical support': {zh:'我需要技术支持', es:'Necesito soporte técnico', fr:'J\'ai besoin d\'assistance technique', pt:'Preciso de suporte técnico', hi:'मुझे तकनीकी सहायता चाहिए', ar:'أحتاج إلى دعم فني', ja:'技術サポートが必要です'},
+  'Contact Publisher Team': {zh:'联系发布商团队', es:'Contactar al Equipo de Editores', fr:'Contacter l\'Équipe Éditeurs', pt:'Contatar Equipe de Editores', hi:'पब्लिशर टीम से संपर्क करें', ar:'تواصل مع فريق الناشرين', ja:'パブリッシャーチームへ連絡'},
+  'Contact Agency Partnerships': {zh:'联系代理商合作伙伴', es:'Contactar Alianzas con Agencias', fr:'Contacter les Partenariats Agences', pt:'Contatar Parcerias com Agências', hi:'एजेंसी पार्टनरशिप से संपर्क करें', ar:'تواصل مع شراكات الوكالات', ja:'代理店パートナーシップへ連絡'},
+  'Contact Press Team': {zh:'联系公关团队', es:'Contactar al Equipo de Prensa', fr:'Contacter l\'Équipe Presse', pt:'Contatar a Equipe de Imprensa', hi:'प्रेस टीम से संपर्क करें', ar:'تواصل مع فريق الصحافة', ja:'広報チームへ連絡'},
+  'Acquired 2.3M high-quality players with playable ads and LTV bidding.': {zh:'通过可试玩广告和LTV竞价获取了230万高质量玩家。', es:'Adquirió 2,3M de jugadores de alta calidad con anuncios jugables y pujas LTV.', fr:'A acquis 2,3M de joueurs de haute qualité avec des annonces jouables et des enchères LTV.', pt:'Adquiriu 2,3M de jogadores de alta qualidade com anúncios jogáveis e lances LTV.', hi:'प्लेएबल एड्स और LTV बिडिंग से 23 लाख हाई-क्वालिटी प्लेयर्स हासिल किए।', ar:'اكتسب 2.3 مليون لاعب عالي الجودة بالإعلانات القابلة للتشغيل ومزايدات LTV.', ja:'プレイアブル広告とLTV入札で230万人の高品質プレイヤーを獲得。'},
+  'Header bidding + AI floor pricing drove 67% eCPM lift and $2.4M incremental annual revenue.': {zh:'头部竞价+AI底价推动eCPM提升67%，带来240万美元额外年收入。', es:'La puja de cabecera + precios mínimos de IA impulsaron un aumento del 67% en eCPM y $2,4M de ingresos anuales incrementales.', fr:'Le header bidding + tarifs planchers IA ont propulsé une hausse eCPM de 67% et 2,4M$ de revenus annuels supplémentaires.', pt:'Header bidding + precificação mínima por IA impulsionou alta de 67% no eCPM e $2,4M em receita anual incremental.', hi:'हेडर बिडिंग + AI फ्लोर प्राइसिंग ने 67% eCPM लिफ्ट और $2.4M अतिरिक्त वार्षिक राजस्व दिया।', ar:'أدت المزايدة في الرأس + التسعير الأدنى بالذكاء الاصطناعي إلى رفع eCPM بنسبة 67% وعائدات سنوية إضافية بقيمة 2.4 مليون دولار.', ja:'ヘッダー入札+AIフロア価格でeCPM67%向上と年間240万ドルの追加収益。'},
+  'Scaled from 3 markets to 28 while maintaining target CPA.': {zh:'在保持目标CPA的同时从3个市场扩展到28个市场。', es:'Escaló de 3 mercados a 28 manteniendo el CPA objetivo.', fr:'A évolué de 3 marchés à 28 tout en maintenant le CPA cible.', pt:'Escalou de 3 mercados para 28 mantendo o CPA alvo.', hi:'लक्ष्य CPA बनाए रखते हुए 3 से 28 बाजारों तक स्केल किया।', ar:'توسع من 3 أسواق إلى 28 مع الحفاظ على CPA المستهدف.', ja:'目標CPAを維持しながら3市場から28市場へ拡大。'},
+  'Trial-to-paid conversion driven by sequential video storytelling.': {zh:'通过连续视频叙事推动免费试用到付费转化。', es:'Conversión de prueba a pago impulsada por narrativa de video secuencial.', fr:'Conversion essai-paiement portée par la narration vidéo séquentielle.', pt:'Conversão de avaliação para pago impulsionada por storytelling de vídeo sequencial.', hi:'सीक्वेंशियल वीडियो स्टोरीटेलिंग से ट्रायल-टू-पेड कन्वर्जन।', ar:'تحويل من التجربة إلى الدفع مدفوعًا بسرد الفيديو المتسلسل.', ja:'シーケンシャル動画ストーリーテリングによる試用から有料への転換。'},
+  'Upper-funnel programmatic video increased brand recall by 34%.': {zh:'上漏斗程序化视频使品牌回忆率提升34%。', es:'El video programático en la parte superior del embudo aumentó el recuerdo de marca en un 34%.', fr:'La vidéo programmatique en haut du funnel a augmenté le rappel de marque de 34%.', pt:'O vídeo programático no topo do funil aumentou o recall de marca em 34%.', hi:'अपर-फनल प्रोग्रामेटिक वीडियो ने ब्रांड रिकॉल 34% बढ़ाया।', ar:'رفع الفيديو البرمجي في الجزء العلوي من القمع تذكر العلامة التجارية بنسبة 34%.', ja:'アッパーファネルのプログラマティック動画でブランドリコール34%向上。'},
+  'Entered 4 SEA markets simultaneously with zero prior brand awareness.': {zh:'在零品牌知名度的情况下同时进入4个东南亚市场。', es:'Entró en 4 mercados SEA simultáneamente con cero conocimiento previo de la marca.', fr:'A pénétré 4 marchés SEA simultanément sans notoriété préalable.', pt:'Entrou em 4 mercados SEA simultaneamente com zero conhecimento prévio da marca.', hi:'शून्य पूर्व ब्रांड जागरूकता के साथ एक साथ 4 SEA बाजारों में प्रवेश किया।', ar:'دخل 4 أسواق في جنوب شرق آسيا في آن واحد مع صفر وعي مسبق بالعلامة التجارية.', ja:'ゼロのブランド認知から4つのSEA市場に同時参入。'},
+  'Build awareness and drive consideration with premium display and video campaigns.': {zh:'通过优质展示和视频营销活动建立品牌知名度并推动消费考虑。', es:'Construye reconocimiento e impulsa la consideración con campañas premium de display y video.', fr:'Construisez la notoriété et stimulez la considération avec des campagnes display et vidéo premium.', pt:'Construa consciência e impulsione consideração com campanhas premium de display e vídeo.', hi:'प्रीमियम डिस्प्ले और वीडियो कैम्पेन से अवेयरनेस बनाएं और विचार करने की प्रेरणा दें।', ar:'بناء الوعي ودفع التفكير بحملات العرض والفيديو المتميزة.', ja:'プレミアムディスプレイ・動画キャンペーンでブランド認知と検討を促進。'},
+  'Drive product sales with dynamic ads, retargeting, and cross-market campaigns.': {zh:'通过动态广告、再营销和跨市场营销活动推动产品销售。', es:'Impulsa las ventas de productos con anuncios dinámicos, retargeting y campañas de múltiples mercados.', fr:'Stimulez les ventes de produits avec des annonces dynamiques, du retargeting et des campagnes multi-marchés.', pt:'Impulsione as vendas de produtos com anúncios dinâmicos, retargeting e campanhas multi-mercado.', hi:'डायनामिक विज्ञापनों, रिटार्गेटिंग और क्रॉस-मार्केट कैम्पेन से उत्पाद बिक्री बढ़ाएं।', ar:'دفع مبيعات المنتجات بالإعلانات الديناميكية وإعادة الاستهداف والحملات عبر الأسواق.', ja:'ダイナミック広告、リターゲティング、クロスマーケットキャンペーンで製品販売を促進。'},
+  'Acquire high-quality users for iOS and Android apps. Creative strategy, targeting and measurement.': {zh:'为iOS和Android应用获取高质量用户。创意策略、定向和衡量。', es:'Adquiere usuarios de alta calidad para apps iOS y Android. Estrategia creativa, segmentación y medición.', fr:'Acquérez des utilisateurs de haute qualité pour les apps iOS et Android. Stratégie créative, ciblage et mesure.', pt:'Adquira usuários de alta qualidade para apps iOS e Android. Estratégia criativa, segmentação e mensuração.', hi:'iOS और Android ऐप्स के लिए हाई-क्वालिटी यूजर्स हासिल करें। क्रिएटिव स्ट्रैटेजी, टार्गेटिंग और मेजरमेंट।', ar:'اكتساب مستخدمين عالي الجودة لتطبيقات iOS وAndroid. استراتيجية إبداعية واستهداف وقياس.', ja:'iOSとAndroidアプリ向けに高品質ユーザーを獲得。クリエイティブ戦略、ターゲティング、計測。'},
+  'Manage programmatic campaigns for all your clients from one unified platform. White-label options, volume pricing, and dedicated support.': {zh:'从一个统一平台为所有客户管理程序化营销活动。提供白标选项、批量定价和专属支持。', es:'Gestiona campañas programáticas para todos tus clientes desde una plataforma unificada. Opciones white-label, precios por volumen y soporte dedicado.', fr:'Gérez les campagnes programmatiques de tous vos clients depuis une plateforme unifiée. Options white-label, tarifs en volume et support dédié.', pt:'Gerencie campanhas programáticas para todos os seus clientes em uma plataforma unificada. Opções white-label, preços por volume e suporte dedicado.', hi:'एक यूनिफाइड प्लेटफॉर्म से सभी क्लाइंट्स के प्रोग्रामेटिक कैम्पेन मैनेज करें। व्हाइट-लेबल ऑप्शन, वॉल्यूम प्राइसिंग और डेडिकेटेड सपोर्ट।', ar:'إدارة الحملات البرمجية لجميع عملائك من منصة موحدة. خيارات العلامة البيضاء وتسعير الحجم والدعم المخصص.', ja:'統一プラットフォームから全クライアントのプログラマティックキャンペーンを管理。ホワイトラベル、ボリューム価格、専任サポート。'},
+
+  // ── Batch 2: Team / Jobs / Locations / Resources ──
+  'Co-Founder & CEO': {zh:'联合创始人兼CEO', es:'Co-Fundador y CEO', fr:'Co-Fondateur et PDG', pt:'Co-Fundador e CEO', hi:'सह-संस्थापक और CEO', ar:'شريك مؤسس والرئيس التنفيذي', ja:'共同創業者兼CEO'},
+  'Co-Founder & CTO': {zh:'联合创始人兼CTO', es:'Co-Fundador y CTO', fr:'Co-Fondateur et CTO', pt:'Co-Fundador e CTO', hi:'सह-संस्थापक और CTO', ar:'شريك مؤسس وكبير مسؤولي التكنولوجيا', ja:'共同創業者兼CTO'},
+  'Chief Revenue Officer': {zh:'首席营收官', es:'Director de Ingresos', fr:'Directeur des Revenus', pt:'Diretor de Receitas', hi:'चीफ रेवेन्यू ऑफिसर', ar:'كبير مسؤولي الإيرادات', ja:'最高収益責任者'},
+  'VP of Engineering': {zh:'工程副总裁', es:'VP de Ingeniería', fr:'VP Ingénierie', pt:'VP de Engenharia', hi:'VP इंजीनियरिंग', ar:'نائب رئيس الهندسة', ja:'エンジニアリングVP'},
+  'Head of Data Science': {zh:'数据科学负责人', es:'Jefe de Ciencia de Datos', fr:'Responsable Data Science', pt:'Chefe de Ciência de Dados', hi:'हेड ऑफ डेटा साइंस', ar:'رئيس علوم البيانات', ja:'データサイエンス責任者'},
+  'Head of Publisher Partnerships': {zh:'发布商合作伙伴负责人', es:'Jefe de Asociaciones con Editores', fr:'Responsable des Partenariats Éditeurs', pt:'Chefe de Parcerias com Editores', hi:'हेड ऑफ पब्लिशर पार्टनरशिप', ar:'رئيس شراكات الناشرين', ja:'パブリッシャーパートナーシップ責任者'},
+  'Singapore / Beijing': {zh:'新加坡/北京', es:'Singapur / Pekín', fr:'Singapour / Pékin', pt:'Singapura / Pequim', hi:'सिंगापुर / बीजिंग', ar:'سنغافورة / بكين', ja:'シンガポール／北京'},
+  'Singapore': {zh:'新加坡', es:'Singapur', fr:'Singapour', pt:'Singapura', hi:'सिंगापुर', ar:'سنغافورة', ja:'シンガポール'},
+  'London': {zh:'伦敦', es:'Londres', fr:'Londres', pt:'Londres', hi:'लंदन', ar:'لندن', ja:'ロンドン'},
+  'Barcelona': {zh:'巴塞罗那', es:'Barcelona', fr:'Barcelone', pt:'Barcelona', hi:'बार्सिलोना', ar:'برشلونة', ja:'バルセロナ'},
+  'Singapore / Remote (APAC)': {zh:'新加坡/远程（亚太）', es:'Singapur / Remoto (APAC)', fr:'Singapour / Télétravail (APAC)', pt:'Singapura / Remoto (APAC)', hi:'सिंगापुर / रिमोट (APAC)', ar:'سنغافورة / عن بُعد (APAC)', ja:'シンガポール／リモート（APAC）'},
+  'London / Remote (EU)': {zh:'伦敦/远程（欧洲）', es:'Londres / Remoto (UE)', fr:'Londres / Télétravail (UE)', pt:'Londres / Remoto (UE)', hi:'लंदन / रिमोट (EU)', ar:'لندن / عن بُعد (EU)', ja:'ロンドン／リモート（EU）'},
+  'Mar 25, 2026': {zh:'2026年3月25日', es:'25 mar 2026', fr:'25 mars 2026', pt:'25 de mar 2026', hi:'25 मार्च 2026', ar:'25 مارس 2026', ja:'2026年3月25日'},
+  'Apr 2, 2026': {zh:'2026年4月2日', es:'2 abr 2026', fr:'2 avr 2026', pt:'2 de abr 2026', hi:'2 अप्रैल 2026', ar:'2 أبريل 2026', ja:'2026年4月2日'},
+  'Apr 15, 2026': {zh:'2026年4月15日', es:'15 abr 2026', fr:'15 avr 2026', pt:'15 de abr 2026', hi:'15 अप्रैल 2026', ar:'15 أبريل 2026', ja:'2026年4月15日'},
+  '24 hours': {zh:'24小时', es:'24 horas', fr:'24 heures', pt:'24 horas', hi:'24 घंटे', ar:'24 ساعة', ja:'24時間'},
+  '1 business day': {zh:'1个工作日', es:'1 día hábil', fr:'1 jour ouvré', pt:'1 dia útil', hi:'1 कार्यदिवस', ar:'يوم عمل واحد', ja:'1営業日'},
+  '2 business days': {zh:'2个工作日', es:'2 días hábiles', fr:'2 jours ouvrés', pt:'2 dias úteis', hi:'2 कार्यदिवस', ar:'يومان عمل', ja:'2営業日'},
+  'Audience Similarity (Lookalike)': {zh:'受众相似度（相似受众）', es:'Similitud de Audiencia (Lookalike)', fr:'Similarité d\'Audience (Sosie)', pt:'Similaridade de Audiência (Lookalike)', hi:'ऑडियंस सिमिलैरिटी (लुकअलाइक)', ar:'تشابه الجمهور (المشابه)', ja:'オーディエンス類似（ルックアライク）'},
+  'Bid Price Prediction': {zh:'竞价价格预测', es:'Predicción de Precio de Puja', fr:'Prédiction du Prix d\'Enchère', pt:'Predição de Preço de Lance', hi:'बिड प्राइस प्रेडिक्शन', ar:'التنبؤ بسعر المزايدة', ja:'入札価格予測'},
+  'CTR Prediction': {zh:'CTR预测模型', es:'Predicción de CTR', fr:'Prédiction du CTR', pt:'Predição de CTR', hi:'CTR प्रेडिक्शन', ar:'التنبؤ بنسبة النقر', ja:'CTR予測'},
+  'Conversion Probability': {zh:'转化概率模型', es:'Probabilidad de Conversión', fr:'Probabilité de Conversion', pt:'Probabilidade de Conversão', hi:'कन्वर्जन प्रोबेबिलिटी', ar:'احتمالية التحويل', ja:'コンバージョン確率'},
+  'Yield Optimization (SSP)': {zh:'收益优化（SSP端）', es:'Optimización de Rendimiento (SSP)', fr:'Optimisation du Rendement (SSP)', pt:'Otimização de Yield (SSP)', hi:'यील्ड ऑप्टिमाइज़ेशन (SSP)', ar:'تحسين العائد (SSP)', ja:'イールド最適化（SSP）'},
+  'Deep neural network, continuous online learning + batch retraining every 6 hours. <5% MAPE accuracy.': {zh:'深度神经网络，持续在线学习+每6小时批量再训练，<5% MAPE精度。', es:'Red neuronal profunda, aprendizaje en línea continuo + reentrenamiento por lotes cada 6 horas. Precisión MAPE <5%.', fr:'Réseau de neurones profond, apprentissage en ligne continu + réentraînement par lots toutes les 6 heures. Précision MAPE <5%.', pt:'Rede neural profunda, aprendizado online contínuo + retreinamento em lotes a cada 6 horas. Precisão MAPE <5%.', hi:'डीप न्यूरल नेटवर्क, निरंतर ऑनलाइन लर्निंग + हर 6 घंटे बैच रिट्रेनिंग। <5% MAPE सटीकता।', ar:'شبكة عصبية عميقة، تعلم مستمر عبر الإنترنت + إعادة تدريب دفعي كل 6 ساعات. دقة MAPE أقل من 5%.', ja:'深層ニューラルネットワーク、継続的オンライン学習＋6時間ごとのバッチ再学習。MAPE精度<5%。'},
+  'Factorization machine + deep learning layers. <5ms inference latency at real-time bid evaluation.': {zh:'因子分解机+深度学习层。竞价评估时推断延迟<5ms。', es:'Máquina de factorización + capas de aprendizaje profundo. Latencia de inferencia <5ms en evaluación de puja en tiempo real.', fr:'Machine de factorisation + couches de deep learning. Latence d\'inférence <5ms lors de l\'évaluation des enchères en temps réel.', pt:'Máquina de fatoração + camadas de deep learning. Latência de inferência <5ms na avaliação de lances em tempo real.', hi:'फैक्टराइजेशन मशीन + डीप लर्निंग लेयर्स। रियल-टाइम बिड एवैल्यूएशन पर <5ms इनफरेंस लेटेंसी।', ar:'آلة التحليل + طبقات التعلم العميق. زمن استجابة الاستدلال أقل من 5ms عند تقييم المزايدة في الوقت الفعلي.', ja:'因子分解マシン＋深層学習レイヤー。リアルタイム入札評価で推論遅延<5ms。'},
+  'Gradient-boosted tree ensemble on tens of billions of impression-to-conversion sequences. Multi-event conversion support.': {zh:'在数百亿次展示到转化序列上训练的梯度提升树集成，支持多事件转化。', es:'Conjunto de árboles con gradiente potenciado en decenas de miles de millones de secuencias de impresión a conversión. Soporte de conversión multi-evento.', fr:'Ensemble d\'arbres boostés par gradient sur des dizaines de milliards de séquences impression-conversion. Support de conversion multi-événements.', pt:'Conjunto de árvores com gradiente impulsionado em dezenas de bilhões de sequências de impressão a conversão. Suporte a conversão multi-evento.', hi:'अरबों इंप्रेशन-टू-कन्वर्जन सीक्वेंस पर ग्रेडिएंट-बूस्टेड ट्री एंसेम्बल। मल्टी-इवेंट कन्वर्जन सपोर्ट।', ar:'مجموعة أشجار معززة بالتدرج على عشرات المليارات من تسلسلات الظهور إلى التحويل. دعم التحويل متعدد الأحداث.', ja:'数百億の表示→コンバージョンシーケンスで学習した勾配ブーストツリーアンサンブル。マルチイベントコンバージョン対応。'},
+  'Graph neural network for user behavioral similarity. Configurable 1%–30% seed expansion.': {zh:'用于用户行为相似度的图神经网络，可配置1%-30%种子扩展。', es:'Red neuronal de grafos para similaridad de comportamiento del usuario. Expansión de semilla configurable del 1% al 30%.', fr:'Réseau de neurones graphiques pour la similarité comportementale des utilisateurs. Expansion de graine configurable de 1% à 30%.', pt:'Rede neural de grafos para similaridade comportamental do usuário. Expansão de semente configurável de 1% a 30%.', hi:'यूजर बिहेवियरल सिमिलैरिटी के लिए ग्राफ न्यूरल नेटवर्क। 1%-30% कॉन्फिगरेबल सीड एक्सपेंशन।', ar:'شبكة عصبية للرسم البياني لتشابه سلوك المستخدم. توسيع البذور قابل للتكوين من 1% إلى 30%.', ja:'ユーザー行動類似性のためのグラフニューラルネットワーク。シード拡張1%〜30%で設定可能。'},
+  'Ensemble anomaly detection at impression, session, and publisher level. >99.8% precision, <0.1% false positive rate.': {zh:'在展示、会话和发布商层面的集成异常检测，>99.8%精度，<0.1%误报率。', es:'Detección de anomalías en conjunto a nivel de impresión, sesión y editor. >99,8% de precisión, <0,1% de tasa de falsos positivos.', fr:'Détection d\'anomalies en ensemble aux niveaux impression, session et éditeur. >99,8% de précision, <0,1% de faux positifs.', pt:'Detecção de anomalias em conjunto nos níveis de impressão, sessão e editor. >99,8% de precisão, <0,1% de falsos positivos.', hi:'इंप्रेशन, सेशन और पब्लिशर स्तर पर एंसेम्बल अनोमली डिटेक्शन। >99.8% प्रिसिजन, <0.1% फॉल्स पॉजिटिव रेट।', ar:'كشف الشذوذ التجميعي على مستوى الظهور والجلسة والناشر. دقة أكثر من 99.8%، معدل إيجابية كاذبة أقل من 0.1%.', ja:'表示、セッション、パブリッシャーレベルのアンサンブル異常検知。精度>99.8%、偽陽性率<0.1%。'},
+  '6 data center regions. 150+ countries served. Local processing reduces latency for every participant globally.': {zh:'6个数据中心区域，服务150+国家。本地处理为全球每个参与者降低延迟。', es:'6 regiones de centros de datos. Más de 150 países atendidos. El procesamiento local reduce la latencia para cada participante a nivel mundial.', fr:'6 régions de centres de données. Plus de 150 pays desservis. Le traitement local réduit la latence pour chaque participant dans le monde.', pt:'6 regiões de data centers. Mais de 150 países atendidos. O processamento local reduz a latência para cada participante globalmente.', hi:'6 डेटा सेंटर रीजन। 150+ देशों को सेवा। लोकल प्रोसेसिंग से वैश्विक हर प्रतिभागी के लिए लेटेंसी कम।', ar:'6 مناطق لمراكز البيانات. خدمة أكثر من 150 دولة. يقلل المعالجة المحلية من الكمون لكل مشارك على مستوى العالم.', ja:'6つのデータセンターリージョン。150カ国以上に対応。ローカル処理で世界中のすべての参加者のレイテンシーを削減。'},
+  'Enterprise-grade infrastructure with 99.98% uptime SLA backed by 24/7 global engineering on-call.': {zh:'99.98%在线率SLA，由24/7全球工程师值班支持的企业级基础设施。', es:'Infraestructura de nivel empresarial con SLA de tiempo de actividad del 99,98% respaldado por ingeniería global de guardia 24/7.', fr:'Infrastructure de niveau entreprise avec SLA de disponibilité à 99,98% soutenu par une ingénierie mondiale d\'astreinte 24/7.', pt:'Infraestrutura de nível empresarial com SLA de disponibilidade de 99,98% apoiado por engenharia global de plantão 24/7.', hi:'99.98% अपटाइम SLA के साथ एंटरप्राइज-ग्रेड इन्फ्रास्ट्रक्चर, 24/7 ग्लोबल इंजीनियरिंग ऑन-कॉल से समर्थित।', ar:'بنية تحتية على مستوى المؤسسات مع اتفاقية مستوى خدمة وقت التشغيل 99.98% مدعومة بهندسة عالمية على مدار الساعة.', ja:'99.98%稼働率SLAの企業グレードインフラ、24/7グローバルエンジニアリングオンコール対応。'},
+  'Every transaction, every fee, every data flow is visible and auditable. We have nothing to hide.': {zh:'每笔交易、每项费用、每个数据流都可见且可审计。我们无需隐瞒任何事情。', es:'Cada transacción, cada tarifa, cada flujo de datos es visible y auditable. No tenemos nada que ocultar.', fr:'Chaque transaction, chaque frais, chaque flux de données est visible et auditable. Nous n\'avons rien à cacher.', pt:'Cada transação, cada taxa, cada fluxo de dados é visível e auditável. Não temos nada a esconder.', hi:'हर ट्रांजेक्शन, हर शुल्क, हर डेटा फ्लो दृश्यमान और ऑडिटेबल है। हमारे पास छुपाने के लिए कुछ नहीं है।', ar:'كل معاملة وكل رسوم وكل تدفق بيانات مرئي وقابل للتدقيق. ليس لدينا ما نخفيه.', ja:'すべての取引、すべての手数料、すべてのデータフローが可視化・監査可能。隠すことは何もありません。'},
+  'Built for a world where user privacy is the default. Cookieless solutions, consent management, privacy-safe targeting.': {zh:'为用户隐私是默认设置的世界而构建。无Cookie解决方案、同意管理、隐私安全定向。', es:'Construido para un mundo donde la privacidad del usuario es la norma. Soluciones sin cookies, gestión del consentimiento, segmentación segura para la privacidad.', fr:'Conçu pour un monde où la confidentialité des utilisateurs est la norme. Solutions sans cookies, gestion du consentement, ciblage respectueux de la vie privée.', pt:'Construído para um mundo onde a privacidade do usuário é o padrão. Soluções sem cookies, gerenciamento de consentimento, segmentação segura para privacidade.', hi:'ऐसी दुनिया के लिए बनाया गया जहां यूजर प्राइवेसी डिफ़ॉल्ट है। कुकीलेस सॉल्यूशन, कंसेंट मैनेजमेंट, प्राइवेसी-सेफ टार्गेटिंग।', ar:'مبني لعالم تكون فيه خصوصية المستخدم هي الافتراضية. حلول بدون ملفات تعريف الارتباط وإدارة الموافقة والاستهداف الآمن للخصوصية.', ja:'ユーザープライバシーがデフォルトの世界のために構築。クッキーレスソリューション、同意管理、プライバシー安全なターゲティング。'},
+  'Sr. Software Engineer, RTB Infrastructure': {zh:'高级工程师，RTB基础设施', es:'Ingeniero de Software Sr., Infraestructura RTB', fr:'Ingénieur Logiciel Sr., Infrastructure RTB', pt:'Engenheiro de Software Sr., Infraestrutura RTB', hi:'वरिष्ठ सॉफ्टवेयर इंजीनियर, RTB इन्फ्रास्ट्रक्चर', ar:'مهندس برمجيات أول، بنية RTB التحتية', ja:'シニアソフトウェアエンジニア、RTBインフラ'},
+  'Staff ML Engineer, Bid Price Prediction': {zh:'Staff ML工程师，竞价价格预测', es:'Ingeniero ML Staff, Predicción de Precio de Puja', fr:'Ingénieur ML Staff, Prédiction du Prix d\'Enchère', pt:'Engenheiro ML Staff, Predição de Preço de Lance', hi:'स्टाफ ML इंजीनियर, बिड प्राइस प्रेडिक्शन', ar:'مهندس ML متقدم، التنبؤ بسعر المزايدة', ja:'スタッフMLエンジニア、入札価格予測'},
+  'Sr. ML Engineer, Fraud Detection': {zh:'高级ML工程师，欺诈检测', es:'Ingeniero ML Sr., Detección de Fraude', fr:'Ingénieur ML Sr., Détection de Fraude', pt:'Engenheiro ML Sr., Detecção de Fraude', hi:'वरिष्ठ ML इंजीनियर, फ्रॉड डिटेक्शन', ar:'مهندس ML أول، كشف الاحتيال', ja:'シニアMLエンジニア、不正検知'},
+  'Data Engineer, Real-Time Streaming': {zh:'数据工程师，实时流处理', es:'Ingeniero de Datos, Streaming en Tiempo Real', fr:'Ingénieur Données, Streaming en Temps Réel', pt:'Engenheiro de Dados, Streaming em Tempo Real', hi:'डेटा इंजीनियर, रियल-टाइम स्ट्रीमिंग', ar:'مهندس بيانات، البث في الوقت الفعلي', ja:'データエンジニア、リアルタイムストリーミング'},
+  'Account Executive, Advertiser Sales (EMEA)': {zh:'客户主管，广告主销售（欧中东非）', es:'Ejecutivo de Cuenta, Ventas a Anunciantes (EMEA)', fr:'Chargé de Compte, Ventes Annonceurs (EMEA)', pt:'Executivo de Contas, Vendas para Anunciantes (EMEA)', hi:'अकाउंट एक्जीक्यूटिव, एडवर्टाइजर सेल्स (EMEA)', ar:'مدير حساب، مبيعات المعلنين (EMEA)', ja:'アカウントエグゼクティブ、広告主営業（EMEA）'},
+  'Agency Partnerships Manager (North America)': {zh:'代理商合作伙伴经理（北美）', es:'Gerente de Asociaciones con Agencias (Norteamérica)', fr:'Responsable Partenariats Agences (Amérique du Nord)', pt:'Gerente de Parcerias com Agências (América do Norte)', hi:'एजेंसी पार्टनरशिप मैनेजर (नॉर्थ अमेरिका)', ar:'مدير شراكات الوكالات (أمريكا الشمالية)', ja:'代理店パートナーシップマネージャー（北米）'},
+  'Business Development Manager, EMEA Expansion': {zh:'商务拓展经理，EMEA市场扩张', es:'Gerente de Desarrollo de Negocios, Expansión EMEA', fr:'Responsable Développement Commercial, Expansion EMEA', pt:'Gerente de Desenvolvimento de Negócios, Expansão EMEA', hi:'बिजनेस डेवलपमेंट मैनेजर, EMEA एक्सपेंशन', ar:'مدير تطوير الأعمال، التوسع في EMEA', ja:'事業開発マネージャー、EMEA拡大'},
+  'Customer Success Manager, Advertisers': {zh:'客户成功经理，广告主', es:'Gerente de Éxito del Cliente, Anunciantes', fr:'Responsable Succès Client, Annonceurs', pt:'Gerente de Sucesso do Cliente, Anunciantes', hi:'कस्टमर सक्सेस मैनेजर, एडवर्टाइजर', ar:'مدير نجاح العملاء، المعلنون', ja:'カスタマーサクセスマネージャー、広告主'},
+  'Technical Implementation Specialist, Publisher': {zh:'技术实施专员，发布商', es:'Especialista en Implementación Técnica, Editor', fr:'Spécialiste en Implémentation Technique, Éditeur', pt:'Especialista em Implementação Técnica, Editor', hi:'टेक्निकल इम्प्लीमेंटेशन स्पेशलिस्ट, पब्लिशर', ar:'متخصص التنفيذ التقني، الناشر', ja:'テクニカル実装スペシャリスト、パブリッシャー'},
+  'Campaign Operations Analyst': {zh:'营销活动运营分析师', es:'Analista de Operaciones de Campaña', fr:'Analyste des Opérations de Campagne', pt:'Analista de Operações de Campanha', hi:'कैम्पेन ऑपरेशन्स एनालिस्ट', ar:'محلل عمليات الحملة', ja:'キャンペーンオペレーションアナリスト'},
+  'Global Programmatic Landscape Report 2026': {zh:'2026全球程序化广告格局报告', es:'Informe del Panorama Programático Global 2026', fr:'Rapport sur le Paysage Programmatique Mondial 2026', pt:'Relatório do Panorama Programático Global 2026', hi:'2026 ग्लोबल प्रोग्रामेटिक लैंडस्केप रिपोर्ट', ar:'تقرير المشهد البرمجي العالمي 2026', ja:'2026年グローバルプログラマティック市場レポート'},
+  'Global Ad Fraud & Brand Safety Report 2026': {zh:'2026全球广告欺诈与品牌安全报告', es:'Informe Global de Fraude Publicitario y Seguridad de Marca 2026', fr:'Rapport Mondial sur la Fraude Publicitaire et la Sécurité des Marques 2026', pt:'Relatório Global de Fraude em Anúncios e Segurança de Marca 2026', hi:'2026 ग्लोबल एड फ्रॉड और ब्रांड सेफ्टी रिपोर्ट', ar:'تقرير الاحتيال الإعلاني وسلامة العلامة التجارية العالمي 2026', ja:'2026年グローバル広告詐欺・ブランドセーフティレポート'},
+  'The State of Mobile Advertising 2026': {zh:'2026移动广告状况报告', es:'El Estado de la Publicidad Móvil 2026', fr:'L\'État de la Publicité Mobile 2026', pt:'O Estado da Publicidade Mobile 2026', hi:'2026 मोबाइल एडवर्टाइजिंग की स्थिति', ar:'حالة الإعلان على الهاتف المحمول 2026', ja:'2026年モバイル広告の現状'},
+  'Cookieless Advertising Transition Report': {zh:'无Cookie广告过渡报告', es:'Informe de Transición a Publicidad sin Cookies', fr:'Rapport de Transition vers la Publicité sans Cookies', pt:'Relatório de Transição para Publicidade sem Cookies', hi:'कुकीलेस एडवर्टाइजिंग ट्रांजिशन रिपोर्ट', ar:'تقرير انتقال الإعلان بدون ملفات تعريف الارتباط', ja:'クッキーレス広告移行レポート'},
+  'CTV Advertising: The Programmatic Opportunity': {zh:'CTV广告：程序化机遇', es:'Publicidad en CTV: La Oportunidad Programática', fr:'Publicité CTV : L\'Opportunité Programmatique', pt:'Publicidade em CTV: A Oportunidade Programática', hi:'CTV एडवर्टाइजिंग: प्रोग्रामेटिक अवसर', ar:'إعلانات CTV: الفرصة البرمجية', ja:'CTV広告：プログラマティックの機会'},
+  'Gaming Advertiser Playbook': {zh:'游戏广告主手册', es:'Manual del Anunciante de Juegos', fr:'Manuel de l\'Annonceur de Jeux', pt:'Manual do Anunciante de Jogos', hi:'गेमिंग एडवर्टाइजर प्लेबुक', ar:'دليل المعلن للألعاب', ja:'ゲーム広告主プレイブック'},
+  'E-Commerce Programmatic Playbook': {zh:'电商程序化手册', es:'Manual Programático de E-Commerce', fr:'Manuel Programmatique E-Commerce', pt:'Manual Programático de E-Commerce', hi:'ई-कॉमर्स प्रोग्रामेटिक प्लेबुक', ar:'دليل التجارة الإلكترونية البرمجي', ja:'Eコマースプログラマティックプレイブック'},
+  'App Ad Revenue Maximization Playbook': {zh:'应用广告收益最大化手册', es:'Manual de Maximización de Ingresos Publicitarios de Apps', fr:'Manuel de Maximisation des Revenus Pub App', pt:'Manual de Maximização de Receita de Anúncios em Apps', hi:'ऐप एड रेवेन्यू मैक्सिमाइजेशन प्लेबुक', ar:'دليل تعظيم إيرادات إعلانات التطبيقات', ja:'アプリ広告収益最大化プレイブック'},
+  'Agency Programmatic Operations Manual': {zh:'代理商程序化运营手册', es:'Manual de Operaciones Programáticas para Agencias', fr:'Manuel d\'Opérations Programmatiques pour Agences', pt:'Manual de Operações Programáticas para Agências', hi:'एजेंसी प्रोग्रामेटिक ऑपरेशन्स मैनुअल', ar:'دليل العمليات البرمجية للوكالات', ja:'代理店プログラマティックオペレーションマニュアル'},
+  'Advanced Programmatic Strategy Certificate': {zh:'高级程序化策略证书', es:'Certificado de Estrategia Programática Avanzada', fr:'Certificat de Stratégie Programmatique Avancée', pt:'Certificado de Estratégia Programática Avançada', hi:'एडवांस्ड प्रोग्रामेटिक स्ट्रैटेजी सर्टिफिकेट', ar:'شهادة استراتيجية برمجية متقدمة', ja:'アドバンストプログラマティック戦略資格'},
+  'Header Bidding Masterclass for Publishers': {zh:'发布商头部竞价大师班', es:'Clase Magistral de Header Bidding para Editores', fr:'Masterclass Header Bidding pour Éditeurs', pt:'Masterclass de Header Bidding para Editores', hi:'पब्लिशर्स के लिए हेडर बिडिंग मास्टरक्लास', ar:'ماستركلاس المزايدة الرأسية للناشرين', ja:'パブリッシャー向けヘッダー入札マスタークラス'},
+  'ADX Buyer Integration Guide (OpenRTB)': {zh:'ADX买方集成指南（OpenRTB）', es:'Guía de Integración de Compradores ADX (OpenRTB)', fr:'Guide d\'Intégration Acheteurs ADX (OpenRTB)', pt:'Guia de Integração de Compradores ADX (OpenRTB)', hi:'ADX खरीदार एकीकरण गाइड (OpenRTB)', ar:'دليل تكامل مشتري ADX (OpenRTB)', ja:'ADX購買者統合ガイド（OpenRTB）'},
+  'DSP Campaign Management Manual': {zh:'DSP营销活动管理手册', es:'Manual de Gestión de Campañas DSP', fr:'Manuel de Gestion de Campagnes DSP', pt:'Manual de Gerenciamento de Campanhas DSP', hi:'DSP कैम्पेन मैनेजमेंट मैनुअल', ar:'دليل إدارة حملات DSP', ja:'DSPキャンペーン管理マニュアル'},
+  'DSP API Reference': {zh:'DSP API参考', es:'Referencia de API DSP', fr:'Référence API DSP', pt:'Referência de API DSP', hi:'DSP API संदर्भ', ar:'مرجع API لـDSP', ja:'DSP APIリファレンス'},
+  'Header Bidding Integration (Prebid.js)': {zh:'Prebid.js头部竞价集成', es:'Integración de Header Bidding (Prebid.js)', fr:'Intégration Header Bidding (Prebid.js)', pt:'Integração de Header Bidding (Prebid.js)', hi:'हेडर बिडिंग इंटीग्रेशन (Prebid.js)', ar:'تكامل المزايدة الرأسية (Prebid.js)', ja:'ヘッダー入札統合（Prebid.js）'},
+  'iOS / Android SDK Integration Guides': {zh:'iOS/Android SDK集成指南', es:'Guías de Integración SDK iOS/Android', fr:'Guides d\'Intégration SDK iOS/Android', pt:'Guias de Integração SDK iOS/Android', hi:'iOS/Android SDK इंटीग्रेशन गाइड', ar:'أدلة تكامل SDK لـiOS/Android', ja:'iOS/Android SDK統合ガイド'},
+  'Annual comprehensive analysis of the global programmatic advertising market.': {zh:'全球程序化广告市场年度综合分析。', es:'Análisis anual exhaustivo del mercado global de publicidad programática.', fr:'Analyse annuelle complète du marché mondial de la publicité programmatique.', pt:'Análise abrangente anual do mercado global de publicidade programática.', hi:'वैश्विक प्रोग्रामेटिक विज्ञापन बाजार का वार्षिक व्यापक विश्लेषण।', ar:'تحليل سنوي شامل لسوق الإعلانات البرمجية العالمية.', ja:'グローバルプログラマティック広告市場の年次包括分析。'},
+  'Ad fraud trends, IVT rates by channel, and brand safety incidents across programmatic ecosystem.': {zh:'广告欺诈趋势、按渠道的IVT率和程序化生态中的品牌安全事件。', es:'Tendencias de fraude publicitario, tasas IVT por canal e incidentes de seguridad de marca en el ecosistema programático.', fr:'Tendances de la fraude publicitaire, taux IVT par canal et incidents de sécurité de marque dans l\'écosystème programmatique.', pt:'Tendências de fraude em anúncios, taxas IVT por canal e incidentes de segurança de marca no ecossistema programático.', hi:'प्रोग्रामेटिक इकोसिस्टम में एड फ्रॉड ट्रेंड, चैनल के अनुसार IVT दरें और ब्रांड सेफ्टी घटनाएं।', ar:'اتجاهات الاحتيال الإعلاني ومعدلات IVT حسب القناة وحوادث سلامة العلامة التجارية في النظام البيئي البرمجي.', ja:'プログラマティックエコシステムにおける広告詐欺のトレンド、チャネル別IVT率、ブランドセーフティインシデント。'},
+  'eCPM benchmarks by vertical, geography, format, and device from anonymized SSP data.': {zh:'基于匿名SSP数据的按垂直行业、地理、格式和设备的eCPM基准。', es:'Referencias de eCPM por vertical, geografía, formato y dispositivo desde datos SSP anonimizados.', fr:'Benchmarks eCPM par vertical, géographie, format et appareil à partir de données SSP anonymisées.', pt:'Benchmarks de eCPM por vertical, geografia, formato e dispositivo de dados SSP anonimizados.', hi:'अनामीकृत SSP डेटा से वर्टिकल, जियोग्राफी, फॉर्मेट और डिवाइस के अनुसार eCPM बेंचमार्क।', ar:'معايير eCPM حسب القطاع الرأسي والجغرافيا والتنسيق والجهاز من بيانات SSP المجهولة الهوية.', ja:'匿名化SSPデータからの垂直市場、地域、フォーマット、デバイス別eCPMベンチマーク。'},
+  'Speak with our advertiser sales team about launching campaigns, pricing, or getting a platform demo.': {zh:'与我们的广告主销售团队交流，了解启动营销活动、定价或获取平台演示。', es:'Habla con nuestro equipo de ventas para anunciantes sobre el lanzamiento de campañas, precios o una demo de la plataforma.', fr:'Parlez à notre équipe de ventes aux annonceurs pour le lancement de campagnes, les tarifs ou une démo de la plateforme.', pt:'Fale com nossa equipe de vendas para anunciantes sobre o lançamento de campanhas, preços ou uma demonstração da plataforma.', hi:'हमारी विज्ञापनदाता बिक्री टीम से कैम्पेन लॉन्च, प्राइसिंग या प्लेटफॉर्म डेमो के बारे में बात करें।', ar:'تحدث مع فريق مبيعات المعلنين لدينا حول إطلاق الحملات أو التسعير أو الحصول على عرض توضيحي للمنصة.', ja:'キャンペーン開始、価格設定、またはプラットフォームデモについて広告主営業チームにお問い合わせください。'},
+  'Connect with our publisher partnerships team to discuss SSP integration and monetization strategy.': {zh:'联系我们的发布商合作伙伴团队，讨论SSP集成和变现策略。', es:'Conéctate con nuestro equipo de asociaciones con editores para discutir la integración de SSP y la estrategia de monetización.', fr:'Connectez-vous avec notre équipe partenariats éditeurs pour discuter de l\'intégration SSP et de la stratégie de monétisation.', pt:'Conecte-se com nossa equipe de parcerias com editores para discutir integração SSP e estratégia de monetização.', hi:'SSP इंटीग्रेशन और मोनेटाइज़ेशन स्ट्रैटेजी पर चर्चा के लिए हमारी पब्लिशर पार्टनरशिप टीम से जुड़ें।', ar:'تواصل مع فريق شراكات الناشرين لدينا لمناقشة تكامل SSP واستراتيجية تحقيق الدخل.', ja:'SSP統合と収益化戦略についてパブリッシャーパートナーシップチームにお問い合わせください。'},
+  'Talk to our agency partnerships team about commercial arrangements and platform access.': {zh:'与我们的代理商合作伙伴团队交流商业安排和平台访问。', es:'Habla con nuestro equipo de asociaciones con agencias sobre acuerdos comerciales y acceso a la plataforma.', fr:'Parlez à notre équipe partenariats agences des arrangements commerciaux et de l\'accès à la plateforme.', pt:'Fale com nossa equipe de parcerias com agências sobre arranjos comerciais e acesso à plataforma.', hi:'हमारी एजेंसी पार्टनरशिप टीम से कमर्शियल अरेंजमेंट और प्लेटफॉर्म एक्सेस के बारे में बात करें।', ar:'تحدث مع فريق شراكات الوكالات لدينا حول الترتيبات التجارية والوصول إلى المنصة.', ja:'商業的な取り決めとプラットフォームアクセスについて代理店パートナーシップチームにお問い合わせください。'},
+  'The AI-powered demand-side platform that helps advertisers reach their audiences with precision and scale across every digital channel globally.': {zh:'AI驱动的需求方平台，帮助广告主在全球每个数字渠道以精准和规模触达其受众。', es:'La plataforma del lado de la demanda impulsada por IA que ayuda a los anunciantes a llegar a sus audiencias con precisión y escala en cada canal digital a nivel mundial.', fr:'La plateforme côté demande propulsée par l\'IA qui aide les annonceurs à atteindre leurs audiences avec précision et à grande échelle sur tous les canaux numériques mondiaux.', pt:'A plataforma do lado da demanda impulsionada por IA que ajuda os anunciantes a alcançar suas audiências com precisão e escala em todos os canais digitais globalmente.', hi:'AI-संचालित डिमांड-साइड प्लेटफॉर्म जो विज्ञापनदाताओं को वैश्विक स्तर पर हर डिजिटल चैनल में सटीकता और स्केल के साथ अपने दर्शकों तक पहुंचने में मदद करता है।', ar:'منصة جانب الطلب المدعومة بالذكاء الاصطناعي التي تساعد المعلنين على الوصول إلى جماهيرهم بدقة وعلى نطاق واسع عبر كل قناة رقمية على مستوى العالم.', ja:'AI駆動のデマンドサイドプラットフォームで、広告主が世界中のすべてのデジタルチャンネルで精度とスケールを持ってオーディエンスにリーチするのを支援します。'},
+  'The yield-optimizing supply platform that connects publishers and developers to the world\'s best demand sources, maximizing revenue through intelligent automation and header bidding.': {zh:'收益优化供应平台，将发布商和开发者与全球最佳需求来源连接，通过智能自动化和头部竞价最大化收益。', es:'La plataforma de suministro de optimización de rendimiento que conecta a editores y desarrolladores con las mejores fuentes de demanda del mundo, maximizando los ingresos mediante automatización inteligente y header bidding.', fr:'La plateforme d\'approvisionnement optimisant le rendement qui connecte éditeurs et développeurs aux meilleures sources de demande mondiales, maximisant les revenus via l\'automatisation intelligente et le header bidding.', pt:'A plataforma de fornecimento de otimização de yield que conecta editores e desenvolvedores às melhores fontes de demanda do mundo, maximizando a receita por meio de automação inteligente e header bidding.', hi:'यील्ड-ऑप्टिमाइजिंग सप्लाई प्लेटफॉर्म जो पब्लिशर और डेवलपर्स को दुनिया के सर्वश्रेष्ठ डिमांड सोर्स से जोड़ता है, इंटेलिजेंट ऑटोमेशन और हेडर बिडिंग के माध्यम से राजस्व अधिकतम करता है।', ar:'منصة التوريد المحسّنة للعائد التي تربط الناشرين والمطورين بأفضل مصادر الطلب في العالم، وتعظيم الإيرادات من خلال الأتمتة الذكية والمزايدة في الرأس.', ja:'発行者と開発者を世界最高のデマンドソースに接続し、インテリジェントな自動化とヘッダー入札を通じて収益を最大化するイールド最適化サプライプラットフォーム。'},
+  'The neutral, high-performance marketplace where premium supply meets quality demand — real-time auction, header bidding, and direct deal infrastructure at global scale.': {zh:'中立的高性能市场，优质供应与高质量需求相遇——全球规模的实时拍卖、头部竞价和直接交易基础设施。', es:'El mercado neutral de alto rendimiento donde la oferta premium se encuentra con la demanda de calidad: infraestructura de subasta en tiempo real, header bidding y tratos directos a escala global.', fr:'La marketplace neutre et haute performance où l\'offre premium rencontre la demande qualité — infrastructure d\'enchères en temps réel, header bidding et deals directs à l\'échelle mondiale.', pt:'O marketplace neutro e de alto desempenho onde oferta premium encontra demanda de qualidade — infraestrutura de leilão em tempo real, header bidding e negociações diretas em escala global.', hi:'न्यूट्रल, हाई-परफॉर्मेंस मार्केटप्लेस जहां प्रीमियम सप्लाई क्वालिटी डिमांड से मिलती है — ग्लोबल स्केल पर रियल-टाइम ऑक्शन, हेडर बिडिंग और डायरेक्ट डील इन्फ्रास्ट्रक्चर।', ar:'السوق المحايدة عالية الأداء حيث يلتقي العرض المتميز بالطلب الجيد — البنية التحتية للمزاد الفوري والمزايدة في الرأس والصفقات المباشرة على نطاق عالمي.', ja:'プレミアムな供給と品質の需要が出会う中立的で高パフォーマンスのマーケットプレイス — グローバルスケールのリアルタイムオークション、ヘッダー入札、直接取引インフラ。'},
+  'Acquired 2.3M new players while improving D30 retention by 38% using playable ads.': {zh:'使用可试玩广告获取了230万新玩家，同时将D30留存率提升了38%。', es:'Adquirió 2,3M de nuevos jugadores mientras mejoraba la retención D30 en un 38% con anuncios jugables.', fr:'A acquis 2,3M de nouveaux joueurs tout en améliorant la rétention D30 de 38% avec des annonces jouables.', pt:'Adquiriu 2,3M de novos jogadores melhorando a retenção D30 em 38% com anúncios jogáveis.', hi:'प्लेएबल एड्स से 23 लाख नए प्लेयर हासिल करते हुए D30 रिटेंशन 38% सुधारा।', ar:'اكتسب 2.3 مليون لاعب جديد مع تحسين الاحتفاظ D30 بنسبة 38% باستخدام الإعلانات القابلة للتشغيل.', ja:'プレイアブル広告でD30リテンション38%改善しつつ230万人の新プレイヤーを獲得。'},
+  'Header bidding implementation drove 67% eCPM increase and $2.4M incremental annual revenue.': {zh:'头部竞价实施推动eCPM提升67%，带来240万美元的额外年收入。', es:'La implementación del header bidding impulsó un incremento del 67% en eCPM y $2,4M en ingresos anuales adicionales.', fr:'L\'implémentation du header bidding a propulsé une hausse eCPM de 67% et 2,4M$ de revenus annuels supplémentaires.', pt:'A implementação do header bidding impulsionou um aumento de 67% no eCPM e $2,4M em receita anual adicional.', hi:'हेडर बिडिंग इम्प्लीमेंटेशन से eCPM में 67% वृद्धि और $2.4M अतिरिक्त वार्षिक राजस्व।', ar:'أدى تنفيذ المزايدة في الرأس إلى زيادة eCPM بنسبة 67% وعائدات سنوية إضافية بقيمة 2.4 مليون دولار.', ja:'ヘッダー入札実装でeCPM67%増加と年間240万ドルの追加収益。'},
+  'Acquire high-LTV players with playable ads, rewarded video, and LTV-optimized bidding.': {zh:'通过可试玩广告、激励视频和LTV优化竞价获取高价值玩家。', es:'Adquiere jugadores de alto LTV con anuncios jugables, video recompensado y pujas optimizadas para LTV.', fr:'Acquérez des joueurs à LTV élevé avec des annonces jouables, des vidéos récompensées et des enchères optimisées LTV.', pt:'Adquira jogadores de alto LTV com anúncios jogáveis, vídeo recompensado e lances otimizados para LTV.', hi:'प्लेएबल विज्ञापनों, रिवार्डेड वीडियो और LTV-ऑप्टिमाइज्ड बिडिंग से हाई-LTV प्लेयर्स हासिल करें।', ar:'اكتساب لاعبين عالي LTV بالإعلانات القابلة للتشغيل والفيديو المكافأ والمزايدة المُحسّنة لـLTV.', ja:'プレイアブル広告、報酬型動画、LTV最適化入札で高LTVプレイヤーを獲得。'},
+
+  // ── Batch 3: index.html data-en missing entries ──
+  'Scale campaigns globally': {zh:'在全球范围内扩展营销活动', es:'Escalar campañas globalmente', fr:'Étendre les campagnes à l\'échelle mondiale', pt:'Escalar campanhas globalmente', hi:'वैश्विक स्तर पर कैम्पेन स्केल करें', ar:'توسيع الحملات على المستوى العالمي', ja:'グローバルにキャンペーンを拡大'},
+  'Maximize your ad revenue': {zh:'最大化广告收益', es:'Maximiza tus ingresos publicitarios', fr:'Maximisez vos revenus publicitaires', pt:'Maximize sua receita publicitária', hi:'अपना विज्ञापन राजस्व अधिकतम करें', ar:'زيادة إيرادات الإعلانات إلى أقصى حد', ja:'広告収益を最大化する'},
+  'One platform for all clients': {zh:'一个平台管理所有客户', es:'Una plataforma para todos los clientes', fr:'Une plateforme pour tous les clients', pt:'Uma plataforma para todos os clientes', hi:'सभी क्लाइंट्स के लिए एक प्लेटफॉर्म', ar:'منصة واحدة لجميع العملاء', ja:'すべてのクライアントのための1つのプラットフォーム'},
+  'E-Commerce, Gaming, Utilities, Media': {zh:'电商、游戏、工具、媒体', es:'E-Commerce, Juegos, Utilidades, Medios', fr:'E-Commerce, Jeux, Utilitaires, Médias', pt:'E-Commerce, Jogos, Utilitários, Mídia', hi:'ई-कॉमर्स, गेमिंग, यूटिलिटी, मीडिया', ar:'التجارة الإلكترونية، الألعاب، التطبيقات، الإعلام', ja:'Eコマース・ゲーム・ユーティリティ・メディア'},
+  'Web, App, Game, OTT': {zh:'网页、应用、游戏、OTT', es:'Web, App, Juego, OTT', fr:'Web, App, Jeu, OTT', pt:'Web, App, Jogo, OTT', hi:'वेब, ऐप, गेम, OTT', ar:'ويب، تطبيق، لعبة، OTT', ja:'ウェブ・アプリ・ゲーム・OTT'},
+  'Our story & mission': {zh:'我们的故事与使命', es:'Nuestra historia y misión', fr:'Notre histoire et mission', pt:'Nossa história e missão', hi:'हमारी कहानी और मिशन', ar:'قصتنا ومهمتنا', ja:'私たちのストーリーとミッション'},
+  'Join the global team': {zh:'加入全球团队', es:'Únete al equipo global', fr:'Rejoignez l\'équipe mondiale', pt:'Junte-se à equipe global', hi:'ग्लोबल टीम में शामिल हों', ar:'انضم إلى الفريق العالمي', ja:'グローバルチームに参加'},
+  'Login': {zh:'登录', es:'Iniciar sesión', fr:'Connexion', pt:'Entrar', hi:'लॉगिन', ar:'تسجيل الدخول', ja:'ログイン'},
+  '© 2026 NexBids. All rights reserved.': {zh:'© 2026 NexBids. 保留所有权利。', es:'© 2026 NexBids. Todos los derechos reservados.', fr:'© 2026 NexBids. Tous droits réservés.', pt:'© 2026 NexBids. Todos os direitos reservados.', hi:'© 2026 NexBids. सर्वाधिकार सुरक्षित।', ar:'© 2026 NexBids. جميع الحقوق محفوظة.', ja:'© 2026 NexBids. 全著作権所有。'},
+
+  // ── Team titles (extended) ──
+  'VP, Publisher Partnerships APAC': {zh:'VP，亚太发布商合作伙伴', es:'VP, Asociaciones con Editores APAC', fr:'VP, Partenariats Éditeurs APAC', pt:'VP, Parcerias com Publishers APAC', hi:'VP, पब्लिशर पार्टनरशिप्स APAC', ar:'نائب رئيس شراكات الناشرين - آسيا والمحيط الهادئ', ja:'VP、APACパブリッシャーパートナーシップ'},
+  'VP, Advertiser Solutions Europe': {zh:'VP，欧洲广告主解决方案', es:'VP, Soluciones para Anunciantes Europa', fr:'VP, Solutions Annonceurs Europe', pt:'VP, Soluções para Anunciantes Europa', hi:'VP, यूरोप एडवर्टाइजर सॉल्यूशंस', ar:'نائب رئيس حلول المعلنين - أوروبا', ja:'VP、ヨーロッパ広告主ソリューション'},
+  'Chief Privacy Officer': {zh:'首席隐私官', es:'Directora de Privacidad', fr:'Directrice de la Confidentialité', pt:'Diretora de Privacidade', hi:'चीफ प्राइवेसी ऑफिसर', ar:'كبيرة مسؤولي الخصوصية', ja:'チーフプライバシーオフィサー'},
+
+  // ── Case Study stat labels ──
+  'Ad Revenue': {zh:'广告收益', es:'Ingresos Publicitarios', fr:'Revenus Pub', pt:'Receita de Anúncio', hi:'विज्ञापन राजस्व', ar:'إيرادات الإعلانات', ja:'広告収益'},
+  'lift': {zh:'提升', es:'aumento', fr:'hausse', pt:'aumento', hi:'वृद्धि', ar:'ارتفاع', ja:'リフト'},
+  'growth': {zh:'增长', es:'crecimiento', fr:'croissance', pt:'crescimiento', hi:'वृद्धि', ar:'نمو', ja:'成長'},
+  'improvement': {zh:'改善', es:'mejora', fr:'amélioration', pt:'melhora', hi:'सुधार', ar:'تحسّن', ja:'改善'},
+  'increase': {zh:'增加', es:'incremento', fr:'augmentation', pt:'aumento', hi:'वृद्धि', ar:'زيادة', ja:'増加'},
+  'vs. prior SSP': {zh:'与之前SSP相比', es:'vs. SSP anterior', fr:'vs. SSP précédent', pt:'vs. SSP anterior', hi:'पिछले SSP की तुलना', ar:'مقارنة بـ SSP السابق', ja:'以前のSSP比'},
+  'per year': {zh:'每年', es:'por año', fr:'par an', pt:'por ano', hi:'प्रति वर्ष', ar:'سنوياً', ja:'年間'},
+  'x3 growth': {zh:'3倍增长', es:'crecimiento x3', fr:'croissance x3', pt:'crescimento x3', hi:'3 गुना वृद्धि', ar:'نمو 3 أضعاف', ja:'3倍成長'},
+  'D28 lift': {zh:'D28提升', es:'alza D28', fr:'hausse D28', pt:'aumento D28', hi:'D28 लिफ्ट', ar:'ارتفاع D28', ja:'D28リフト'},
+  'D28 ARPU': {zh:'D28 ARPU', es:'ARPU D28', fr:'ARPU D28', pt:'ARPU D28', hi:'D28 ARPU', ar:'ARPU D28', ja:'D28 ARPU'},
+  'eCPM Lift': {zh:'eCPM提升', es:'Alza de eCPM', fr:'Hausse eCPM', pt:'Alta de eCPM', hi:'eCPM लिफ्ट', ar:'ارتفاع eCPM', ja:'eCPMリフト'},
+  'Incremental Revenue': {zh:'增量收益', es:'Ingresos Incrementales', fr:'Revenus Incrémentaux', pt:'Receita Incremental', hi:'इंक्रीमेंटल रेवेन्यू', ar:'الإيرادات الإضافية', ja:'増分収益'},
+  'Fill Rate': {zh:'填充率', es:'Tasa de Llenado', fr:'Taux de Remplissage', pt:'Taxa de Preenchimento', hi:'फिल रेट', ar:'معدل الملء', ja:'フィルレート'},
+  'Page RPM': {zh:'页面RPM', es:'RPM de Página', fr:'RPM de Page', pt:'RPM de Página', hi:'पेज RPM', ar:'RPM الصفحة', ja:'ページRPM'},
+  'Monthly Revenue': {zh:'月收益', es:'Ingresos Mensuales', fr:'Revenus Mensuels', pt:'Receita Mensal', hi:'मासिक राजस्व', ar:'الإيرادات الشهرية', ja:'月次収益'},
+  'Tripled': {zh:'增至三倍', es:'Triplicado', fr:'Triplé', pt:'Triplicado', hi:'तीन गुना', ar:'تضاعف ثلاثاً', ja:'3倍に'},
+  'User Retention': {zh:'用户留存', es:'Retención de Usuarios', fr:'Rétention Utilisateurs', pt:'Retenção de Usuários', hi:'यूजर रिटेंशन', ar:'الاحتفاظ بالمستخدمين', ja:'ユーザー継続率'},
+  'ARPDAU': {zh:'ARPDAU', es:'ARPDAU', fr:'ARPDAU', pt:'ARPDAU', hi:'ARPDAU', ar:'ARPDAU', ja:'ARPDAU'},
+  'DAU': {zh:'日活跃用户', es:'DAU', fr:'DAU', pt:'DAU', hi:'DAU', ar:'DAU', ja:'DAU'},
+  'eCPM': {zh:'eCPM', es:'eCPM', fr:'eCPM', pt:'eCPM', hi:'eCPM', ar:'eCPM', ja:'eCPM'},
+  'ROAS': {zh:'广告支出回报率', es:'ROAS', fr:'ROAS', pt:'ROAS', hi:'ROAS', ar:'ROAS', ja:'ROAS'},
+  'CPA (New Customers)': {zh:'CPA（新客户）', es:'CPA (Nuevos Clientes)', fr:'CPA (Nouveaux Clients)', pt:'CPA (Novos Clientes)', hi:'CPA (नए ग्राहक)', ar:'CPA (عملاء جدد)', ja:'CPA（新規顧客）'},
+  'Markets': {zh:'市场数量', es:'Mercados', fr:'Marchés', pt:'Mercados', hi:'बाज़ार', ar:'الأسواق', ja:'市場数'},
+  'New Players': {zh:'新增玩家', es:'Nuevos Jugadores', fr:'Nouveaux Joueurs', pt:'Novos Jogadores', hi:'नए खिलाड़ी', ar:'لاعبون جدد', ja:'新規プレイヤー'},
+  'D30 Retention': {zh:'D30留存', es:'Retención D30', fr:'Rétention D30', pt:'Retenção D30', hi:'D30 रिटेंशन', ar:'الاحتفاظ D30', ja:'D30継続率'},
+  'CPI': {zh:'每次安装成本', es:'CPI', fr:'CPI', pt:'CPI', hi:'CPI', ar:'CPI', ja:'CPI'},
+  'ROAS D180': {zh:'D180 ROAS', es:'ROAS D180', fr:'ROAS D180', pt:'ROAS D180', hi:'ROAS D180', ar:'ROAS D180', ja:'D180 ROAS'},
+  'Install Volume': {zh:'安装量', es:'Volumen de Instalaciones', fr:'Volume d\'Installations', pt:'Volume de Instalações', hi:'इंस्टॉल वॉल्यूम', ar:'حجم التثبيت', ja:'インストール数'},
+  'CPA': {zh:'每次转化成本', es:'CPA', fr:'CPA', pt:'CPA', hi:'CPA', ar:'CPA', ja:'CPA'},
+  'D7 Retention': {zh:'D7留存', es:'Retención D7', fr:'Rétention D7', pt:'Retenção D7', hi:'D7 रिटेंशन', ar:'الاحتفاظ D7', ja:'D7継続率'},
+  'On Target': {zh:'目标达成', es:'En Objetivo', fr:'À l\'Objectif', pt:'No Alvo', hi:'लक्ष्य पर', ar:'على الهدف', ja:'目標達成'},
+  'High Quality': {zh:'高质量', es:'Alta Calidad', fr:'Haute Qualité', pt:'Alta Qualidade', hi:'उच्च गुणवत्ता', ar:'جودة عالية', ja:'高品質'},
+
+  // ── Team bios ──
+  '18 years in programmatic advertising. Former VP Product at a leading global DSP. Stanford CS + Wharton MBA.': {
+    zh:'18年程序化广告经验，前领先全球DSP产品副总裁。斯坦福CS+沃顿MBA。',
+    es:'18 años en publicidad programática. Ex VP de Producto en un DSP global líder. Stanford CS + Wharton MBA.',
+    fr:'18 ans dans la publicité programmatique. Ex VP Produit chez un DSP mondial leader. Stanford CS + MBA Wharton.',
+    pt:'18 anos em publicidade programática. Ex VP de Produto em um DSP global líder. Stanford CS + MBA Wharton.',
+    hi:'18 साल प्रोग्रामेटिक एडवर्टाइजिंग में। एक अग्रणी ग्लोबल DSP में पूर्व VP प्रोडक्ट। Stanford CS + Wharton MBA।',
+    ar:'18 عامًا في الإعلان البرمجي. نائب رئيس المنتج السابق في DSP عالمي رائد. Stanford CS + Wharton MBA.',
+    ja:'プログラマティック広告18年のキャリア。大手グローバルDSPの元VP製品。スタンフォードCS＋ウォートンMBA。'
+  },
+  '6 patents in RTB systems & audience modeling. PhD Computer Science (ML) from MIT. NexBids Privacy Engineering lead.': {
+    zh:'6项RTB系统和受众建模专利，MIT计算机科学（ML）博士，NexBids隐私工程负责人。',
+    es:'6 patentes en sistemas RTB y modelado de audiencias. Doctorado en Informática (ML) del MIT. Líder de Ingeniería de Privacidad de NexBids.',
+    fr:'6 brevets dans les systèmes RTB et la modélisation d\'audience. PhD Informatique (ML) du MIT. Responsable Privacy Engineering chez NexBids.',
+    pt:'6 patentes em sistemas RTB e modelagem de audiências. PhD em Ciência da Computação (ML) do MIT. Líder de Engenharia de Privacidade da NexBids.',
+    hi:'RTB सिस्टम और ऑडियंस मॉडलिंग में 6 पेटेंट। MIT से कंप्यूटर साइंस (ML) में PhD। NexBids प्राइवेसी इंजीनियरिंग लीड।',
+    ar:'6 براءات اختراع في أنظمة RTB ونمذجة الجمهور. دكتوراه في علوم الحاسب (ML) من MIT. قائد هندسة الخصوصية في NexBids.',
+    ja:'RTBシステムとオーディエンスモデリングで6件の特許。MITコンピュータサイエンス（ML）博士号。NexBidsプライバシーエンジニアリングリード。'
+  },
+  'Oversees global commercial operations. Former VP Americas Sales at major ad networks across NA and LATAM.': {
+    zh:'监督全球商业运营，前北美和拉美主要广告网络美洲销售VP。',
+    es:'Supervisa las operaciones comerciales globales. Ex VP de Ventas para las Américas en importantes redes publicitarias de NA y LATAM.',
+    fr:'Supervise les opérations commerciales mondiales. Ex VP Ventes Amériques dans des réseaux publicitaires majeurs en NA et LATAM.',
+    pt:'Supervisiona operações comerciais globais. Ex VP de Vendas Américas em grandes redes de publicidade na NA e LATAM.',
+    hi:'वैश्विक कमर्शियल ऑपरेशन की देखरेख। NA और LATAM के प्रमुख विज्ञापन नेटवर्क में पूर्व VP अमेरिका सेल्स।',
+    ar:'يشرف على العمليات التجارية العالمية. نائب رئيس مبيعات الأمريكتين السابق في شبكات إعلانية كبرى عبر NA وLATAM.',
+    ja:'グローバル商業オペレーションを統括。北米・中南米の大手広告ネットワークで元VP Americas Sales。'
+  },
+  'Leads publisher partnerships across APAC & China. 10 years mobile monetization at major Chinese internet company.': {
+    zh:'领导亚太和中国的发布商合作伙伴关系。在中国主要互联网公司有10年移动变现经验。',
+    es:'Lidera las asociaciones con editores en APAC y China. 10 años en monetización móvil en una importante empresa de internet china.',
+    fr:'Dirige les partenariats éditeurs en APAC et Chine. 10 ans de monétisation mobile dans une grande entreprise internet chinoise.',
+    pt:'Lidera parcerias com publishers na APAC e China. 10 anos de monetização mobile em grande empresa de internet chinesa.',
+    hi:'APAC और चीन में पब्लिशर पार्टनरशिप का नेतृत्व। प्रमुख चीनी इंटरनेट कंपनी में 10 साल मोबाइल मोनेटाइजेशन।',
+    ar:'يقود شراكات الناشرين في APAC والصين. 10 سنوات في تحقيق الدخل للمحمول في شركة إنترنت صينية كبرى.',
+    ja:'アジア太平洋・中国全域のパブリッシャーパートナーシップをリード。中国大手インターネット企業でモバイル収益化10年。'
+  },
+  'Leads European advertiser team from London. Frequent speaker at DMEXCO and Programmatic IO Europe.': {
+    zh:'从伦敦领导欧洲广告主团队。DMEXCO和Programmatic IO Europe的常邀演讲嘉宾。',
+    es:'Lidera el equipo de anunciantes europeos desde Londres. Ponente frecuente en DMEXCO y Programmatic IO Europe.',
+    fr:'Dirige l\'équipe annonceurs européens depuis Londres. Intervenant régulier au DMEXCO et Programmatic IO Europe.',
+    pt:'Lidera a equipe de anunciantes europeus em Londres. Palestrante frequente no DMEXCO e Programmatic IO Europe.',
+    hi:'लंदन से यूरोपीय एडवर्टाइजर टीम का नेतृत्व। DMEXCO और Programmatic IO Europe के नियमित वक्ता।',
+    ar:'يقود فريق المعلنين الأوروبيين من لندن. متحدث متكرر في DMEXCO وProgrammatic IO Europe.',
+    ja:'ロンドンから欧州広告主チームをリード。DMEXCOおよびProgrammatic IO Europeの常連スピーカー。'
+  },
+  'CIPP/E certified. Leads global privacy program. IAB Tech Lab Privacy Compliance Working Group member.': {
+    zh:'CIPP/E认证。领导全球隐私计划。IAB Tech Lab隐私合规工作组成员。',
+    es:'Certificado CIPP/E. Lidera el programa global de privacidad. Miembro del Grupo de Trabajo de Cumplimiento de Privacidad de IAB Tech Lab.',
+    fr:'Certifié CIPP/E. Dirige le programme mondial de confidentialité. Membre du groupe de travail Conformité Vie Privée de l\'IAB Tech Lab.',
+    pt:'Certificado CIPP/E. Lidera o programa global de privacidade. Membro do Grupo de Trabalho de Conformidade de Privacidade do IAB Tech Lab.',
+    hi:'CIPP/E सर्टिफाइड। ग्लोबल प्राइवेसी प्रोग्राम का नेतृत्व। IAB Tech Lab प्राइवेसी कम्प्लायंस वर्किंग ग्रुप सदस्य।',
+    ar:'معتمد CIPP/E. يقود برنامج الخصوصية العالمي. عضو في مجموعة عمل الامتثال للخصوصية في IAB Tech Lab.',
+    ja:'CIPP/E認定。グローバルプライバシープログラムをリード。IAB Tech Labプライバシーコンプライアンス作業部会メンバー。'
+  },
 };
 
 /**
@@ -434,26 +4293,64 @@ const CONTENT_T = {
  * Also stores data-en / data-zh attributes for legacy applyLang() usage.
  */
 const t = (en, zh) => {
+  const enStr = (en != null) ? String(en) : '';
+  const zhStr = (zh != null) ? String(zh) : enStr;
   let text;
-  if (currentLang === 'zh') {
-    text = zh;
-  } else if (currentLang === 'en') {
-    text = en;
-  } else {
-    // Look up translation in CONTENT_T dictionary
-    const entry = CONTENT_T[en];
-    text = (entry && entry[currentLang]) ? entry[currentLang] : en;
+  const entry = CONTENT_T[enStr];
+  
+
+  // Determine the Chinese text value for data-zh attribute
+  // This is crucial: data-zh must contain the actual Chinese translation
+  // so that applyLang() doesn't override it with English
+  let zhValueForAttr = zhStr;
+  if (entry && entry['zh']) {
+    zhValueForAttr = entry['zh'];
   }
-  const safeEn = en.replace(/"/g,'&quot;');
-  const safeZh = zh.replace(/"/g,'&quot;');
+  
+  if (currentLang === 'zh') {
+    // First try CONTENT_T lookup for zh translation
+    if (entry && entry['zh']) {
+      text = entry['zh'];
+
+    } else {
+      // Fall back to zh parameter passed to t()
+      text = zhStr;
+
+    }
+  } else if (currentLang === 'en') {
+    text = enStr;
+
+  } else {
+    // Look up translation in CONTENT_T dictionary for other languages
+    text = (entry && entry[currentLang]) ? entry[currentLang] : enStr;
+
+  }
+  
+  const safeEn = enStr.replace(/"/g,'&quot;');
+  const safeZh = zhValueForAttr.replace(/"/g,'&quot;');
+  
+
+  
   return `<span data-en="${safeEn}" data-zh="${safeZh}">${text}</span>`;
 };
+
 function setLang(code) {
   currentLang = code;
+  // Update active state in both dropdowns
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    const active = btn.getAttribute('onclick')?.includes(`'${code}'`);
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', active);
+  });
+  // Update footer lang button label
+  const footerBtn = document.getElementById('langBtnFooter');
+  const _lang = LANGUAGES.find(l => l.code === code);
+  if (footerBtn && _lang) footerBtn.innerHTML = `${_lang.flag} ${_lang.code.toUpperCase()} <svg width="8" height="6" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
   applyLang();
   renderPage(currentPage);
-  // close lang dropdown
+  // close both lang dropdowns
   document.getElementById('langDropdown')?.classList.remove('open');
+  document.getElementById('langDropdownFooter')?.classList.remove('open');
 }
 
 // Legacy toggle kept for footer button
@@ -464,8 +4361,77 @@ function toggleLang() {
   renderPage(currentPage);
 }
 
-window.toggleLangDropdown = function() {
-  document.getElementById('langDropdown')?.classList.toggle('open');
+window.toggleLangDropdown = function(e) {
+  if (e) e.stopPropagation();
+  const dd  = document.getElementById('langDropdown');
+  const btn = document.getElementById('langBtn');
+  if (!dd || !btn) return;
+  const opening = !dd.classList.contains('open');
+  // close all first
+  document.getElementById('langDropdown')?.classList.remove('open');
+  document.getElementById('langDropdownFooter')?.classList.remove('open');
+  closeLoginDropdown();
+  if (opening) {
+    const rect      = btn.getBoundingClientRect();
+    const ddWidth   = 260;
+    const rightEdge = window.innerWidth - rect.right;
+    // Ensure dropdown doesn't overflow left edge
+    const clampedRight = Math.min(rightEdge, window.innerWidth - ddWidth - 8);
+    dd.style.top   = (rect.bottom + 8) + 'px';
+    dd.style.left  = 'auto';
+    dd.style.right = Math.max(0, clampedRight) + 'px';
+    dd.classList.add('open');
+  }
+};
+
+window.toggleLangDropdownFooter = function(e) {
+  if (e) e.stopPropagation();
+  const dd  = document.getElementById('langDropdownFooter');
+  const btn = document.getElementById('langBtnFooter');
+  if (!dd || !btn) return;
+  const opening = !dd.classList.contains('open');
+  // close all first
+  document.getElementById('langDropdown')?.classList.remove('open');
+  document.getElementById('langDropdownFooter')?.classList.remove('open');
+  closeLoginDropdown();
+  if (opening) {
+    // Position dropdown above the button (footer)
+    const rect    = btn.getBoundingClientRect();
+    const ddH     = 220; // estimated height, will be corrected after render
+    dd.style.left  = 'auto';
+    dd.style.right = (window.innerWidth - rect.right) + 'px';
+    // Tentatively place it; after class toggle measure actual height
+    dd.classList.add('open');
+    requestAnimationFrame(() => {
+      const actualH = dd.offsetHeight;
+      dd.style.top    = (rect.top - actualH - 8) + 'px';
+      dd.style.bottom = 'auto';
+    });
+  }
+};
+
+window.toggleLoginDropdown = function(e) {
+  if (e) e.stopPropagation();
+  const menu = document.getElementById('loginMenu');
+  const btn  = document.getElementById('loginDropdownBtn');
+  if (!menu) return;
+  const opening = !menu.classList.contains('open');
+  // close all first
+  menu.classList.remove('open');
+  btn?.setAttribute('aria-expanded', 'false');
+  document.getElementById('langDropdown')?.classList.remove('open');
+  document.getElementById('langDropdownFooter')?.classList.remove('open');
+  if (opening) {
+    menu.classList.add('open');
+    btn?.setAttribute('aria-expanded', 'true');
+  }
+};
+
+window.closeLoginDropdown = function() {
+  const menu = document.getElementById('loginMenu');
+  const btn  = document.getElementById('loginDropdownBtn');
+  menu?.classList.remove('open');
+  btn?.setAttribute('aria-expanded', 'false');
 };
 
 function applyLang() {
@@ -479,7 +4445,31 @@ function applyLang() {
   const langBtn = document.getElementById('langBtn');
   if (langBtn) langBtn.innerHTML = `${lang.flag} <span>${lang.label}</span> <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
 
-  // Footer copyright / tagline
+  // swap all data-en / data-zh text nodes (legacy)
+  // Must run BEFORE the specific ui() overrides below so ui() takes precedence
+  let dataEnCount = 0;
+  const allElements = document.querySelectorAll('[data-en]');
+  console.log(`applyLang(${currentLang}): found ${allElements.length} [data-en] elements`);
+  allElements.forEach(el => {
+    let val;
+    const enKey = el.dataset.en;
+    if (currentLang === 'zh') {
+      val = el.dataset.zh || el.dataset.en;
+      if (enKey && (enKey === 'Solutions' || enKey === 'Products')) {
+        console.log(`  Translating "${enKey}" -> "${val}"`);
+      }
+    } else if (currentLang === 'en') {
+      val = el.dataset.en;
+    } else {
+      // For other languages, look up CONTENT_T first, fall back to en
+      val = (enKey && CONTENT_T[enKey] && CONTENT_T[enKey][currentLang]) ? CONTENT_T[enKey][currentLang] : enKey;
+    }
+    if (val) el.textContent = val;
+  });
+
+
+  // Footer copyright / tagline — use ui() so these get proper translations
+  // (runs after data-en loop to take precedence)
   const cp = document.getElementById('footerCopyright');
   if (cp) cp.textContent = ui('copyright');
   const tg = document.getElementById('footerTagline');
@@ -495,12 +4485,6 @@ function applyLang() {
     const el = document.getElementById(id);
     if (el) el.textContent = ui(key);
   });
-
-  // swap all data-en / data-zh text nodes (legacy)
-  document.querySelectorAll('[data-en]').forEach(el => {
-    const val = el.dataset[currentLang] || el.dataset.en;
-    if (val) el.textContent = val;
-  });
 }
 
 /* ─────────────────────────────────────────────
@@ -511,7 +4495,11 @@ function navigate(page) {
   renderPage(page);
   window.scrollTo({ top: 0, behavior: 'smooth' });
   // close mobile menu
-  document.getElementById('navMenu')?.classList.remove('open');
+  const navMenu = document.getElementById('navMenu');
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  navMenu?.classList.remove('open');
+  mobileBtn?.classList.remove('open');
+  document.body.style.overflow = '';
   // update active state
   updateNavActive(page);
 }
@@ -543,7 +4531,12 @@ function renderPage(page) {
     '404':                  render404,
   };
   const fn = renderers[page] || renderHome;
-  container.innerHTML = `<div class="page-transition">${fn()}</div>`;
+  try {
+    container.innerHTML = `<div class="page-transition">${fn()}</div>`;
+  } catch (err) {
+    console.error('[renderPage] Error rendering page "' + page + '":', err);
+    container.innerHTML = '<div style="padding:40px;text-align:center;color:#F87171">Page render error — please check the console.</div>';
+  }
   applyLang();
   initScrollSpy();
   initCounterAnimation();
@@ -626,7 +4619,7 @@ function vizSolutionsOverview() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">NexBids Ecosystem</span>
+      <span class="ph-viz-title">${ui('NexBids Ecosystem')}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:14px">
       ${cards.map(c => `
@@ -665,20 +4658,20 @@ function vizAdvertiser() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Campaign Performance</span>
+      <span class="ph-viz-title">${ui('Campaign Performance')}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:14px">
       <div style="display:flex;justify-content:space-between;align-items:center">
         <div>
-          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">ROAS</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">${ui('ROAS')}</div>
           <div style="font-size:28px;font-weight:900;color:#60A5FA;letter-spacing:-1px">8.4×</div>
         </div>
         <div>
-          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">CPA</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">${ui('CPA')}</div>
           <div style="font-size:28px;font-weight:900;color:#34D399;letter-spacing:-1px">-38%</div>
         </div>
         <div>
-          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">CTR</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">${ui('CTR')}</div>
           <div style="font-size:28px;font-weight:900;color:#C084FC;letter-spacing:-1px">3.2%</div>
         </div>
       </div>
@@ -702,15 +4695,15 @@ function vizAdvertiser() {
       <div style="display:flex;gap:8px">
         <div style="flex:1;padding:8px;background:rgba(0,87,255,0.08);border-radius:8px;border:1px solid rgba(0,87,255,0.15);text-align:center">
           <div style="font-size:14px;font-weight:800;color:#60A5FA">150+</div>
-          <div style="font-size:10px;color:var(--text-muted)">Countries</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui('Countries')}</div>
         </div>
         <div style="flex:1;padding:8px;background:rgba(124,58,237,0.08);border-radius:8px;border:1px solid rgba(124,58,237,0.15);text-align:center">
           <div style="font-size:14px;font-weight:800;color:#C084FC">AI-Bid</div>
-          <div style="font-size:10px;color:var(--text-muted)">Optimizer</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui('Optimizer')}</div>
         </div>
         <div style="flex:1;padding:8px;background:rgba(5,150,105,0.08);border-radius:8px;border:1px solid rgba(5,150,105,0.15);text-align:center">
           <div style="font-size:14px;font-weight:800;color:#34D399">30+</div>
-          <div style="font-size:10px;color:var(--text-muted)">Ad Formats</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui('Ad Formats')}</div>
         </div>
       </div>
     </div>
@@ -729,7 +4722,7 @@ function vizPublisher() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Publisher Revenue Dashboard</span>
+      <span class="ph-viz-title">${ui("Publisher Revenue Dashboard")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:14px">
       <div style="display:flex;justify-content:space-between;align-items:center">
@@ -739,7 +4732,7 @@ function vizPublisher() {
           <div style="font-size:10px;color:#34D399">↑ +67% vs prior</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">Fill Rate</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-bottom:3px">${ui('Fill Rate')}</div>
           <div style="font-size:26px;font-weight:900;color:#60A5FA;letter-spacing:-1px">99.5%</div>
           <div style="font-size:10px;color:#60A5FA">↑ +23%</div>
         </div>
@@ -764,7 +4757,7 @@ function vizPublisher() {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <div style="padding:10px;background:rgba(5,150,105,0.08);border:1px solid rgba(5,150,105,0.15);border-radius:8px">
           <div style="font-size:13px;font-weight:800;color:#34D399">30K+</div>
-          <div style="font-size:10px;color:var(--text-muted)">Active Publishers</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui('Active Publishers')}</div>
         </div>
         <div style="padding:10px;background:rgba(37,99,235,0.08);border:1px solid rgba(37,99,235,0.15);border-radius:8px">
           <div style="font-size:13px;font-weight:800;color:#60A5FA">50K+</div>
@@ -802,7 +4795,7 @@ function vizAgency() {
         </div>
         <div style="text-align:center">
           <div style="font-size:20px;font-weight:900;color:#60A5FA">$2.1M</div>
-          <div style="font-size:10px;color:var(--text-muted)">Monthly Spend</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui('Monthly Spend')}</div>
         </div>
         <div style="text-align:center">
           <div style="font-size:20px;font-weight:900;color:#34D399">5.8×</div>
@@ -885,13 +4878,13 @@ function vizDSP() {
           <div style="font-size:24px;font-weight:900;color:#60A5FA;letter-spacing:-1px">578K</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:10px;color:var(--text-muted)">RESPONSE TIME</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui("RESPONSE TIME")}</div>
           <div style="font-size:24px;font-weight:900;color:#34D399;letter-spacing:-1px">&lt;80ms</div>
         </div>
       </div>
       <!-- AI Bidding types -->
       <div style="background:rgba(255,255,255,0.02);border-radius:10px;padding:12px">
-        <div style="font-size:10px;color:var(--text-muted);margin-bottom:10px;font-weight:600">AI BIDDING STRATEGY</div>
+        <div style="font-size:10px;color:var(--text-muted);margin-bottom:10px;font-weight:600">${ui("AI BIDDING STRATEGY")}</div>
         ${[
           ['ROAS Optimizer','62% campaigns','#60A5FA',62],
           ['CPA Bidder','24% campaigns','#C084FC',24],
@@ -936,24 +4929,24 @@ function vizADX() {
       <!-- Auction flow diagram -->
       <div style="display:flex;align-items:center;gap:8px;font-size:11px">
         <div style="flex:1;padding:10px;background:rgba(37,99,235,0.1);border-radius:8px;border:1px solid rgba(37,99,235,0.2);text-align:center">
-          <div style="font-size:14px;font-weight:800;color:#60A5FA">DSP</div>
-          <div style="color:var(--text-muted);margin-top:2px">Buyers</div>
+          <div style="font-size:14px;font-weight:800;color:#60A5FA">${ui("DSP")}</div>
+          <div style="color:var(--text-muted);margin-top:2px">${ui("Buyers")}</div>
         </div>
         <div style="text-align:center;color:var(--text-muted)">
           <div style="font-size:18px">⟷</div>
           <div style="font-size:10px">&lt;100ms</div>
         </div>
         <div style="flex:1;padding:10px;background:rgba(124,58,237,0.15);border-radius:8px;border:1px solid rgba(124,58,237,0.25);text-align:center">
-          <div style="font-size:14px;font-weight:800;color:#C084FC">ADX</div>
-          <div style="color:var(--text-muted);margin-top:2px">Exchange</div>
+          <div style="font-size:14px;font-weight:800;color:#C084FC">${ui("ADX")}</div>
+          <div style="color:var(--text-muted);margin-top:2px">${ui("Exchange")}</div>
         </div>
         <div style="text-align:center;color:var(--text-muted)">
           <div style="font-size:18px">⟷</div>
           <div style="font-size:10px">&lt;100ms</div>
         </div>
         <div style="flex:1;padding:10px;background:rgba(5,150,105,0.1);border-radius:8px;border:1px solid rgba(5,150,105,0.2);text-align:center">
-          <div style="font-size:14px;font-weight:800;color:#34D399">SSP</div>
-          <div style="color:var(--text-muted);margin-top:2px">Sellers</div>
+          <div style="font-size:14px;font-weight:800;color:#34D399">${ui("SSP")}</div>
+          <div style="color:var(--text-muted);margin-top:2px">${ui("Sellers")}</div>
         </div>
       </div>
       <!-- Stats -->
@@ -972,7 +4965,7 @@ function vizADX() {
       </div>
       <div style="display:flex;gap:8px">
         <span style="font-size:10px;padding:5px 8px;background:rgba(124,58,237,0.1);color:#C084FC;border-radius:6px;border:1px solid rgba(124,58,237,0.2)">OpenRTB 2.6</span>
-        <span style="font-size:10px;padding:5px 8px;background:rgba(37,99,235,0.1);color:#60A5FA;border-radius:6px;border:1px solid rgba(37,99,235,0.2)">PMP Deals</span>
+        <span style="font-size:10px;padding:5px 8px;background:rgba(37,99,235,0.1);color:#60A5FA;border-radius:6px;border:1px solid rgba(37,99,235,0.2)">${ui("PMP Deals")}</span>
         <span style="font-size:10px;padding:5px 8px;background:rgba(5,150,105,0.1);color:#34D399;border-radius:6px;border:1px solid rgba(5,150,105,0.2)">Prog. Guaranteed</span>
       </div>
     </div>
@@ -1001,7 +4994,7 @@ function vizSSP() {
           <div style="font-size:10px;color:#34D399">↑ +52% vs last month</div>
         </div>
         <div style="text-align:right">
-          <div style="font-size:10px;color:var(--text-muted)">FILL RATE</div>
+          <div style="font-size:10px;color:var(--text-muted)">${ui("FILL RATE")}</div>
           <div style="font-size:24px;font-weight:900;color:#60A5FA;letter-spacing:-1px">99.5%</div>
         </div>
       </div>
@@ -1043,7 +5036,7 @@ function vizTechnology() {
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:12px">
       <!-- Global regions -->
-      <div style="font-size:10px;color:var(--text-muted);font-weight:600;letter-spacing:0.4px">GLOBAL DATA CENTERS</div>
+      <div style="font-size:10px;color:var(--text-muted);font-weight:600;letter-spacing:0.4px">${ui("GLOBAL DATA CENTERS")}</div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
         ${[
           ['NA-W','San Francisco','#34D399'],
@@ -1093,7 +5086,7 @@ function vizResources() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Resource Center</span>
+      <span class="ph-viz-title">${ui("Resource Center")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:10px">
       ${[
@@ -1125,7 +5118,7 @@ function vizCaseStudies() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Partner Success Metrics</span>
+      <span class="ph-viz-title">${ui("Partner Success Metrics")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:14px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -1162,10 +5155,10 @@ function vizCaseStudiesHub() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Case Study Coverage</span>
+      <span class="ph-viz-title">${ui("Case Study Coverage")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:12px">
-      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase">Industry Breakdown</div>
+      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase">${ui("Industry Breakdown")}</div>
       ${[
         ['E-Commerce',       '31%', '#60A5FA', 0.31],
         ['Mobile Gaming',    '24%', '#C084FC', 0.24],
@@ -1201,7 +5194,7 @@ function vizAdvertiserCases() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Advertiser Performance Lift</span>
+      <span class="ph-viz-title">${ui("Advertiser Performance Lift")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:12px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -1216,7 +5209,7 @@ function vizAdvertiserCases() {
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px">${l}</div>
         </div>`).join('')}
       </div>
-      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase;margin-top:2px">Avg ROAS by Channel</div>
+      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase;margin-top:2px">${ui("Avg ROAS by Channel")}</div>
       ${[
         ['Display',       '3.1×', '#60A5FA', 0.52],
         ['Video',         '4.8×', '#C084FC', 0.80],
@@ -1247,7 +5240,7 @@ function vizPublisherCases() {
       <span class="ph-viz-dot" style="background:#FF5F57"></span>
       <span class="ph-viz-dot" style="background:#FEBC2E"></span>
       <span class="ph-viz-dot" style="background:#28C840"></span>
-      <span class="ph-viz-title">Publisher Revenue Dashboard</span>
+      <span class="ph-viz-title">${ui("Publisher Revenue Dashboard")}</span>
     </div>
     <div class="ph-viz-body" style="display:flex;flex-direction:column;gap:12px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -1262,7 +5255,7 @@ function vizPublisherCases() {
           <div style="font-size:10px;color:var(--text-muted);margin-top:3px">${l}</div>
         </div>`).join('')}
       </div>
-      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase;margin-top:2px">Revenue Lift by Format</div>
+      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase;margin-top:2px">${ui("Revenue Lift by Format")}</div>
       ${[
         ['Header Bidding', '+67%', '#34D399', 0.67],
         ['Rewarded Video', '+200%','#60A5FA', 1.00],
@@ -1309,7 +5302,7 @@ function vizCompany() {
         </div>`).join('')}
       </div>
       <!-- Timeline -->
-      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase">Growth Timeline</div>
+      <div style="font-size:11px;color:var(--text-muted);font-weight:600;letter-spacing:0.6px;text-transform:uppercase">${ui("Growth Timeline")}</div>
       ${[
         ['2018','Founded in San Francisco','#C084FC'],
         ['2020','Launched DSP + ADX globally','#60A5FA'],
@@ -1602,10 +5595,10 @@ function renderHome() {
         <p class="section-sub center">${t('Three powerful, interconnected platforms designed to serve every participant in the programmatic advertising ecosystem.',
            '三个强大、相互连接的平台，为程序化广告生态系统中的每个参与者提供服务。')}</p>
       </div>
-      <div class="card-grid card-grid-3">
+      <div class="card-grid card-grid-3 swipeable">
         <!-- DSP -->
         <div class="platform-card dsp">
-          <div class="platform-tag">DSP</div>
+          <div class="platform-tag">${ui("DSP")}</div>
           <div class="platform-body">
             <h3>${t('NexBids DSP', 'NexBids DSP')}</h3>
             <p>${t('Demand-Side Platform. AI-powered buying platform with global reach, premium inventory access, and advanced audience targeting across every digital channel.',
@@ -1627,7 +5620,7 @@ function renderHome() {
         </div>
         <!-- ADX -->
         <div class="platform-card adx">
-          <div class="platform-tag">ADX</div>
+          <div class="platform-tag">${ui("ADX")}</div>
           <div class="platform-body">
             <h3>${t('NexBids ADX', 'NexBids ADX')}</h3>
             <p>${t('Ad Exchange. The neutral, high-performance marketplace connecting premium supply with quality demand — built for speed, scale, and trust.',
@@ -1649,7 +5642,7 @@ function renderHome() {
         </div>
         <!-- SSP -->
         <div class="platform-card ssp">
-          <div class="platform-tag">SSP</div>
+          <div class="platform-tag">${ui("SSP")}</div>
           <div class="platform-body">
             <h3>${t('NexBids SSP', 'NexBids SSP')}</h3>
             <p>${t('Supply-Side Platform. Maximize your ad revenue with intelligent yield optimization, header bidding, and direct access to thousands of premium advertisers worldwide.',
@@ -1680,7 +5673,7 @@ function renderHome() {
         ${sectionTag('Who We Serve', '我们服务谁')}
         <h2 class="section-headline">${t('Built for Every Participant in the Ecosystem', '为生态系统中的每个参与者而构建')}</h2>
       </div>
-      <div class="card-grid card-grid-3">
+      <div class="card-grid card-grid-3 swipeable">
         <div class="card" style="cursor:pointer" onclick="navigate('solutions-advertiser')">
           <div style="margin-bottom:16px">${gIcon('trending','blue','lg')}</div>
           <h3 style="font-size:20px;font-weight:700;margin-bottom:10px">${t('Advertisers', '广告主')}</h3>
@@ -1728,7 +5721,7 @@ function renderHome() {
           </div>
           <button class="btn btn-secondary" style="margin-top:32px" onclick="navigate('technology')">${t('View Full Technology Stack →', '查看完整技术栈 →')}</button>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="tech-stats-grid">
           ${[
             ['50B+', 'Daily Bid Requests', '每日竞价请求', 'var(--accent-dsp)'],
             ['<100ms', 'Bid Response Time', '竞价响应时间', 'var(--accent-adx)'],
@@ -1751,7 +5744,7 @@ function renderHome() {
         ${sectionTag('Case Studies', '客户案例')}
         <h2 class="section-headline">${t('Real Results from Real Partners', '来自真实合作伙伴的真实成果')}</h2>
       </div>
-      <div class="card-grid card-grid-3">
+      <div class="card-grid card-grid-3 swipeable">
         ${[
           ['E-Commerce', '电商', 'Global Fashion Brand — ROAS Transformation', '全球时尚品牌——ROAS转型', 'ROAS improved from 1.4x to 4.2x in 90 days with AI bidding and dynamic creative.', 'AI竞价和动态创意在90天内将ROAS从1.4x提升至4.2x。', ['ROAS +200%', 'CPA -54%', 'Revenue +400%']],
           ['Mobile Gaming', '移动游戏', 'Top Mobile RPG — Scale & Quality', '顶级移动RPG——规模与质量', 'Acquired 2.3M new players while improving D30 retention by 38% using playable ads.', '使用可试玩广告获取了230万新玩家，同时将D30留存率提升了38%。', ['2.3M Players', 'D30 Ret +38%', 'CPI -41%']],
@@ -1763,7 +5756,7 @@ function renderHome() {
             <h3>${t(title, titleZh)}</h3>
             <p>${t(desc, descZh)}</p>
           </div>
-          <div class="case-metrics">${badges.map(b => `<span class="case-metric-badge">${b}</span>`).join('')}</div>
+          <div class="case-metrics">${badges.map(b => `<span class="case-metric-badge">${t(b,b)}</span>`).join('')}</div>
         </div>`).join('')}
       </div>
       <div style="text-align:center;margin-top:36px">
@@ -1793,7 +5786,7 @@ function renderHome() {
 ───────────────────────────────────────────── */
 function renderGlobalTrafficMap() {
   return `
-  <section class="section global-traffic-section" id="globalTraffic">
+  <section class="section global-traffic-section section-compact-mobile" id="globalTraffic">
     <div class="container">
       <div class="text-center" style="margin-bottom:40px">
         ${sectionTag('Global Reach', '全球覆盖')}
@@ -1845,15 +5838,15 @@ function renderGlobalTrafficMap() {
       <!-- Bottom key metrics row -->
       <div class="gtm-footer-stats">
         ${[
-          { icon:'⚡', val:'578K', unit:'req/s', label:'Peak Bid Throughput', zh:'竞价吞吐峰值', color:'#60A5FA' },
-          { icon:'🌍', val:'150+', unit:'countries', label:'Geographic Coverage', zh:'地理覆盖', color:'#34D399' },
-          { icon:'📱', val:'30+', unit:'formats', label:'Mobile Ad Formats', zh:'移动广告格式', color:'#C084FC' },
-          { icon:'🔒', val:'98.2%', unit:'quality', label:'Traffic Quality Score', zh:'流量质量评分', color:'#FCD34D' },
-          { icon:'⏱️', val:'<80ms', unit:'response', label:'Avg Bid Response', zh:'平均竞价响应', color:'#F87171' },
+          { icon:'⚡', val:'578K', unit:'req/s', unitZh:'次/秒', label:'Peak Bid Throughput', zh:'竞价吞吐峰值', color:'#60A5FA' },
+          { icon:'🌍', val:'150+', unit:'countries', unitZh:'个国家', label:'Geographic Coverage', zh:'地理覆盖', color:'#34D399' },
+          { icon:'📱', val:'30+', unit:'formats', unitZh:'种格式', label:'Mobile Ad Formats', zh:'移动广告格式', color:'#C084FC' },
+          { icon:'🔒', val:'98.2%', unit:'quality', unitZh:'质量评分', label:'Traffic Quality Score', zh:'流量质量评分', color:'#FCD34D' },
+          { icon:'⏱️', val:'<80ms', unit:'response', unitZh:'响应', label:'Avg Bid Response', zh:'平均竞价响应', color:'#F87171' },
         ].map(s => `
         <div class="gtm-footer-stat">
           <div class="gtm-footer-icon">${s.icon}</div>
-          <div class="gtm-footer-val" style="color:${s.color}">${s.val} <span class="gtm-footer-unit">${s.unit}</span></div>
+          <div class="gtm-footer-val" style="color:${s.color}">${s.val} <span class="gtm-footer-unit">${t(s.unit, s.unitZh)}</span></div>
           <div class="gtm-footer-label">${t(s.label, s.zh)}</div>
         </div>`).join('')}
       </div>
@@ -1937,7 +5930,7 @@ function renderPartnersSection() {
 
   const makeRow = (row, idx) => `
     <div class="partner-carousel-row">
-      <div class="partner-carousel-label">
+      <div class="partner-carousel-header">
         <span class="prow-tag">${t(row.label, row.labelZh)}</span>
       </div>
       <div class="partner-carousel-wrap">
@@ -2010,7 +6003,7 @@ function renderSolutionsOverview() {
   `, vizSolutionsOverview())}
   <section class="section section-subtle">
     <div class="container">
-      <div class="card-grid card-grid-3">
+      <div class="card-grid card-grid-3 swipeable">
         ${[
           ['solutions-advertiser', gIcon('rocket','blue','md'), 'Advertiser Launch Solutions','广告主投放解决方案','Scale programmatic campaigns globally with AI-driven DSP technology. Drive measurable ROAS, reduce CPA, and unlock new markets.','通过AI驱动的DSP技术在全球扩展程序化营销活动。提高可衡量的ROAS、降低CPA并开拓新市场。'],
           ['solutions-publisher',  gIcon('dollar','green','md'), 'Publisher & Developer Monetization','发布商/开发者变现解决方案','Maximize ad revenue from web, app, and game traffic with header bidding, SDK integration, and intelligent yield management.','通过头部竞价、SDK集成和智能收益管理，最大化网页、应用和游戏流量的广告收益。'],
@@ -2037,7 +6030,7 @@ function renderSolutionsOverview() {
 function renderSolutionsAdvertiser() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(37,99,235,0.12),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('solutions')">Solutions</a> › <span>${t('Advertiser Launch Solutions','广告主投放解决方案')}</span></div>
+    <div class="breadcrumb"><a onclick="navigate('solutions')">${t('Solutions','解决方案')}</a> › <span>${t('Advertiser Launch Solutions','广告主投放解决方案')}</span></div>
     ${sectionTag('For Advertisers', '面向广告主')}
     <h1>${t('Launch, Scale & Optimise Campaigns Globally', '在全球范围内启动、扩展和优化营销活动')}</h1>
     <p>${t('NexBids DSP gives advertisers AI-powered tools to reach the right audiences across 150+ countries, drive measurable ROAS, and dominate every digital channel.',
@@ -2053,7 +6046,7 @@ function renderSolutionsAdvertiser() {
     <div class="container">
       ${sectionTag('Who It\'s For','适用对象')}
       <h2 class="section-headline">${t('Built for Performance-Driven Advertisers','专为绩效驱动的广告主而构建')}</h2>
-      <div class="card-grid card-grid-4" style="margin-top:32px">
+      <div class="card-grid card-grid-4 swipeable" style="margin-top:32px">
         ${[
           [gIcon('barChart','blue','sm'),'E-Commerce Brands','电商品牌','Drive product sales with dynamic ads, retargeting, and cross-market campaigns.','通过动态广告、再营销和跨市场营销活动推动产品销售。'],
           [gIcon('gamepad','purple','sm'),'Mobile Gaming Studios','移动游戏工作室','Acquire high-LTV players with playable ads, rewarded video, and LTV-optimized bidding.','通过可试玩广告、激励视频和LTV优化竞价获取高价值玩家。'],
@@ -2107,7 +6100,7 @@ function renderSolutionsAdvertiser() {
 function renderSolutionsPublisher() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(5,150,105,0.12),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('solutions')">Solutions</a> › <span>${t('Publisher & Developer Monetization','发布商/开发者变现解决方案')}</span></div>
+    <div class="breadcrumb"><a onclick="navigate('solutions')">${t('Solutions','解决方案')}</a> › <span>${t('Publisher & Developer Monetization','发布商/开发者变现解决方案')}</span></div>
     ${sectionTag('For Publishers & Developers','面向发布商与开发者','green')}
     <h1>${t('Maximize Your Ad Revenue with Intelligent Monetization', '用智能变现最大化您的广告收益')}</h1>
     <p>${t('NexBids SSP connects your inventory to 50,000+ premium advertisers worldwide, delivering higher eCPMs through header bidding, AI floor optimization, and direct deal access.',
@@ -2122,7 +6115,7 @@ function renderSolutionsPublisher() {
     <div class="container">
       ${sectionTag('Publisher Types','发布商类型','green')}
       <h2 class="section-headline">${t('Solutions for Every Publisher Format','针对每种发布商格式的解决方案')}</h2>
-      <div class="card-grid card-grid-4" style="margin-top:32px">
+      <div class="card-grid card-grid-4 swipeable" style="margin-top:32px">
         ${[
           [gIcon('globe','blue','sm'),'Web Publishers','网站发布商','News, content sites, and blogs monetizing desktop and mobile web traffic with display, native, and video ads.','通过展示、原生和视频广告将桌面和移动网络流量变现的新闻、内容网站和博客。'],
           [gIcon('smartphone','purple','sm'),'Mobile App Developers','移动应用开发者','Utility, lifestyle, and productivity app developers integrating banner, interstitial, and native ads via SDK.','通过SDK集成横幅、插页式和原生广告的工具、生活方式和生产力应用开发者。'],
@@ -2174,7 +6167,7 @@ function renderSolutionsPublisher() {
 function renderSolutionsAgency() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(124,58,237,0.12),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('solutions')">Solutions</a> › <span>${t('Agency Cooperation Solutions','代理合作解决方案')}</span></div>
+    <div class="breadcrumb"><a onclick="navigate('solutions')">${t('Solutions','解决方案')}</a> › <span>${t('Agency Cooperation Solutions','代理合作解决方案')}</span></div>
     ${sectionTag('For Agencies','面向代理商','purple')}
     <h1>${t('One Platform. All Your Clients. Maximum Performance.','一个平台。所有客户。最佳绩效。')}</h1>
     <p>${t('NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.',
@@ -2231,14 +6224,14 @@ function renderProductsOverview() {
            '收益优化供应平台，将发布商和开发者与全球最佳需求来源连接，通过智能自动化和头部竞价最大化收益。',
            [['30K+','Publishers','发布商'],['+52%','Avg eCPM Lift','平均eCPM提升'],['99.5%+','Fill Rate','填充率'],['SDK','iOS/Android/Unity','SDK支持']]],
         ].map(([type,pg,tag,en,zh,color,forEn,forZh,descEn,descZh,stats])=>`
-        <div class="platform-card ${type}" style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start">
-          <div>
+        <div class="platform-card ${type} product-overview-card">
+          <div class="poc-body">
             <div class="platform-tag">${tag} — ${t(en,zh)}</div>
             <h2 style="font-size:28px;font-weight:800;margin-bottom:8px">NexBids ${tag}</h2>
             <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px">${t(forEn,forZh)}</div>
             <p style="color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:24px;max-width:600px">${t(descEn,descZh)}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px">
-              ${stats.map(([n,en,zh])=>`<div style="text-align:center;padding:12px 16px;background:rgba(255,255,255,0.04);border-radius:10px"><div style="font-size:22px;font-weight:800;color:${color}">${n}</div><div style="font-size:12px;color:var(--text-secondary);margin-top:2px">${t(en,zh)}</div></div>`).join('')}
+            <div class="poc-stats">
+              ${stats.map(([n,en,zh])=>`<div class="poc-stat"><div style="font-size:22px;font-weight:800;color:${color}">${n}</div><div style="font-size:12px;color:var(--text-secondary);margin-top:2px">${t(en,zh)}</div></div>`).join('')}
             </div>
             <button class="btn btn-primary" style="background:linear-gradient(135deg,${color},${color}bb)" onclick="navigate('${pg}')">${t(`Explore ${tag} →`,`探索 ${tag} →`)}</button>
           </div>
@@ -2254,7 +6247,7 @@ function renderProductsOverview() {
 function renderProductsDSP() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(37,99,235,0.15),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('products')">Products</a> › <span>NexBids DSP</span></div>
+    <div class="breadcrumb"><a onclick="navigate('products')">${t('Products','产品')}</a> › <span>NexBids DSP</span></div>
     ${sectionTag('DSP — Demand-Side Platform','DSP — 需求方平台')}
     <h1>NexBids DSP</h1>
     <p>${t('The AI-powered demand-side platform built for performance. Reach the right audiences across 150+ countries, optimize to your KPIs in real time, and scale campaigns with confidence.',
@@ -2295,7 +6288,7 @@ function renderProductsDSP() {
     <div class="container">
       ${sectionTag('Ad Formats','广告格式')}
       <h2 class="section-headline">${t('30+ Ad Formats Across Every Channel','跨每个渠道的30+广告格式')}</h2>
-      <div class="card-grid card-grid-4" style="margin-top:32px">
+      <div class="card-grid card-grid-4 swipeable" style="margin-top:32px">
         ${[
           [gIcon('monitor','blue'),'Display Ads','展示广告','Banner, rich media, expandable formats across web and app inventory.','网页和应用资源中的横幅、富媒体、可扩展格式。'],
           [gIcon('tv','purple'),'Video Ads','视频广告','In-stream (pre/mid/post roll), out-stream, rewarded video, and CTV/OTT.','前/中/后贴片、外置流、激励视频和CTV/OTT。'],
@@ -2323,7 +6316,7 @@ function renderProductsDSP() {
 function renderProductsADX() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(124,58,237,0.15),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('products')">Products</a> › <span>NexBids ADX</span></div>
+    <div class="breadcrumb"><a onclick="navigate('products')">${t('Products','产品')}</a> › <span>NexBids ADX</span></div>
     ${sectionTag('ADX — Ad Exchange','ADX — 广告交易中枢','purple')}
     <h1>NexBids ADX</h1>
     <p>${t('The high-performance, neutral ad exchange connecting premium supply with quality demand — processing 50 billion auctions daily with sub-100ms latency.',
@@ -2379,7 +6372,7 @@ function renderProductsADX() {
 function renderProductsSSP() {
   return `
   ${pageHeroLayout('linear-gradient(135deg,rgba(5,150,105,0.15),var(--bg-dark))', `
-    <div class="breadcrumb"><a onclick="navigate('products')">Products</a> › <span>NexBids SSP</span></div>
+    <div class="breadcrumb"><a onclick="navigate('products')">${t('Products','产品')}</a> › <span>NexBids SSP</span></div>
     ${sectionTag('SSP — Supply-Side Platform','SSP — 供应方平台','green')}
     <h1>NexBids SSP</h1>
     <p>${t('The intelligent supply-side platform that maximizes publisher revenue through header bidding, AI yield optimization, direct deal access, and seamless SDK integration.',
@@ -2419,7 +6412,7 @@ function renderProductsSSP() {
     <div class="container">
       ${sectionTag('Quick Integration','快速集成','green')}
       <h2 class="section-headline">${t('Live in Hours, Not Weeks','数小时上线，而非数周')}</h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px" class="integration-steps">
         ${[
           ['1','Create Account','创建账户','Sign up and complete publisher verification in under 10 minutes.','10分钟内注册并完成发布商验证。'],
           ['2','Add Your Inventory','添加您的广告资源','Define your ad units, formats, and floor price preferences in the publisher dashboard.','在发布商仪表盘中定义您的广告单元、格式和底价偏好。'],
@@ -2465,7 +6458,7 @@ function renderTechnology() {
     <div class="container">
       ${sectionTag('Our Principles','我们的原则')}
       <h2 class="section-headline">${t('Technology Philosophy','技术理念')}</h2>
-      <div class="card-grid card-grid-3" style="margin-top:40px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-top:40px">
         ${[
           [gIcon('brain','purple','md'),'Intelligent','智能的','Not just automated — genuinely smart. Our ML systems learn and improve continuously from every auction signal.','不仅仅是自动化，而是真正智能。我们的ML系统从每个竞价信号持续学习和改进。'],
           [gIcon('zap','blue','md'),'Fast','快速的','Millisecond-level decisions at global scale. Sub-100ms bid processing at 50B+ daily requests.','全球规模下毫秒级决策，不做任何妥协。在500亿+日请求下竞价处理低于100毫秒。'],
@@ -2488,7 +6481,7 @@ function renderTechnology() {
       ${sectionTag('AI & Machine Learning','AI与机器学习')}
       <h2 class="section-headline">${t('Six Proprietary ML Models at the Core','六大专有机器学习模型驱动核心')}</h2>
       <p class="section-sub" style="margin-bottom:40px">${t('Our AI platform processes trillions of historical auction signals to power real-time optimization across every dimension of programmatic advertising.','我们的AI平台处理数万亿历史竞价信号，驱动程序化广告各维度的实时优化。')}</p>
-      <div class="card-grid card-grid-3">
+      <div class="card-grid card-grid-3 swipeable">
         ${[
           ['Bid Price Prediction','竞价价格预测','Deep neural network, continuous online learning + batch retraining every 6 hours. <5% MAPE accuracy.','深度神经网络，持续在线学习+每6小时批量再训练，<5% MAPE精度。','#2563EB'],
           ['Conversion Probability','转化概率模型','Gradient-boosted tree ensemble on tens of billions of impression-to-conversion sequences. Multi-event support.','在数百亿次展示到转化序列上训练的梯度提升树集成，支持多事件转化。','#7C3AED'],
@@ -2510,7 +6503,7 @@ function renderTechnology() {
     <div class="container">
       ${sectionTag('RTB Infrastructure','实时竞价基础设施')}
       <h2 class="section-headline">${t('Global Real-Time Bidding at Scale','全球规模的实时竞价')}</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px" class="home-tech-grid">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px" class="home-tech-grid tech-infra-grid">
         <div>
           ${[
             ['🌐','Global PoP Network','全球PoP网络','6 regional data center clusters (NA, EU, APAC-East, APAC-SE, MENA, LATAM) with 50+ Points of Presence worldwide.','6个区域数据中心集群，全球50+接入点。'],
@@ -2644,12 +6637,12 @@ function renderResources() {
   <section class="section section-subtle">
     <div class="container">
       ${cats.map(cat=>`
-      <div style="margin-bottom:64px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px">
+      <div class="resource-category">
+        <div class="resource-category-header">
           <div style="font-size:28px">${cat.icon}</div>
           <h2 style="font-size:24px;font-weight:800">${t(cat.en,cat.zh)}</h2>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="resource-list">
           ${cat.items.map(([en,zh,enD,zhD,fmt])=>`
           <div class="resource-card">
             <div class="resource-icon">📄</div>
@@ -2665,12 +6658,12 @@ function renderResources() {
         </div>
       </div>`).join('')}
 
-      <div style="margin-bottom:64px">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px">
+      <div class="resource-category">
+        <div class="resource-category-header">
           <div style="font-size:28px">🎙️</div>
           <h2 style="font-size:24px;font-weight:800">${t('Webinars & Events','网络研讨会与活动')}</h2>
         </div>
-        <div class="card-grid card-grid-3">
+        <div class="card-grid card-grid-3 swipeable">
           ${[
             ['Mar 25, 2026','2026年3月25日','Maximizing ROAS in a Privacy-First World','隐私优先时代的ROAS最大化','Emily Zhang, VP Advertiser Solutions','60 min'],
             ['Apr 2, 2026','2026年4月2日','Header Bidding Masterclass for Publishers','发布商头部竞价大师班','James Park, Director Publisher Partnerships','75 min'],
@@ -2719,7 +6712,7 @@ function renderCaseStudiesHub() {
     <div class="container">
       ${sectionTag('Advertiser Cases','广告主案例')}
       <h2 class="section-headline">${t('How Advertisers Grow Faster with NexBids','广告主如何通过NexBids实现更快增长')}</h2>
-      <div class="card-grid card-grid-3" style="margin-top:40px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-top:40px">
         ${[
           ['E-Commerce','电商','Global Fashion Brand — ROAS Transformation','全球时尚品牌——ROAS转型','Rebuilt audience strategy with DCO and AI bidding across 12 countries.','在12个国家以DCO和AI竞价重建受众策略。',['ROAS +200%','CPA -54%','Revenue +400%']],
           ['Mobile Gaming','移动游戏','Top Mobile RPG — Scale & Quality','顶级移动RPG——规模与质量','Acquired 2.3M high-quality players with playable ads and LTV bidding.','通过可试玩广告和LTV竞价获取了230万高质量玩家。',['2.3M Players','D30 Ret +38%','CPI -41%']],
@@ -2734,7 +6727,7 @@ function renderCaseStudiesHub() {
             <h3>${t(title,titleZh)}</h3>
             <p>${t(desc,descZh)}</p>
           </div>
-          <div class="case-metrics">${badges.map(b=>`<span class="case-metric-badge">${b}</span>`).join('')}</div>
+          <div class="case-metrics">${badges.map(b=>`<span class="case-metric-badge">${t(b,b)}</span>`).join('')}</div>
         </div>`).join('')}
       </div>
       <div style="text-align:center;margin-top:32px">
@@ -2747,7 +6740,7 @@ function renderCaseStudiesHub() {
     <div class="container">
       ${sectionTag('Publisher & Developer Cases','发布商与开发者案例','green')}
       <h2 class="section-headline">${t('How Publishers Maximize Revenue with NexBids','发布商如何通过NexBids最大化收益')}</h2>
-      <div class="card-grid card-grid-3" style="margin-top:40px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-top:40px">
         ${[
           ['News Publisher','新闻发布商','Finance News Network — eCPM Growth','财经新闻网络——eCPM增长','Header bidding + AI floor pricing drove 67% eCPM lift and $2.4M incremental annual revenue.','头部竞价+AI底价推动eCPM提升67%，带来240万美元额外年收入。',['eCPM +67%','+$2.4M/yr','Fill +23%']],
           ['Mobile App','移动应用','Lifestyle App — Monetization Overhaul','生活方式应用——变现改造','SDK migration and rewarded video adoption tripled monthly ad revenue.','SDK迁移和激励视频采用使月广告收入翻三倍。',['Revenue x3','eCPM +89%','Retention +12%']],
@@ -2759,7 +6752,7 @@ function renderCaseStudiesHub() {
             <h3>${t(title,titleZh)}</h3>
             <p>${t(desc,descZh)}</p>
           </div>
-          <div class="case-metrics">${badges.map(b=>`<span class="case-metric-badge" style="background:rgba(5,150,105,0.08);color:#34D399;border-color:rgba(5,150,105,0.15)">${b}</span>`).join('')}</div>
+          <div class="case-metrics">${badges.map(b=>`<span class="case-metric-badge" style="background:rgba(5,150,105,0.08);color:#34D399;border-color:rgba(5,150,105,0.15)">${t(b,b)}</span>`).join('')}</div>
         </div>`).join('')}
       </div>
       <div style="text-align:center;margin-top:32px">
@@ -2797,9 +6790,9 @@ function renderCasesAdvertiser() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Global Fashion Brand — ROAS Transformation','全球时尚品牌——ROAS转型')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A fast-growing global fashion e-commerce brand operating in 12 countries transformed programmatic from a write-off into their fastest-growing revenue driver.',
            '一个在12个国家运营的快速成长全球时尚电商品牌，将程序化广告从被放弃的渠道转变为增长最快的收益驱动器。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['ROAS','1.4x → 4.2x','+200%'],['CPA (New Customers)','$68 → $31','-54%'],['Monthly Revenue','$420K → $2.1M','+400%'],['Markets','3 → 12','+300%']].map(([l,v,c])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:18px;font-weight:700">${v}</div><div class="stat-badge green" style="margin-top:8px;display:inline-flex">${c}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:18px;font-weight:700">${v}</div><div class="stat-badge green" style="margin-top:8px;display:inline-flex">${c}</div></div>`).join('')}
         </div>
         <div class="quote-block">
           <blockquote>${t('"NexBids transformed programmatic from a channel we had written off into our fastest-growing revenue driver. The combination of their dynamic creative technology and AI bidding delivered ROAS we never thought achievable."',
@@ -2816,9 +6809,9 @@ function renderCasesAdvertiser() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Top Mobile RPG — Scale & Quality Player Acquisition','顶级移动RPG——规模化高质量玩家获取')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A top-grossing mobile RPG studio needed to scale beyond their existing channels without sacrificing the player quality that drove their monetization.',
            '一家顶级收入移动RPG工作室需要超越现有渠道进行扩展，同时不牺牲推动变现的玩家质量。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['New Players','2.3M Acquired','High Quality'],['D30 Retention','Benchmark → +38%','+38%'],['CPI','Optimized','-41%'],['ROAS D180','LTV Positive','+156%']].map(([l,v,c])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:18px;font-weight:700">${v}</div><div class="stat-badge green" style="margin-top:8px;display:inline-flex">${c}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:18px;font-weight:700">${t(v,v)}</div><div class="stat-badge green" style="margin-top:8px;display:inline-flex">${c}</div></div>`).join('')}
         </div>
         <div class="quote-block">
           <blockquote>${t('"We\'d tried every major DSP and none could match the quality of players NexBids delivered. Their LTV Optimizer changed everything — we\'re now profitable on a D180 basis across all markets."',
@@ -2835,9 +6828,9 @@ function renderCasesAdvertiser() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Productivity App — From 3 Markets to Global','生产力应用——从3个市场到全球')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A productivity app needed a programmatic partner to support rapid global expansion from 3 to 28 markets while maintaining CPA targets.',
            '一款生产力应用需要程序化合作伙伴支持从3个市场扩展到28个市场的快速全球扩张，同时保持CPA目标。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['Markets','3 → 28','x9.3'],['Install Volume','Scaled Up','+340%'],['CPA','Maintained','On Target'],['D7 Retention','Improved','+22%']].map(([l,v,c])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:18px;font-weight:700">${v}</div><div class="stat-badge" style="margin-top:8px;display:inline-flex">${c}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:18px;font-weight:700">${t(v,v)}</div><div class="stat-badge" style="margin-top:8px;display:inline-flex">${t(c,c)}</div></div>`).join('')}
         </div>
       </div>
     </div>
@@ -2872,9 +6865,9 @@ function renderCasesPublisher() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Regional Finance News Network — eCPM Growth & Revenue Transformation','区域财经新闻网络——eCPM增长与收益转型')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A leading regional finance news platform migrated from a single SSP waterfall setup to NexBids header bidding, transforming their ad revenue performance in 90 days.',
            '一家领先的区域财经新闻平台从单一SSP瀑布流迁移至NexBids头部竞价，在90天内彻底改变了广告收益表现。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['eCPM Lift','+67%','vs. prior SSP'],['Incremental Revenue','+$2.4M','per year'],['Fill Rate','+23%','improvement'],['Page RPM','+71%','growth']].map(([l,v,s])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${s}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${t(s,s)}</div></div>`).join('')}
         </div>
         <div class="quote-block" style="border-left-color:#059669">
           <blockquote>${t('"The NexBids header bidding implementation was transformative. Within 90 days, our CPMs had increased by 67% and our monthly revenue had grown by $200K. The yield optimization team was outstanding."',
@@ -2891,9 +6884,9 @@ function renderCasesPublisher() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Lifestyle App — Monetization Overhaul via SDK Migration','生活方式应用——通过SDK迁移实现变现改造')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A popular lifestyle and wellness app with 8M+ MAU had been monetizing with banner ads only. NexBids SSP integration unlocked rewarded video and interstitial formats, tripling monthly revenue.',
            '一款拥有800万+月活用户的热门生活方式应用仅靠横幅广告变现。NexBids SSP集成解锁了激励视频和插页式格式，使月收入增长三倍。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['Monthly Revenue','Tripled','x3 growth'],['eCPM','+89%','improvement'],['User Retention','+12%','D28 lift'],['D28 ARPU','+156%','growth']].map(([l,v,s])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${s}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${t(s,s)}</div></div>`).join('')}
         </div>
         <div class="quote-block" style="border-left-color:#059669">
           <blockquote>${t('"We were skeptical that adding rewarded video could increase revenue without hurting retention — NexBids proved us wrong on both counts. Revenue tripled and our retention actually improved."',
@@ -2910,9 +6903,9 @@ function renderCasesPublisher() {
         <h2 style="font-size:28px;font-weight:800;margin-bottom:16px">${t('Casual Game Studio — Revenue Maximization via Rewarded Video','休闲游戏工作室——通过激励视频实现收益最大化')}</h2>
         <p class="section-sub" style="margin-bottom:32px">${t('A casual mobile game studio with 15M+ downloads integrated NexBids SSP across their portfolio, leveraging rewarded video optimization and mediation strategy for a 145% revenue lift.',
            '一家拥有1500万+下载量的休闲移动游戏工作室在其产品组合中集成了NexBids SSP，通过激励视频优化和聚合策略实现了145%的收益提升。')}</p>
-        <div class="card-grid card-grid-4" style="margin-bottom:32px">
+        <div class="card-grid card-grid-4 swipeable" style="margin-bottom:32px">
           ${[['Ad Revenue','+145%','lift'],['DAU','+18%','growth'],['eCPM','+92%','improvement'],['ARPDAU','+127%','increase']].map(([l,v,s])=>`
-          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${l}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${s}</div></div>`).join('')}
+          <div class="card" style="text-align:center"><div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px">${t(l,l)}</div><div style="font-size:28px;font-weight:900;color:#34D399">${v}</div><div style="font-size:12px;color:var(--text-muted);margin-top:4px">${t(s,s)}</div></div>`).join('')}
         </div>
       </div>
     </div>
@@ -2959,7 +6952,7 @@ function renderAbout() {
   <!-- Our Story -->
   <section class="section section-dark">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="home-tech-grid">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="home-tech-grid tech-infra-grid">
         <div>
           ${sectionTag('Our Story','我们的故事')}
           <h2 class="section-headline">${t('Building the Future of Programmatic Since 2018','自2018年以来构建程序化广告的未来')}</h2>
@@ -3000,7 +6993,7 @@ function renderAbout() {
     <div class="container">
       ${sectionTag('Mission & Values','使命与价值观')}
       <h2 class="section-headline">${t('What We Stand For','我们的立场')}</h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px" class="home-tech-grid">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px" class="home-tech-grid tech-infra-grid">
         <div>
           <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;color:var(--primary-light)">${t('Our Mission','我们的使命')}</h3>
           <p style="color:var(--text-secondary);font-size:15px;line-height:1.8;margin-bottom:28px">${t('To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.',
@@ -3009,7 +7002,7 @@ function renderAbout() {
           <p style="color:var(--text-secondary);font-size:15px;line-height:1.8">${t('A digital advertising ecosystem that is intelligent, transparent, efficient, and privacy-respecting — where every participant can trust that the technology is working for their benefit.',
              '一个智能、透明、高效且尊重隐私的数字广告生态系统——每个参与者都能信任技术在为自己的利益服务。')}</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="values-list">
           ${[
             ['🤝','Partner Success First','合作伙伴成功第一','We measure our own success by the success of our partners. Every decision starts with: does this make our partners more successful?','我们通过合作伙伴的成功来衡量我们自己的成功。每个决策都从这个问题开始：这能让我们的合作伙伴更成功吗？'],
             ['🔍','Radical Transparency','极致透明','Complete transparency in pricing, data practices, auction mechanics, and reporting. Trust is the foundation of long-term partnership.','定价、数据实践、拍卖机制和报告方面的完全透明。信任是长期合作关系的基础。'],
@@ -3030,7 +7023,7 @@ function renderAbout() {
     <div class="container">
       ${sectionTag('Leadership Team','领导团队')}
       <h2 class="section-headline">${t('The People Leading NexBids','领导NexBids的人才')}</h2>
-      <div class="card-grid card-grid-3" style="margin-top:40px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-top:40px">
         ${[
           ['MW','Michael Wang','Michael Wang','Co-Founder & CEO','联合创始人兼CEO','18 years in programmatic advertising. Former VP Product at a leading global DSP. Stanford CS + Wharton MBA.','18年程序化广告经验，前领先全球DSP产品副总裁。斯坦福CS+沃顿MBA。'],
           ['SO','Sarah Okonkwo','Sarah Okonkwo','Co-Founder & CTO','联合创始人兼CTO','6 patents in RTB systems & audience modeling. PhD Computer Science (ML) from MIT. NexBids Privacy Engineering lead.','6项RTB系统和受众建模专利，MIT计算机科学（ML）博士，NexBids隐私工程负责人。'],
@@ -3054,7 +7047,7 @@ function renderAbout() {
     <div class="container">
       ${sectionTag('Global Presence','全球影响力')}
       <h2 class="section-headline">${t('A Truly Global Company','一家真正意义上的全球公司')}</h2>
-      <div class="card-grid card-grid-3" style="margin-top:40px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-top:40px">
         ${[
           ['🇺🇸','San Francisco, CA','旧金山','North America','北美市场','Engineering, Product, Corporate','工程、产品、企业运营'],
           ['🇪🇸','Barcelona, Spain','巴塞罗那','EMEA / Americas','欧美市场','Sales & Business Development','销售与商务拓展'],
@@ -3078,6 +7071,7 @@ function renderAbout() {
     <div class="container">
       ${sectionTag('Recognition','行业认可')}
       <h2 class="section-headline" style="margin-bottom:32px">${t('Industry Awards & Recognition','行业奖项与认可')}</h2>
+      <div class="award-list-wrap">
       <div class="award-list">
         ${[
           ['🏆','2025','Best DSP Platform — Programmatic IO Awards'],
@@ -3092,6 +7086,7 @@ function renderAbout() {
           <div class="award-icon">${icon}</div>
           <div><div class="award-year">${year}</div><div class="award-name">${name}</div></div>
         </div>`).join('')}
+      </div>
       </div>
     </div>
   </section>
@@ -3159,11 +7154,11 @@ function renderCareers() {
     <div class="container">
       ${sectionTag('Open Positions','开放职位')}
       <h2 class="section-headline">${t('Current Openings','当前职位空缺')}</h2>
-      <div style="margin-top:40px;display:flex;flex-direction:column;gap:40px">
+      <div class="jobs-list">
         ${jobs.map(dept=>`
-        <div>
+        <div class="jobs-dept">
           <h3 style="font-size:18px;font-weight:700;color:var(--primary-light);margin-bottom:16px">${t(dept.dept,dept.deptZh)}</h3>
-          <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="jobs-dept-cards">
             ${dept.roles.map(([en,zh,locEn,locZh,type])=>`
             <div class="job-card">
               <div class="job-card-header">
@@ -3225,7 +7220,7 @@ function renderContact() {
   <!-- Contact Cards -->
   <section class="section section-dark">
     <div class="container">
-      <div class="card-grid card-grid-3" style="margin-bottom:64px">
+      <div class="card-grid card-grid-3 swipeable" style="margin-bottom:64px">
         ${[
           [
             `<span class="gi gi-blue gi-lg"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>`,
@@ -3265,21 +7260,21 @@ function renderContact() {
           <div class="form-row">
             <div class="form-group">
               <label>${t('First Name','名字')} *</label>
-              <input type="text" placeholder="${currentLang==='zh'?'张':'John'}">
+              <input type="text" id="cf_firstName" placeholder="${currentLang==='zh'?'张':'John'}">
             </div>
             <div class="form-group">
               <label>${t('Last Name','姓氏')} *</label>
-              <input type="text" placeholder="${currentLang==='zh'?'伟':'Smith'}">
+              <input type="text" id="cf_lastName" placeholder="${currentLang==='zh'?'伟':'Smith'}">
             </div>
           </div>
           <div class="form-group">
             <label>${t('Business Email','工作邮箱')} *</label>
-            <input type="email" placeholder="you@company.com">
+            <input type="email" id="cf_email" placeholder="you@company.com">
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>${t('Company Name','公司名称')} *</label>
-              <input type="text" placeholder="${currentLang==='zh'?'您的公司':'Your Company'}">
+              <input type="text" id="cf_company" placeholder="${currentLang==='zh'?'您的公司':'Your Company'}">
             </div>
             <div class="form-group">
               <label>${t('Country','国家')} *</label>
@@ -3291,7 +7286,7 @@ function renderContact() {
           </div>
           <div class="form-group">
             <label>${t('I am a','我是')} *</label>
-            <select>
+            <select id="cf_role">
               <option value="">${currentLang==='zh'?'请选择...':'Select...'}</option>
               <option value="advertiser">${currentLang==='zh'?'广告主':'Advertiser'}</option>
               <option value="publisher">${currentLang==='zh'?'发布商或开发者':'Publisher or Developer'}</option>
@@ -3302,7 +7297,7 @@ function renderContact() {
           </div>
           <div class="form-group">
             <label>${t('How can we help?','我们能为您做什么？')} *</label>
-            <textarea placeholder="${currentLang==='zh'?'告诉我们您的需求...':'Tell us about your needs...'}"></textarea>
+            <textarea id="cf_message" placeholder="${currentLang==='zh'?'告诉我们您的需求...':'Tell us about your needs...'}"></textarea>
           </div>
           <div class="form-check" style="margin-bottom:20px">
             <input type="checkbox" id="privacyCheck">
@@ -3372,22 +7367,62 @@ function submitContactForm(e) {
   const wrap = document.getElementById('contactFormWrap');
   const successMsg = document.getElementById('contactSuccessMsg');
   if (!wrap || !successMsg) return;
-  // Basic validation: check required inputs are filled
-  const inputs = wrap.querySelectorAll('input[type="text"], input[type="email"]');
+
+  // Collect field values
+  const firstName = (document.getElementById('cf_firstName')?.value || '').trim();
+  const lastName  = (document.getElementById('cf_lastName')?.value  || '').trim();
+  const email     = (document.getElementById('cf_email')?.value     || '').trim();
+  const company   = (document.getElementById('cf_company')?.value   || '').trim();
+  const country   = (document.getElementById('countrySearch')?.value || '').trim();
+  const role      = (document.getElementById('cf_role')?.value      || '').trim();
+  const message   = (document.getElementById('cf_message')?.value   || '').trim();
+
+  // Validation: required text/email inputs
   let valid = true;
-  inputs.forEach(inp => {
+  [
+    document.getElementById('cf_firstName'),
+    document.getElementById('cf_lastName'),
+    document.getElementById('cf_email'),
+    document.getElementById('cf_company'),
+  ].forEach(inp => {
+    if (!inp) return;
     if (!inp.value.trim()) { inp.style.borderColor = '#F87171'; valid = false; }
     else inp.style.borderColor = '';
   });
-  const privacy = wrap.querySelector('#privacyCheck');
+
+  const privacy = document.getElementById('privacyCheck');
   if (privacy && !privacy.checked) {
     privacy.parentElement.style.outline = '1px solid #F87171';
     valid = false;
   } else if (privacy) {
     privacy.parentElement.style.outline = '';
   }
+
   if (!valid) return;
-  // Hide form, show success
+
+  // Build mailto body with all fields
+  const roleLabel = document.getElementById('cf_role')?.selectedOptions?.[0]?.text || role;
+  const body = [
+    'New contact enquiry from nexbids.com',
+    '─────────────────────────',
+    `First Name:     ${firstName}`,
+    `Last Name:      ${lastName}`,
+    `Business Email: ${email}`,
+    `Company:        ${company}`,
+    `Country:        ${country || '(not provided)'}`,
+    `Role:           ${roleLabel || '(not provided)'}`,
+    '─────────────────────────',
+    'Message:',
+    message || '(no message)',
+  ].join('\n');
+
+  const subject = `NexBids Contact: ${firstName} ${lastName} — ${company}`;
+  const mailtoUrl = `mailto:contact@nexbids.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  // Open mail client
+  window.location.href = mailtoUrl;
+
+  // Show success message
   wrap.style.display = 'none';
   successMsg.style.display = 'block';
   successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -3570,13 +7605,7 @@ function renderLogin(platform) {
     <div class="login-right">
       <div class="login-form-wrap">
         <div style="margin-bottom:24px">
-          <svg class="nexbids-logo" width="138" height="29" viewBox="0 0 164 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">Nex</text>
-            <text x="64" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">B</text>
-            <polygon points="71,4 64,20 76,12" fill="#8B2EFF"/>
-            <text x="84" y="29" font-family="Inter,Arial Black,system-ui,sans-serif" font-size="34" font-weight="900" fill="#1650F5" letter-spacing="-2">ids</text>
-            <rect x="154" y="1" width="9" height="9" rx="2" fill="#8B2EFF"/>
-          </svg>
+          <img src="nexbids-logo.png" alt="NexBids" height="36" style="display:block;object-fit:contain;max-width:180px;" />
         </div>
         <h3>${t(c.headingEn,c.headingZh)}</h3>
         <p>${t('Enter your credentials to access the platform.','输入您的凭据以访问平台。')}</p>
@@ -3718,9 +7747,89 @@ function render404() {
 }
 
 function toggleMobileMenu() {
-  const menu = document.getElementById('navMenu');
-  menu?.classList.toggle('open');
+  const menu   = document.getElementById('navMenu');
+  const btn    = document.getElementById('mobileMenuBtn');
+  const isOpen = menu?.classList.toggle('open');
+
+  // Hamburger ↔ X animation
+  if (btn) btn.classList.toggle('open', isOpen);
+
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+
+  // Inject mobile Login section if not already present
+  if (isOpen && menu && !menu.querySelector('.mobile-login-section')) {
+    const loginSection = document.createElement('div');
+    loginSection.className = 'mobile-login-section';
+    loginSection.innerHTML = `
+      <div style="padding:0 0 10px;font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase">${t('Language','语言')}</div>
+      <div class="mobile-lang-grid">
+        ${LANGUAGES.map(lang => `
+          <button class="mobile-lang-btn ${lang.code === currentLang ? 'active' : ''}" onclick="setLang('${lang.code}')">
+            <span>${lang.flag}</span><span>${lang.label}</span>
+          </button>`).join('')}
+      </div>
+      <div style="padding:16px 0 8px;font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase">${t('Login to Platform','登录平台')}</div>
+      <button class="btn-login-mobile" style="background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.25);color:#60A5FA;border-radius:10px;padding:13px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:space-between;width:100%;" onclick="navigate('login-dsp')">
+        <span><strong>${ui("DSP")}</strong> — ${t('Advertiser Platform','广告主平台')}</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn-login-mobile" style="background:rgba(5,150,105,0.15);border:1px solid rgba(5,150,105,0.25);color:#34D399;border-radius:10px;padding:13px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:space-between;width:100%;" onclick="navigate('login-ssp')">
+        <span><strong>${ui("SSP")}</strong> — ${t('Publisher Platform','发布商平台')}</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <button class="btn-login-mobile" style="background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.25);color:#A78BFA;border-radius:10px;padding:13px 16px;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:space-between;width:100%;" onclick="navigate('login-adx')">
+        <span><strong>${ui("ADX")}</strong> — ${t('Exchange Platform','交易平台')}</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>`;
+    menu.appendChild(loginSection);
+  }
+
+  // Wire up accordion for dropdown items in mobile
+  if (isOpen && menu) {
+    menu.querySelectorAll('.nav-item.dropdown').forEach(item => {
+      if (item._mobileAccordionBound) return;
+      item._mobileAccordionBound = true;
+      const trigger = item.querySelector('.dropdown-trigger');
+      if (!trigger) return;
+      trigger.addEventListener('click', (e) => {
+        if (window.innerWidth > 900) return;
+        // In mobile: toggle accordion, do NOT navigate
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        const expanded = item.classList.toggle('expanded');
+        // Collapse siblings
+        item.closest('.nav-menu')?.querySelectorAll('.nav-item.dropdown').forEach(sibling => {
+          if (sibling !== item) sibling.classList.remove('expanded');
+        });
+      }, true); // capture phase — fires before onclick
+    });
+  }
 }
+
+/* Close mobile menu when clicking outside */
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('navMenu');
+  const btn  = document.getElementById('mobileMenuBtn');
+  if (!menu?.classList.contains('open')) return;
+  if (btn?.contains(e.target) || menu.contains(e.target)) return;
+  menu.classList.remove('open');
+  btn?.classList.remove('open');
+  document.body.style.overflow = '';
+});
+
+/* Close mobile menu on resize to desktop */
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 900) {
+    const menu = document.getElementById('navMenu');
+    const btn  = document.getElementById('mobileMenuBtn');
+    if (menu?.classList.contains('open')) {
+      menu.classList.remove('open');
+      btn?.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+});
 
 function handleLoginSubmit(btn, platform) {
   const wrap = btn.closest('.login-form-wrap');
@@ -3739,20 +7848,20 @@ function handleLoginSubmit(btn, platform) {
     }
   });
   if (!valid) return;
+  // Platform redirect URLs
+  const platformUrls = {
+    dsp: 'http://dsp.nexbids.com',
+    ssp: 'http://ssp.nexbids.com',
+    adx: 'http://adx.nexbids.com',
+  };
   // Show loading state
   const origText = btn.textContent;
   btn.disabled = true;
   btn.textContent = t('Signing in…','登录中…');
-  // Simulate auth delay, then show friendly message
+  // Brief delay then redirect
   setTimeout(() => {
-    btn.disabled = false;
-    btn.textContent = origText;
-    // Show a toast
-    showToast(
-      t('Demo environment — Login not available in preview mode.', '演示环境——预览模式下暂不支持登录。'),
-      'info'
-    );
-  }, 1000);
+    window.location.href = platformUrls[platform] || 'http://nexbids.com';
+  }, 800);
 }
 
 function showToast(msg, type = 'info') {
@@ -4120,7 +8229,7 @@ function togglePassword(platform) {
    BOOT
 ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Build language dropdown list
+  // Build language dropdown list (navbar)
   const langDropdown = document.getElementById('langDropdown');
   if (langDropdown) {
     langDropdown.innerHTML = LANGUAGES.map(lang => `
@@ -4134,33 +8243,73 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
-  // Close lang dropdown when clicking outside
+  // Build language dropdown list (footer)
+  const langDropdownFooter = document.getElementById('langDropdownFooter');
+  if (langDropdownFooter) {
+    langDropdownFooter.innerHTML = LANGUAGES.map(lang => `
+      <button class="lang-option ${lang.code === currentLang ? 'active' : ''}"
+              onclick="setLang('${lang.code}')"
+              role="option"
+              aria-selected="${lang.code === currentLang}">
+        <span class="lang-flag">${lang.flag}</span>
+        <span class="lang-name">${lang.label}</span>
+      </button>
+    `).join('');
+  }
+
+  // Close lang + login dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#langSelector') && !e.target.closest('#langSelectorFooter')) {
       document.getElementById('langDropdown')?.classList.remove('open');
+      document.getElementById('langDropdownFooter')?.classList.remove('open');
+    }
+    if (!e.target.closest('#loginDropdownWrap')) {
+      closeLoginDropdown();
     }
   });
+
+  // ---- Back to Top button ----
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  }
+
+  // ---- Footer accordion (mobile) ----
+  // Bind toggle to each .footer-col h4 heading
+  function initFooterAccordion() {
+    const cols = document.querySelectorAll('.footer-col');
+    cols.forEach(col => {
+      const heading = col.querySelector('h4');
+      if (!heading) return;
+      // Remove any previously attached listener (safe to re-init after page nav)
+      heading.removeEventListener('click', heading._footerToggle);
+      heading._footerToggle = () => {
+        // Only activate on mobile breakpoint
+        if (window.innerWidth > 640) return;
+        col.classList.toggle('open');
+      };
+      heading.addEventListener('click', heading._footerToggle);
+    });
+  }
+
+  // On resize: re-open all cols when switching back to desktop
+  let _prevMobile = window.innerWidth <= 640;
+  window.addEventListener('resize', () => {
+    const isMobile = window.innerWidth <= 640;
+    if (_prevMobile && !isMobile) {
+      // Switched to desktop: remove open/closed classes so CSS grid takes over
+      document.querySelectorAll('.footer-col').forEach(col => col.classList.remove('open'));
+    }
+    _prevMobile = isMobile;
+  });
+
+  initFooterAccordion();
 
   renderPage('home');
   applyLang();
   updateNavActive('home');
 });
 
-// Re-render lang options when lang changes
-const _origSetLang = setLang;
-window.setLang = function(code) {
-  currentLang = code;
-  // Update active state in dropdown
-  document.querySelectorAll('.lang-option').forEach(btn => {
-    const active = btn.getAttribute('onclick').includes(`'${code}'`);
-    btn.classList.toggle('active', active);
-    btn.setAttribute('aria-selected', active);
-  });
-  // Update footer btn label
-  const footerBtn = document.getElementById('langBtnFooter');
-  const lang = LANGUAGES.find(l => l.code === code);
-  if (footerBtn && lang) footerBtn.innerHTML = `${lang.flag} ${lang.code.toUpperCase()} <svg width="8" height="6" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
-  applyLang();
-  renderPage(currentPage);
-  document.getElementById('langDropdown')?.classList.remove('open');
-};
+

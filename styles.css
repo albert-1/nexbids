@@ -229,6 +229,8 @@ ul { list-style: none; }
   font-weight: 700;
   transition: opacity 0.2s, transform 0.2s;
   letter-spacing: -0.1px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .btn-login:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,87,255,0.3); }
 .login-dropdown .dropdown-menu {
@@ -237,8 +239,12 @@ ul { list-style: none; }
   transform: translateX(0) translateY(-8px);
   min-width: 240px;
 }
-.login-dropdown:hover .dropdown-menu {
+.login-dropdown:hover .dropdown-menu,
+.login-dropdown .dropdown-menu.open {
+  opacity: 1;
+  visibility: visible;
   transform: translateX(0) translateY(0);
+  pointer-events: auto;
 }
 
 .mobile-menu-btn {
@@ -1490,27 +1496,29 @@ ul { list-style: none; }
 .lang-selector:has(#langDropdown.open) .lang-btn svg { transform: rotate(180deg); }
 
 .lang-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: rgba(14,18,32,0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 14px;
   padding: 8px;
-  min-width: 180px;
-  max-height: 380px;
+  width: 260px;
+  max-height: 420px;
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
-  transition: all 0.2s cubic-bezier(0.16,1,0.3,1);
-  z-index: 2000;
+  transition: opacity 0.2s cubic-bezier(0.16,1,0.3,1),
+              transform 0.2s cubic-bezier(0.16,1,0.3,1),
+              visibility 0.2s;
+  z-index: 9999;
   box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 4px;
 }
 .lang-dropdown.open {
   opacity: 1;
@@ -1543,10 +1551,24 @@ ul { list-style: none; }
 .lang-btn-sm { padding: 6px 10px; font-size: 12px; }
 .lang-selector-sm { display: inline-block; }
 
+/* Footer lang dropdown: pops upward — position set by JS */
+.lang-dropdown-up {
+  /* position/top/right set dynamically by toggleLangDropdownFooter() */
+}
+.lang-dropdown-up.open {
+  /* inherits from .lang-dropdown.open */
+}
+
 /* RTL support */
 body.rtl { direction: rtl; }
-body.rtl .nav-container { flex-direction: row-reverse; }
+/* direction:rtl already reverses flex order; no need for row-reverse */
+body.rtl .nav-container { flex-direction: row; }
+/* nav-actions: keep items in a fixed LTR order so login btn stays adjacent to lang selector */
+body.rtl .nav-actions { flex-direction: row; direction: ltr; }
+/* lang-dropdown anchors to the left edge of its trigger in RTL context */
 body.rtl .lang-dropdown { right: auto; left: 0; }
+/* login dropdown stays anchored to the right of the button */
+body.rtl .login-dropdown .dropdown-menu { left: 0; right: auto; }
 
 /* ===== FOOTER ===== */
 .footer {
@@ -1855,31 +1877,37 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
 .partner-carousels {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
   margin-bottom: 48px;
 }
 
+/* Each row: label on top, carousel below */
 .partner-carousel-row {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Label / category tag header */
+.partner-carousel-header {
+  display: flex;
   align-items: center;
-  gap: 24px;
+  padding: 0 2px;
 }
-.partner-carousel-label {
-  flex-shrink: 0;
-  width: 200px;
-  text-align: right;
-}
+
+/* Category tag pill */
 .prow-tag {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
   border-radius: 100px;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  color: #60A5FA;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -1887,7 +1915,6 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 1;
   min-width: 0;
   position: relative;
 }
@@ -1918,12 +1945,14 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
   scrollbar-width: none;
   flex: 1;
   min-width: 0;
-  padding: 4px 0;
+  padding: 4px 0 8px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 .partner-carousel-track::-webkit-scrollbar { display: none; }
 
 /* Partner banner card */
-.pcard { flex-shrink: 0; }
+.pcard { flex-shrink: 0; scroll-snap-align: start; }
 .pcard-inner {
   display: flex;
   align-items: center;
@@ -1999,8 +2028,7 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
 }
 @media (max-width: 640px) {
   .partner-stats-row { grid-template-columns: repeat(2, 1fr); padding: 24px 20px; }
-  .partner-carousel-label { width: 90px; }
-  .prow-tag { font-size: 10px; padding: 4px 8px; }
+  .prow-tag { font-size: 11px; padding: 4px 10px; }
   .pcard-inner { min-width: 130px; padding: 9px 14px 9px 10px; }
   .pcard-logo-wrap { width: 28px; height: 28px; border-radius: 6px; }
   .pcard-logo-img { width: 20px; height: 20px; }
@@ -2008,7 +2036,7 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
   .pcard-name { font-size: 12px; }
 }
 @media (max-width: 480px) {
-  .partner-carousel-label { display: none; }
+  /* handled in MOBILE Partners section below */
 }
 .partner-stat-num {
   font-size: 28px;
@@ -2046,14 +2074,24 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
     overflow-y: auto;
     z-index: 999;
   }
+  /* Dropdown menus hidden by default in mobile — controlled by .expanded via JS */
   .nav-menu.open .dropdown-menu {
     position: static;
-    transform: none;
+    transform: none !important;
     opacity: 1;
     visibility: visible;
-    margin-top: 8px;
+    margin: 0;
     box-shadow: none;
-    background: var(--bg-light);
+    background: rgba(255,255,255,0.03);
+    border: none;
+    border-radius: 0;
+    padding: 4px 0 8px;
+    min-width: 0;
+    width: 100%;
+    display: none;
+  }
+  .nav-menu.open .dropdown.expanded .dropdown-menu {
+    display: block;
   }
   .mobile-menu-btn { display: flex; }
   .login-dropdown { display: none; }
@@ -2080,8 +2118,7 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
   .pillar-grid { grid-template-columns: 1fr; }
   .cta-band { padding: 32px 24px; margin: 0 12px; }
   .contact-form { padding: 24px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  /* footer-grid layout handled in MOBILE — Footer section below */
   .page-hero { padding: calc(var(--nav-h) + 32px) 20px 40px; }
   .section { padding: 48px 0; }
 }
@@ -2136,4 +2173,1446 @@ body.rtl .lang-dropdown { right: auto; left: 0; }
   background: rgba(5, 150, 105, 0.18);
   box-shadow: 0 2px 8px rgba(5,150,105,0.2);
   color: #34D399; font-size: 12px; font-weight: 700;
+}
+
+/* =========================================
+   MOBILE — Touch Targets & Interaction
+   ========================================= */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover transforms on touch devices to prevent sticky states */
+  .card:hover,
+  .platform-card:hover,
+  .pillar-card:hover,
+  .case-card:hover,
+  .contact-card:hover,
+  .team-card:hover,
+  .job-card:hover,
+  .resource-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover { transform: none; box-shadow: none; }
+
+  /* Larger tap targets */
+  .nav-link { min-height: 48px; }
+  .btn { min-height: 48px; }
+  .dropdown-item { min-height: 52px; }
+}
+
+/* =========================================
+   MOBILE NAV — Enhanced mobile menu
+   ========================================= */
+@media (max-width: 900px) {
+  /* Hamburger animation — open state */
+  .mobile-menu-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-menu-btn.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-menu-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Mobile nav menu full-screen overlay */
+  .nav-menu.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: var(--nav-h) 0 0 0;
+    background: rgba(8,12,22,0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 16px 0 32px;
+    overflow-y: auto;
+    z-index: 999;
+    gap: 0;
+    animation: mobileMenuSlide 0.25s ease;
+  }
+  @keyframes mobileMenuSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Nav items in mobile */
+  .nav-menu.open .nav-item {
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  .nav-menu.open .nav-link {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 0;
+    justify-content: space-between;
+    color: var(--text-primary);
+  }
+  .nav-menu.open .nav-link.active {
+    background: rgba(0,87,255,0.1);
+    border-radius: 0;
+  }
+
+  /* Mobile dropdown — accordion style */
+  .nav-menu.open .dropdown-menu {
+    position: static;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+    box-shadow: none;
+    background: rgba(255,255,255,0.03);
+    border: none;
+    border-radius: 0;
+    padding: 4px 0 8px;
+    border-top: 1px solid var(--border);
+    min-width: 0;
+    width: 100%;
+    display: none;
+  }
+  .nav-menu.open .dropdown.expanded .dropdown-menu {
+    display: block;
+  }
+  .nav-menu.open .dropdown-item {
+    padding: 12px 32px;
+    border-radius: 0;
+  }
+
+  /* Chevron rotation on expanded */
+  .nav-menu.open .dropdown.expanded .nav-link svg {
+    transform: rotate(180deg);
+    opacity: 0.9;
+  }
+
+  /* Mobile Login button — inline in menu */
+  .nav-menu.open .mobile-login-section {
+    padding: 16px 24px;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    margin-top: 8px;
+  }
+  .nav-menu.open .mobile-login-section .btn-login-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    background: var(--gradient-primary);
+    width: 100%;
+  }
+
+  /* Hide desktop login dropdown in mobile */
+  .login-dropdown { display: none !important; }
+
+  /* Language selector adjustment */
+  .nav-actions .lang-selector { order: -1; }
+  .lang-btn { padding: 7px 10px; }
+  .lang-btn span { display: none; }
+}
+
+/* =========================================
+   MOBILE — Home Page
+   ========================================= */
+@media (max-width: 640px) {
+  /* Hero */
+  .hero-content { padding: 24px 16px 40px; }
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 40px);
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+  .hero p {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .hero-badges {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .stat-badge { font-size: 12px; padding: 3px 10px; }
+
+  /* Metrics band */
+  .metrics-band { padding: 28px 16px; }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .metric-item .metric-num { font-size: 28px; letter-spacing: -1px; }
+  .metric-item .metric-label { font-size: 12px; }
+}
+
+/* =========================================
+   MOBILE — Section Layouts
+   ========================================= */
+@media (max-width: 900px) {
+  .section { padding: 56px 0; }
+
+  /* Two-col grids → single column */
+  .home-tech-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(2"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(2"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Spec table full width */
+  .spec-table { font-size: 13px; }
+  .spec-table td { padding: 12px 14px; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 40px 0; }
+  .container { padding: 0 16px; }
+  .nav-container { padding: 0 16px; }
+
+  /* All multi-col inline grids → single column */
+  [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+  [style*="grid-template-columns: repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+  [style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Section typography */
+  .section-headline { font-size: clamp(24px, 6vw, 36px); letter-spacing: -0.5px; }
+  .section-sub { font-size: 15px; }
+
+  /* Card padding */
+  .card { padding: 20px; }
+  .platform-card { padding: 24px; }
+  .pillar-card { padding: 24px; }
+
+  /* CTA Band */
+  .cta-band {
+    padding: 28px 20px;
+    margin: 0 8px;
+    border-radius: 16px;
+  }
+  .cta-band h2 { font-size: clamp(22px, 6vw, 32px); }
+  .cta-band p { font-size: 15px; margin-bottom: 24px; }
+  .cta-band .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cta-band .btn-group .btn { width: 100%; justify-content: center; }
+
+  /* Page hero */
+  .page-hero { padding: calc(var(--nav-h) + 24px) 16px 32px; }
+  .page-hero-inner {
+    grid-template-columns: 1fr !important;
+    padding: calc(var(--nav-h) + 24px) 16px 32px !important;
+    gap: 24px !important;
+  }
+  .page-hero-inner .page-hero-visual { display: none !important; }
+  .page-hero h1,
+  .page-hero-text h1 { font-size: clamp(26px, 7vw, 42px); letter-spacing: -0.5px; margin-bottom: 14px; }
+  .page-hero p,
+  .page-hero-text p { font-size: 15px; margin-bottom: 24px; }
+
+  /* Sub-nav scrollable */
+  .sub-nav { padding: 10px 16px; overflow-x: auto; }
+  .sub-nav-inner { gap: 8px; flex-wrap: nowrap; min-width: max-content; }
+  .sub-nav-links { gap: 16px; flex-wrap: nowrap; }
+  .sub-nav-link { font-size: 13px; white-space: nowrap; }
+}
+
+/* =========================================
+   MOBILE — Cards & Grids
+   ========================================= */
+@media (max-width: 640px) {
+  /* Card grids */
+  .card-grid-2,
+  .card-grid-3,
+  .card-grid-4 { grid-template-columns: 1fr; gap: 16px; }
+  .pillar-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* Platform cards */
+  .platform-card h3 { font-size: 22px; }
+  .platform-stats { gap: 6px; }
+
+  /* Quote block */
+  .quote-block { padding: 20px 20px; }
+  .quote-block blockquote { font-size: 15px; }
+
+  /* Resource cards */
+  .resource-card { flex-direction: column; gap: 12px; }
+
+  /* Team cards grid */
+  .team-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+
+  /* Job cards */
+  .job-card-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .job-apply { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 400px) {
+  .team-grid { grid-template-columns: 1fr !important; }
+}
+
+/* =========================================
+   MOBILE — Table Overflow
+   ========================================= */
+@media (max-width: 768px) {
+  /* Comparison & data tables — horizontal scroll */
+  .comparison-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comparison-table { min-width: 480px; font-size: 13px; }
+  .comparison-table th,
+  .comparison-table td { padding: 10px 14px; }
+
+  .data-table th,
+  .data-table td { padding: 10px 12px; font-size: 13px; }
+
+  /* Spec table responsive */
+  .spec-table td:first-child { width: 50%; }
+  .spec-table td { font-size: 13px; padding: 10px 14px; }
+
+  /* Wrap long tables in scroll container */
+  table.data-table,
+  table.comparison-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* =========================================
+   MOBILE — RTB Flow Diagram
+   ========================================= */
+@media (max-width: 640px) {
+  .rtb-flow-diagram { margin-top: 32px !important; }
+  .rtb-flow-steps {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 0;
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .rtb-flow-step {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    min-width: 0;
+    padding: 14px 10px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    gap: 14px;
+  }
+  .rtb-flow-step:last-child { border-bottom: none; }
+  .rtb-step-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .rtb-step-label { flex: 1; width: auto; }
+  .rtb-step-num { font-size: 13px; margin-bottom: 3px; }
+  .rtb-step-desc { font-size: 11px; }
+  .rtb-step-ms {
+    margin-top: 0;
+    margin-left: auto;
+    flex-shrink: 0;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   MOBILE — Technology Page
+   ========================================= */
+@media (max-width: 900px) {
+  /* Tech infrastructure grid */
+  .section .home-tech-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* RTB infra items */
+  .home-tech-grid > div > div[style*="display:flex"] {
+    gap: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE — Contact Page
+   ========================================= */
+@media (max-width: 768px) {
+  .contact-form { padding: 24px 20px; border-radius: 16px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 640px) {
+  .contact-form { padding: 20px 16px; }
+}
+
+/* =========================================
+   MOBILE — Login Page
+   ========================================= */
+@media (max-width: 768px) {
+  .login-page {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .login-left {
+    padding: 32px 24px 28px;
+    min-height: auto;
+  }
+  .login-right {
+    padding: 28px 24px 40px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .login-form-wrap { max-width: 100%; }
+  .login-stat-row { gap: 10px; }
+  .login-stat { padding: 8px 12px; }
+  .login-stat strong { font-size: 16px; }
+}
+
+/* =========================================
+   MOBILE — Footer
+   ========================================= */
+@media (max-width: 900px) {
+  .footer { padding: 48px 0 0; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .footer { padding: 32px 0 0; }
+  .footer-container { padding: 0 16px; }
+  .footer-tagline { max-width: 100%; }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  /* ---- Collapsible footer columns on mobile ---- */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  /* Brand section stays expanded */
+  .footer-brand {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+
+  /* Each link column becomes an accordion item */
+  .footer-col {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .footer-col h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-bottom: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Chevron arrow using CSS */
+  .footer-col h4::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    margin-left: 8px;
+    position: relative;
+    top: -2px;
+  }
+
+  .footer-col.open h4::after {
+    transform: rotate(-135deg);
+    top: 2px;
+  }
+
+  /* Collapsed state: links hidden */
+  .footer-col ul {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  /* Expanded state */
+  .footer-col.open ul {
+    max-height: 400px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Already handled by flex column above on mobile */
+}
+
+/* =========================================
+   MOBILE — Partners Section
+   ========================================= */
+@media (max-width: 768px) {
+  .partner-carousels { gap: 20px; margin-bottom: 36px; }
+  .partner-carousel-row { gap: 10px; }
+  .partner-carousel-header { padding: 0; }
+  .partner-carousel-wrap { width: 100%; }
+  .pcarousel-btn { width: 30px; height: 30px; flex-shrink: 0; }
+  .partner-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 16px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+  .partner-stat-num { font-size: 22px; }
+  .partner-stat-label { font-size: 12px; }
+}
+
+@media (max-width: 640px) {
+  /* Cards: comfortable width on small screens */
+  .pcard { flex: 0 0 auto !important; }
+  .pcard-inner {
+    min-width: 140px;
+    padding: 10px 14px 10px 10px;
+  }
+  /* Hide prev/next nav buttons — pure touch swipe on mobile */
+  .pcarousel-btn { display: none !important; }
+  .partner-carousel-track { padding: 4px 0 12px; }
+}
+
+@media (max-width: 480px) {
+  .prow-tag { font-size: 11px; padding: 4px 10px; }
+  .pcard-inner { min-width: 125px; }
+}
+
+/* =========================================
+   MOBILE — Global Traffic Map
+   ========================================= */
+@media (max-width: 640px) {
+  .gtm-canvas { height: 220px; }
+  .gtm-stats-overlay {
+    padding: 5px 10px;
+    gap: 0;
+    border-radius: 20px;
+  }
+  .gtm-stat { padding: 0 10px; }
+  .gtm-stat-num { font-size: 12px; }
+  .gtm-stat-label { font-size: 9px; }
+  .gtm-stat-divider { height: 24px; }
+  .gtm-footer-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .gtm-footer-val { font-size: 18px; }
+  .gtm-footer-icon { font-size: 16px; }
+  .gtm-region-badge { display: none; }
+}
+
+/* =========================================
+   MOBILE — Modal
+   ========================================= */
+@media (max-width: 640px) {
+  .modal-backdrop { padding: 12px; align-items: flex-end; }
+  .modal-box {
+    border-radius: 20px 20px 0 0;
+    max-height: 88vh;
+  }
+  @keyframes slideModal {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .modal-header { padding: 18px 20px; }
+  .modal-body { padding: 20px; }
+  .modal-footer-bar { padding: 12px 20px; }
+}
+
+/* =========================================
+   MOBILE — Hero Visual Viz Card
+   ========================================= */
+@media (max-width: 860px) {
+  .hero-visual { display: none; }
+  .hero-layout { grid-template-columns: 1fr !important; }
+}
+
+/* =========================================
+   MOBILE — Case Study Cards
+   ========================================= */
+@media (max-width: 640px) {
+  .case-card { border-radius: 14px; }
+  .case-metrics { gap: 6px; padding: 12px 16px; }
+  .case-metric-badge { font-size: 11px; padding: 3px 8px; }
+}
+
+/* =========================================
+   MOBILE — Award Badges
+   ========================================= */
+@media (max-width: 640px) {
+  .award-list { gap: 8px; }
+  .award-badge { padding: 9px 12px; }
+  .award-badge .award-name { font-size: 12px; }
+}
+
+/* =========================================
+   MOBILE — Breadcrumb & Sub-nav
+   ========================================= */
+@media (max-width: 640px) {
+  .breadcrumb { font-size: 12px; gap: 6px; }
+  .sub-nav { overflow-x: auto; }
+  .sub-nav-inner { min-width: max-content; white-space: nowrap; }
+}
+
+/* =========================================
+   MOBILE — 404 Page
+   ========================================= */
+@media (max-width: 640px) {
+  .page-404 { padding: calc(var(--nav-h) + 40px) 16px 40px; }
+  .page-404 .err-code { font-size: clamp(60px, 20vw, 100px); letter-spacing: -4px; }
+  .page-404 h2 { font-size: 22px; }
+  .page-404 p { font-size: 14px; }
+  .page-404 .btn-group { flex-direction: column; width: 100%; }
+  .page-404 .btn-group .btn { width: 100%; justify-content: center; }
+}
+
+/* =========================================
+   MOBILE — Language Dropdown
+   ========================================= */
+@media (max-width: 640px) {
+  .lang-dropdown {
+    width: 260px;
+    max-height: 380px;
+  }
+  /* nav-actions lang dropdown position is set by JS (fixed) */
+}
+
+/* =========================================
+   MOBILE — Scrollable Overflow Helpers
+   ========================================= */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow without breaking sticky children */
+  .section { overflow-x: clip; }
+  .page-hero-section { overflow-x: clip; }
+}
+
+/* =========================================
+   MOBILE — Typography Adjustments
+   ========================================= */
+@media (max-width: 640px) {
+  /* Platform card headings */
+  .platform-card h3 { font-size: 20px; }
+  .platform-card p { font-size: 14px; }
+
+  /* Tab list */
+  .tab-list { gap: 6px; }
+  .tab-btn { padding: 7px 14px; font-size: 13px; }
+
+  /* Stat badges in hero */
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  /* Timeline */
+  .timeline { padding-left: 24px; }
+  .timeline-dot { left: -20px; }
+  .timeline-item p { font-size: 13px; }
+  .timeline-year { font-size: 13px; }
+
+  /* Office card */
+  .office-card { padding: 18px; }
+
+  /* Section dividers */
+  .divider { margin: 0 16px; }
+}
+
+/* =========================================
+   MOBILE — Safe Area (iPhone notch etc)
+   ========================================= */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .footer { padding-bottom: env(safe-area-inset-bottom); }
+  .navbar {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  .nav-menu.open {
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+}
+
+/* =========================================
+   MOBILE — inline style grid overrides
+   (for JS-rendered sections with inline styles)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Technology page: RTB infra two-col */
+  section .container > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Products page feature grid */
+  div[style*="grid-template-columns: 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Team grid */
+  div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Office grid */
+  div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Case study details */
+  div[style*="grid-template-columns: 2fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns: 1fr 2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  div[style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  div[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* tech-infra-grid mobile */
+@media (max-width: 768px) {
+  .tech-infra-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+}
+
+/* MOBILE — home-tech-grid universal */
+@media (max-width: 900px) {
+  .home-tech-grid, .tech-infra-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* ---- SSP/Hiring steps handled below ---- */
+
+/* MOBILE — repeat(4,1fr) grids */
+@media (max-width: 768px) {
+  div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+@media (max-width: 400px) {
+  div[style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* MOBILE — repeat(5,1fr) grids */
+@media (max-width: 900px) {
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: repeat(3,1fr) !important;
+  }
+}
+@media (max-width: 640px) {
+  div[style*="grid-template-columns:repeat(5,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================
+   MOBILE — Language Selector in Menu
+   ========================================= */
+.mobile-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.mobile-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mobile-lang-btn span:first-child { font-size: 15px; flex-shrink: 0; }
+.mobile-lang-btn.active {
+  background: rgba(0,87,255,0.15);
+  border-color: rgba(0,87,255,0.4);
+  color: #60A5FA;
+  font-weight: 700;
+}
+.mobile-lang-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+/* =========================================
+   MOBILE — Nav Menu Height Fix
+   ========================================= */
+@media (max-width: 900px) {
+  /* Ensure the mobile menu extends the full remaining screen height */
+  .nav-menu.open {
+    height: calc(100dvh - var(--nav-h));
+    max-height: none;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+  }
+  /* Each nav item takes full width and is tappable */
+  .nav-menu.open .nav-item {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================
+   MOBILE — Horizontal Swipe Cards
+   ========================================= */
+/* Wrapper that converts card grids to horizontal scroll on mobile */
+.swipe-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.swipe-row::-webkit-scrollbar { display: none; }
+
+.swipe-row > * {
+  flex: 0 0 calc(85vw - 32px);
+  max-width: 360px;
+  scroll-snap-align: start;
+}
+
+/* Scroll indicator dots */
+.swipe-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+.swipe-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border-hover);
+  transition: all 0.3s;
+}
+.swipe-dot.active {
+  width: 18px;
+  border-radius: 3px;
+  background: var(--primary);
+}
+
+/* On desktop keep grid layout (these classes only affect mobile) */
+.mobile-swipe-wrap .swipe-row { display: none; }
+.mobile-swipe-wrap .card-grid { display: grid; }
+
+@media (max-width: 768px) {
+  .mobile-swipe-wrap .swipe-row { display: flex; }
+  .mobile-swipe-wrap .card-grid { display: none; }
+  .mobile-swipe-wrap { overflow: hidden; }
+}
+
+/* =========================================
+   MOBILE — section card-grid-3 swipe 
+   (platform cards, who-we-serve, case studies)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Turn swipeable card-grid into a horizontal swipe track */
+  .card-grid-3.swipeable,
+  .card-grid-4.swipeable,
+  .card-grid-2.swipeable {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding: 4px 0 16px !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* extend past container edges for full-bleed feel */
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .card-grid-3.swipeable::-webkit-scrollbar,
+  .card-grid-4.swipeable::-webkit-scrollbar,
+  .card-grid-2.swipeable::-webkit-scrollbar { display: none; }
+
+  /* Each card becomes a fixed-width slide */
+  .card-grid-3.swipeable > *,
+  .card-grid-4.swipeable > *,
+  .card-grid-2.swipeable > * {
+    flex: 0 0 min(80vw, 320px) !important;
+    width: min(80vw, 320px) !important;
+    max-width: none !important;
+    scroll-snap-align: start;
+  }
+
+  /* Platform cards should keep their height natural */
+  .platform-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Case study cards */
+  .case-card {
+    min-height: 220px;
+  }
+}
+
+/* =========================================
+   MOBILE — GTM Footer Stats Scroll
+   ========================================= */
+@media (max-width: 768px) {
+  .gtm-footer-stats {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 8px !important;
+    padding-top: 16px;
+    padding-bottom: 12px;
+    /* bleed to edges for full-width scroll feel */
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    /* reset any grid props */
+    grid-template-columns: none;
+  }
+  .gtm-footer-stats::-webkit-scrollbar { display: none; }
+  .gtm-footer-stat {
+    flex: 0 0 auto !important;
+    width: 120px;
+    min-width: 120px;
+    padding: 12px 14px;
+    scroll-snap-align: start;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+}
+
+/* =========================================
+   MOBILE — Tab Lists Scroll
+   ========================================= */
+@media (max-width: 640px) {
+  /* Make tab lists horizontally scrollable */
+  .tab-list {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .tab-list::-webkit-scrollbar { display: none; }
+  .tab-btn { flex-shrink: 0; }
+
+  /* Feature grids in product pages — scroll */
+  .features-grid-3 {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .features-grid-3::-webkit-scrollbar { display: none; }
+  .features-grid-3 > * {
+    flex: 0 0 80vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+/* =========================================
+   MOBILE — Logo size
+   ========================================= */
+@media (max-width: 480px) {
+  .nexbids-logo { width: 160px !important; height: auto !important; }
+}
+
+/* =========================================
+   MOBILE — All Sub-page Adaptations
+   ========================================= */
+
+/* ---- pillar-grid: swipe on mobile ---- */
+@media (max-width: 768px) {
+  .pillar-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding: 4px 0 16px !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .pillar-grid::-webkit-scrollbar { display: none; }
+  .pillar-grid > .pillar-card {
+    flex: 0 0 min(82vw, 300px) !important;
+    width: min(82vw, 300px) !important;
+    scroll-snap-align: start;
+  }
+}
+
+/* ---- Two-column "tech/story/mission" grids → stack on mobile ---- */
+@media (max-width: 768px) {
+  .home-tech-grid,
+  .tech-infra-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ---- Products Overview: platform-card inner grid → stack ---- */
+@media (max-width: 768px) {
+  .platform-card[style*="grid-template-columns:1fr auto"],
+  .platform-card[style*="grid-template-columns: 1fr auto"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  /* stats mini-grid inside product overview cards */
+  .platform-card div[style*="display:flex;flex-wrap:wrap"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+}
+
+/* ---- SSP Integration 4-step grid + hiring steps → swipe ---- */
+@media (max-width: 768px) {
+  .integration-steps,
+  .hiring-steps {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px !important;
+    padding: 4px 0 16px !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .integration-steps::-webkit-scrollbar,
+  .hiring-steps::-webkit-scrollbar { display: none; }
+  .integration-steps > *,
+  .hiring-steps > * {
+    flex: 0 0 min(65vw, 220px) !important;
+    scroll-snap-align: start;
+  }
+}
+
+/* ---- Quote block: tighter on mobile ---- */
+@media (max-width: 640px) {
+  .quote-block {
+    padding: 20px 16px;
+  }
+  .quote-block blockquote {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+/* ---- Spec table: full-width, smaller text on mobile ---- */
+@media (max-width: 640px) {
+  .spec-table {
+    font-size: 12px;
+  }
+  .spec-table td {
+    padding: 8px 10px;
+  }
+  .spec-table td:first-child { width: 45%; }
+}
+
+/* ---- Timeline: tighter on mobile ---- */
+@media (max-width: 640px) {
+  .timeline { padding-left: 24px; }
+  .timeline-year { font-size: 13px; }
+  .timeline-item p { font-size: 13px; }
+  .timeline-item { margin-bottom: 24px; }
+}
+
+/* ---- Award list: single column on mobile ---- */
+@media (max-width: 640px) {
+  .award-list {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .award-badge {
+    width: 100%;
+    padding: 12px 14px;
+  }
+}
+
+/* ---- Resource card: simpler layout on mobile ---- */
+@media (max-width: 640px) {
+  .resource-card {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .resource-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  /* resource title and format tag wrap */
+  .resource-card div[style*="display:flex;align-items:flex-start;justify-content:space-between"] {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+}
+
+/* ---- Contact cards: tighter on mobile ---- */
+@media (max-width: 640px) {
+  .contact-card {
+    padding: 20px 16px;
+  }
+}
+
+/* ---- Job card: stack apply button ---- */
+@media (max-width: 480px) {
+  .job-card-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+  .job-apply {
+    align-self: flex-start;
+  }
+}
+
+/* ---- Metrics band: horizontal scroll on very small screens ---- */
+@media (max-width: 480px) {
+  .metrics-band .metrics-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding-bottom: 4px;
+    /* override the 2-col grid from earlier */
+    grid-template-columns: none !important;
+  }
+  .metrics-band .metrics-grid::-webkit-scrollbar { display: none; }
+  .metrics-band .metrics-grid .metric-item {
+    flex: 0 0 min(60vw, 180px);
+    scroll-snap-align: start;
+    border-right: 1px solid var(--border);
+    padding: 20px 16px;
+  }
+  .metrics-band .metrics-grid .metric-item:last-child { border-right: none; }
+}
+
+/* ---- Section sub-headline: smaller on mobile ---- */
+@media (max-width: 640px) {
+  .section-headline { font-size: clamp(20px, 5.5vw, 32px); }
+  .section-sub { font-size: 14px; }
+}
+
+/* ---- Page hero heading: responsive size ---- */
+@media (max-width: 640px) {
+  .page-hero h1,
+  .hero h1 { font-size: clamp(24px, 7vw, 42px) !important; line-height: 1.2 !important; }
+  .page-hero p,
+  .hero-sub { font-size: 14px !important; }
+}
+
+/* =========================================
+   Products Overview — poc-body / poc-stats
+   ========================================= */
+.product-overview-card { padding: 32px; }
+.poc-body { width: 100%; }
+.poc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.poc-stat {
+  text-align: center;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+@media (max-width: 640px) {
+  .product-overview-card { padding: 20px 16px; }
+  .poc-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .poc-stat {
+    padding: 10px 12px;
+  }
+}
+
+
+/* =========================================
+   Resource Category Layout
+   ========================================= */
+.resource-category { margin-bottom: 56px; }
+.resource-category-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================
+   Values List (Mission & Values)
+   ========================================= */
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================================
+   Jobs List (Careers)
+   ========================================= */
+.jobs-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.jobs-dept { /* intentionally empty, dept wrapper */ }
+.jobs-dept-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================================
+   Award List Wrap
+   ========================================= */
+.award-list-wrap { /* desktop: normal flow */ }
+
+/* =========================================
+   Home Technology Stats Grid
+   ========================================= */
+.tech-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* =========================================
+   MOBILE — Resource / Values / Jobs / Awards
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Resource cards: horizontal swipe */
+  .resource-list {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .resource-list::-webkit-scrollbar { display: none; }
+  .resource-list > .resource-card {
+    flex: 0 0 min(82vw, 340px) !important;
+    flex-direction: column !important;
+    scroll-snap-align: start;
+  }
+  .resource-list > .resource-card .btn { width: 100%; justify-content: center; }
+
+  /* Values list: horizontal swipe */
+  .values-list {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .values-list::-webkit-scrollbar { display: none; }
+  .values-list > * {
+    flex: 0 0 min(78vw, 300px) !important;
+    scroll-snap-align: start;
+  }
+
+  /* Job dept cards: horizontal swipe per dept */
+  .jobs-dept-cards {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .jobs-dept-cards::-webkit-scrollbar { display: none; }
+  .jobs-dept-cards > .job-card {
+    flex: 0 0 min(82vw, 320px) !important;
+    scroll-snap-align: start;
+  }
+
+  /* Award list: horizontal swipe */
+  .award-list-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+  }
+  .award-list-wrap::-webkit-scrollbar { display: none; }
+  .award-list {
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    width: max-content;
+  }
+  .award-badge { flex-shrink: 0; }
+
+  /* Home Technology 2x2 stats: swipe track */
+  .tech-stats-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 12px !important;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-bottom: 12px !important;
+  }
+  .tech-stats-grid::-webkit-scrollbar { display: none; }
+  .tech-stats-grid > * {
+    flex: 0 0 min(44vw, 160px) !important;
+    scroll-snap-align: start;
+  }
+
+  /* Global Reach: shrink map height on mobile */
+  .section-compact-mobile { padding: 36px 0 !important; }
+  .section-compact-mobile .gtm-canvas { height: 190px !important; }
+
+  /* Partners section: less bottom padding */
+  .partners-section { padding-bottom: 32px !important; }
+  .partner-carousels { margin-bottom: 24px !important; }
+}
+
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 28px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0, 87, 255, 0.38);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, box-shadow 0.2s;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  box-shadow: 0 6px 24px rgba(0, 87, 255, 0.55);
+  transform: translateY(-2px);
+}
+.back-to-top:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 87, 255, 0.3);
+}
+@media (max-width: 640px) {
+  .back-to-top { bottom: 20px; right: 16px; width: 40px; height: 40px; }
 }

@@ -5,9 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexBids | Global Programmatic Advertising Solutions</title>
   <meta name="description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="nexbids-logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NexBids | Global Programmatic Advertising Solutions" />
+  <meta property="og:description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
+  <meta property="og:image" content="nexbids-logo.png" />
+  <meta property="og:url" content="https://nexbids.com" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NexBids | Global Programmatic Advertising Solutions" />
+  <meta name="twitter:description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
+  <meta name="twitter:image" content="nexbids-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260318-release" />
   <!-- D3 + TopoJSON for accurate world map rendering -->
   <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
@@ -18,12 +31,7 @@
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <a href="#" class="nav-logo" onclick="navigate('home')">
-      <svg class="nexbids-logo" width="170" height="38" viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NexBids">
-        <!-- NexBids wordmark -->
-        <text x="0" y="30" font-family="'Arial Black','Arial',system-ui,sans-serif" font-size="32" font-weight="900" fill="#1650F5" letter-spacing="-1.5">NexBids</text>
-        <!-- Purple accent square top-right -->
-        <rect x="156" y="0" width="11" height="11" rx="3" fill="#7C2FFF"/>
-      </svg>
+      <img src="nexbids-logo.png" alt="NexBids" width="240" height="40" class="nexbids-logo" style="display:block;object-fit:contain;" />
     </a>
 
     <div class="nav-menu" id="navMenu">
@@ -173,7 +181,7 @@
     <div class="nav-actions">
       <!-- Language Selector -->
       <div class="lang-selector" id="langSelector">
-        <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown()" aria-label="Select language">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown(event)" aria-label="Select language">
           🇺🇸 <span>English</span>
           <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
@@ -181,27 +189,27 @@
       </div>
 
       <!-- Login Dropdown -->
-      <div class="nav-item dropdown login-dropdown">
-        <button class="btn-login dropdown-trigger">
+      <div class="nav-item dropdown login-dropdown" id="loginDropdownWrap">
+        <button class="btn-login dropdown-trigger" onclick="toggleLoginDropdown(event)" aria-haspopup="true" aria-expanded="false" id="loginDropdownBtn">
           <span data-en="Login" data-zh="登录">Login</span>
           <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu login-menu">
-          <a class="dropdown-item" onclick="navigate('login-dsp')">
+        <div class="dropdown-menu login-menu" id="loginMenu">
+          <a class="dropdown-item" onclick="navigate('login-dsp');closeLoginDropdown()">
             <span class="di-icon dsp-icon">DSP</span>
             <div>
               <div class="di-title">NexBids DSP</div>
               <div class="di-sub" data-en="Advertiser Platform" data-zh="广告主平台">Advertiser Platform</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('login-ssp')">
+          <a class="dropdown-item" onclick="navigate('login-ssp');closeLoginDropdown()">
             <span class="di-icon ssp-icon">SSP</span>
             <div>
               <div class="di-title">NexBids SSP</div>
               <div class="di-sub" data-en="Publisher Platform" data-zh="发布商平台">Publisher Platform</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('login-adx')">
+          <a class="dropdown-item" onclick="navigate('login-adx');closeLoginDropdown()">
             <span class="di-icon adx-icon">ADX</span>
             <div>
               <div class="di-title">NexBids ADX</div>
@@ -231,10 +239,7 @@
       <!-- Brand column -->
       <div class="footer-brand">
         <div class="footer-logo">
-          <svg class="nexbids-logo" width="150" height="34" viewBox="0 0 170 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="NexBids">
-            <text x="0" y="30" font-family="'Arial Black','Arial',system-ui,sans-serif" font-size="32" font-weight="900" fill="#1650F5" letter-spacing="-1.5">NexBids</text>
-            <rect x="156" y="0" width="11" height="11" rx="3" fill="#7C2FFF"/>
-          </svg>
+          <img src="nexbids-logo.png" alt="NexBids" width="200" height="33" class="nexbids-logo" style="display:block;object-fit:contain;" />
         </div>
         <p class="footer-tagline" id="footerTagline" data-en="Power Your Growth with Intelligent Programmatic" data-zh="用智能程序化广告驱动增长">Power Your Growth with Intelligent Programmatic</p>
         <div class="footer-social">
@@ -295,15 +300,23 @@
     <div class="footer-bottom">
       <p id="footerCopyright" data-en="© 2026 NexBids. All rights reserved." data-zh="© 2026 NexBids. 保留所有权利。">© 2026 NexBids. All rights reserved.</p>
       <div class="lang-selector lang-selector-sm" id="langSelectorFooter">
-        <button class="lang-btn lang-btn-sm" id="langBtnFooter" onclick="toggleLangDropdown()" aria-label="Select language">
+        <button class="lang-btn lang-btn-sm" id="langBtnFooter" onclick="toggleLangDropdownFooter(event)" aria-label="Select language">
           🇺🇸 EN
           <svg width="8" height="6" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
+        <div class="lang-dropdown lang-dropdown-up" id="langDropdownFooter" role="listbox" aria-label="Language options"></div>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="app.js"></script>
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"/>
+  </svg>
+</button>
+
+<script src="app.js?v=20260318-release"></script>
 </body>
 </html>

@@ -476,7 +476,7 @@ const CONTENT_T = {
   'Solutions for Every Publisher Format': { es:'Soluciones para Cada Formato de Editor', fr:"Solutions pour Chaque Format d'Éditeur", de:'Lösungen für jedes Publisher-Format', pt:'Soluções para Cada Formato de Editor', ru:'Решения для Каждого Формата Издателя', zh:'为每种发布商格式提供解决方案', ko:'모든 퍼블리셔 형식을 위한 솔루션', ja:'すべてのパブリッシャーフォーマットのためのソリューション', ms:'Penyelesaian untuk Setiap Format Penerbit', th:'โซลูชันสำหรับทุกรูปแบบผู้เผยแพร่', vi:'Giải Pháp Cho Mọi Định Dạng Nhà XB', hi:'हर प्रकाशक फॉर्मेट के लिए समाधान', ar:'حلول لكل تنسيق ناشر' },
   'Everything Agencies Need to Win': { es:'Todo lo que las Agencias Necesitan para Ganar', fr:'Tout ce dont les Agences ont Besoin pour Gagner', de:'Alles was Agenturen brauchen, um zu gewinnen', pt:'Tudo que as Agências Precisam para Vencer', ru:'Всё, Что Нужно Агентствам для Победы', zh:'代理商取胜所需的一切', ko:'에이전시가 승리하기 위해 필요한 모든 것', ja:'エージェンシーが勝つために必要なすべて', ms:'Semua yang Diperlukan Agensi untuk Menang', th:'ทุกสิ่งที่เอเจนซี่ต้องการเพื่อชนะ', vi:'Tất Cả Những Gì Đại Lý Cần Để Thắng', hi:'एजेंसियों को जीतने के लिए सब कुछ', ar:'كل ما تحتاجه الوكالات للفوز' },
   'Every Tool You Need to Win in Programmatic': { es:'Todas las Herramientas que Necesitas para Ganar en Programática', fr:'Tous les Outils dont vous avez Besoin pour Gagner en Programmatique', de:'Alle Tools, die Sie brauchen, um in Programmatic zu gewinnen', pt:'Todas as Ferramentas que você Precisa para Vencer no Programático', ru:'Все Инструменты, Необходимые для Победы в Программатике', zh:'在程序化广告中取胜所需的每一个工具', ko:'프로그래매틱에서 승리하기 위해 필요한 모든 도구', ja:'プログラマティックで勝つために必要なすべてのツール', ms:'Setiap Alat yang Anda Perlukan untuk Menang dalam Programatik', th:'เครื่องมือทุกอย่างที่คุณต้องการเพื่อชนะในโปรแกรมเมติก', vi:'Mọi Công Cụ Bạn Cần Để Thắng Trong Programmatic', hi:'प्रोग्रामेटिक में जीतने के लिए आपको हर टूल चाहिए', ar:'كل أداة تحتاجها للفوز في الإعلانات البرمجية' },
-  'One Platform. All Your Clients. Maximum Performance.': { es:'Una Plataforma. Todos sus Clientes. Máximo Rendimiento.', fr:'Une Plateforme. Tous vos Clients. Performance Maximale.', de:'Eine Plattform. Alle Ihre Kunden. Maximale Leistung.', pt:'Uma Plataforma. Todos os seus Clientes. Máximo Desempenho.', ru:'Одна Платформа. Все Ваши Клиенты. Максимальная Производительность.', zh:'一个平台。所有客户。最大绩效。', ko:'하나의 플랫폼. 모든 고객. 최대 성능.', ja:'一つのプラットフォーム。すべてのクライアント。最大のパフォーマンス。', ms:'Satu Platform. Semua Klien Anda. Prestasi Maksimum.', th:'แพลตฟอร์มเดียว ลูกค้าทั้งหมดของคุณ ประสิทธิภาพสูงสุด', vi:'Một Nền Tảng. Tất Cả Khách Hàng. Hiệu Suất Tối Đa.', hi:'एक प्लेटफॉर्म। सभी क्लाइंट। अधिकतम प्रदर्शन।', ar:'منصة واحدة. جميع عملائك. أقصى أداء.' },
+  'One Platform. All Your Clients. Maximum Performance.': { es:'Una Plataforma. Todos sus Clientes. Máximo Rendimiento.', fr:'Une Plateforme. Tous vos Clients. Performance Maximale.', de:'Eine Plattform. Alle Ihre Kunden. Maximale Leistung.', pt:'Uma Plataforma. Todos os seus Clientes. Máximo Desempenho.', ru:'Одна Платформа. Все Ваши Клиенты. Максимальная Производительность.', zh:'一个平台<br>所有客户<br>最佳绩效', ko:'하나의 플랫폼. 모든 고객. 최대 성능.', ja:'一つのプラットフォーム。すべてのクライアント。最大のパフォーマンス。', ms:'Satu Platform. Semua Klien Anda. Prestasi Maksimum.', th:'แพลตฟอร์มเดียว ลูกค้าทั้งหมดของคุณ ประสิทธิภาพสูงสุด', vi:'Một Nền Tảng. Tất Cả Khách Hàng. Hiệu Suất Tối Đa.', hi:'एक प्लेटफॉर्म। सभी क्लाइंट। अधिकतम प्रदर्शन।', ar:'منصة واحدة. جميع عملائك. أقصى أداء.' },
   'Launch, Scale & Optimise Campaigns Globally': { es:'Lanzar, Escalar y Optimizar Campañas Globalmente', fr:'Lancer, Scaler et Optimiser des Campagnes Mondialement', de:'Kampagnen Global Starten, Skalieren und Optimieren', pt:'Lançar, Escalar e Otimizar Campanhas Globalmente', ru:'Запускать, Масштабировать и Оптимизировать Кампании Глобально', zh:'在全球范围内启动、扩大和优化营销活动', ko:'글로벌 캠페인 시작, 확장 및 최적화', ja:'グローバルにキャンペーンを開始、スケール、最適化', ms:'Melancarkan, Skala & Optimalkan Kempen Secara Global', th:'เปิดตัว ขยาย และปรับแต่งแคมเปญทั่วโลก', vi:'Khởi Chạy, Mở Rộng & Tối Ưu Chiến Dịch Toàn Cầu', hi:'वैश्विक स्तर पर अभियान लॉन्च, स्केल और ऑप्टिमाइज़ करें', ar:'إطلاق الحملات وتوسيعها وتحسينها عالمياً' },
   'Buy Premium Inventory at Scale': { es:'Comprar Inventario Premium a Escala', fr:"Acheter de l'Inventaire Premium à l'Échelle", de:'Premium-Inventar in Großem Maßstab Kaufen', pt:'Comprar Inventário Premium em Escala', ru:'Покупать Премиум-Инвентарь в Масштабе', zh:'大规模购买优质广告库存', ko:'대규모 프리미엄 인벤토리 구매', ja:'大規模でプレミアムインベントリを購入', ms:'Beli Inventori Premium pada Skala', th:'ซื้อสินค้าคงคลังระดับพรีเมียมในระดับขนาดใหญ่', vi:'Mua Kho Hàng Cao Cấp Ở Quy Mô Lớn', hi:'बड़े पैमाने पर प्रीमियम इन्वेंटरी खरीदें', ar:'شراء المخزون المتميز على نطاق واسع' },
   'Maximize Your Ad Revenue with Intelligent Monetization': { es:'Maximice sus Ingresos Publicitarios con Monetización Inteligente', fr:'Maximisez vos Revenus Publicitaires avec une Monétisation Intelligente', de:'Maximieren Sie Ihre Anzeigeneinnahmen mit Intelligenter Monetarisierung', pt:'Maximize sua Receita de Anúncios com Monetização Inteligente', ru:'Максимизируйте Доходы от Рекламы с Интеллектуальной Монетизацией', zh:'通过智能变现最大化您的广告收益', ko:'지능형 수익화로 광고 수익 극대화', ja:'インテリジェントなマネタイゼーションで広告収益を最大化', ms:'Maksimumkan Pendapatan Iklan Anda dengan Monetisasi Cerdas', th:'เพิ่มรายได้โฆษณาของคุณให้สูงสุดด้วยการสร้างรายได้อัจฉริยะ', vi:'Tối Đa Hóa Doanh Thu QC Với Kiếm Tiền Thông Minh', hi:'इंटेलिजेंट मोनेटाइज़ेशन से विज्ञापन आय को अधिकतम करें', ar:'عظّم إيرادات الإعلانات بالتحقيق الذكي' },
@@ -4491,6 +4491,7 @@ function applyLang() {
    ROUTER
 ───────────────────────────────────────────── */
 function navigate(page) {
+  console.log(`[navigate] Going to page: ${page}`);
   currentPage = page;
   renderPage(page);
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -4502,6 +4503,27 @@ function navigate(page) {
   document.body.style.overflow = '';
   // update active state
   updateNavActive(page);
+}
+
+// Handle dropdown trigger clicks (mobile vs desktop)
+function handleDropdownTrigger(page, event) {
+  if (window.innerWidth <= 900) {
+    // Mobile: toggle accordion without navigating
+    event.preventDefault();
+    event.stopPropagation();
+    const item = event.currentTarget.closest('.nav-item.dropdown');
+    if (item) {
+      item.classList.toggle('expanded');
+      // Collapse siblings
+      item.closest('.nav-menu')?.querySelectorAll('.nav-item.dropdown').forEach(sibling => {
+        if (sibling !== item) sibling.classList.remove('expanded');
+      });
+    }
+    return false;
+  } else {
+    // Desktop: navigate normally
+    navigate(page);
+  }
 }
 
 function renderPage(page) {
@@ -4530,9 +4552,14 @@ function renderPage(page) {
     'login-adx':            () => renderLogin('adx'),
     '404':                  render404,
   };
-  const fn = renderers[page] || renderHome;
+  const fn = renderers[page];
+  if (!fn) {
+    console.warn(`[renderPage] Page "${page}" not found in renderers, falling back to home`);
+  }
+  const actualFn = fn || renderHome;
   try {
-    container.innerHTML = `<div class="page-transition">${fn()}</div>`;
+    container.innerHTML = `<div class="page-transition">${actualFn()}</div>`;
+    console.log(`[renderPage] Successfully rendered page: "${page}"`);
   } catch (err) {
     console.error('[renderPage] Error rendering page "' + page + '":', err);
     container.innerHTML = '<div style="padding:40px;text-align:center;color:#F87171">Page render error — please check the console.</div>';
@@ -5511,7 +5538,7 @@ function renderHome() {
     <div class="hero-content hero-layout">
       <div class="hero-text">
         ${sectionTag('Global Ad Tech Leader', '全球广告技术领导者')}
-        <h1>${t('Power Your Growth with', '用智能程序化广告')}<br><span class="gradient-text">${t('Intelligent Programmatic', '驱动您的全球增长')}</span></h1>
+        <h1>${currentLang === 'zh' ? '用<span class="gradient-text">智能程序化广告</span>驱动增长' : `${t('Power Your Growth with')}<br><span class="gradient-text">${t('Intelligent Programmatic')}</span>`}</h1>
         <p>${t('NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.',
                'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。')}</p>
         <div class="btn-group">
@@ -6169,7 +6196,7 @@ function renderSolutionsAgency() {
   ${pageHeroLayout('linear-gradient(135deg,rgba(124,58,237,0.12),var(--bg-dark))', `
     <div class="breadcrumb"><a onclick="navigate('solutions')">${t('Solutions','解决方案')}</a> › <span>${t('Agency Cooperation Solutions','代理合作解决方案')}</span></div>
     ${sectionTag('For Agencies','面向代理商','purple')}
-    <h1>${t('One Platform. All Your Clients. Maximum Performance.','一个平台。所有客户。最佳绩效。')}</h1>
+    <h1>${currentLang === 'zh' ? '一个平台<br>所有客户<br>最佳绩效' : 'One Platform<br>All Your Clients<br>Maximum Performance'}</h1>
     <p>${t('NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.',
        'NexBids代理商解决方案为绩效和全服务代理商提供工具、定价和支持，帮助赢得更多客户并提供卓越的程序化成果。')}</p>
     <div class="btn-group">
@@ -7787,22 +7814,15 @@ function toggleMobileMenu() {
 
   // Wire up accordion for dropdown items in mobile
   if (isOpen && menu) {
-    menu.querySelectorAll('.nav-item.dropdown').forEach(item => {
-      if (item._mobileAccordionBound) return;
-      item._mobileAccordionBound = true;
-      const trigger = item.querySelector('.dropdown-trigger');
-      if (!trigger) return;
-      trigger.addEventListener('click', (e) => {
-        if (window.innerWidth > 900) return;
-        // In mobile: toggle accordion, do NOT navigate
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        const expanded = item.classList.toggle('expanded');
-        // Collapse siblings
-        item.closest('.nav-menu')?.querySelectorAll('.nav-item.dropdown').forEach(sibling => {
-          if (sibling !== item) sibling.classList.remove('expanded');
-        });
-      }, true); // capture phase — fires before onclick
+    menu.querySelectorAll('.nav-item.dropdown .dropdown-item').forEach(dropItem => {
+      dropItem.addEventListener('click', () => {
+        if (window.innerWidth <= 900) {
+          // Close the mobile menu when a dropdown item is clicked
+          menu.classList.remove('open');
+          btn?.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }, { once: true });
     });
   }
 }

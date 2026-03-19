@@ -544,7 +544,6 @@ const CONTENT_T = {
     ja: '独自のAI/MLインフラが500億件の入札リクエストを処理します',
   },
   'Whether you\'re an advertiser seeking global reach, a publisher maximiz': {
-    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商',
     es: 'Ya sea que sea un anunciante que busca alcance global o un publisher que maximiza ingresos',
     ar: 'سواء كنت معلنًا يسعى للوصول العالمي أو ناشرًا يعظم الإيرادات',
     hi: 'चाहे आप वैश्विक पहुंच चाहने वाले विज्ञापनदाता हों या राजस्व अधिकतम करने वाले प्रकाशक',
@@ -589,7 +588,6 @@ const CONTENT_T = {
     ja: 'NexBidsエージェンシーソリューションは、エージェンシーに必要なツールを提供します',
   },
   'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP —': {
-    zh: 'NexBids 全栈程序化基础设施 — DSP、ADX 和 SSP',
     es: 'La infraestructura programática completa de NexBids — DSP, ADX y SSP',
     ar: 'البنية التحتية البرمجية الكاملة لـ NexBids — DSP وADX وSSP',
     hi: 'NexBids का फुल-स्टैक प्रोग्रामेटिक इन्फ्रास्ट्रक्चर — DSP, ADX, और SSP',
@@ -724,7 +722,6 @@ const CONTENT_T = {
     ja: '高収益モバイルRPGスタジオが既存チャネルを超えてスケールする必要がありました',
   },
   '"We\'d tried every major DSP and none could match the quality of player': {
-    zh: '"我们尝试了所有主要 DSP，没有一个能匹配 NexBids 带来的玩家质量。"',
     es: '"Probamos todos los principales DSP y ninguno pudo igualar la calidad de los jugadores de NexBids."',
     ar: '"جربنا كل DSP رئيسي ولم يستطع أي منهم مضاهاة جودة اللاعبين من NexBids."',
     hi: '"हमने हर प्रमुख DSP आजमाया और कोई भी NexBids की खिलाड़ी गुणवत्ता से मेल नहीं खा सका।"',
@@ -859,7 +856,6 @@ const CONTENT_T = {
     ja: '1500万以上のダウンロードを持つカジュアルモバイルゲームスタジオがNexBids SSPを統合',
   },
   'The Company Behind the World\'s Programmatic Infrastructure': {
-    zh: '全球程序化广告基础设施背后的公司',
     es: 'La Empresa Detrás de la Infraestructura Programática Mundial',
     ar: 'الشركة وراء البنية التحتية البرمجية العالمية',
     hi: 'दुनिया के प्रोग्रामेटिक इन्फ्रास्ट्रक्चर के पीछे की कंपनी',
@@ -904,7 +900,6 @@ const CONTENT_T = {
     ja: '創業ビジョン：完全なプログラマティックスタックを1つのプラットフォームに統合するフルスタックプラットフォームの構築',
   },
   'To democratize access to the world\'s best programmatic advertising tec': {
-    zh: '让全球最优秀的程序化广告技术触手可及',
     es: 'Democratizar el acceso a la mejor tecnología de publicidad programática del mundo',
     ar: 'إضفاء الطابع الديمقراطي على الوصول إلى أفضل تقنية إعلانية برمجية في العالم',
     hi: 'दुनिया की सर्वश्रेष्ठ प्रोग्रामेटिक विज्ञापन तकनीक तक पहुंच को लोकतांत्रिक बनाना',
@@ -922,7 +917,6 @@ const CONTENT_T = {
     ja: 'インテリジェントで透明、効率的で誰もがアクセス可能なデジタル広告エコシステム',
   },
   'At NexBids, we\'re on a mission to make programmatic advertising smarte': {
-    zh: '在 NexBids，我们的使命是让程序化广告更智能、更公平',
     es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente y justa',
     ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وإنصافًا',
     hi: 'NexBids में, हमारा मिशन प्रोग्रामेटिक विज्ञापन को और अधिक स्मार्ट और निष्पक्ष बनाना है',
@@ -931,7 +925,6 @@ const CONTENT_T = {
     ja: 'NexBidsでは、プログラマティック広告をよりスマートで公平にすることが使命です',
   },
   'I agree to NexBids\'': {
-    zh: '我同意 NexBids 的',
     es: 'Acepto los',
     ar: 'أوافق على',
     hi: 'मैं NexBids की',
@@ -940,7 +933,6 @@ const CONTENT_T = {
     ja: 'NexBidsの',
   },
   'Sorry, the page you are looking for doesn\'t exist or is temporarily un': {
-    zh: '抱歉，您访问的页面不存在或暂时无法访问。',
     es: 'Lo sentimos, la página que busca no existe o no está disponible temporalmente.',
     ar: 'عذرًا، الصفحة التي تبحث عنها غير موجودة أو غير متاحة مؤقتًا.',
     hi: 'क्षमा करें, आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है या अस्थायी रूप से अनुपलब्ध है।',
@@ -1066,7 +1058,6 @@ const CONTENT_T = {
     ja: '独自のAI/MLインフラが毎日500億件の入札リクエストを100ms以内に処理します。',
   },
   'Whether you\'re an advertiser seeking global reach, a publisher maximizing revenue, or an agency scaling programmatic operations — NexBids has the solution.': {
-    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商，还是扩展程序化运营的代理商——NexBids 都有适合您的解决方案。',
     es: 'Ya sea anunciante buscando alcance global, publisher maximizando ingresos o agencia — NexBids tiene la solución.',
     ar: 'سواء كنت معلنًا أو ناشرًا أو وكالة — NexBids لديه الحل.',
     hi: 'चाहे आप विज्ञापनदाता हों, प्रकाशक हों, या एजेंसी — NexBids के पास समाधान है।',
@@ -1102,7 +1093,6 @@ const CONTENT_T = {
     ja: 'NexBids SSPはあなたのインベントリを世界中の50,000以上のプレミアム広告主に接続します。',
   },
   'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP — works seamlessly together to power every side of the digital advertising marketplace.': {
-    zh: 'NexBids的全栈程序化广告基础设施——DSP、ADX和SSP——无缝协作，驱动数字广告市场的每一方。',
     es: 'NexBids Agency Solutions da a las agencias las herramientas, precios y soporte para ganar más clientes y entregar resultados programáticos excepcionales.',
     ar: 'يمنح NexBids Agency Solutions الوكالات الأدوات والأسعار والدعم لكسب المزيد من العملاء.',
     hi: 'NexBids Agency Solutions एजेंसियों को अधिक क्लाइंट जीतने के लिए टूल, प्राइसिंग और सपोर्ट देता है।',
@@ -1201,7 +1191,6 @@ const CONTENT_T = {
     ja: '"NexBidsはプログラマティックを諦めていたチャネルから最も急成長する収益ドライバーへと変革しました。"',
   },
   '"We\'d tried every major DSP and none could match the quality of players NexBids delivered. Their LTV Optimizer changed everything — we\'re now profitable on a D180 basis across all markets."': {
-    zh: '"我们尝试过每一家主要DSP，没有一家能匹配NexBids带来的玩家质量。他们的LTV优化器改变了一切——我们现在在所有市场的D180基础上都是盈利的。"',
     es: 'Un estudio de RPG móvil top necesitaba escalar más allá de sus canales existentes sin sacrificar la calidad de los jugadores.',
     ar: 'احتاج استوديو RPG للجوال إلى التوسع إلى ما بعد قنواته الحالية دون التضحية بجودة اللاعبين.',
     hi: 'एक टॉप-ग्रॉसिंग मोबाइल RPG स्टूडियो को खिलाड़ी की गुणवत्ता का बलिदान किए बिना स्केल करने की जरूरत थी।',
@@ -1273,7 +1262,6 @@ const CONTENT_T = {
     ja: '"リワード動画に懐疑的でしたがNexBidsが間違いを証明しました。収益は3倍になりリテンションも改善しました。"',
   },
   'The Company Behind the World\'s Programmatic Infrastructure': {
-    zh: '驱动全球程序化基础设施的公司',
     es: 'Un estudio de juegos móviles casuales con más de 15M de descargas integró NexBids SSP y logró un aumento de ingresos del 145%.',
     ar: 'دمج استوديو ألعاب الجوال العرضية مع 15 مليون تنزيل NexBids SSP وحقق زيادة في الإيرادات بنسبة 145%.',
     hi: '15M+ डाउनलोड वाले एक कैजुअल गेम स्टूडियो ने NexBids SSP इंटीग्रेट किया और 145% राजस्व वृद्धि हासिल की।',
@@ -1300,7 +1288,6 @@ const CONTENT_T = {
     ja: '2018年の大胆な創業ビジョンから150カ国以上を支えるグローバルなアドテクリーダーへ。',
   },
   'NexBids was founded in 2018 by a team of advertising technology veterans who had spent their careers at some of the world\'s largest ad tech companies. They saw firsthand how programmatic advertising remained unnecessarily complex, opaque, and inaccessible for the vast majority of advertisers and publishers.': {
-    zh: 'NexBids由一支广告技术老兵团队于2018年创立。他们亲眼看到，程序化广告尽管前途光明，但对于绝大多数本可从中受益的广告主和发布商而言，仍然不必要地复杂、不透明且难以接触。',
     es: 'De un pequeño equipo con una gran idea a una empresa global de ad tech sirviendo a miles de anunciantes, publishers y agencias en 150+ países.',
     ar: 'من فريق صغير بفكرة كبيرة إلى شركة عالمية لتقنية الإعلانات تخدم آلاف المعلنين والناشرين في 150+ دولة.',
     hi: 'एक बड़े विचार वाली छोटी टीम से 150+ देशों में हजारों की सेवा करने वाली वैश्विक एड टेक कंपनी तक।',
@@ -1318,7 +1305,6 @@ const CONTENT_T = {
     ja: 'NexBidsは2018年に広告テクノロジーのベテランたちによって設立されました。プログラマティック広告が不必要に複雑であることを目の当たりにしていました。',
   },
   'To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.': {
-    zh: '让全球最好的程序化广告技术人人可及——使每一位广告主、发布商和代理商，无论规模大小，都能在全球数字经济中竞争、成长和成功。',
     es: 'La visión fundacional: construir una plataforma programática completa que combinara sofisticación tecnológica con accesibilidad y transparencia.',
     ar: 'الرؤية التأسيسية: بناء منصة برمجية متكاملة تجمع التطور التكنولوجي مع سهولة الوصول والشفافية.',
     hi: 'संस्थापन दृष्टि: तकनीकी परिष्कार को पहुंच और पारदर्शिता के साथ जोड़ने वाला फुल-स्टैक प्लेटफॉर्म बनाना।',
@@ -1336,7 +1322,6 @@ const CONTENT_T = {
     ja: '世界最高のプログラマティック広告テクノロジーへのアクセスを民主化する。',
   },
   'At NexBids, we\'re on a mission to make programmatic advertising smarter, faster, and more accessible for everyone. We need brilliant, curious, driven people to help us get there.': {
-    zh: '在NexBids，我们的使命是让程序化广告对每个人来说更智能、更快速、更易获取。我们需要才华横溢、充满好奇心、充满动力的人来帮助我们实现这一目标。',
     es: 'Un ecosistema de publicidad digital inteligente, transparente, eficiente y respetuoso de la privacidad para todos los participantes.',
     ar: 'نظام بيئي للإعلان الرقمي ذكي وشفاف وفعال ومحترم للخصوصية لجميع المشاركين.',
     hi: 'सभी प्रतिभागियों के लिए बुद्धिमान, पारदर्शी, कुशल और गोपनीयता का सम्मान करने वाला डिजिटल विज्ञापन इकोसिस्टम।',
@@ -1345,7 +1330,6 @@ const CONTENT_T = {
     ja: 'すべての参加者のためのインテリジェントで透明、効率的でプライバシーを尊重するデジタル広告エコシステム。',
   },
   'I agree to NexBids\'': {
-    zh: '我同意NexBids的',
     es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente, rápida y accesible para todos.',
     ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وسرعة وسهولة للجميع.',
     hi: 'NexBids में हमारा मिशन प्रोग्रामेटिक विज्ञापन को सभी के लिए स्मार्ट, तेज और अधिक सुलभ बनाना है।',
@@ -1354,7 +1338,6 @@ const CONTENT_T = {
     ja: 'NexBidsでは、プログラマティック広告をすべての人にとってよりスマートで速く、アクセスしやすくすることが使命です。',
   },
   'Sorry, the page you are looking for doesn\'t exist or is temporarily unavailable. This may be due to a network issue.': {
-    zh: '抱歉，您访问的页面不存在或暂时无法访问，这可能是由于网络问题导致的。',
     es: 'Acepto los',
     ar: 'أوافق على',
     hi: 'मैं सहमत हूं',
@@ -1363,7 +1346,6 @@ const CONTENT_T = {
     ja: '同意します',
   },
   'Whether you\'re an advertiser seeking global reach, a publisher maximizing revenue, or an agency scaling programmatic operations — NexBids has the solution.': {
-    zh: '无论您是寻求全球覆盖的广告主、最大化收益的发布商，还是扩展程序化运营的代理商——NexBids 都有适合您的解决方案。',
     es: 'Ya sea anunciante buscando alcance global, publisher maximizando ingresos o agencia — NexBids tiene la solución.',
     ar: 'سواء كنت معلنًا أو ناشرًا أو وكالة — NexBids لديه الحل.',
     hi: 'चाहे आप विज्ञापनदाता हों, प्रकाशक हों, या एजेंसी — NexBids के पास समाधान है।',
@@ -1372,7 +1354,6 @@ const CONTENT_T = {
     ja: '広告主、パブリッシャー、エージェンシーのいずれでも — NexBidsに解決策があります。',
   },
   'NexBids\'s full-stack programmatic infrastructure — DSP, ADX, and SSP — works seamlessly together to power every side of the digital advertising marketplace.': {
-    zh: 'NexBids的全栈程序化广告基础设施——DSP、ADX和SSP——无缝协作，驱动数字广告市场的每一方。',
     es: 'La infraestructura programática completa de NexBids trabaja perfectamente junta para impulsar el mercado digital.',
     ar: 'تعمل البنية التحتية الكاملة لـ NexBids معًا بسلاسة.',
     hi: 'NexBids का फुल-स्टैक इन्फ्रास्ट्रक्चर डिजिटल विज्ञापन के हर पहलू को शक्ति देता है।',
@@ -1381,7 +1362,6 @@ const CONTENT_T = {
     ja: 'NexBidsのフルスタックインフラがデジタル広告マーケットプレイスのあらゆる側面を支えます。',
   },
   '"We\'d tried every major DSP and none could match the quality of players NexBids delivered. Their LTV Optimizer changed everything — we\'re now profitable on a D180 basis across all markets."': {
-    zh: '"我们尝试过每一家主要DSP，没有一家能匹配NexBids带来的玩家质量。他们的LTV优化器改变了一切——我们现在在所有市场的D180基础上都是盈利的。"',
     es: '"Probamos todos los DSP principales y ninguno igualó la calidad de NexBids. Su LTV Optimizer lo cambió todo."',
     ar: '"جربنا كل DSP ولم يستطع أحد مضاهاة جودة لاعبي NexBids. غيّر LTV Optimizer كل شيء."',
     hi: '"हमने हर DSP आजमाया, कोई NexBids की खिलाड़ी गुणवत्ता से मेल नहीं खाया।"',
@@ -1390,7 +1370,6 @@ const CONTENT_T = {
     ja: '"主要なDSPをすべて試しましたがNexBidsのプレイヤー品質に匹敵するものはありませんでした。LTV Optimizerがすべてを変えました。"',
   },
   'The Company Behind the World\'s Programmatic Infrastructure': {
-    zh: '驱动全球程序化基础设施的公司',
     es: 'La Empresa Detrás de la Infraestructura Programática Mundial',
     ar: 'الشركة وراء البنية التحتية البرمجية العالمية',
     hi: 'दुनिया के प्रोग्रामेटिक इन्फ्रास्ट्रक्चर के पीछे की कंपनी',
@@ -1399,7 +1378,6 @@ const CONTENT_T = {
     ja: '世界のプログラマティックインフラを支える会社',
   },
   'NexBids was founded in 2018 by a team of advertising technology veterans who had spent their careers at some of the world\'s largest ad tech companies. They saw firsthand how programmatic advertising remained unnecessarily complex, opaque, and inaccessible for the vast majority of advertisers and publishers.': {
-    zh: 'NexBids由一支广告技术老兵团队于2018年创立，他们亲眼看到程序化广告对绝大多数广告主和发布商而言仍然不必要地复杂且难以接触。',
     es: 'NexBids fue fundada en 2018 por veteranos del ad tech que vieron cómo el programático seguía siendo innecesariamente complejo.',
     ar: 'تأسست NexBids عام 2018 على يد خبراء رأوا كيف ظل الإعلان البرمجي معقدًا بلا داعٍ.',
     hi: 'NexBids की स्थापना 2018 में अनुभवी लोगों ने की जिन्होंने देखा कि प्रोग्रामेटिक अनावश्यक रूप से जटिल रहा।',
@@ -1408,7 +1386,6 @@ const CONTENT_T = {
     ja: 'NexBidsは2018年に広告テクノロジーのベテランたちによって設立されました。',
   },
   'To democratize access to the world\'s best programmatic advertising technology — empowering every advertiser, publisher, and agency, regardless of size, to compete, grow, and succeed in the global digital economy.': {
-    zh: '让全球最好的程序化广告技术人人可及——使每一位广告主、发布商和代理商，无论规模大小，都能在全球数字经济中竞争、成长和成功。',
     es: 'Democratizar el acceso a la mejor tecnología programática para que cada anunciante y publisher pueda competir y crecer.',
     ar: 'إضفاء الطابع الديمقراطي على الوصول إلى أفضل تقنية إعلانية برمجية.',
     hi: 'सर्वश्रेष्ठ प्रोग्रामेटिक तकनीक तक पहुंच को लोकतांत्रिक बनाना।',
@@ -1417,7 +1394,6 @@ const CONTENT_T = {
     ja: '世界最高のプログラマティック広告テクノロジーへのアクセスを民主化する。',
   },
   'At NexBids, we\'re on a mission to make programmatic advertising smarter, faster, and more accessible for everyone. We need brilliant, curious, driven people to help us get there.': {
-    zh: '在NexBids，我们的使命是让程序化广告更智能、更快速、更易获取。我们需要才华横溢、充满好奇心的人来帮助我们实现这一目标。',
     es: 'En NexBids, nuestra misión es hacer la publicidad programática más inteligente, rápida y accesible para todos.',
     ar: 'في NexBids، مهمتنا هي جعل الإعلان البرمجي أكثر ذكاءً وسرعة وسهولة للجميع.',
     hi: 'NexBids में हमारा मिशन प्रोग्रामेटिक विज्ञापन को सभी के लिए स्मार्ट और सुलभ बनाना है।',
@@ -1426,7 +1402,6 @@ const CONTENT_T = {
     ja: 'NexBidsではプログラマティック広告をすべての人にとってよりスマートにすることが使命です。',
   },
   'I agree to NexBids\'': {
-    zh: '我同意NexBids的',
     es: 'Acepto los',
     ar: 'أوافق على',
     hi: 'मैं सहमत हूं',
@@ -1435,7 +1410,6 @@ const CONTENT_T = {
     ja: '同意します',
   },
   'Sorry, the page you are looking for doesn\'t exist or is temporarily unavailable. This may be due to a network issue.': {
-    zh: '抱歉，您访问的页面不存在或暂时无法访问，这可能是由于网络问题导致的。',
     es: 'Lo sentimos, la página no existe o no está disponible temporalmente.',
     ar: 'عذرًا، الصفحة غير موجودة أو غير متاحة مؤقتًا.',
     hi: 'क्षमा करें, यह पृष्ठ मौजूद नहीं है या अस्थायी रूप से अनुपलब्ध है।',
@@ -1585,7 +1559,6 @@ const CONTENT_T = {
     pt:'Para Compradores',
     fr:'Pour les Acheteurs',
     ja:'バイヤー向け',
-    zh:'为买方'
   },
   'For Sellers': {
     es:'Para Vendedores',
@@ -1658,7 +1631,6 @@ const CONTENT_T = {
     pt:'Fluxo de Leilão RTB',
     fr:'Flux d\'Enchères RTB',
     ja:'RTBオークションフロー',
-    zh:'RTB竞价流程'
   },
   'Privacy & Security': {
     es:'Privacidad y Seguridad',
@@ -1731,7 +1703,6 @@ const CONTENT_T = {
     pt:'Missão e Valores',
     fr:'Mission et Valeurs',
     ja:'ミッションと価値観',
-    zh:'使命与价值观'
   },
   'Leadership Team': {
     zh:'领导团队',
@@ -1876,7 +1847,6 @@ const CONTENT_T = {
     pt:'Formatos de Anúncios Suportados',
     fr:'Formats Publicitaires Supportés',
     ja:'対応広告フォーマット数',
-    zh:'平均CPA降低'
   },
   'Avg eCPM Lift for New Publishers': {
     es:'Aumento Prom. de eCPM para Nuevos Pub.',
@@ -1949,7 +1919,6 @@ const CONTENT_T = {
     pt:'Parceiros Integrados',
     fr:'Partenaires Intégrés',
     ja:'連携パートナー数',
-    zh:'竞价胜出透明度'
   },
   'Audience Segments': {
     es:'Segmentos de Audiencia',
@@ -2022,7 +1991,6 @@ const CONTENT_T = {
     pt:'Regiões Globais de Data Centers',
     fr:'Régions de Centres de Données Mondiaux',
     ja:'グローバルデータセンター地域数',
-    zh:'发布商收益管理额'
   },
   'Global PoP Network': {
     es:'Red Global de PoP',
@@ -2167,7 +2135,6 @@ const CONTENT_T = {
     pt:'Comece Gratuitamente',
     fr:'Commencer Gratuitement',
     ja:'無料で始める',
-    zh:'准备好变革您的广告业务了吗？'
   },
   'Talk to Sales': {
     es:'Hablar con Ventas',
@@ -2384,7 +2351,6 @@ const CONTENT_T = {
     pt:'Seja para iniciar uma campanha, monetizar seu tráfego ou se tornar parceiro — adoraríamos ouvir de você.',
     fr:'Que vous souhaitiez lancer une campagne, monétiser votre trafic ou nous rejoindre en tant que partenaire — nous adorons vous entendre.',
     ja:'キャンペーンの開始、トラフィックの収益化、またはパートナーシップについて — ぜひご連絡ください。',
-    zh:'我们很乐意与您联系。'
   },
   'Contact Our Team': {
     zh:'联系我们的团队',
@@ -2772,7 +2738,6 @@ const CONTENT_T = {
     pt:'Taxa de Preenchimento',
     fr:'Taux de Remplissage',
     ja:'フィルレート',
-    zh:'收益提升'
   },
   'Rev Tripled': {
     es:'Ingresos Triplicados',
@@ -2841,7 +2806,6 @@ const CONTENT_T = {
     zh:'增至三倍',
     es:'Triplicado',
     ar:'تضاعف ثلاثة أضعاف',
-    zh:'翻三倍',
     hi:'तीन गुना',
     pt:'Triplicado',
     fr:'Triplé',
@@ -3053,7 +3017,6 @@ const CONTENT_T = {
     pt:'<100ms',
     fr:'<100ms',
     ja:'100ms未満',
-    zh:'5万发布商里程碑——年度管理广告支出超过5亿美元。'
   },
   '50B+/day': {
     es:'50B+/día',
@@ -3080,7 +3043,6 @@ const CONTENT_T = {
     pt:'Para Quem É',
     fr:'Pour Qui C\'est',
     ja:'対象ユーザー',
-    zh:'旧金山+巴塞罗那'
   },
   'Whether you\'re looking to start a campaign, monetize your traffic, or partner with us — we\'d love to hear from you.': {
     es:'Ya sea que quiera iniciar una campaña, monetizar su tráfico o asociarse — nos encantaría saber de usted.',
@@ -3089,7 +3051,6 @@ const CONTENT_T = {
     pt:'Seja para iniciar uma campanha, monetizar seu tráfego ou se tornar parceiro — adoraríamos ouvir de você.',
     fr:'Que vous souhaitiez lancer une campagne, monétiser votre trafic ou nous rejoindre — nous serions ravis de vous entendre.',
     ja:'キャンペーン開始、トラフィックの収益化、パートナーシップなど — ぜひご連絡ください。',
-    zh:'无论您是想开展活动、通过流量获利，还是与我们合作，我们很乐意听到您的声音。',
   }
 ,
   '"Migrating to NexBids SSP increased our monthly ad revenue by 328% in 90 days."': {
@@ -3261,7 +3222,7 @@ const CONTENT_T = {
     pt:'Cobertura Geográfica',
     fr:'Couverture Géographique',
     ja:'地理的カバレッジ',
-    zh:'AI评分'
+    zh:'地理覆盖'
   },
   'Industry Reports': {
     es:'Informes del Sector',
@@ -3307,7 +3268,6 @@ const CONTENT_T = {
     pt:'Mercados',
     fr:'Marchés',
     ja:'マーケット',
-    zh:'广告主和品牌'
   },
   'Measurement & Analytics': {
     es:'Medición y Analítica',
@@ -3626,7 +3586,6 @@ const CONTENT_T = {
     vi:'phản hồi',
     hi:'प्रतिक्रिया',
     ar:'استجابة',
-    zh:'为隐私合规的未来准备的无Cookie定向解决方案。'
   },
   'Revenue +400%': {
     es:'Ingresos +400%',
@@ -3642,7 +3601,6 @@ const CONTENT_T = {
     vi:'Doanh thu +400%',
     hi:'राजस्व +400%',
     ar:'الإيرادات +400%',
-    zh:'流量质量评分'
   },
   'Revenue +145%': {
     es:'Ingresos +145%',
@@ -3658,7 +3616,6 @@ const CONTENT_T = {
     vi:'Doanh thu +145%',
     hi:'राजस्व +145%',
     ar:'الإيرادات +145%',
-    zh:'通知胜出者'
   },
   'Revenue x3': {
     es:'Ingresos x3',

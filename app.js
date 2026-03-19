@@ -291,7 +291,7 @@ const CONTENT_T = {
   'Advertiser Launch Solutions': { es:'Soluciones de Lanzamiento para Anunciantes', fr:'Solutions de Lancement pour Annonceurs', de:'Start-Lösungen für Werbetreibende', pt:'Soluções de Lançamento para Anunciantes', ru:'Стартовые решения для рекламодателей', zh:'广告主启动方案', ko:'광고주 런칭 솔루션', ja:'広告主ローンチソリューション', ms:'Penyelesaian Pelancaran Pengiklan', th:'โซลูชันเปิดตัวสำหรับผู้ลงโฆษณา', vi:'Giải Pháp Khởi Chạy Nhà Quảng Cáo', hi:'विज्ञापनदाता लॉन्च समाधान', ar:'حلول إطلاق المعلنين' },
   'Advertiser Growth Cases': { es:'Casos de Crecimiento de Anunciantes', fr:'Cas de Croissance Annonceurs', de:'Wachstumsfälle für Werbetreibende', pt:'Casos de Crescimento de Anunciantes', ru:'Кейсы роста рекламодателей', zh:'广告主增长案例', ko:'광고주 성장 사례', ja:'広告主成長事例', ms:'Kes Pertumbuhan Pengiklan', th:'กรณีการเติบโตของผู้ลงโฆษณา', vi:'Trường Hợp Tăng Trưởng Nhà Quảng Cáo', hi:'विज्ञापनदाता वृद्धि मामले', ar:'حالات نمو المعلنين' },
   'Publisher & Developer Growth Cases': { es:'Casos de Editores y Desarrolladores', fr:'Cas Éditeurs & Développeurs', de:'Wachstumsfälle für Publisher & Entwickler', pt:'Casos de Editores & Desenvolvedores', ru:'Кейсы издателей & разработчиков', zh:'发布商与开发者增长案例', ko:'퍼블리셔 & 개발자 성장 사례', ja:'パブリッシャー&開発者成長事例', ms:'Kes Pertumbuhan Penerbit & Pembangun', th:'กรณีการเติบโตของผู้เผยแพร่ & นักพัฒนา', vi:'Trường Hợp Tăng Trưởng Nhà Xuất Bản & Nhà Phát Triển', hi:'प्रकाशक और डेवलपर वृद्धि मामले', ar:'حالات نمو الناشرين والمطورين' },
-  'Publisher & Developer Monetization': { es:'Monetización de Editores y Desarrolladores', fr:'Monétisation Éditeurs & Développeurs', de:'Publisher & Entwickler Monetarisierung', pt:'Monetização de Editores & Desenvolvedores', ru:'Монетизация для издателей & разработчиков', zh:'发布商与开发者变现', ko:'퍼블리셔 & 개발자 수익화', ja:'パブリッシャー&開発者向け収益化', ms:'Pengewangan Penerbit & Pembangun', th:'การสร้างรายได้สำหรับผู้เผยแพร่ & นักพัฒนา', vi:'Kiếm Tiền Từ Nhà Xuất Bản & Nhà Phát Triển', hi:'प्रकाशक और डेवलपर मुद्रीकरण', ar:'تحقيق الدخل للناشرين والمطورين' },
+  'Publisher & Developer Monetization': { es:'Monetización de Editores y Desarrolladores', fr:'Monétisation Éditeurs & Développeurs', de:'Publisher & Entwickler Monetarisierung', pt:'Monetização de Editores & Desenvolvedores', ru:'Монетизация для издателей & разработчиков', zh:'发布商与开发者变现', ar:'تحقيق الدخل لصفحات الويب والمطورين', ko:'퍼블리셔 & 개발자 수익화', ja:'パブリッシャー&開発者向け収益化', ms:'Pengewangan Penerbit & Pembangun', th:'การสร้างรายได้สำหรับผู้เผยแพร่ & นักพัฒนา', vi:'Kiếm Tiền Từ Nhà Xuất Bản & Nhà Phát Triển', hi:'प्रकाशक और डेवलपर मुद्रीकरण', ar:'تحقيق الدخل للناشرين والمطورين' },
   'Agency Cooperation Solutions': { es:'Soluciones de Cooperación para Agencias', fr:'Solutions de Coopération Agences', de:'Kooperationslösungen für Agenturen', pt:'Soluções de Cooperação para Agências', ru:'Решения для сотрудничества агентств', zh:'代理商合作解决方案', ko:'에이전시 협력 솔루션', ja:'エージェンシー協力ソリューション', ms:'Penyelesaian Kerjasama Agensi', th:'โซลูชันความร่วมมือเอเจนซี่', vi:'Giải Pháp Hợp Tác Đại Lý', hi:'एजेंसी सहयोग समाधान', ar:'حلول تعاون الوكالات' },
   'Apply as Publisher': { es:'Solicitar como Editor', fr:"Postuler en tant qu'Éditeur", de:'Als Publisher Bewerben', pt:'Candidatar como Editor', ru:'Подать заявку как издатель', zh:'申请成为发布商', ko:'퍼블리셔로 신청', ja:'パブリッシャーとして申請', ms:'Mohon Sebagai Penerbit', th:'สมัครเป็นผู้เผยแพร่', vi:'Đăng Ký Làm Nhà Xuất Bản', hi:'प्रकाशक के रूप में आवेदन करें', ar:'التقدم كناشر' },
   'Apply for Agency Partnership': { es:'Solicitar Asociación de Agencia', fr:'Postuler pour un Partenariat Agence', de:'Für Agenturpartnerschaft Bewerben', pt:'Solicitar Parceria de Agência', ru:'Подать заявку на партнёрство агентства', zh:'申请代理商合作', ko:'에이전시 파트너십 신청', ja:'エージェンシーパートナーシップに申請', ms:'Mohon Perkongsian Agensi', th:'สมัครความร่วมมือเอเจนซี่', vi:'Đăng Ký Quan Hệ Đối Tác Đại Lý', hi:'एजेंसी पार्टनरशिप के लिए आवेदन करें', ar:'التقدم لشراكة الوكالة' },
@@ -1085,12 +1085,12 @@ const CONTENT_T = {
   },
   'NexBids SSP connects your inventory to 50,000+ premium advertisers worldwide, delivering higher eCPMs through header bidding, AI floor optimization, and direct deal access.': {
     zh: 'NexBids SSP将您的广告资源连接至全球50,000+优质广告主，通过头部竞价、AI底价优化和直接交易访问，提供更高的eCPM。',
-    es: 'Todo lo que necesitas para ganar en programática',
-    ar: 'كل ما تحتاجه للفوز في الإعلان البرمجي',
-    hi: 'प्रोग्रामेटिक में जीतने के लिए जो कुछ भी चाहिए',
-    pt: 'Tudo que você precisa para vencer no programático',
-    fr: 'Tout ce dont vous avez besoin pour gagner en programmatique',
-    ja: 'プログラマティックで勝つために必要なすべて',
+    es: 'NexBids SSP conecta tu inventario con 50,000+ anunciantes premium mundiales, ofreciendo eCPMs más altos a través de header bidding, optimización de floor con IA y acceso a acuerdos directos.',
+    ar: 'يربط NexBids SSP مخزونك بأكثر من 50,000 معلن متميز حول العالم، محققًا eCPM أعلى من خلال header bidding وتحسين الحد الأدنى بالذكاء الاصطناعي والوصول إلى الصفقات المباشرة.',
+    hi: 'NexBids SSP आपकी इन्वेंटरी को दुनिया भर के 50,000+ प्रीमियम विज्ञापनदाताओं से जोड़ता है, हेडर बिडिंग, AI फ्लोर ऑप्टिमाइजेशन और डायरेक्ट डील एक्सेस के माध्यम से उच्च eCPM प्रदान करता है।',
+    pt: 'NexBids SSP conecta seu inventário a 50.000+ anunciantes premium mundialmente, entregando eCPMs mais altos por meio de header bidding, otimização de floor com IA e acesso a acordos diretos.',
+    fr: 'NexBids SSP connecte votre inventaire à 50 000+ annonceurs premium mondiaux, offrant des eCPM plus élevés grâce au header bidding, à l\'optimisation du plancher par IA et à l\'accès aux accords directs.',
+    ja: 'NexBids SSPは、ヘッダービディング、AIフロア最適化、ダイレクトディール・アクセスを通じて高いeCPMを提供しながら、インベントリを世界中の50,000以上のプレミアム広告主と接続します。',
   },
   'NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.': {
     zh: 'NexBids代理商解决方案为绩效和全服务代理商提供工具、定价和支持，帮助赢得更多客户并提供卓越的程序化成果。',
@@ -1812,7 +1812,7 @@ const CONTENT_T = {
     pt:'Países e Territórios',
     fr:'Pays et Territoires',
     ja:'国・地域',
-    zh:'每日竞价请求'
+    zh:'国家和地区'
   },
   'Platform Uptime SLA': {
     es:'SLA de Tiempo de Actividad',
@@ -1821,7 +1821,7 @@ const CONTENT_T = {
     pt:'SLA de Disponibilidade da Plataforma',
     fr:'SLA de Disponibilité Plateforme',
     ja:'プラットフォーム稼働率SLA',
-    zh:'覆盖国家和地区'
+    zh:'平台正常运行时间 SLA'
   },
   'Bid Response Time': {
     es:'Tiempo de Respuesta de Puja',
@@ -1885,7 +1885,7 @@ const CONTENT_T = {
     pt:'Aumento Médio de eCPM para Novos Pub.',
     fr:'Hausse eCPM Moy. pour Nouveaux Éditeurs',
     ja:'新規PV平均eCPM向上率',
-    zh:'支持的广告格式'
+    zh:'新发布商平均eCPM提升'
   },
   'Active Publishers': {
     es:'Publicadores Activos',
@@ -1894,7 +1894,7 @@ const CONTENT_T = {
     pt:'Publicadores Ativos',
     fr:'Éditeurs Actifs',
     ja:'アクティブパブリッシャー',
-    zh:'新发布商平均eCPM提升'
+    zh:'活跃发布商'
   },
   'Connected Advertisers': {
     es:'Anunciantes Conectados',
@@ -1958,7 +1958,7 @@ const CONTENT_T = {
     pt:'Segmentos de Audiência',
     fr:'Segments d\'Audience',
     ja:'オーディエンスセグメント',
-    zh:'集成合作伙伴'
+    zh:'受众细分'
   },
   'Countries Covered': {
     zh:'覆盖国家',
@@ -2040,7 +2040,7 @@ const CONTENT_T = {
     pt:'Processamento Sub-100ms',
     fr:'Traitement Inférieur à 100ms',
     ja:'100ms未満の処理速度',
-    zh:'全球数据中心区域'
+    zh:'100毫秒以下处理'
   },
   'Not Sure Where to Start?': {
     es:'¿No Sabe Por Dónde Empezar?',
@@ -2176,7 +2176,7 @@ const CONTENT_T = {
     pt:'Falar com Vendas',
     fr:'Parler aux Ventes',
     ja:'営業に問い合わせる',
-    zh:'加入已有50,000+广告主和30,000+发布商使用NexBids推动增长的行列。'
+    zh:'联系销售'
   },
   'Our team will help identify the right NexBids solution for your business goals.': {
     zh:'我们的团队将帮助您找到适合您业务目标的NexBids解决方案。',
@@ -2248,7 +2248,7 @@ const CONTENT_T = {
     pt:'Candidatar-se Agora',
     fr:'Postuler Maintenant',
     ja:'今すぐ申し込む',
-    zh:'探索SSP'
+    zh:'立即申请'
   },
   'View Case Studies': {
     es:'Ver Casos de Estudio',
@@ -2384,7 +2384,7 @@ const CONTENT_T = {
     pt:'Seja para iniciar uma campanha, monetizar seu tráfego ou se tornar parceiro — adoraríamos ouvir de você.',
     fr:'Que vous souhaitiez lancer une campagne, monétiser votre trafic ou nous rejoindre en tant que partenaire — nous adorons vous entendre.',
     ja:'キャンペーンの開始、トラフィックの収益化、またはパートナーシップについて — ぜひご連絡ください。',
-    zh:'联系广告主销售'
+    zh:'我们很乐意与您联系。'
   },
   'Contact Our Team': {
     zh:'联系我们的团队',
@@ -2393,8 +2393,7 @@ const CONTENT_T = {
     hi:'हमारी टीम से संपर्क करें',
     pt:'Contatar Nossa Equipe',
     fr:'Contacter Notre Équipe',
-    ja:'チームに連絡する',
-    zh:'探索DSP'
+    ja:'チームに連絡する'
   },
   'Advertiser Revenue Driven': {
     es:'Ingresos de Anunciantes Generados',
@@ -2403,7 +2402,7 @@ const CONTENT_T = {
     pt:'Receita de Anunciantes Gerada',
     fr:'Revenus Annonceurs Générés',
     ja:'広告主収益創出額',
-    zh:'加入30,000+通过NexBids SSP最大化收益的发布商。'
+    zh:'广告主收入驱动'
   },
   'Avg eCPM Lift for Publishers': {
     zh:'发布商平均eCPM提升',
@@ -2421,7 +2420,7 @@ const CONTENT_T = {
     pt:'Estudos de Caso Globalmente',
     fr:'Études de Cas Mondiales',
     ja:'グローバル事例数',
-    zh:'联系我们的团队'
+    zh:'全球案例研究'
   },
   'Employees': {
     es:'Empleados',
@@ -2448,7 +2447,7 @@ const CONTENT_T = {
     pt:'Países Atendidos',
     fr:'Pays Desservis',
     ja:'サービス提供国',
-    zh:'发布商平均eCPM提升'
+    zh:'服务国家'
   },
   'Team Size': {
     es:'Tamaño del Equipo',
@@ -2475,7 +2474,7 @@ const CONTENT_T = {
     pt:'Problemas Difíceis em Escala',
     fr:'Problèmes Complexes à Grande Échelle',
     ja:'大規模な難題',
-    zh:'全球办公室'
+    zh:'大规模技术难题'
   },
   'International Team': {
     es:'Equipo Internacional',
@@ -2484,7 +2483,7 @@ const CONTENT_T = {
     pt:'Equipe Internacional',
     fr:'Équipe Internationale',
     ja:'インターナショナルチーム',
-    zh:'服务国家'
+    zh:'国际团队'
   },
   'Growth Stage': {
     es:'Etapa de Crecimiento',
@@ -2565,7 +2564,7 @@ const CONTENT_T = {
     pt:'Marco de 50B leilões diários',
     fr:'Jalon de 50B enchères quotidiennes',
     ja:'1日500億回入札マイルストーン',
-    zh:'成立'
+    zh:'每日500亿次竞价里程碑'
   },
   '150+ countries, $2B+ revenue driven': {
     es:'150+ países, $2B+ ingresos generados',
@@ -2574,7 +2573,7 @@ const CONTENT_T = {
     pt:'150+ países, $2B+ de receita gerada',
     fr:'150+ pays, $2B+ de revenus générés',
     ja:'150か国以上、20億ドル以上の収益創出',
-    zh:'已融资额'
+    zh:'150+国家，2B美元以上收入驱动'
   },
   'Full-stack ecosystem, 500+ team': {
     es:'Ecosistema completo, equipo de 500+',
@@ -2583,7 +2582,7 @@ const CONTENT_T = {
     pt:'Ecossistema completo, equipe de 500+',
     fr:'Écosystème complet, équipe de 500+',
     ja:'フルスタックエコシステム、500人以上のチーム',
-    zh:'全球员工'
+    zh:'全栈生态系统，500+团队'
   },
   'Partner Success First': {
     es:'El Éxito del Socio es lo Primero',
@@ -3026,7 +3025,7 @@ const CONTENT_T = {
     pt:'24% campanhas',
     fr:'24% campagnes',
     ja:'24%キャンペーン',
-    zh:'全栈平台——SSP和ADX发布，新加坡办公室开业。'
+    zh:'24%营销活动'
   },
   '14% campaigns': {
     es:'14% campañas',
@@ -3063,7 +3062,7 @@ const CONTENT_T = {
     pt:'50B+/dia',
     fr:'50B+/jour',
     ja:'500億以上/日',
-    zh:'CTV和音频扩展——完整的CTV、程序化音频和DOOH能力。'
+    zh:'每天500亿+'
   },
   '6 Proprietary': {
     es:'6 Propietarios',
@@ -3226,7 +3225,7 @@ const CONTENT_T = {
     pt:'Resposta de Lance Médio',
     fr:'Réponse d\'Offre Moy.',
     ja:'平均入札応答',
-    zh:'每日500亿+展示量 | <100ms延迟 | 99.9%可用率'
+    zh:'平均竞价响应'
   },
   'Best Practices': {
     es:'Mejores Prácticas',
@@ -3271,7 +3270,7 @@ const CONTENT_T = {
     pt:'Relatórios do Setor',
     fr:'Rapports Sectoriels',
     ja:'業界レポート',
-    zh:'广告请求'
+    zh:'行业报告'
   },
   'Kubernetes': {
     zh:'Kubernetes',
@@ -3335,7 +3334,7 @@ const CONTENT_T = {
     pt:'Mídia e Editores',
     fr:'Médias et Éditeurs',
     ja:'メディアとパブリッシャー',
-    zh:'平均竞价响应'
+    zh:'媒体与发布商'
   },
   'Middle East': {
     es:'Oriente Medio',
@@ -3542,7 +3541,7 @@ const CONTENT_T = {
     pt:'O DSP vencedor recebe a notificação de vitória, o anúncio é exibido',
     fr:'Le DSP gagnant reçoit la notification de victoire, l\'annonce est diffusée',
     ja:'落札DSPが落札通知を受信し、広告が配信されます',
-    zh:'Prebid.js'
+    zh:'获胜DSP收到赢标通知，广告投放'
   },
   '2.3M Acquired': {
     zh:'230万新增',
@@ -4442,28 +4441,28 @@ function applyLang() {
   const langBtn = document.getElementById('langBtn');
   if (langBtn) langBtn.innerHTML = `${lang.flag} <span>${lang.label}</span> <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
 
-  // swap all data-en / data-zh text nodes (legacy)
+  // swap all data-en / data-zh text nodes — supports all 8 languages
   // Must run BEFORE the specific ui() overrides below so ui() takes precedence
-  let dataEnCount = 0;
   const allElements = document.querySelectorAll('[data-en]');
-  console.log(`applyLang(${currentLang}): found ${allElements.length} [data-en] elements`);
   allElements.forEach(el => {
     let val;
     const enKey = el.dataset.en;
     if (currentLang === 'zh') {
-      val = el.dataset.zh || el.dataset.en;
-      if (enKey && (enKey === 'Solutions' || enKey === 'Products')) {
-        console.log(`  Translating "${enKey}" -> "${val}"`);
-      }
+      // Use data-zh attribute first, then CONTENT_T lookup, then fallback to en
+      val = el.dataset.zh || (enKey && CONTENT_T[enKey] && CONTENT_T[enKey]['zh']) || enKey;
     } else if (currentLang === 'en') {
-      val = el.dataset.en;
+      val = enKey;
     } else {
-      // For other languages, look up CONTENT_T first, fall back to en
-      val = (enKey && CONTENT_T[enKey] && CONTENT_T[enKey][currentLang]) ? CONTENT_T[enKey][currentLang] : enKey;
+      // For all other supported languages: look up CONTENT_T first,
+      // then try UI_STRINGS, then fall back to English
+      val = (enKey && CONTENT_T[enKey] && CONTENT_T[enKey][currentLang])
+        ? CONTENT_T[enKey][currentLang]
+        : (UI_STRINGS[enKey] && UI_STRINGS[enKey][currentLang])
+          ? UI_STRINGS[enKey][currentLang]
+          : enKey;
     }
-    if (val) el.textContent = val;
+    if (val !== undefined && val !== null) el.textContent = val;
   });
-
 
   // Footer copyright / tagline — use ui() so these get proper translations
   // (runs after data-en loop to take precedence)
@@ -4482,6 +4481,19 @@ function applyLang() {
     const el = document.getElementById(id);
     if (el) el.textContent = ui(key);
   });
+
+  // Update page title with current language if available
+  const titleMap = {
+    en: 'NexBids | Global Programmatic Advertising Solutions',
+    zh: 'NexBids | 全球程序化广告解决方案',
+    es: 'NexBids | Soluciones Globales de Publicidad Programática',
+    ar: 'NexBids | حلول الإعلانات البرمجية العالمية',
+    hi: 'NexBids | वैश्विक प्रोग्रामेटिक विज्ञापन समाधान',
+    pt: 'NexBids | Soluções Globais de Publicidade Programática',
+    fr: 'NexBids | Solutions Mondiales de Publicité Programmatique',
+    ja: 'NexBids | グローバルプログラマティック広告ソリューション',
+  };
+  if (titleMap[currentLang]) document.title = titleMap[currentLang];
 }
 
 /* ─────────────────────────────────────────────
@@ -5535,7 +5547,7 @@ function renderHome() {
     <div class="hero-content hero-layout">
       <div class="hero-text">
         ${sectionTag('Global Ad Tech Leader', '全球广告技术领导者')}
-        <h1>${currentLang === 'zh' ? '用<span class="gradient-text">智能程序化广告</span>驱动增长' : `${t('Power Your Growth with')}<br><span class="gradient-text">${t('Intelligent Programmatic')}</span>`}</h1>
+        <h1>${currentLang === 'zh' ? '用<span class="gradient-text">智能程序化广告</span>驱动增长' : (currentLang === 'en' ? `${t('Power Your Growth with')}<br><span class="gradient-text">${t('Intelligent Programmatic')}</span>` : `${t('Power Your Growth with')}<br><span class="gradient-text">${t('Intelligent Programmatic')}</span>`)}</h1>
         <p>${t('NexBids delivers a full-stack programmatic advertising ecosystem — DSP, ADX, and SSP — built for advertisers, publishers, developers, and agencies seeking measurable growth at global scale.',
                'NexBids 提供全栈程序化广告生态系统——DSP、ADX 和 SSP——专为寻求全球规模可衡量增长的广告主、发布商、开发者和代理商而构建。')}</p>
         <div class="btn-group">
@@ -6193,7 +6205,7 @@ function renderSolutionsAgency() {
   ${pageHeroLayout('linear-gradient(135deg,rgba(124,58,237,0.12),var(--bg-dark))', `
     <div class="breadcrumb"><a onclick="navigate('solutions')">${t('Solutions','解决方案')}</a> › <span>${t('Agency Cooperation Solutions','代理合作解决方案')}</span></div>
     ${sectionTag('For Agencies','面向代理商','purple')}
-    <h1>${currentLang === 'zh' ? '一个平台<br>所有客户<br>最佳绩效' : 'One Platform<br>All Your Clients<br>Maximum Performance'}</h1>
+    <h1>${currentLang === 'zh' ? '一个平台<br>所有客户<br>最佳绩效' : (()=>{ const k='One Platform. All Your Clients. Maximum Performance.'; const e=CONTENT_T[k]; return e&&e[currentLang] ? e[currentLang].replace(/\. /g,'<br>').replace(/\.$/,'') : 'One Platform<br>All Your Clients<br>Maximum Performance'; })()}</h1>
     <p>${t('NexBids Agency Solutions give performance and full-service agencies the tools, pricing, and support to win more clients and deliver exceptional programmatic results.',
        'NexBids代理商解决方案为绩效和全服务代理商提供工具、定价和支持，帮助赢得更多客户并提供卓越的程序化成果。')}</p>
     <div class="btn-group">
@@ -7284,11 +7296,11 @@ function renderContact() {
           <div class="form-row">
             <div class="form-group">
               <label>${t('First Name','名字')} *</label>
-              <input type="text" id="cf_firstName" placeholder="${currentLang==='zh'?'张':'John'}">
+              <input type="text" id="cf_firstName" placeholder="${({en:'John',zh:'张',es:'Juan',ar:'محمد',hi:'राज',pt:'João',fr:'Jean',ja:'太郎'})[currentLang]||'John'}">
             </div>
             <div class="form-group">
               <label>${t('Last Name','姓氏')} *</label>
-              <input type="text" id="cf_lastName" placeholder="${currentLang==='zh'?'伟':'Smith'}">
+              <input type="text" id="cf_lastName" placeholder="${({en:'Smith',zh:'张',es:'García',ar:'الأحمد',hi:'शर्मा',pt:'Silva',fr:'Dupont',ja:'田中'})[currentLang]||'Smith'}">
             </div>
           </div>
           <div class="form-group">
@@ -7298,12 +7310,12 @@ function renderContact() {
           <div class="form-row">
             <div class="form-group">
               <label>${t('Company Name','公司名称')} *</label>
-              <input type="text" id="cf_company" placeholder="${currentLang==='zh'?'您的公司':'Your Company'}">
+              <input type="text" id="cf_company" placeholder="${({en:'Your Company',zh:'您的公司',es:'Su Empresa',ar:'شركتك',hi:'आपकी कंपनी',pt:'Sua Empresa',fr:'Votre Société',ja:'御社名'})[currentLang]||'Your Company'}">
             </div>
             <div class="form-group">
               <label>${t('Country','国家')} *</label>
               <div class="country-select-wrap">
-                <input type="text" class="country-search-input country-single" id="countrySearch" placeholder="${currentLang==='zh'?'搜索或选择国家...':'Search or select country...'}" autocomplete="off" oninput="filterCountries(this.value)" onfocus="openCountryDropdown()" onblur="setTimeout(()=>closeCountryDropdown(),200)">
+                <input type="text" class="country-search-input country-single" id="countrySearch" placeholder="${({en:'Search or select country...',zh:'搜索或选择国家...',es:'Buscar o seleccionar país...',ar:'ابحث أو اختر الدولة...',hi:'देश खोजें या चुनें...',pt:'Pesquisar ou selecionar país...',fr:'Rechercher ou sélectionner un pays...',ja:'国を検索または選択...'})[currentLang]||'Search or select country...'}" autocomplete="off" oninput="filterCountries(this.value)" onfocus="openCountryDropdown()" onblur="setTimeout(()=>closeCountryDropdown(),200)">
                 <div class="country-dropdown-list" id="countryDropdown"></div>
               </div>
             </div>
@@ -7311,17 +7323,17 @@ function renderContact() {
           <div class="form-group">
             <label>${t('I am a','我是')} *</label>
             <select id="cf_role">
-              <option value="">${currentLang==='zh'?'请选择...':'Select...'}</option>
-              <option value="advertiser">${currentLang==='zh'?'广告主':'Advertiser'}</option>
-              <option value="publisher">${currentLang==='zh'?'发布商或开发者':'Publisher or Developer'}</option>
-              <option value="agency">${currentLang==='zh'?'代理商':'Agency'}</option>
-              <option value="press">${currentLang==='zh'?'媒体/分析师':'Press / Analyst'}</option>
-              <option value="other">${currentLang==='zh'?'其他':'Other'}</option>
+              <option value="">${({en:'Select...',zh:'请选择...',es:'Seleccionar...',ar:'اختر...',hi:'चुनें...',pt:'Selecionar...',fr:'Sélectionner...',ja:'選択してください...'})[currentLang]||'Select...'}</option>
+              <option value="advertiser">${({en:'Advertiser',zh:'广告主',es:'Anunciante',ar:'معلن',hi:'विज्ञापनदाता',pt:'Anunciante',fr:'Annonceur',ja:'広告主'})[currentLang]||'Advertiser'}</option>
+              <option value="publisher">${({en:'Publisher or Developer',zh:'发布商或开发者',es:'Editor o Desarrollador',ar:'ناشر أو مطور',hi:'प्रकाशक या डेवलपर',pt:'Editor ou Desenvolvedor',fr:'Éditeur ou Développeur',ja:'パブリッシャーまたは開発者'})[currentLang]||'Publisher or Developer'}</option>
+              <option value="agency">${({en:'Agency',zh:'代理商',es:'Agencia',ar:'وكالة',hi:'एजेंसी',pt:'Agência',fr:'Agence',ja:'エージェンシー'})[currentLang]||'Agency'}</option>
+              <option value="press">${({en:'Press / Analyst',zh:'媒体/分析师',es:'Prensa / Analista',ar:'صحافة / محلل',hi:'प्रेस / विश्लेषक',pt:'Imprensa / Analista',fr:'Presse / Analyste',ja:'プレス / アナリスト'})[currentLang]||'Press / Analyst'}</option>
+              <option value="other">${({en:'Other',zh:'其他',es:'Otro',ar:'أخرى',hi:'अन्य',pt:'Outro',fr:'Autre',ja:'その他'})[currentLang]||'Other'}</option>
             </select>
           </div>
           <div class="form-group">
             <label>${t('How can we help?','我们能为您做什么？')} *</label>
-            <textarea id="cf_message" placeholder="${currentLang==='zh'?'告诉我们您的需求...':'Tell us about your needs...'}"></textarea>
+            <textarea id="cf_message" placeholder="${({en:'Tell us about your needs...',zh:'告诉我们您的需求...',es:'Cuéntenos sobre sus necesidades...',ar:'أخبرنا عن احتياجاتك...',hi:'अपनी ज़रूरतों के बारे में बताएं...',pt:'Conte-nos sobre suas necessidades...',fr:'Parlez-nous de vos besoins...',ja:'ご要望をお聞かせください...'})[currentLang]||'Tell us about your needs...'}"></textarea>
           </div>
           <div class="form-check" style="margin-bottom:20px">
             <input type="checkbox" id="privacyCheck">
@@ -7458,18 +7470,9 @@ function submitContactForm(e) {
 function openPrivacyModal(e) {
   if (e) e.preventDefault();
   const isZh = currentLang === 'zh';
-  const modal = document.createElement('div');
-  modal.className = 'modal-backdrop';
-  modal.id = 'privacyModal';
-  modal.onclick = (ev) => { if (ev.target === modal) closePrivacyModal(); };
-  modal.innerHTML = `
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
-    <div class="modal-header">
-      <h2 id="privacyTitle">${isZh ? 'NexBids 隐私政策' : 'NexBids Privacy Policy'}</h2>
-      <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-body">
-      ${isZh ? `
+  // Helper to build localized privacy content by language group
+  const privacyContent = {
+    zh: `
       <p><strong>最后更新日期：</strong>2026年3月</p>
       <h3>1. 概述</h3>
       <p>NexBids Inc.（"NexBids"、"我们"）致力于保护您的个人信息。本隐私政策说明我们在您使用nexbids.com及相关服务时如何收集、使用、披露和保护您的个人数据。</p>
@@ -7509,7 +7512,135 @@ function openPrivacyModal(e) {
       <p>我们可能不时更新本隐私政策。重大变更将通过电子邮件或网站显著位置通知您。继续使用我们的服务即视为接受更新后的政策。</p>
       <h3>12. 联系我们</h3>
       <p>如对本隐私政策有任何疑问，请联系：<br>数据保护官，NexBids Inc.<br>contact@nexbids.com</p>
-      ` : `
+    `,
+    es: `
+      <p><strong>Última actualización:</strong> Marzo 2026</p>
+      <h3>1. Resumen</h3>
+      <p>NexBids Inc. ("NexBids", "nosotros") se compromete a proteger su información personal. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos sus datos personales cuando utiliza nexbids.com y servicios relacionados.</p>
+      <h3>2. Información que recopilamos</h3>
+      <ul>
+        <li><strong>Datos de identidad:</strong> Nombre, cargo, nombre de empresa</li>
+        <li><strong>Datos de contacto:</strong> Dirección de correo electrónico, número de teléfono</li>
+        <li><strong>Datos de uso:</strong> Dirección IP, tipo de navegador, páginas visitadas, marcas de tiempo</li>
+        <li><strong>Datos publicitarios:</strong> Solicitudes de oferta, impresiones y datos de clics procesados a través de nuestras plataformas</li>
+      </ul>
+      <h3>3. Cómo usamos su información</h3>
+      <ul>
+        <li>Proporcionar, operar y mejorar nuestros servicios</li>
+        <li>Procesar consultas comerciales y cumplir contratos</li>
+        <li>Enviar notificaciones de servicio y alertas de seguridad</li>
+        <li>Cumplir con las leyes y regulaciones aplicables</li>
+        <li>Prevenir fraudes y mantener la seguridad de la plataforma</li>
+      </ul>
+      <h3>4. Compartir información</h3>
+      <p>No vendemos sus datos personales. Solo compartimos información con su consentimiento explícito, con proveedores de servicios de confianza o cuando lo exija la ley.</p>
+      <h3>5. Sus derechos</h3>
+      <p>Bajo la ley aplicable (incluyendo GDPR y CCPA), puede tener derechos de acceso, corrección, eliminación y portabilidad de sus datos. Contáctenos en contact@nexbids.com.</p>
+      <h3>6. Contáctenos</h3>
+      <p>Para preguntas sobre esta Política de Privacidad:<br>Oficial de Protección de Datos, NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    fr: `
+      <p><strong>Dernière mise à jour :</strong> Mars 2026</p>
+      <h3>1. Vue d'ensemble</h3>
+      <p>NexBids Inc. ("NexBids", "nous") s'engage à protéger vos informations personnelles. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos données personnelles lorsque vous utilisez nexbids.com et les services associés.</p>
+      <h3>2. Informations que nous collectons</h3>
+      <ul>
+        <li><strong>Données d'identité :</strong> Nom, titre du poste, nom de l'entreprise</li>
+        <li><strong>Données de contact :</strong> Adresse e-mail, numéro de téléphone</li>
+        <li><strong>Données d'utilisation :</strong> Adresse IP, type de navigateur, pages visitées, horodatages</li>
+        <li><strong>Données publicitaires :</strong> Demandes d'enchères, impressions et données de clics</li>
+      </ul>
+      <h3>3. Comment nous utilisons vos informations</h3>
+      <ul>
+        <li>Fournir, exploiter et améliorer nos services</li>
+        <li>Traiter les demandes commerciales et exécuter les contrats</li>
+        <li>Envoyer des notifications de service et des alertes de sécurité</li>
+        <li>Se conformer aux lois et réglementations applicables</li>
+      </ul>
+      <h3>4. Vos droits</h3>
+      <p>En vertu du RGPD et des lois applicables, vous pouvez avoir des droits d'accès, de rectification, de suppression et de portabilité de vos données. Contactez-nous à contact@nexbids.com.</p>
+      <h3>5. Contactez-nous</h3>
+      <p>Pour toute question sur cette Politique de Confidentialité :<br>Délégué à la Protection des Données, NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    ja: `
+      <p><strong>最終更新日：</strong>2026年3月</p>
+      <h3>1. 概要</h3>
+      <p>NexBids Inc.（「NexBids」、「当社」）は、お客様の個人情報の保護に取り組んでいます。このプライバシーポリシーは、nexbids.comおよび関連サービスをご利用の際に、当社がお客様の個人データをどのように収集、使用、開示、保護するかを説明しています。</p>
+      <h3>2. 収集する情報</h3>
+      <ul>
+        <li><strong>身元情報：</strong>氏名、役職、会社名</li>
+        <li><strong>連絡先情報：</strong>メールアドレス、電話番号</li>
+        <li><strong>使用状況データ：</strong>IPアドレス、ブラウザの種類、訪問したページ、タイムスタンプ</li>
+        <li><strong>広告データ：</strong>当社プラットフォームで処理された入札リクエスト、インプレッション、クリックデータ</li>
+      </ul>
+      <h3>3. 情報の使用方法</h3>
+      <ul>
+        <li>サービスの提供、運営、改善</li>
+        <li>商業的な問い合わせの処理と契約の履行</li>
+        <li>サービス通知、セキュリティアラート、サポートメッセージの送信</li>
+        <li>適用される法律および規制の遵守</li>
+      </ul>
+      <h3>4. お客様の権利</h3>
+      <p>適用される法律（GDPR等）に基づき、データへのアクセス、訂正、削除、ポータビリティに関する権利を有する場合があります。contact@nexbids.comまでご連絡ください。</p>
+      <h3>5. お問い合わせ</h3>
+      <p>このプライバシーポリシーに関するご質問は：<br>データ保護責任者、NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    ar: `
+      <p><strong>آخر تحديث:</strong> مارس 2026</p>
+      <h3>1. نظرة عامة</h3>
+      <p>تلتزم NexBids Inc. ("NexBids"، "نحن") بحماية معلوماتك الشخصية. توضح سياسة الخصوصية هذه كيفية جمع بياناتك الشخصية واستخدامها والإفصاح عنها وحمايتها عند استخدام nexbids.com والخدمات ذات الصلة.</p>
+      <h3>2. المعلومات التي نجمعها</h3>
+      <ul>
+        <li><strong>بيانات الهوية:</strong> الاسم، المسمى الوظيفي، اسم الشركة</li>
+        <li><strong>بيانات الاتصال:</strong> عنوان البريد الإلكتروني، رقم الهاتف</li>
+        <li><strong>بيانات الاستخدام:</strong> عنوان IP، نوع المتصفح، الصفحات المزارة، الطوابع الزمنية</li>
+        <li><strong>البيانات الإعلانية:</strong> طلبات العطاءات والظهور وبيانات النقر المعالجة عبر منصاتنا</li>
+      </ul>
+      <h3>3. كيف نستخدم معلوماتك</h3>
+      <ul>
+        <li>تقديم خدماتنا وتشغيلها وتحسينها</li>
+        <li>معالجة الاستفسارات التجارية وتنفيذ العقود</li>
+        <li>إرسال إشعارات الخدمة وتنبيهات الأمان</li>
+        <li>الامتثال للقوانين واللوائح المعمول بها</li>
+      </ul>
+      <h3>4. حقوقك</h3>
+      <p>بموجب القانون المعمول به (بما في ذلك GDPR)، قد يحق لك الوصول إلى بياناتك وتصحيحها وحذفها ونقلها. تواصل معنا عبر contact@nexbids.com.</p>
+      <h3>5. اتصل بنا</h3>
+      <p>لأسئلة حول سياسة الخصوصية هذه:<br>مسؤول حماية البيانات، NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    hi: `
+      <p><strong>अंतिम अपडेट:</strong> मार्च 2026</p>
+      <h3>1. अवलोकन</h3>
+      <p>NexBids Inc. ("NexBids", "हम") आपकी व्यक्तिगत जानकारी की सुरक्षा के प्रति प्रतिबद्ध है। यह गोपनीयता नीति बताती है कि जब आप nexbids.com और संबंधित सेवाओं का उपयोग करते हैं तो हम आपके व्यक्तिगत डेटा को कैसे एकत्र, उपयोग, प्रकट और सुरक्षित करते हैं।</p>
+      <h3>2. हम जो जानकारी एकत्र करते हैं</h3>
+      <ul>
+        <li><strong>पहचान डेटा:</strong> नाम, नौकरी का शीर्षक, कंपनी का नाम</li>
+        <li><strong>संपर्क डेटा:</strong> ईमेल पता, फोन नंबर</li>
+        <li><strong>उपयोग डेटा:</strong> IP पता, ब्राउज़र प्रकार, देखे गए पृष्ठ, टाइमस्टैम्प</li>
+        <li><strong>विज्ञापन डेटा:</strong> हमारे प्लेटफॉर्म के माध्यम से संसाधित बिड अनुरोध, इंप्रेशन और क्लिक डेटा</li>
+      </ul>
+      <h3>3. आपके अधिकार</h3>
+      <p>लागू कानून के तहत, आपके पास अपने डेटा तक पहुंचने, सुधारने, हटाने और पोर्ट करने के अधिकार हो सकते हैं। contact@nexbids.com पर हमसे संपर्क करें।</p>
+      <h3>4. हमसे संपर्क करें</h3>
+      <p>इस गोपनीयता नीति के बारे में प्रश्नों के लिए:<br>डेटा संरक्षण अधिकारी, NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    pt: `
+      <p><strong>Última atualização:</strong> Março de 2026</p>
+      <h3>1. Visão Geral</h3>
+      <p>A NexBids Inc. ("NexBids", "nós") está comprometida com a proteção das suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos seus dados pessoais quando você usa nexbids.com e serviços relacionados.</p>
+      <h3>2. Informações que coletamos</h3>
+      <ul>
+        <li><strong>Dados de identidade:</strong> Nome, cargo, nome da empresa</li>
+        <li><strong>Dados de contato:</strong> Endereço de e-mail, número de telefone</li>
+        <li><strong>Dados de uso:</strong> Endereço IP, tipo de navegador, páginas visitadas, carimbos de data/hora</li>
+        <li><strong>Dados de publicidade:</strong> Solicitações de lance, impressões e dados de cliques processados através de nossas plataformas</li>
+      </ul>
+      <h3>3. Seus direitos</h3>
+      <p>Sob a lei aplicável (incluindo GDPR), você pode ter direitos de acesso, correção, exclusão e portabilidade dos seus dados. Entre em contato conosco em contact@nexbids.com.</p>
+      <h3>4. Entre em contato</h3>
+      <p>Para dúvidas sobre esta Política de Privacidade:<br>Encarregado de Proteção de Dados, NexBids Inc.<br>contact@nexbids.com</p>
+    `,
+    en: `
       <p><strong>Last Updated:</strong> March 2026</p>
       <h3>1. Overview</h3>
       <p>NexBids Inc. ("NexBids," "we," "us") is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you use nexbids.com and related services.</p>
@@ -7549,10 +7680,28 @@ function openPrivacyModal(e) {
       <p>We may update this Privacy Policy from time to time. Material changes will be communicated via email or a prominent notice on our website. Continued use of our services constitutes acceptance of the updated policy.</p>
       <h3>12. Contact Us</h3>
       <p>For questions about this Privacy Policy, please contact:<br>Data Protection Officer, NexBids Inc.<br>contact@nexbids.com</p>
-      `}
+    `
+  };
+  const privacyTitle = {en:'NexBids Privacy Policy',zh:'NexBids 隐私政策',es:'Política de Privacidad de NexBids',ar:'سياسة خصوصية NexBids',hi:'NexBids गोपनीयता नीति',pt:'Política de Privacidade NexBids',fr:'Politique de Confidentialité NexBids',ja:'NexBids プライバシーポリシー'};
+  const privacyClose = {en:'Close',zh:'关闭',es:'Cerrar',ar:'إغلاق',hi:'बंद करें',pt:'Fechar',fr:'Fermer',ja:'閉じる'};
+  const titleText = privacyTitle[currentLang] || privacyTitle.en;
+  const closeText = privacyClose[currentLang] || privacyClose.en;
+  const modal = document.createElement('div');
+  modal.className = 'modal-backdrop';
+  modal.id = 'privacyModal';
+  modal.onclick = (ev) => { if (ev.target === modal) closePrivacyModal(); };
+  modal.innerHTML = `
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="modal-header">
+      <h2 id="privacyTitle">${titleText}</h2>
+      <button class="modal-close" onclick="closePrivacyModal()" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      ${privacyContent[currentLang] || privacyContent.en}
+    </div>
     </div>
     <div class="modal-footer-bar">
-      <button class="btn btn-primary" onclick="closePrivacyModal()" style="padding:10px 28px">${isZh ? '关闭' : 'Close'}</button>
+      <button class="btn btn-primary" onclick="closePrivacyModal()" style="padding:10px 28px">${closeText}</button>
     </div>
   </div>`;
   document.body.appendChild(modal);

@@ -7426,8 +7426,8 @@ async function submitContactForm(e) {
   const origBtnText = submitBtn ? submitBtn.textContent : '';
   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = t('Sending…', '发送中…'); }
 
-  // Attempt Formspree submission (replace YOUR_FORM_ID with actual Formspree form ID)
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  // Formspree endpoint for NexBids contact form
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/meernyza';
 
   try {
     const response = await fetch(FORMSPREE_ENDPOINT, {

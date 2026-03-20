@@ -12,7 +12,7 @@ let currentLang = 'en';
 let currentPage = 'home';
 
 /* ─────────────────────────────────────────────
-   MULTI-LANGUAGE CONFIG  (14 languages)
+   MULTI-LANGUAGE CONFIG  (8 languages with complete translations)
 ───────────────────────────────────────────── */
 const LANGUAGES = [
   { code: 'en',  label: 'English',    flag: '🇺🇸', dir: 'ltr' },
@@ -22,13 +22,7 @@ const LANGUAGES = [
   { code: 'hi',  label: 'हिन्दी',     flag: '🇮🇳', dir: 'ltr' },
   { code: 'pt',  label: 'Português',  flag: '🇧🇷', dir: 'ltr' },
   { code: 'fr',  label: 'Français',   flag: '🇫🇷', dir: 'ltr' },
-  { code: 'ja',  label: '日本語',      flag: '🇯🇵', dir: 'ltr' },
-  { code: 'de',  label: 'Deutsch',    flag: '🇩🇪', dir: 'ltr' },
-  { code: 'ru',  label: 'Русский',    flag: '🇷🇺', dir: 'ltr' },
   { code: 'ko',  label: '한국어',      flag: '🇰🇷', dir: 'ltr' },
-  { code: 'ms',  label: 'Melayu',     flag: '🇲🇾', dir: 'ltr' },
-  { code: 'th',  label: 'ภาษาไทย',   flag: '🇹🇭', dir: 'ltr' },
-  { code: 'vi',  label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr' },
 ];
 
 /* Core UI strings translated to all 14 languages */

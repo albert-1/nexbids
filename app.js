@@ -22,7 +22,7 @@ const LANGUAGES = [
   { code: 'hi',  label: 'हिन्दी',     flag: '🇮🇳', dir: 'ltr' },
   { code: 'pt',  label: 'Português',  flag: '🇧🇷', dir: 'ltr' },
   { code: 'fr',  label: 'Français',   flag: '🇫🇷', dir: 'ltr' },
-  { code: 'ko',  label: '한국어',      flag: '🇰🇷', dir: 'ltr' },
+  { code: 'ja',  label: '日本語',      flag: '🇯🇵', dir: 'ltr' },
 ];
 
 /* Core UI strings translated to all 14 languages */

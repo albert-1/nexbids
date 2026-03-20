@@ -23,6 +23,12 @@ const LANGUAGES = [
   { code: 'pt',  label: 'Português',  flag: '🇧🇷', dir: 'ltr' },
   { code: 'fr',  label: 'Français',   flag: '🇫🇷', dir: 'ltr' },
   { code: 'ja',  label: '日本語',      flag: '🇯🇵', dir: 'ltr' },
+  { code: 'de',  label: 'Deutsch',    flag: '🇩🇪', dir: 'ltr' },
+  { code: 'ru',  label: 'Русский',    flag: '🇷🇺', dir: 'ltr' },
+  { code: 'ko',  label: '한국어',      flag: '🇰🇷', dir: 'ltr' },
+  { code: 'ms',  label: 'Melayu',     flag: '🇲🇾', dir: 'ltr' },
+  { code: 'th',  label: 'ภาษาไทย',   flag: '🇹🇭', dir: 'ltr' },
+  { code: 'vi',  label: 'Tiếng Việt', flag: '🇻🇳', dir: 'ltr' },
 ];
 
 /* Core UI strings translated to all 14 languages */
@@ -4398,7 +4404,7 @@ function applyLang() {
   const langBtn = document.getElementById('langBtn');
   if (langBtn) langBtn.innerHTML = `${lang.flag} <span>${lang.label}</span> <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`;
 
-  // swap all data-en / data-zh text nodes — supports all 8 languages
+  // swap all data-en / data-zh text nodes — supports all 14 languages
   // Must run BEFORE the specific ui() overrides below so ui() takes precedence
   const allElements = document.querySelectorAll('[data-en]');
   allElements.forEach(el => {
@@ -4456,11 +4462,15 @@ function applyLang() {
 /* ─────────────────────────────────────────────
    ROUTER
 ───────────────────────────────────────────── */
-function navigate(page) {
-  console.log(`[navigate] Going to page: ${page}`);
+function navigate(page, pushToHistory = true) {
   currentPage = page;
   renderPage(page);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Update browser history for back/forward support
+  if (pushToHistory) {
+    const url = page === 'home' ? '#' : '#' + page;
+    history.pushState({ page }, '', url);
+  }
   // close mobile menu
   const navMenu = document.getElementById('navMenu');
   const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -4525,7 +4535,6 @@ function renderPage(page) {
   const actualFn = fn || renderHome;
   try {
     container.innerHTML = `<div class="page-transition">${actualFn()}</div>`;
-    console.log(`[renderPage] Successfully rendered page: "${page}"`);
   } catch (err) {
     console.error('[renderPage] Error rendering page "' + page + '":', err);
     container.innerHTML = '<div style="padding:40px;text-align:center;color:#F87171">Page render error — please check the console.</div>';
@@ -7296,6 +7305,10 @@ function renderContact() {
             <input type="checkbox" id="privacyCheck">
             <label for="privacyCheck" style="font-size:13px;color:var(--text-secondary)">${t('I agree to NexBids\'','我同意NexBids的')} <a href="#" onclick="openPrivacyModal(event)" style="color:var(--primary-light);text-decoration:underline">${t('Privacy Policy','隐私政策')}</a> ${t('and consent to being contacted.','并同意被联系。')}</label>
           </div>
+          <!-- Honeypot field: hidden from real users, traps bots -->
+          <div style="display:none" aria-hidden="true">
+            <input type="text" id="cf_website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
           <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitContactForm(event)">${t('Send Message','发送消息')}</button>
         </div>
         <div id="contactSuccessMsg" style="display:none;text-align:center;padding:32px;background:rgba(5,150,105,0.1);border:1px solid rgba(52,211,153,0.25);border-radius:16px;margin-top:24px">
@@ -7355,11 +7368,15 @@ function selectCountry(name) {
 /* ─────────────────────────────────────────────
    CONTACT FORM SUBMIT
 ───────────────────────────────────────────── */
-function submitContactForm(e) {
+async function submitContactForm(e) {
   e.preventDefault();
   const wrap = document.getElementById('contactFormWrap');
   const successMsg = document.getElementById('contactSuccessMsg');
   if (!wrap || !successMsg) return;
+
+  // Honeypot: if this hidden field is filled, it's a bot
+  const honeypot = document.getElementById('cf_website');
+  if (honeypot && honeypot.value) return; // silently reject
 
   // Collect field values
   const firstName = (document.getElementById('cf_firstName')?.value || '').trim();
@@ -7370,18 +7387,29 @@ function submitContactForm(e) {
   const role      = (document.getElementById('cf_role')?.value      || '').trim();
   const message   = (document.getElementById('cf_message')?.value   || '').trim();
 
-  // Validation: required text/email inputs
+  // Email format validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validation: required fields
   let valid = true;
   [
     document.getElementById('cf_firstName'),
     document.getElementById('cf_lastName'),
-    document.getElementById('cf_email'),
     document.getElementById('cf_company'),
   ].forEach(inp => {
     if (!inp) return;
     if (!inp.value.trim()) { inp.style.borderColor = '#F87171'; valid = false; }
     else inp.style.borderColor = '';
   });
+
+  // Email validation
+  const emailInp = document.getElementById('cf_email');
+  if (!email || !emailRegex.test(email)) {
+    if (emailInp) emailInp.style.borderColor = '#F87171';
+    valid = false;
+  } else if (emailInp) {
+    emailInp.style.borderColor = '';
+  }
 
   const privacy = document.getElementById('privacyCheck');
   if (privacy && !privacy.checked) {
@@ -7393,32 +7421,56 @@ function submitContactForm(e) {
 
   if (!valid) return;
 
-  // Build mailto body with all fields
-  const roleLabel = document.getElementById('cf_role')?.selectedOptions?.[0]?.text || role;
-  const body = [
-    'New contact enquiry from nexbids.com',
-    '─────────────────────────',
-    `First Name:     ${firstName}`,
-    `Last Name:      ${lastName}`,
-    `Business Email: ${email}`,
-    `Company:        ${company}`,
-    `Country:        ${country || '(not provided)'}`,
-    `Role:           ${roleLabel || '(not provided)'}`,
-    '─────────────────────────',
-    'Message:',
-    message || '(no message)',
-  ].join('\n');
+  // Get submit button and show loading state
+  const submitBtn = wrap.querySelector('button[type="submit"], button[onclick*="submitContactForm"]');
+  const origBtnText = submitBtn ? submitBtn.textContent : '';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = t('Sending…', '发送中…'); }
 
-  const subject = `NexBids Contact: ${firstName} ${lastName} — ${company}`;
-  const mailtoUrl = `mailto:contact@nexbids.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Attempt Formspree submission (replace YOUR_FORM_ID with actual Formspree form ID)
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
 
-  // Open mail client
-  window.location.href = mailtoUrl;
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName, lastName, email, company, country, role, message,
+        _subject: `NexBids Contact: ${firstName} ${lastName} — ${company}`,
+      }),
+    });
 
-  // Show success message
-  wrap.style.display = 'none';
-  successMsg.style.display = 'block';
-  successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (response.ok) {
+      wrap.style.display = 'none';
+      successMsg.style.display = 'block';
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch (err) {
+    // Fallback: open mail client if Formspree is not configured
+    const roleLabel = document.getElementById('cf_role')?.selectedOptions?.[0]?.text || role;
+    const body = [
+      'New contact enquiry from nexbids.com',
+      '─────────────────────────',
+      `First Name:     ${firstName}`,
+      `Last Name:      ${lastName}`,
+      `Business Email: ${email}`,
+      `Company:        ${company}`,
+      `Country:        ${country || '(not provided)'}`,
+      `Role:           ${roleLabel || '(not provided)'}`,
+      '─────────────────────────',
+      'Message:',
+      message || '(no message)',
+    ].join('\n');
+    const subject = `NexBids Contact: ${firstName} ${lastName} — ${company}`;
+    const mailtoUrl = `mailto:contact@nexbids.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    wrap.style.display = 'none';
+    successMsg.style.display = 'block';
+    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } finally {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = origBtnText; }
+  }
 }
 
 /* ─────────────────────────────────────────────
@@ -7882,7 +7934,10 @@ function toggleMobileMenu() {
   const isOpen = menu?.classList.toggle('open');
 
   // Hamburger ↔ X animation
-  if (btn) btn.classList.toggle('open', isOpen);
+  if (btn) {
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
 
   // Prevent body scroll when menu is open
   document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -7973,9 +8028,9 @@ function handleLoginSubmit(btn, platform) {
   if (!valid) return;
   // Platform redirect URLs
   const platformUrls = {
-    dsp: 'http://dsp.nexbids.com',
-    ssp: 'http://ssp.nexbids.com',
-    adx: 'http://adx.nexbids.com',
+    dsp: 'https://dsp.nexbids.com',
+    ssp: 'https://ssp.nexbids.com',
+    adx: 'https://adx.nexbids.com',
   };
   // Show loading state
   const origText = btn.textContent;
@@ -7983,7 +8038,7 @@ function handleLoginSubmit(btn, platform) {
   btn.textContent = t('Signing in…','登录中…');
   // Brief delay then redirect
   setTimeout(() => {
-    window.location.href = platformUrls[platform] || 'http://nexbids.com';
+    window.location.href = platformUrls[platform] || 'https://nexbids.com';
   }, 800);
 }
 
@@ -8380,6 +8435,48 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+  // ---- Keyboard navigation for dropdowns ----
+  document.addEventListener('keydown', (e) => {
+    // Escape closes any open dropdown or mobile menu
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.dropdown-menu.open, .lang-dropdown.open').forEach(el => {
+        el.classList.remove('open');
+      });
+      document.querySelectorAll('[aria-expanded="true"]').forEach(btn => {
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      const navMenu = document.getElementById('navMenu');
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      if (navMenu?.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        mobileBtn?.classList.remove('open');
+        mobileBtn?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+
+  // ---- Dropdown items: keyboard Enter/Space triggers click ----
+  document.addEventListener('keydown', (e) => {
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('dropdown-item')) {
+      e.preventDefault();
+      e.target.click();
+    }
+  });
+
+  // ---- Update aria-expanded on dropdown triggers ----
+  document.querySelectorAll('.dropdown-trigger[aria-haspopup]').forEach(trigger => {
+    const observer = new MutationObserver(() => {
+      const menu = trigger.nextElementSibling;
+      if (menu) {
+        const isOpen = menu.classList.contains('open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+    const menu = trigger.nextElementSibling;
+    if (menu) observer.observe(menu, { attributes: true, attributeFilter: ['class'] });
+  });
+
   // Close lang + login dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('#langSelector') && !e.target.closest('#langSelectorFooter')) {
@@ -8430,9 +8527,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initFooterAccordion();
 
-  renderPage('home');
+  // ---- Handle initial URL hash routing ----
+  const initialHash = window.location.hash.replace('#', '') || 'home';
+  const validPage = initialHash && initialHash !== '' ? initialHash : 'home';
+  renderPage(validPage);
+  currentPage = validPage;
+  // Replace initial history state
+  history.replaceState({ page: validPage }, '', validPage === 'home' ? '#' : '#' + validPage);
   applyLang();
-  updateNavActive('home');
+  updateNavActive(validPage);
+
+  // ---- Browser back/forward support ----
+  window.addEventListener('popstate', (e) => {
+    const page = (e.state && e.state.page) ? e.state.page : 'home';
+    currentPage = page;
+    renderPage(page);
+    updateNavActive(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
 
 

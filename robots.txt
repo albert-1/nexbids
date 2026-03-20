@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://albert-1.github.io/nexbids/sitemap.xml

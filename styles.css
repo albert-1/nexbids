@@ -3616,3 +3616,33 @@ body.rtl .login-dropdown .dropdown-menu { left: 0; right: auto; }
 @media (max-width: 640px) {
   .back-to-top { bottom: 20px; right: 16px; width: 40px; height: 40px; }
 }
+
+/* ─── Skeleton Loading Screen ─── */
+.skeleton-loader { padding: 120px 40px 80px; max-width: 900px; margin: 0 auto; }
+.skeleton-hero { display: flex; flex-direction: column; gap: 16px; }
+.skeleton-line {
+  border-radius: 8px;
+  background: linear-gradient(90deg,rgba(255,255,255,0.05) 25%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}
+.skeleton-line-lg { height: 52px; width: 70%; }
+.skeleton-line-md { height: 28px; width: 55%; }
+.skeleton-line-sm { height: 20px; width: 40%; }
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Focus Visible (keyboard navigation) ─── */
+:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.dropdown-item:focus-visible,
+.nav-link:focus-visible,
+.btn-login:focus-visible {
+  outline: 2px solid #60A5FA;
+  outline-offset: 2px;
+}

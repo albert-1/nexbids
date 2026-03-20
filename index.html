@@ -11,39 +11,68 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="NexBids | Global Programmatic Advertising Solutions" />
   <meta property="og:description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
-  <meta property="og:image" content="fav.png" />
-  <meta property="og:url" content="https://nexbids.com" />
+  <meta property="og:image" content="https://albert-1.github.io/nexbids/nexbids-logo.png" />
+  <meta property="og:url" content="https://albert-1.github.io/nexbids/" />
+  <meta property="og:site_name" content="NexBids" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NexBids | Global Programmatic Advertising Solutions" />
   <meta name="twitter:description" content="NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for advertisers, publishers, developers, and agencies." />
-  <meta name="twitter:image" content="fav.png" />
+  <meta name="twitter:image" content="https://albert-1.github.io/nexbids/nexbids-logo.png" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://albert-1.github.io/nexbids/" />
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NexBids",
+    "url": "https://albert-1.github.io/nexbids/",
+    "logo": "https://albert-1.github.io/nexbids/nexbids-logo.png",
+    "description": "NexBids is a global ad tech company offering DSP, SSP, and ADX platforms for programmatic advertising.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact@nexbids.com",
+      "contactType": "customer support"
+    },
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NexBids",
+    "url": "https://albert-1.github.io/nexbids/",
+    "description": "Global Programmatic Advertising Solutions — DSP, SSP, ADX platforms"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260318-release" />
-  <!-- D3 + TopoJSON for accurate world map rendering -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" /></noscript>
+  <link rel="stylesheet" href="styles.css?v=20260320-release" />
 </head>
 <body>
 
 <!-- ===================== NAVIGATION ===================== -->
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="#" class="nav-logo" onclick="navigate('home')">
+    <a href="#" class="nav-logo" onclick="navigate('home')" aria-label="NexBids Home">
       <img src="nexbids-logo.png" alt="NexBids" width="240" height="40" class="nexbids-logo" style="display:block;object-fit:contain;" />
     </a>
 
-    <div class="nav-menu" id="navMenu">
+    <div class="nav-menu" id="navMenu" role="menubar">
       <!-- Solutions -->
       <div class="nav-item dropdown">
-        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('solutions', event)">
+        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('solutions', event)" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-solutions">
           <span data-en="Solutions" data-zh="解决方案">Solutions</span>
-          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" onclick="navigate('solutions-advertiser')">
-            <span class="di-icon di-icon-svg" style="background:rgba(0,87,255,0.15);box-shadow:0 2px 10px rgba(0,87,255,0.2)">
+        <div class="dropdown-menu" id="dropdown-solutions" role="menu">
+          <a class="dropdown-item" onclick="navigate('solutions-advertiser')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(0,87,255,0.15);box-shadow:0 2px 10px rgba(0,87,255,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
             </span>
             <div>
@@ -51,8 +80,8 @@
               <div class="di-sub" data-en="Scale campaigns globally" data-zh="在全球范围内扩展营销活动">Scale campaigns globally</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('solutions-publisher')">
-            <span class="di-icon di-icon-svg" style="background:rgba(5,150,105,0.15);box-shadow:0 2px 10px rgba(5,150,105,0.2)">
+          <a class="dropdown-item" onclick="navigate('solutions-publisher')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(5,150,105,0.15);box-shadow:0 2px 10px rgba(5,150,105,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </span>
             <div>
@@ -60,8 +89,8 @@
               <div class="di-sub" data-en="Maximize your ad revenue" data-zh="最大化广告收益">Maximize your ad revenue</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('solutions-agency')">
-            <span class="di-icon di-icon-svg" style="background:rgba(153,52,255,0.15);box-shadow:0 2px 10px rgba(153,52,255,0.2)">
+          <a class="dropdown-item" onclick="navigate('solutions-agency')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(153,52,255,0.15);box-shadow:0 2px 10px rgba(153,52,255,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C084FC" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </span>
             <div>
@@ -74,27 +103,27 @@
 
       <!-- Products -->
       <div class="nav-item dropdown">
-        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('products', event)">
+        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('products', event)" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-products">
           <span data-en="Products" data-zh="产品">Products</span>
-          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" onclick="navigate('products-dsp')">
-            <span class="di-icon dsp-icon">DSP</span>
+        <div class="dropdown-menu" id="dropdown-products" role="menu">
+          <a class="dropdown-item" onclick="navigate('products-dsp')" role="menuitem" tabindex="0">
+            <span class="di-icon dsp-icon" aria-hidden="true">DSP</span>
             <div>
               <div class="di-title" data-en="NexBids DSP" data-zh="NexBids DSP">NexBids DSP</div>
               <div class="di-sub" data-en="Demand-Side Platform" data-zh="需求方平台">Demand-Side Platform</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('products-adx')">
-            <span class="di-icon adx-icon">ADX</span>
+          <a class="dropdown-item" onclick="navigate('products-adx')" role="menuitem" tabindex="0">
+            <span class="di-icon adx-icon" aria-hidden="true">ADX</span>
             <div>
               <div class="di-title" data-en="NexBids ADX" data-zh="NexBids ADX">NexBids ADX</div>
               <div class="di-sub" data-en="Ad Exchange" data-zh="广告交易中枢">Ad Exchange</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('products-ssp')">
-            <span class="di-icon ssp-icon">SSP</span>
+          <a class="dropdown-item" onclick="navigate('products-ssp')" role="menuitem" tabindex="0">
+            <span class="di-icon ssp-icon" aria-hidden="true">SSP</span>
             <div>
               <div class="di-title" data-en="NexBids SSP" data-zh="NexBids SSP">NexBids SSP</div>
               <div class="di-sub" data-en="Supply-Side Platform" data-zh="供应方平台">Supply-Side Platform</div>
@@ -104,26 +133,26 @@
       </div>
 
       <div class="nav-item">
-        <button class="nav-link" onclick="navigate('technology')">
+        <button class="nav-link" onclick="navigate('technology')" role="menuitem">
           <span data-en="Technology" data-zh="技术优势">Technology</span>
         </button>
       </div>
 
       <div class="nav-item">
-        <button class="nav-link" onclick="navigate('resources')">
+        <button class="nav-link" onclick="navigate('resources')" role="menuitem">
           <span data-en="Resources" data-zh="资源文档">Resources</span>
         </button>
       </div>
 
       <!-- Case Studies -->
       <div class="nav-item dropdown">
-        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('case-studies', event)">
+        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('case-studies', event)" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-case-studies">
           <span data-en="Case Studies" data-zh="客户案例">Case Studies</span>
-          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" onclick="navigate('cases-advertiser')">
-            <span class="di-icon di-icon-svg" style="background:rgba(0,87,255,0.15);box-shadow:0 2px 10px rgba(0,87,255,0.2)">
+        <div class="dropdown-menu" id="dropdown-case-studies" role="menu">
+          <a class="dropdown-item" onclick="navigate('cases-advertiser')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(0,87,255,0.15);box-shadow:0 2px 10px rgba(0,87,255,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
             </span>
             <div>
@@ -131,8 +160,8 @@
               <div class="di-sub" data-en="E-Commerce, Gaming, Utilities, Media" data-zh="电商、游戏、工具、媒体">E-Commerce, Gaming, Utilities, Media</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('cases-publisher')">
-            <span class="di-icon di-icon-svg" style="background:rgba(5,150,105,0.15);box-shadow:0 2px 10px rgba(5,150,105,0.2)">
+          <a class="dropdown-item" onclick="navigate('cases-publisher')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(5,150,105,0.15);box-shadow:0 2px 10px rgba(5,150,105,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </span>
             <div>
@@ -145,13 +174,13 @@
 
       <!-- Company -->
       <div class="nav-item dropdown">
-        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('company', event)">
+        <button class="nav-link dropdown-trigger" onclick="handleDropdownTrigger('company', event)" aria-haspopup="true" aria-expanded="false" aria-controls="dropdown-company">
           <span data-en="Company" data-zh="公司">Company</span>
-          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" onclick="navigate('about')">
-            <span class="di-icon di-icon-svg" style="background:rgba(6,182,212,0.15);box-shadow:0 2px 10px rgba(6,182,212,0.2)">
+        <div class="dropdown-menu" id="dropdown-company" role="menu">
+          <a class="dropdown-item" onclick="navigate('about')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(6,182,212,0.15);box-shadow:0 2px 10px rgba(6,182,212,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </span>
             <div>
@@ -159,8 +188,8 @@
               <div class="di-sub" data-en="Our story & mission" data-zh="我们的故事与使命">Our story & mission</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('careers')">
-            <span class="di-icon di-icon-svg" style="background:rgba(245,158,11,0.15);box-shadow:0 2px 10px rgba(245,158,11,0.2)">
+          <a class="dropdown-item" onclick="navigate('careers')" role="menuitem" tabindex="0">
+            <span class="di-icon di-icon-svg" style="background:rgba(245,158,11,0.15);box-shadow:0 2px 10px rgba(245,158,11,0.2)" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="12" stroke-width="3" stroke-linecap="round"/><path d="M2 13s4 2 10 2 10-2 10-2"/></svg>
             </span>
             <div>
@@ -172,7 +201,7 @@
       </div>
 
       <div class="nav-item">
-        <button class="nav-link" onclick="navigate('contact')">
+        <button class="nav-link" onclick="navigate('contact')" role="menuitem">
           <span data-en="Contact Us" data-zh="联系我们">Contact Us</span>
         </button>
       </div>
@@ -181,9 +210,9 @@
     <div class="nav-actions">
       <!-- Language Selector -->
       <div class="lang-selector" id="langSelector">
-        <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown(event)" aria-label="Select language">
+        <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown(event)" aria-label="Select language" aria-haspopup="listbox" aria-expanded="false">
           🇺🇸 <span>English</span>
-          <svg width="10" height="7" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="10" height="7" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
         <div class="lang-dropdown" id="langDropdown" role="listbox" aria-label="Language options"></div>
       </div>
@@ -192,25 +221,25 @@
       <div class="nav-item dropdown login-dropdown" id="loginDropdownWrap">
         <button class="btn-login dropdown-trigger" onclick="toggleLoginDropdown(event)" aria-haspopup="true" aria-expanded="false" id="loginDropdownBtn">
           <span data-en="Login" data-zh="登录">Login</span>
-          <svg width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
         </button>
-        <div class="dropdown-menu login-menu" id="loginMenu">
-          <a class="dropdown-item" onclick="navigate('login-dsp');closeLoginDropdown()">
-            <span class="di-icon dsp-icon">DSP</span>
+        <div class="dropdown-menu login-menu" id="loginMenu" role="menu">
+          <a class="dropdown-item" onclick="navigate('login-dsp');closeLoginDropdown()" role="menuitem" tabindex="0">
+            <span class="di-icon dsp-icon" aria-hidden="true">DSP</span>
             <div>
               <div class="di-title">NexBids DSP</div>
               <div class="di-sub" data-en="Advertiser Platform" data-zh="广告主平台">Advertiser Platform</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('login-ssp');closeLoginDropdown()">
-            <span class="di-icon ssp-icon">SSP</span>
+          <a class="dropdown-item" onclick="navigate('login-ssp');closeLoginDropdown()" role="menuitem" tabindex="0">
+            <span class="di-icon ssp-icon" aria-hidden="true">SSP</span>
             <div>
               <div class="di-title">NexBids SSP</div>
               <div class="di-sub" data-en="Publisher Platform" data-zh="发布商平台">Publisher Platform</div>
             </div>
           </a>
-          <a class="dropdown-item" onclick="navigate('login-adx');closeLoginDropdown()">
-            <span class="di-icon adx-icon">ADX</span>
+          <a class="dropdown-item" onclick="navigate('login-adx');closeLoginDropdown()" role="menuitem" tabindex="0">
+            <span class="di-icon adx-icon" aria-hidden="true">ADX</span>
             <div>
               <div class="di-title">NexBids ADX</div>
               <div class="di-sub" data-en="Exchange Platform" data-zh="交易平台">Exchange Platform</div>
@@ -220,16 +249,23 @@
       </div>
 
       <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
     </div>
   </div>
 </nav>
 
 <!-- ===================== PAGE CONTAINER ===================== -->
-<main id="pageContainer">
-  <!-- All pages rendered by JS -->
+<main id="pageContainer" role="main" aria-live="polite" aria-atomic="false" tabindex="-1">
+  <!-- Skeleton loading screen shown before JS initializes -->
+  <div class="skeleton-loader" id="skeletonLoader" aria-hidden="true">
+    <div class="skeleton-hero">
+      <div class="skeleton-line skeleton-line-lg"></div>
+      <div class="skeleton-line skeleton-line-md"></div>
+      <div class="skeleton-line skeleton-line-sm"></div>
+    </div>
+  </div>
 </main>
 
 <!-- ===================== FOOTER ===================== -->
@@ -261,9 +297,9 @@
       <div class="footer-col">
         <h4 data-en="Solutions" data-zh="解决方案">Solutions</h4>
         <ul>
-          <li><a onclick="navigate('solutions-advertiser')" data-en="Advertiser Launch Solutions" data-zh="广告主投放解决方案">Advertiser Launch Solutions</a></li>
-          <li><a onclick="navigate('solutions-publisher')" data-en="Publisher & Developer Monetization" data-zh="发布商/开发者变现">Publisher & Developer Monetization</a></li>
-          <li><a onclick="navigate('solutions-agency')" data-en="Agency Cooperation" data-zh="代理合作解决方案">Agency Cooperation</a></li>
+          <li><a href="#solutions-advertiser" onclick="navigate('solutions-advertiser')" data-en="Advertiser Launch Solutions" data-zh="广告主投放解决方案">Advertiser Launch Solutions</a></li>
+          <li><a href="#solutions-publisher" onclick="navigate('solutions-publisher')" data-en="Publisher & Developer Monetization" data-zh="发布商/开发者变现">Publisher & Developer Monetization</a></li>
+          <li><a href="#solutions-agency" onclick="navigate('solutions-agency')" data-en="Agency Cooperation" data-zh="代理合作解决方案">Agency Cooperation</a></li>
         </ul>
       </div>
 
@@ -271,10 +307,10 @@
       <div class="footer-col">
         <h4 data-en="Products" data-zh="产品">Products</h4>
         <ul>
-          <li><a onclick="navigate('products-dsp')" data-en="NexBids DSP" data-zh="NexBids DSP">NexBids DSP</a></li>
-          <li><a onclick="navigate('products-adx')" data-en="NexBids ADX" data-zh="NexBids ADX">NexBids ADX</a></li>
-          <li><a onclick="navigate('products-ssp')" data-en="NexBids SSP" data-zh="NexBids SSP">NexBids SSP</a></li>
-          <li><a onclick="navigate('technology')" data-en="Technology" data-zh="技术优势">Technology</a></li>
+          <li><a href="#products-dsp" onclick="navigate('products-dsp')" data-en="NexBids DSP" data-zh="NexBids DSP">NexBids DSP</a></li>
+          <li><a href="#products-adx" onclick="navigate('products-adx')" data-en="NexBids ADX" data-zh="NexBids ADX">NexBids ADX</a></li>
+          <li><a href="#products-ssp" onclick="navigate('products-ssp')" data-en="NexBids SSP" data-zh="NexBids SSP">NexBids SSP</a></li>
+          <li><a href="#technology" onclick="navigate('technology')" data-en="Technology" data-zh="技术优势">Technology</a></li>
         </ul>
       </div>
 
@@ -282,10 +318,10 @@
       <div class="footer-col">
         <h4 data-en="Company" data-zh="公司">Company</h4>
         <ul>
-          <li><a onclick="navigate('about')" data-en="About Us" data-zh="关于我们">About Us</a></li>
-          <li><a onclick="navigate('careers')" data-en="Careers" data-zh="招贤纳士">Careers</a></li>
-          <li><a onclick="navigate('case-studies')" data-en="Case Studies" data-zh="客户案例">Case Studies</a></li>
-          <li><a onclick="navigate('resources')" data-en="Resources" data-zh="资源文档">Resources</a></li>
+          <li><a href="#about" onclick="navigate('about')" data-en="About Us" data-zh="关于我们">About Us</a></li>
+          <li><a href="#careers" onclick="navigate('careers')" data-en="Careers" data-zh="招贤纳士">Careers</a></li>
+          <li><a href="#case-studies" onclick="navigate('case-studies')" data-en="Case Studies" data-zh="客户案例">Case Studies</a></li>
+          <li><a href="#resources" onclick="navigate('resources')" data-en="Resources" data-zh="资源文档">Resources</a></li>
         </ul>
       </div>
 
@@ -293,9 +329,9 @@
       <div class="footer-col">
         <h4 data-en="Contact & Legal" data-zh="联系与法律">Contact & Legal</h4>
         <ul>
-          <li><a onclick="navigate('contact')" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
+          <li><a href="#contact" onclick="navigate('contact')" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
           <li><a href="mailto:contact@nexbids.com">contact@nexbids.com</a></li>
-          <li><a onclick="openPrivacyModal(event)" href="#" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a></li>
+          <li><a href="#privacy" onclick="openPrivacyModal(event)" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -320,6 +356,8 @@
   </svg>
 </button>
 
-<script src="app.js?v=20260318-release"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
+<script src="app.js?v=20260320-release" defer></script>
 </body>
 </html>
